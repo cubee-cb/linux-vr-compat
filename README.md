@@ -5,17 +5,17 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 ## Setup
 
 ### Software
-Fedora 41 (KDE Plasma, Wayland)
-WiVRN to connect to the headset and emulate SteamVR.
-WlxOverlay for desktops and playspace drag.
-Games run through Steam, SteamVR is not installed. Use launch arguments provided by WiVRn to run using WiVRn.
+- Fedora 41 (KDE Plasma, Wayland)
+- WiVRN to connect to the headset and emulate SteamVR.
+- WlxOverlay for desktops and playspace drag.
+- Games run through Steam, SteamVR is not installed. Use launch arguments provided by WiVRn to run using WiVRn.
 
 ### Hardware
-AMD Ryzen 5 5600G
-AMD RX 6600XT 8GB
-16GB RAM (2x8GB, 3200Mhz)
-Everything installed on a hard drive. (including OS)
-PICO 4 headset, connected with USB 3.0.
+- AMD Ryzen 5 5600G
+- AMD RX 6600XT 8GB
+- 16GB RAM (2x8GB, 3200Mhz)
+- Everything installed on a hard drive. (including OS)
+- PICO 4 headset, connected with USB 3.0.
 
 ## Working
 - VRChat
