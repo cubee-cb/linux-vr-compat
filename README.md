@@ -1,7 +1,7 @@
 # linux-vr-compat
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 
-Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on them fixing it is [as stated here](https://github.com/WiVRn/WiVRn/issues/94). Was silent for a month until the day I wrote this page.
+Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on them fixing it is [as stated here](https://github.com/WiVRn/WiVRn/issues/94).
 
 ## Setup
 
