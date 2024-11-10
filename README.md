@@ -1,6 +1,7 @@
 # linux-vr-compat
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
-Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on them fixing it is... [unconfirmed](https://github.com/WiVRn/WiVRn/issues/94). Well, until I write this today, lol.
+
+Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on them fixing it is [as stated here](https://github.com/WiVRn/WiVRn/issues/94). Was silent for a month until the day I wrote this page.
 
 ## Setup
 
@@ -9,6 +10,7 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 - WiVRN to connect to the headset and emulate SteamVR.
 - WlxOverlay for desktops and playspace drag.
 - Games run through Steam, SteamVR is not installed. Use launch arguments provided by WiVRn to run using WiVRn.
+- Proton: GE-Proton9-18 (unless otherwise specified)
 
 ### Hardware
 - AMD Ryzen 5 5600G
@@ -21,6 +23,8 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 - VRChat
     - World "Connecting" screens are broken.
 - Beat Saber
+    - Modding with Beat Saber Mod Manager.
+    - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
 - Pistol Whip
     - First launch takes ages.
 - The Lab
