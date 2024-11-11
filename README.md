@@ -19,6 +19,8 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [as stated in this issue](https://github.com/WiVRn/WiVRn/issues/94).
 
 ## Working
+^ - Requires a different Proton version.
+
 - VRChat
     - World "Connecting" screens are broken.
     - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
@@ -32,39 +34,44 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
         - Settings and selected mods do not save.
     - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
 - Pistol Whip
-    - First launch takes ages.
+    - First launch takes ages, but otherwise works perfectly.
 - The Lab
     - Loading screens are broken.
 - Sushi Ben Demo
+- ^ Ragnarock
+    - Successfully launches with GE-Proton7-55.
+    - Otherwise, fails to launch with d3d11 error.
+    - Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
+- ^ Into the Radius
+    - Successfully launches with GE-Proton7-55.
+    - Otherwise, fails to launch with d3d11 error.
+    - Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
+- Vacation Simulator
+- Rumble
+    - Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
 
-## Technically working
+## Partially working
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
 - Resonite (Proton + Native)
     - Logged in, froze when loading cloud home while in the tutorial.
     - Desktop mode works.
-    
+
 ## Non-working
-- Ragnarock
-    - Successfully launches without WiVRn running, but falls back to desktop mode.
-    - When run with WiVRn, fails to launch with d3d11 error.
-- Into the Radius
-    - Successfully launches without WiVRn running.
-    - When run with WiVRn, fails to launch with d3d11 error.
 - Zenith VR
     - Loading screens are broken.
     - Crashes immediately after launch with a texture error.
+    - Using GE-Proton7-55 seems to give a different texture error.
 - Until You Fall
     - Black screen after logo, black-screen-fix beta no longer exists.
 - Half-Life 2 VR
     - Launches, but can't find VR session.
+- Hyper Dash
+    - Fails to launch with an OpenComposite error for a stubbed file related to the chaperone.
+    - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 
 ## Untested (but owned/willing to test)
-- Rumble
-- Hyper Dash
-    - This also has a free standalone version on both PICO and Quest.
-- Vacation Simulator
 - VAIL
     - Uses Denuvo anti-cheat. Last ProtonDB report was 2 years ago. Coincidence? Remains to be seen.
 - ChilloutVR
