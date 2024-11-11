@@ -23,6 +23,10 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 - VRChat
     - World "Connecting" screens are broken.
     - Uses gamemoderun and custom start script from Linux VR Adventures Wiki. (EAC section)
+    - Terrors of Nowhere
+        - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix.
+            - Needs testing, but it at least runs and finds the saves in the VRChat logs.
+            - Will test auto copy-paste, osc parameters.
 - Beat Saber
     - Modding with Beat Saber Mod Manager. Settings and selected mods do not save.
     - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
