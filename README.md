@@ -15,7 +15,7 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 ### Hardware
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
-- 16GB RAM (2x8GB, 3200Mhz)
+- 16GB RAM (2x8GB, 3200Mhz, DDR4)
 - Everything installed on a hard drive. (including OS)
 - PICO 4 headset, connected with USB 3.0.
 
@@ -23,7 +23,7 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 - VRChat
     - World "Connecting" screens are broken.
 - Beat Saber
-    - Modding with Beat Saber Mod Manager.
+    - Modding with Beat Saber Mod Manager. Settings and selected mods do not save.
     - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
 - Pistol Whip
     - First launch takes ages.
