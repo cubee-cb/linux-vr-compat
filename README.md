@@ -24,7 +24,8 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
     - World "Connecting" screens are broken.
     - Uses gamemoderun and custom start script from Linux VR Adventures Wiki. (EAC section)
     - Terrors of Nowhere
-        - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix.
+        - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
+            - See the VRChat folder for a launch script using flatpak Protontricks.
             - Needs testing, but it at least runs and finds the saves in the VRChat logs.
             - Will test auto copy-paste, osc parameters.
 - Beat Saber
