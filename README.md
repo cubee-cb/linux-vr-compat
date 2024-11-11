@@ -22,6 +22,7 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 ## Working
 - VRChat
     - World "Connecting" screens are broken.
+    - Uses gamemoderun and custom start script from Linux VR Adventures Wiki. (EAC section)
 - Beat Saber
     - Modding with Beat Saber Mod Manager. Settings and selected mods do not save.
     - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
