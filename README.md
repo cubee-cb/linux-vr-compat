@@ -1,8 +1,6 @@
 # linux-vr-compat
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 
-Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [as stated here](https://github.com/WiVRn/WiVRn/issues/94).
-
 ## Setup
 
 ### Software
@@ -18,18 +16,20 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
 - Everything installed on a hard drive. (including OS)
 - PICO 4 headset, connected with USB 3.0.
+    - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [as stated in this issue](https://github.com/WiVRn/WiVRn/issues/94).
 
 ## Working
 - VRChat
     - World "Connecting" screens are broken.
-    - Uses gamemoderun and custom start script from Linux VR Adventures Wiki. (EAC section)
+    - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
     - Terrors of Nowhere
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
             - Needs testing, but it at least runs and finds the saves in the VRChat logs.
             - Will test auto copy-paste, osc parameters.
 - Beat Saber
-    - Modding with Beat Saber Mod Manager. Settings and selected mods do not save.
+    - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
+        - Settings and selected mods do not save.
     - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
 - Pistol Whip
     - First launch takes ages.
@@ -40,25 +40,25 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
 ## Technically working
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
-    - WiVRn doesn't provide a playspace, so only joystick locomotion is available.
+    - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
 - Resonite (Proton + Native)
     - Logged in, froze when loading cloud home while in the tutorial.
     - Desktop mode works.
     
 ## Non-working
 - Ragnarock
-    - Successfully launches in desktop mode without WiVRn.
+    - Successfully launches without WiVRn running, but falls back to desktop mode.
     - When run with WiVRn, fails to launch with d3d11 error.
 - Into the Radius
     - Successfully launches without WiVRn running.
     - When run with WiVRn, fails to launch with d3d11 error.
 - Zenith VR
     - Loading screens are broken.
-    - Crashes soon after launch with a texture error.
+    - Crashes immediately after launch with a texture error.
 - Until You Fall
     - Black screen after logo, black-screen-fix beta no longer exists.
 - Half-Life 2 VR
-    - Launches, but can't find VR session
+    - Launches, but can't find VR session.
 
 ## Untested (but owned/willing to test)
 - Rumble
@@ -66,7 +66,7 @@ Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status
     - This also has a free standalone version on both PICO and Quest.
 - Vacation Simulator
 - VAIL
-    - Uses Denuvo Anti-cheat, EAC for VRC is as far as I'm willing to go.
+    - Uses Denuvo anti-cheat. Last ProtonDB report was 2 years ago. Coincidence? Remains to be seen.
 - ChilloutVR
 - Down the Rabbit Hole
 - Project Cars
