@@ -72,6 +72,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 
 ## Untested (but owned/willing to test)
+- Vivecraft
 - VAIL
     - Uses Denuvo anti-cheat. Last ProtonDB report was 2 years ago. Coincidence? Remains to be seen.
 - ChilloutVR
