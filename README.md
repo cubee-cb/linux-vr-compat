@@ -27,8 +27,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Terrors of Nowhere
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
-            - Needs testing, but it at least runs and finds the saves in the VRChat logs.
-            - Will test auto copy-paste, osc parameters.
+            - Seems to work fine. Finds save files in the logs, saves copy when clicked, and OSC works.
 - Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
         - Settings and selected mods do not save.
