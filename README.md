@@ -38,12 +38,10 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Loading screens are broken.
 - Sushi Ben Demo
 - ^ Ragnarock
-    - Successfully launches with GE-Proton7-55.
-    - Otherwise, fails to launch with d3d11 error.
+    - Successfully launches with GE-Proton7-55. Fails to launch with d3d11 error on latest.
     - Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
 - ^ Into the Radius
-    - Successfully launches with GE-Proton7-55.
-    - Otherwise, fails to launch with d3d11 error.
+    - Successfully launches with GE-Proton7-55. Fails to launch with d3d11 error on latest.
     - Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
 - Vacation Simulator
 - Rumble
@@ -54,16 +52,17 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
 - Resonite (Proton + Native)
-    - Logged in, froze when loading cloud home while in the tutorial.
+    - Logged in, froze when loading cloud home while in the tutorial, so it may not like changing worlds.
     - Desktop mode works.
 
 ## Non-working
 - Zenith VR
     - Loading screens are broken.
     - Crashes immediately after launch with a texture error.
-    - Using GE-Proton7-55 seems to give a different texture error.
+    - Using GE-Proton7-55 seems to give a different texture error, at least a different style of error window.
 - Until You Fall
-    - Black screen after logo, black-screen-fix beta no longer exists.
+    - Black screen after logo, black-screen-fix beta no longer exists?
+    - Using GE-Proton7-55 changes nothing.
 - Half-Life 2 VR
     - Launches, but can't find VR session.
 - Hyper Dash
