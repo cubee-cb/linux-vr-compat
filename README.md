@@ -27,7 +27,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Terrors of Nowhere
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
-            - Seems to work fine. Finds save files in the logs, saves copy when clicked, and OSC works.
+            - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
 - Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
         - Settings and selected mods do not save.
@@ -46,16 +46,21 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - Vacation Simulator
 - Rumble
     - Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
+- VAIL
+    - Shockingly works, despite the recent addition of Denuvo anti-cheat in patch 1.2.4 on 3 October 2024.
+    - Menus are flickery. Flickers look as if they're sheets of paper with a section ripped out the middle.
+    - Large stutters while loading maps, though likely due to running on a hard drive.
+- Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
+    - Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
+        - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
+    - Default stick-click to jump binding conflicts with my space-drag/reset bindings.
 
 ## Partially working
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
-- Resonite (Proton + Native)
-    - Logged in, froze when loading cloud home while in the tutorial, so it may not like changing worlds.
-    - Desktop mode works.
 
-## Non-working
+## Not working
 - Zenith VR
     - Loading screens are broken.
     - Crashes immediately after launch with a texture error.
@@ -71,8 +76,6 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 
 ## Untested (but owned/willing to test)
 - Vivecraft
-- VAIL
-    - Uses Denuvo anti-cheat. Last ProtonDB report was 2 years ago. Coincidence? Remains to be seen.
 - ChilloutVR
 - Down the Rabbit Hole
 - Project Cars
