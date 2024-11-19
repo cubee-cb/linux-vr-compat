@@ -54,6 +54,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
         - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
     - Default stick-click to jump binding conflicts with my space-drag/reset bindings.
+- ChilloutVR
 
 ## Partially working
 - Tea For God
@@ -76,7 +77,6 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 
 ## Untested (but owned/willing to test)
 - Vivecraft
-- ChilloutVR
 - Down the Rabbit Hole
 - Project Cars
 - Propagation VR
