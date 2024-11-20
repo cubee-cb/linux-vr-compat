@@ -48,7 +48,9 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
 - VAIL
     - Shockingly works, despite the recent addition of Denuvo anti-cheat in patch 1.2.4 on 3 October 2024.
-    - Menus are flickery. Flickers look as if they're sheets of paper with a section ripped out the middle.
+    - Default bindings have fire on trigger touch rather than pull. I haven't yet figured out how to obtain a `bindings_oculus_touch.json` action manifest from VAIL to fix that for myself.
+        - Maybe getting the binding files from the local workshop folder for SteamVR would get me a working action manifest. But then where does the override folder go for Unreal games?
+    - Menus are very flickery some of the time.
     - Large stutters while loading maps, though likely due to running on a hard drive.
 - Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
     - Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
