@@ -17,8 +17,12 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - AMD RX 6600XT 8GB
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
 - Everything installed on a hard drive. (including OS)
+    - Plan to move to an SSD at some point, but loading speeds aren't bad! Or maybe I'm just used to it?
 - PICO 4 headset, connected with USB 3.0.
     - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [completed](https://github.com/WiVRn/WiVRn/issues/94) but a release has yet to be made.
+    - Hand tracking works fine in titles that support it, and has correct offsets unlike the controllers.
+        - The enable option will be greyed out on the HMD unless hand tracking is enabled at the system level. (Settings > Lab > Hand Tracking)
+        - I wonder if this means that WiVRn supports the PICO Motion Trackers, since the body tracking option is visible. Unlikely, but I may look into trying to implement that myself if I get them.
 
 ## Working
 Things we can actually play! Yay!
@@ -64,12 +68,12 @@ Things we can actually play! Yay!
 - Propagation VR
 
 ## Partially working
-These launch, but are unplayable.
+These launch, but are unplayable or become unplayable at some point.
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
 - Slinger VR
-    - Hands are stuck at the playspace origin.
+    - Controllers are stuck at the playspace origin and don't respond to input.
 - Aperture Hand Lab
     - Hand tracking is unusable due to lacking buttons, and uses Knuckles-style curls instead of the proper hand skeleton.
     - Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
@@ -100,8 +104,9 @@ The following crash on launch or have other major issues.
     - Crashes with a texture error after rendering the first logo, like Zenith.
 
 ## Untested
-Owned and willing to test.
+Owned and/or willing to test.
 - I am Sakuya VR
+- Metal Hellsinger VR Demo
 - Desert Bus VR
 - Republique VR
 - Traffic Jams
