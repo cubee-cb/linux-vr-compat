@@ -21,8 +21,8 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [completed](https://github.com/WiVRn/WiVRn/issues/94) but a release has yet to be made.
 
 ## Working
+Things we can actually play! Yay!
 ^ - Requires a different Proton version.
-
 - VRChat
     - World "Connecting" screens are broken.
     - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
@@ -64,6 +64,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - Propagation VR
 
 ## Partially working
+These launch, but are unplayable.
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
@@ -76,6 +77,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
         - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
 
 ## Not working
+The following crash on launch or have other major issues.
 - Zenith VR
     - Loading screens are broken.
     - Crashes immediately after rendering the first loading screen with a texture error.
@@ -97,8 +99,17 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - Museum of Other Realities
     - Crashes with a texture error after rendering the first logo, like Zenith.
 
-## Untested (but owned/willing to test)
+## Untested
+Owned and willing to test.
 - I am Sakuya VR
 - Desert Bus VR
 - Republique VR
 - Traffic Jams
+
+## Curiosites
+Stuff I don't expect to work but try anyway.
+- OVR Toolkit
+    - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
+    - Nothing happens in VR.
+    - After closing the desktop window, it remains running until closed by other means.
+
