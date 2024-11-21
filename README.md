@@ -7,7 +7,9 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - Fedora 41 (KDE Plasma, Wayland)
 - WiVRN to connect to the headset and emulate SteamVR.
 - WlxOverlay for desktops and playspace drag.
-- Games run through Steam, SteamVR is not installed. Use launch arguments provided by WiVRn to run using WiVRn.
+    - Space Drag is either stick click, Space Reset is double-click left stick.
+    - Custom build with battery OSC parameters, see my repos for more info on that.
+- Most games run through Steam, SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime.
 - Proton: GE-Proton9-18 (unless otherwise specified)
 
 ### Hardware
@@ -16,7 +18,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
 - Everything installed on a hard drive. (including OS)
 - PICO 4 headset, connected with USB 3.0.
-    - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [as stated in this issue](https://github.com/WiVRn/WiVRn/issues/94).
+    - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [completed](https://github.com/WiVRn/WiVRn/issues/94) but a release has yet to be made.
 
 ## Working
 ^ - Requires a different Proton version.
@@ -58,16 +60,25 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
         - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
     - Default stick-click to jump binding conflicts with my space-drag/reset bindings.
 - ChilloutVR
+- Down the Rabbit Hole
+- Propagation VR
 
 ## Partially working
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
+- Slinger VR
+    - Hands are stuck at the playspace origin.
+- Aperture Hand Lab
+    - Hand tracking is unusable due to lacking buttons, and uses Knuckles-style curls instead of the proper hand skeleton.
+    - Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
+    - Playable with controllers up until the handshake bot due to lacking a grip pressure sensor.
+        - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
 
 ## Not working
 - Zenith VR
     - Loading screens are broken.
-    - Crashes immediately after launch with a texture error.
+    - Crashes immediately after rendering the first loading screen with a texture error.
     - Using GE-Proton7-55 seems to give a different texture error, at least a different style of error window.
 - Until You Fall
     - Black screen after logo, black-screen-fix beta no longer exists?
@@ -77,16 +88,17 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - Hyper Dash
     - Fails to launch with an OpenComposite error for a stubbed file related to the chaperone.
     - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
+- Vivecraft (Non-Steam game)
+    - Version: 1.20.1-1.1.14-fabric on Quilt Loader
+    - Fails to locate installation path, presumably for SteamVR.
+        - According to [the FAQ](https://www.vivecraft.org/faq/#opencomposite), Vivecraft supports OpenComposite, but I'm not sure how to get it to find it or if recent updates (such as moving to Fabric) broke things.
+- Project Cars
+    - Doesn't create a window, crashes shortly after Steam stops saying loading.
+- Museum of Other Realities
+    - Crashes with a texture error after rendering the first logo, like Zenith.
 
 ## Untested (but owned/willing to test)
-- Vivecraft
-- Down the Rabbit Hole
-- Project Cars
-- Propagation VR
-- Museum of Other Realities
-- Slinger VR
 - I am Sakuya VR
-- Aperture Hand Lab
 - Desert Bus VR
 - Republique VR
 - Traffic Jams
