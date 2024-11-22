@@ -23,10 +23,13 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Hand tracking works fine in titles that support it, and has correct offsets unlike the controllers.
         - The enable option will be greyed out on the HMD unless hand tracking is enabled at the system level. (Settings > Lab > Hand Tracking)
         - I wonder if this means that WiVRn supports the PICO Motion Trackers, since the body tracking option is visible. Unlikely, but I may look into trying to implement that myself if I get them.
+    - Previously, whenever I used ALVR I would get a connection time out on occasion, despite using USB and regardless of device or OS. This has not yet occured with WiVRn.
 
 ## Working
 Things we can actually play! Yay!
+
 ^ - Requires a different Proton version.
+
 - VRChat
     - World "Connecting" screens are broken.
     - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
@@ -34,6 +37,7 @@ Things we can actually play! Yay!
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
             - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
+    - Interestingly, a while after going AFK my avatar stands up. Looks kind of silly.
 - Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
         - Settings and selected mods do not save.
@@ -85,7 +89,7 @@ The following crash on launch or have other major issues.
 - Zenith VR
     - Loading screens are broken.
     - Crashes immediately after rendering the first loading screen with a texture error.
-    - Using GE-Proton7-55 seems to give a different texture error, at least a different style of error window.
+    - Using GE-Proton7-55 doesn't help.
 - Until You Fall
     - Black screen after logo, black-screen-fix beta no longer exists?
     - Using GE-Proton7-55 changes nothing.
@@ -96,12 +100,13 @@ The following crash on launch or have other major issues.
     - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 - Vivecraft (Non-Steam game)
     - Version: 1.20.1-1.1.14-fabric on Quilt Loader
-    - Fails to locate installation path, presumably for SteamVR.
+    - When entering VR mode it fails to locate installation path, presumably for SteamVR.
         - According to [the FAQ](https://www.vivecraft.org/faq/#opencomposite), Vivecraft supports OpenComposite, but I'm not sure how to get it to find it or if recent updates (such as moving to Fabric) broke things.
 - Project Cars
     - Doesn't create a window, crashes shortly after Steam stops saying loading.
 - Museum of Other Realities
     - Crashes with a texture error after rendering the first logo, like Zenith.
+    - Using GE-Proton7-55 doesn't help.
 
 ## Untested
 Owned and/or willing to test.
@@ -112,7 +117,7 @@ Owned and/or willing to test.
 - Traffic Jams
 
 ## Curiosites
-Stuff I don't expect to work but try anyway.
+Stuff I don't expect to work but try anyway, because why not?
 - OVR Toolkit
     - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
     - Nothing happens in VR.
