@@ -63,10 +63,6 @@ Things we can actually play! Yay!
         - I might try [XRBinder](https://lvra.gitlab.io/docs/fossvr/xrbinder/) in the future to see if that has any more success.
     - Menus are very flickery some of the time.
     - Large stutters while loading maps, though likely due to running on a hard drive.
-- Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
-    - Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
-        - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
-    - Default stick-click to jump binding conflicts with my space-drag/reset bindings.
 - ChilloutVR
 - Down the Rabbit Hole
 - Propagation VR
@@ -75,10 +71,12 @@ Things we can actually play! Yay!
         - Alpha on the EAC window is broken, causing black squares.
     - Launches perfectly fine, but gives error code "wrapper" which effectively just means EAC broke.
         - Installing "Proton Easy Anti Cheat Runtime" through Steam then allows the game to log in.
-    - After logging in the first time, an OpenComposite window appeared simply saying "An error occured". Second launch went smoothly.
+    - After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
+    - Loading screens are broken a la VRChat, but the game itself looks fine as opposed to what some people have been saying for Rec Room on OpenComposite.
+    - Rec Room, hire me so I can fix all the broken weights in your outfits, the Aviator Gloves have like 3 verts weighted wrong each.
 
 ## Partially working
-These launch, but are unplayable or become unplayable at some point.
+These launch, but are unplayable or have serious issues functioning.
 - Tea For God
     - Hands don't appear, so cannot interact with anything.
     - This setup doesn't provide a playspace at all, so only joystick locomotion is available.
@@ -89,6 +87,12 @@ These launch, but are unplayable or become unplayable at some point.
     - Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
     - Playable with controllers up until the handshake bot due to lacking a grip pressure sensor.
         - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
+- Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
+    - Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
+        - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
+    - Default stick-click to jump binding conflicts with my space-drag/reset bindings.
+    - My performance is abysmal and I often freeze when connecting to sessions, so for now I've demoted its status.
+        - This may be due to running off a hard drive, I'll revisit this and add a note if running off an SSD fixes it.
 
 ## Not working
 The following crash on launch or have other major issues.
