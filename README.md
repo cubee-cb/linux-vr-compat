@@ -70,6 +70,12 @@ Things we can actually play! Yay!
 - ChilloutVR
 - Down the Rabbit Hole
 - Propagation VR
+- Rec Room?
+    - Wait, Rec Room has EAC??
+        - Alpha on the EAC window is broken, causing black squares.
+    - Launches perfectly fine, but gives error code "wrapper" which effectively just means EAC broke.
+        - Installing "Proton Easy Anti Cheat Runtime" through Steam then allows the game to log in.
+    - After logging in the first time, an OpenComposite window appeared simply saying "An error occured". Second launch went smoothly.
 
 ## Partially working
 These launch, but are unplayable or become unplayable at some point.
