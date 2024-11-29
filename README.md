@@ -97,6 +97,8 @@ These launch, but are unplayable or have serious issues functioning.
         - This may be due to running off a hard drive, I'll revisit this and add a note if running off an SSD fixes it.
 - GRIP
     - Plays perfectly with a traditional controller... until it crashes mid-race.
+        - `Assertion failed: Wine C++ Runtime Library > /src-vrclient/winIVRSystem.c Line 8701 expression "!status"`
+        - Seems like it's a VR-specific error for running under Wine/Proton. That's a shame.
     - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
     - Desktop mode seems to work.
 - Metal: Hellsinger VR Demo
