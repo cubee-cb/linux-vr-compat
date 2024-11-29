@@ -97,10 +97,11 @@ These launch, but are unplayable or have serious issues functioning.
         - This may be due to running off a hard drive, I'll revisit this and add a note if running off an SSD fixes it.
 - GRIP
     - Plays perfectly with a traditional controller... until it crashes mid-race.
-        - `Assertion failed: Wine C++ Runtime Library > /src-vrclient/winIVRSystem.c Line 8701 expression "!status"`
+        - `Assertion failed: Wine C++ Runtime Library > /src-vrclient/winIVRSystem.c Line 8701 expression "!status"`, then `Fatal Error`.
         - Seems like it's a VR-specific error for running under Wine/Proton. That's a shame.
     - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
     - Desktop mode seems to work.
+    - Using GE-Proton7-55 seems to prevent the Wine error window from appearing, however it does not stop the crashing nor the `Fatal Error` window.
 - Metal: Hellsinger VR Demo
     - Starts and stays on a black screen. May need longer for initial load like Pistol Whip, hence being placed here instead of Not working.
     - The game's custom cursor appears on the desktop window and can be moved around.
