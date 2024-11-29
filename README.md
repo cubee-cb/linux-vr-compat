@@ -121,13 +121,34 @@ The following crash on launch or have other major issues.
 ## Untested
 Owned and/or willing to test.
 - I am Sakuya VR
-- Metal Hellsinger VR Demo
+- Metal: Hellsinger VR Demo
 - Desert Bus VR
 - Republique VR
 - Traffic Jams
+- Inaccessible (due to library sharing):
+    - Half Life: Alyx
+    - Kingspray Graffiti
+    - Tabletop Simulator
+- Wishlisted:
+    - SUPERHOT VR
+    - GRIP
+    - Hyperbolica
+    - Sairento VR
+    - Ancient Dungeon
+    - Endoparasitic VR
+    - Metal: Hellsinger VR
+    - Hot Dogs, Horseshoes & Hand Grenades
+    - COMPOUND
+    - Waltz of the Wizard
+    - The Tale of Onogoro
+    - No Man's Sky
+    - BONEWORKS
+    - BONELAB
+    - Sushi Ben
+    - The Walking Dead: Saints & Sinners
 
 ## Curiosites
-Stuff I don't expect to work but try anyway, because why not?
+Stuff I don't expect to work but try anyway, because why not? Maybe something fun will happen.
 - OVR Toolkit
     - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
     - Nothing happens in VR.
