@@ -74,6 +74,8 @@ Things we can actually play! Yay!
     - After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
     - Loading screens are broken a la VRChat, but the game itself looks fine as opposed to what some people have been saying for Rec Room on OpenComposite.
     - Rec Room, hire me so I can fix all the broken weights in your outfits, the Aviator Gloves have like 3 verts weighted wrong each.
+- SUPERHOT VR
+    - Tested the version without removed scenes via depot download. (assuming that the depot command was correct, haven't played far enough yet)
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -93,6 +95,13 @@ These launch, but are unplayable or have serious issues functioning.
     - Default stick-click to jump binding conflicts with my space-drag/reset bindings.
     - My performance is abysmal and I often freeze when connecting to sessions, so for now I've demoted its status.
         - This may be due to running off a hard drive, I'll revisit this and add a note if running off an SSD fixes it.
+- GRIP
+    - Plays perfectly with a traditional controller... until it crashes mid-race.
+    - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
+    - Desktop mode seems to work.
+- Metal: Hellsinger VR Demo
+    - Starts and stays on a black screen. May need longer for initial load like Pistol Whip, hence being placed here instead of Not working.
+    - The game's custom cursor appears on the desktop window and can be moved around.
 
 ## Not working
 The following crash on launch or have other major issues.
@@ -121,17 +130,14 @@ The following crash on launch or have other major issues.
 ## Untested
 Owned and/or willing to test.
 - I am Sakuya VR
-- Metal: Hellsinger VR Demo
 - Desert Bus VR
 - Republique VR
 - Traffic Jams
-- Inaccessible (due to library sharing):
+- Through library sharing:
     - Half Life: Alyx
     - Kingspray Graffiti
     - Tabletop Simulator
 - Wishlisted:
-    - SUPERHOT VR
-    - GRIP
     - Hyperbolica
     - Sairento VR
     - Ancient Dungeon
