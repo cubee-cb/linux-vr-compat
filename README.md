@@ -81,6 +81,15 @@ Things we can actually play! Yay!
     - First launch crashed on starting a new game. Subsequent launch was fine, however.
     - No VR controller support; must use a controller or keyboard. This is just a VR view of the standard game after all.
     - A certain cutscene near the start of the game has Senua's head clip through the cutscene border and into the camera, which was fairly weird to experience.
+- Half Life: Alyx (Proton)
+    - Launches, menu interaction works, can load into a save file.
+    - Controller bindings are somewhat broken:
+        - A and X are snap turn right/left respectively. A is also the held item secondary action (like shotgun reload)
+        - Left joystick seems to do nothing, but right stick turns and does teleport/jump as normal.
+        - Weapon selection button conflicts with my space drag binding.
+        - To be fair I've only played this on WMR so I have no idea what the controls are supposed to be like.
+    - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
+        - Perhaps the dynamic resolution is broken? Maybe try disabling it.
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -110,13 +119,6 @@ These launch, but are unplayable or have serious issues functioning.
 - Metal: Hellsinger VR Demo
     - Starts and stays on a black screen. May need longer for initial load like Pistol Whip, hence being placed here instead of Not working.
     - The game's custom cursor appears on the desktop window and can be moved around.
-- Half Life: Alyx (Proton)
-    - Launches, menu interaction works, can load into a save file.
-    - Controller bindings are broken:
-        - A and X are snap turn right/left respectively. A is also the held item secondary action (like shotgun reload)
-        - Left joystick seems to do nothing, right stick only turns (no teleport/jump)
-        - Weapon selection button conflicts with my space drag binding.
-        - To be fair I've only played this on WMR so I have no idea what the controls are supposed to be like.
 - Kingspray Graffiti
     - Might work, but takes ages to load into a map. I gave up waiting.
     - Again, might be a HDD-related speed problem.
