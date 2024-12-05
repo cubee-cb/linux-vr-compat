@@ -76,6 +76,10 @@ Things we can actually play! Yay!
     - Rec Room, hire me so I can fix all the broken weights in your outfits, the Aviator Gloves have like 3 verts weighted wrong each.
 - SUPERHOT VR
     - Tested the version without removed scenes via depot download. (assuming that the depot command was correct, haven't played far enough yet)
+- Hellblade: Senua's Sacrifice VR Edition
+    - First launch crashed on starting a new game. Subsequent launch was fine, however.
+    - No VR controller support; must use a controller or keyboard. This is just a VR view of the standard game after all.
+    - A certain cutscene near the start of the game has Senua's head clip through the cutscene border and into the camera, which was fairly weird to experience.
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -105,6 +109,16 @@ These launch, but are unplayable or have serious issues functioning.
 - Metal: Hellsinger VR Demo
     - Starts and stays on a black screen. May need longer for initial load like Pistol Whip, hence being placed here instead of Not working.
     - The game's custom cursor appears on the desktop window and can be moved around.
+- Half Life: Alyx (Proton)
+    - Launches, menu interaction works, can load into a save file.
+    - Controller bindings are broken:
+        - A and X are snap turn right/left respectively. A is also the held item secondary action (like shotgun reload)
+        - Left joystick seems to do nothing, right stick only turns (no teleport/jump)
+        - Weapon selection button conflicts with my space drag binding.
+        - To be fair I've only played this on WMR so I have no idea what the controls are supposed to be like.
+- Kingspray Graffiti
+    - Might work, but takes ages to load into a map. I gave up waiting.
+    - Again, might be a HDD-related speed problem.
 
 ## Not working
 The following crash on launch or have other major issues.
@@ -121,14 +135,20 @@ The following crash on launch or have other major issues.
     - Fails to launch with an OpenComposite error for a stubbed file related to the chaperone.
     - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 - Vivecraft (Non-Steam game)
+    - Running through Modrinth Launcher
     - Version: 1.20.1-1.1.14-fabric on Quilt Loader
     - When entering VR mode it fails to locate installation path, presumably for SteamVR.
         - According to [the FAQ](https://www.vivecraft.org/faq/#opencomposite), Vivecraft supports OpenComposite, but I'm not sure how to get it to find it or if recent updates (such as moving to Fabric) broke things.
+        - Providing environment variables according to [this video from Issac Dowling] to allow Modrinth Launcher to talk to WiVRn doesn't seem to change anything, though I may have made a mistake somewhere.
 - Project Cars
     - Doesn't create a window, crashes shortly after Steam stops saying loading.
 - Museum of Other Realities
     - Crashes with a texture error after rendering the first logo, like Zenith.
     - Using GE-Proton7-55 doesn't help.
+- Half Life: Alyx (Native)
+    - Crashes on launch with no error window.
+- COMPOUND
+    - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
 
 ## Untested
 Owned and/or willing to test.
@@ -137,8 +157,6 @@ Owned and/or willing to test.
 - Republique VR
 - Traffic Jams
 - Through library sharing:
-    - Half Life: Alyx
-    - Kingspray Graffiti
     - Tabletop Simulator
 - Wishlisted:
     - Hyperbolica
@@ -147,7 +165,6 @@ Owned and/or willing to test.
     - Endoparasitic VR
     - Metal: Hellsinger VR
     - Hot Dogs, Horseshoes & Hand Grenades
-    - COMPOUND
     - Waltz of the Wizard
     - The Tale of Onogoro
     - No Man's Sky
