@@ -8,7 +8,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - WiVRN (Flatpak) to connect to the headset and emulate SteamVR via OpenComposite.
 - WlxOverlay for desktop views and playspace drag.
     - Space Drag is either stick click, Space Reset is double-click left stick.
-    - Custom build with battery OSC parameters, this has been merged with main as of now but has yet to be included in a release.
+    - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
 - Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
 - Proton: GE-Proton9-18 (unless otherwise specified)
 
