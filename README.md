@@ -5,11 +5,11 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
-- WiVRN to connect to the headset and emulate SteamVR.
-- WlxOverlay for desktops and playspace drag.
+- WiVRN (Flatpak) to connect to the headset and emulate SteamVR via OpenComposite.
+- WlxOverlay for desktop views and playspace drag.
     - Space Drag is either stick click, Space Reset is double-click left stick.
-    - Custom build with battery OSC parameters, see my repos for more info on that.
-- Most games run through Steam, SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime.
+    - Custom build with battery OSC parameters, this has been merged with main as of now but has yet to be included in a release.
+- Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
 - Proton: GE-Proton9-18 (unless otherwise specified)
 
 ### Hardware
@@ -22,8 +22,8 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
     - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [completed](https://github.com/WiVRn/WiVRn/issues/94) but a release has yet to be made.
     - Hand tracking works fine in titles that support it, and has correct offsets unlike the controllers.
         - The enable option will be greyed out on the HMD unless hand tracking is enabled at the system level. (Settings > Lab > Hand Tracking)
-        - I wonder if this means that WiVRn supports the PICO Motion Trackers, since the body tracking option is visible. Unlikely, but I may look into trying to implement that myself if I get them.
-    - Previously, whenever I used ALVR I would get a connection time out on occasion, despite using USB and regardless of device or OS. This has not yet occured with WiVRn.
+        - If I get the PICO Motion Trackers, I may look into trying to implement support for them myself. I really have no idea what I'm doing though, so don't hold your breath.
+    - On Windows, whenever I used ALVR I would somewhat regularly get connection time outs, even over USB. Interruptions have only occured on WiVRn thus far if my system is dramatically overloaded. Thanks Windows!
 
 ## Working
 Things we can actually play! Yay!
@@ -38,6 +38,7 @@ Things we can actually play! Yay!
             - See the VRChat folder for a launch script using flatpak Protontricks.
             - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
     - Interestingly, a while after going AFK my avatar stands up. Looks kind of silly.
+    - Every first launch of the day will produce rapid in-game anticheat errors for each file of the game, saying it couldn't validate them. Subsequent launches are fine. Investigation ongoing.
 - Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
         - Settings and selected mods do not save.
