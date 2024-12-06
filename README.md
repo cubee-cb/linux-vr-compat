@@ -37,7 +37,6 @@ Things we can actually play! Yay!
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
             - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
-    - Interestingly, a while after going AFK my avatar stands up. Looks kind of silly.
     - Every first launch of the day will produce rapid in-game anticheat errors for each file of the game, saying it couldn't validate them. Subsequent launches are fine. Investigation ongoing.
 - Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
@@ -160,6 +159,12 @@ Owned and/or willing to test.
 - Traffic Jams
 - Through library sharing:
     - Tabletop Simulator
+    - Keep Talking and Nobody Explodes
+    - The Forest
+    - REZ: Infinite
+    - Legend of Dungeon (apparently that has a VR mode)
+    - Blind
+    - Project Cars 2
 - Wishlisted:
     - Hyperbolica
     - Sairento VR
