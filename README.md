@@ -75,8 +75,7 @@ Things we can actually play! Yay!
     - After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
     - Loading screens are broken a la VRChat, but the game itself looks fine as opposed to what some people have been saying for Rec Room on OpenComposite.
     - Rec Room, hire me so I can fix all the broken weights in your outfits, the Aviator Gloves have like 3 verts weighted wrong each.
-- SUPERHOT VR
-    - Tested the version without removed scenes via depot download. (assuming that the depot command was correct, haven't played far enough yet)
+- SUPERHOT VR (Pre-removed scenes version via depot download)
 - Hellblade: Senua's Sacrifice VR Edition
     - First launch crashed on starting a new game. Subsequent launch was fine, however.
     - No VR controller support; must use a controller or keyboard. This is just a VR view of the standard game after all.
@@ -86,10 +85,10 @@ Things we can actually play! Yay!
     - Controller bindings are somewhat broken:
         - A and X are snap turn right/left respectively. A is also the held item secondary action (like shotgun reload)
         - Left joystick seems to do nothing, but right stick turns and does teleport/jump as normal.
-        - Weapon selection button conflicts with my space drag binding.
+        - Weapon selection on joystick click conflicts with my space drag binding.
         - To be fair I've only played this on WMR so I have no idea what the controls are supposed to be like.
     - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
-        - Perhaps the dynamic resolution is broken? Maybe try disabling it.
+        - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling). (Verify)
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
