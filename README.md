@@ -140,7 +140,7 @@ The following crash on launch or have other major issues.
     - Version: 1.20.1-1.1.14-fabric on Quilt Loader
     - When entering VR mode it fails to locate installation path, presumably for SteamVR.
         - According to [the FAQ](https://www.vivecraft.org/faq/#opencomposite), Vivecraft supports OpenComposite, but I'm not sure how to get it to find it or if recent updates (such as moving to Fabric) broke things.
-        - Providing environment variables according to [this video from Issac Dowling] to allow Modrinth Launcher to talk to WiVRn doesn't seem to change anything, though I may have made a mistake somewhere.
+        - Providing environment variables according to [this video from Issac Dowling](https://www.youtube.com/watch?v=o8ho7VG13Ck&t=530s) to allow Modrinth Launcher to talk to WiVRn doesn't seem to change anything, though I may have made a mistake somewhere.
 - Project Cars
     - Doesn't create a window, crashes shortly after Steam stops saying loading.
 - Museum of Other Realities
