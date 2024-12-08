@@ -19,7 +19,7 @@ Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 - Everything installed on a hard drive. (including OS)
     - Plan to move to an SSD at some point, but loading speeds aren't bad! Or maybe I'm just used to it?
 - PICO 4 headset, connected with USB 3.0.
-    - Currently, WiVRn has incorrect controller offsets for PICO 4 controllers. Status on that is [completed](https://github.com/WiVRn/WiVRn/issues/94) but a release has yet to be made.
+    - Currently, WiVRn may have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and the WiVRn client menu looks like it was, but my in-game controller models have not moved. (i.e. they still have the wrong offset)
     - Hand tracking works fine in titles that support it, and has correct offsets unlike the controllers.
         - The enable option will be greyed out on the HMD unless hand tracking is enabled at the system level. (Settings > Lab > Hand Tracking)
         - If I get the PICO Motion Trackers, I may look into trying to implement support for them myself. I really have no idea what I'm doing though, so don't hold your breath.
