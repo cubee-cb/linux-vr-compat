@@ -1,0 +1,64 @@
+
+width: 0.115
+
+size: [400, 200]
+
+elements:
+  # background panel
+  - type: Panel
+    rect: [0, 0, 400, 200]
+    corner_radius: 50
+    bg_color: "#24273a"
+
+  # close button
+  - type: Button
+    rect: [16, 16, 38, 38]
+    corner_radius: 100
+    font_size: 15
+    bg_color: "#ee2366"
+    fg_color: "#cad3f5"
+    text: "X"
+    click_up: # destroy if exists, otherwise create
+      - type: Window
+        target: waywatch
+        action: Destroy # only triggers if exists since before current frame
+
+  - type: WayVRDisplayList
+    rect: [68, 17, 300, 36]
+    corner_radius: 15
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#a468ca"
+
+  # dividing line
+  - type: Panel
+    rect: [32, 60, 336, 4]
+    corner_radius: 100
+    bg_color: "#5b6078"
+
+  # first row
+  - type: WayVRLauncher
+    rect: [16, 70, 368, 36]
+    corner_radius: 15
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    catalog_name: "catalog_row1"
+
+  # second row
+  - type: WayVRLauncher
+    rect: [16, 108, 368, 36]
+    corner_radius: 15
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    catalog_name: "catalog_row2"
+
+  # third row
+  - type: WayVRLauncher
+    rect: [16, 146, 368, 36]
+    corner_radius: 15
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    catalog_name: "catalog_row3"

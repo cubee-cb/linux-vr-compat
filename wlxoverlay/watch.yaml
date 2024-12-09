@@ -1,0 +1,197 @@
+# looking to make changes?
+# drop me in ~/.config/wlxoverlay/watch.yaml
+#
+
+width: 0.115
+
+size: [400, 200]
+
+elements:
+  # background panel
+  - type: Panel
+    rect: [0, 30, 400, 130]
+    corner_radius: 50
+    bg_color: "#24273a"
+
+  # settings button
+  - type: Button
+    rect: [304, 104, 80, 38]
+    corner_radius: 100
+    font_size: 15
+    bg_color: "#c6a0f6"
+    fg_color: "#24273a"
+    text: "Config"
+    click_up: # destroy if exists, otherwise create
+      - type: Window
+        target: settings
+        action: ShowUi # only triggers if not exists
+      - type: Window
+        target: settings
+        action: Destroy # only triggers if exists since before current frame
+
+  # Keyboard button
+  - type: Button
+    rect: [83, 162, 50, 36]
+    corner_radius: 100
+    font_size: 15
+    fg_color: "#24273a"
+    bg_color: "#a6da95"
+    text: "Kbd"
+    click_up:
+      - type: Overlay
+        target: "kbd"
+        action: ToggleVisible
+    long_click_up:
+      - type: Overlay
+        target: "kbd"
+        action: Reset
+    right_up:
+      - type: Overlay
+        target: "kbd"
+        action: ToggleImmovable
+    middle_up:
+      - type: Overlay
+        target: "kbd"
+        action: ToggleInteraction
+    scroll_up:
+      - type: Overlay
+        target: "kbd"
+        action:
+          Opacity: { delta: 0.025 }
+    scroll_down:
+      - type: Overlay
+        target: "kbd"
+        action:
+          Opacity: { delta: -0.025 }
+
+  # wayvr button
+  - type: Button
+    rect: [1, 162, 78, 36]
+    corner_radius: 100
+    font_size: 15
+    fg_color: "#24273a"
+    bg_color: "#95a6da"
+    text: "WayVR"
+    click_up: # destroy if exists, otherwise create
+      - type: Window
+        target: waywatch
+        action: ShowUi # only triggers if not exists
+      - type: Window
+        target: waywatch
+        action: Destroy # only triggers if exists since before current frame
+
+  # overlay toggle buttons
+  - type: OverlayList
+    rect: [135, 160, 266, 40]
+    corner_radius: 100
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#1e2030"
+    layout: Horizontal
+    click_up: ToggleVisible
+    long_click_up: Reset
+    right_up: ToggleImmovable
+    middle_up: ToggleInteraction
+    scroll_up:
+      Opacity: { delta: 0.025 }
+    scroll_down:
+      Opacity: { delta: -0.025 }
+
+  # local clock
+  - type: Label
+    rect: [19, 100, 200, 50]
+    corner_radius: 4
+    font_size: 46 # Use 32 for 12-hour time
+    fg_color: "#cad3f5"
+    source: Clock
+    format: "%H:%M" # 23:59
+    #format: "%I:%M %p" # 11:59 PM
+
+  # local date
+  - type: Label
+    rect: [35, 135, 200, 20]
+    corner_radius: 4
+    font_size: 14
+    fg_color: "#cad3f5"
+    source: Clock
+    format: "%a %e/%b/%y" # local date representation
+
+  # local day-of-week
+  #- type: Label
+    #rect: [60, 140, 200, 50]
+    #corner_radius: 4
+    #font_size: 14
+    #fg_color: "#cad3f5"
+    #source: Clock
+    #format: "%A" # Tuesday
+    #format: "%a" # Tue
+
+  # alt clock 1
+  - type: Label
+    rect: [200, 87, 200, 50]
+    corner_radius: 4
+    font_size: 24 # Use 18 for 12-hour time
+    fg_color: "#b7bdf8"
+    source: Clock
+    timezone: "US/Eastern" # change TZ2 here
+    format: "%H:%M" # 23:59
+    #format: "%I:%M %p" # 11:59 PM
+  - type: Label
+    rect: [200, 57, 200, 50]
+    corner_radius: 4
+    font_size: 14
+    fg_color: "#b7bdf8"
+    source: Static
+    text: "EST" # change TZ2 label here
+
+  # alt clock 2
+  - type: Label
+    rect: [200, 147, 200, 50]
+    corner_radius: 4
+    font_size: 24 # Use 18 for 12-hour time
+    fg_color: "#8bd5ca"
+    source: Clock
+    timezone: "Japan" # change TZ1 here
+    format: "%H:%M" # 23:59
+    #format: "%I:%M %p" # 11:59 PM
+  - type: Label
+    rect: [200, 117, 200, 50]
+    corner_radius: 4
+    font_size: 14
+    fg_color: "#8bd5ca"
+    source: Static
+    text: "JST" # change TZ1 label here
+
+  # batteries
+  - type: BatteryList
+    rect: [20, 8, 400, 30]
+    corner_radius: 4
+    font_size: 16
+    fg_color: "#8bd5ca"
+    fg_color_low: "#B06060"
+    fg_color_charging: "#6080A0"
+    num_devices: 9
+    layout: Horizontal
+    low_threshold: 33
+
+  # volume buttons
+  - type: Button
+    rect: [346, 50, 38, 38]
+    corner_radius: 20
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "+"
+    click_down:
+      - type: Exec
+        command: ["pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%"]
+  - type: Button
+    rect: [304, 50, 38, 38]
+    corner_radius: 20
+    font_size: 15
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "-"
+    click_down:
+      - type: Exec
+        command: ["pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%"]

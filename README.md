@@ -1,5 +1,6 @@
 # linux-vr-compat
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
+The files contain certain scripts or configs that I've set up. For example, I modified the WlxOverlay watch layout to look nicer (in my opinion) and add a button that spawns a WayVR app list.
 
 ## Setup
 
