@@ -19,6 +19,7 @@ Contained here are the following:
 - [waywatch](waywatch.yaml)
     - Little overlay with 3 rows of WayVR application lists and a close button.
     - Was supposed to be a watch but idk if I can attach it to a hand automatically.
+    - Lists are `catalog_row1`, `catalog_row2`, and `catalog_row3`.
 - [wayvr](wayvr.yaml)
     - My placeholder WayVR config. Since I use KDE, I have their apps set up for the moment.
     - Contains mostly broken launchers for things like Firefox, osu, and OBS.
