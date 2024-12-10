@@ -38,7 +38,7 @@ Things we can actually play! Yay!
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
             - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
-    - If you have the Proton EasyAntiCheat Runtime installed, every first launch of the day will typicaqlly produce rapid in-game anticheat errors for each file of the game, saying it couldn't validate them. Subsequent launches are fine.
+    - If you have the Proton EasyAntiCheat Runtime installed, every first launch of the day will typically produce rapid in-game anticheat errors for each file of the game, saying it couldn't validate them. Subsequent launches are fine.
 - Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
         - Settings and selected mods do not save on v0.0.6, use v0.0.5 instead.
@@ -49,10 +49,10 @@ Things we can actually play! Yay!
     - Loading screens are broken.
 - Sushi Ben Demo
 - ^ Ragnarock
-    - Successfully launches with GE-Proton7-55. Fails to launch with d3d11 error on latest.
+    - Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on latest.
     - Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
 - ^ Into the Radius
-    - Successfully launches with GE-Proton7-55. Fails to launch with d3d11 error on latest.
+    - Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on latest.
     - Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
 - Vacation Simulator
 - Rumble
@@ -67,9 +67,9 @@ Things we can actually play! Yay!
 - ChilloutVR
 - Down the Rabbit Hole
 - Propagation VR
-- Rec Room?
+- Rec Room
     - Alpha on the EAC window is broken, causing black squares.
-    - The game will fail to login unless you install "Proton Easy Anti Cheat Runtime" through Steam.
+    - The game will fail to login with error code "wrapper" unless you install "Proton Easy Anti Cheat Runtime" through Steam.
         - This may affect VRChat, however. See VRChat's section above.
     - After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
     - Loading screens are broken a la VRChat, but the game itself looks fine as opposed to what some people have been saying for Rec Room on OpenComposite.
