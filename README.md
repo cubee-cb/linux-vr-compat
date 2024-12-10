@@ -20,10 +20,14 @@ Other files include scripts or configs that I use. For example, I modified the W
 - Everything installed on a hard drive. (including OS)
     - Plan to move to an SSD at some point, but loading speeds aren't bad! Or maybe I'm just used to it?
 - PICO 4 headset, connected with USB 3.0.
-    - Currently, WiVRn may have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and the WiVRn client menu looks like it was, but my in-game controller models have not moved. (i.e. they still have the wrong offset)
-    - Hand tracking works fine in titles that support it, and has correct offsets unlike the controllers.
+    - Currently, WiVRn may have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu, but my in-game controller models still have the wrong offset.
+    - Hand tracking works fine in titles that support it.
         - The enable option will be greyed out on the HMD unless hand tracking is enabled at the system level. (Settings > Lab > Hand Tracking)
-        - If I get the PICO Motion Trackers, I may look into trying to implement support for them myself. I really have no idea what I'm doing though, so don't hold your breath.
+    - WiVRn currently has no Body Tracking implementation, so the PICO Motion Trackers (if I had them) would be useless for now. I am interested in attempting to get those working, but don't hold your breath.
+        - Current concerns are the following:
+            - Will PICO release an OpenXR extension for their Motion Trackers?
+            - How complex would implementing said extension be for WiVRn?
+            - Does Monado send its trackers to OpenComposite?
     - On Windows, whenever I used ALVR I would somewhat regularly get connection time outs, even over USB. Interruptions have only occured on WiVRn thus far if my system is dramatically overloaded. Thanks Windows!
 
 ## Working
