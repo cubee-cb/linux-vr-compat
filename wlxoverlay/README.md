@@ -22,9 +22,10 @@ Contained here are the following:
     - Lists are `catalog_row1`, `catalog_row2`, and `catalog_row3`.
 - [wayvr](wayvr.yaml)
     - My placeholder WayVR config. Since I use KDE, I have their apps set up for the moment.
-    - Contains mostly broken launchers for things like Firefox, osu, and OBS.
+    - Contains mostly broken launchers for things like Firefox and the OBS flatpak.
         - They technically run, but don't appear on-screen.
     - Working shortcuts:
         - Radeontop and htop spawn on the right hand.
         - Kwrite, Terminal, and fastfetch share a window. Fastfetch exits on its own.
         - Dolphin has its own window.
+        - osu! seems to work now, didn't before. idk what changed. (flatpak)
