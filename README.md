@@ -189,4 +189,9 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
     - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
     - Nothing happens in VR.
     - After closing the desktop window, it remains running until closed by other means.
+- [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+    - Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
+    - Setup:
+        - Added the executable to Heroic through the Add Game button. Set to Proton-GE-9-18 as usual.
+        - Added WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
 
