@@ -192,6 +192,10 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 - [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
     - Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
     - Setup:
-        - Added the executable to Heroic through the Add Game button. Set to Proton-GE-9-18 as usual.
-        - Added WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
-
+        - Add the executable to Heroic through the Add Game button. Set to Proton-GE-9-18 as usual.
+        - Add WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
+- Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+    - Playable, flickery shadows. Black screen in VR until actually in-game.
+    - Setup:
+        - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as Proton-GE-9-18 doesn't launch the game.
+        - Add the `-vr` launch option and WiVRn's PRESSURE_VESSEL environment variable to Steam's Launch Options or Heroic's Advanced tab.
