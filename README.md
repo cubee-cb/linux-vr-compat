@@ -2,6 +2,15 @@
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 Other files include scripts or configs that I use. For example, I modified the WlxOverlay watch layout and added a button to it that spawns a WayVR app list.
 
+### Shortcuts
+- [Setup](#setup)
+- [Working games](#working)
+- [Partially working games](#partially-working)
+- [Not working games](#not-working)
+- [Development](#development)
+- [Curiosities](#curiosities)
+- [Untested](#untested)
+
 ## Setup
 
 ### Software
@@ -91,10 +100,16 @@ Things we can actually play! Yay!
         - I've only played this on WMR so to be fair I have no idea what the controls are supposed to be like.
     - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
         - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling).
-- Aperture Hand Lab
-    - Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
-    - Playable with controllers up until the handshake bot due to lacking a grip pressure sensor. Hand tracking has no buttons and so it's unusable here.
-        - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
+- [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+    - Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
+    - Setup:
+        - Add the executable to Heroic through the Add Game button. Set to Proton-GE-9-18 as usual.
+        - Add WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
+- Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+    - Playable, flickery shadows. Black screen in VR until actually in-game.
+    - Setup:
+        - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as Proton-GE-9-18 doesn't launch the game.
+        - Add the `-vr` launch option and WiVRn's PRESSURE_VESSEL environment variable to Steam's Launch Options or Heroic's Advanced tab.
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -104,6 +119,10 @@ These launch, but are unplayable or have serious issues functioning.
         - Maybe [LOVR Playspace](https://lvra.gitlab.io/docs/fossvr/lovr/lovr-playspace/) could help with this, if it actually creates a playspace and isn't just visual.
 - Slinger VR
     - Controllers are stuck at the playspace origin and don't respond to input.
+- Aperture Hand Lab
+    - Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
+    - Playable with controllers up until the handshake bot due to lacking a grip pressure sensor. Hand tracking has no buttons and so it's unusable here.
+        - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
 - Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
     - Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
         - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
@@ -154,6 +173,17 @@ The following crash on launch or have other major issues.
 - COMPOUND
     - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
 
+## Development
+- Envision
+    - Asks me to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needed was `boost-devel`.
+
+## Curiosities
+Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
+- OVR Toolkit
+    - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
+    - Nothing happens in VR.
+    - After closing the desktop window, it remains running until closed by other means.
+
 ## Untested
 Owned and/or willing to test.
 - I am Sakuya VR
@@ -182,20 +212,3 @@ Owned and/or willing to test.
     - BONELAB
     - Sushi Ben
     - The Walking Dead: Saints & Sinners
-
-## Curiosites
-Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
-- OVR Toolkit
-    - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
-    - Nothing happens in VR.
-    - After closing the desktop window, it remains running until closed by other means.
-- [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
-    - Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
-    - Setup:
-        - Add the executable to Heroic through the Add Game button. Set to Proton-GE-9-18 as usual.
-        - Add WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
-- Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
-    - Playable, flickery shadows. Black screen in VR until actually in-game.
-    - Setup:
-        - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as Proton-GE-9-18 doesn't launch the game.
-        - Add the `-vr` launch option and WiVRn's PRESSURE_VESSEL environment variable to Steam's Launch Options or Heroic's Advanced tab.
