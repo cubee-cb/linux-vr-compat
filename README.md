@@ -13,15 +13,6 @@ Other files include scripts or configs that I use. For example, I modified the W
 
 ## Setup
 
-### Software
-- Fedora 41 (KDE Plasma, Wayland)
-- WiVRn (Flatpak) to connect to the headset and emulate SteamVR via OpenComposite.
-- WlxOverlay for desktop views and playspace drag.
-    - Space Drag is either stick click, Space Reset is double-click left stick.
-    - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
-- Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
-- Proton: GE-Proton9-18 (unless otherwise specified)
-
 ### Hardware
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
@@ -29,15 +20,22 @@ Other files include scripts or configs that I use. For example, I modified the W
 - Everything installed on a hard drive. (including OS)
     - Plan to move to an SSD at some point, but loading speeds aren't bad! Or maybe I'm just used to it?
 - PICO 4 headset, connected with USB 3.0.
-    - Currently, WiVRn may have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu, but my in-game controller models still have the wrong offset.
-    - Hand tracking works fine in titles that support it.
-        - The enable option will be greyed out on the HMD unless hand tracking is enabled at the system level. (Settings > Lab > Hand Tracking)
-    - WiVRn currently has no Body Tracking implementation, so the PICO Motion Trackers (if I had them) would be useless for now. I am interested in attempting to get those working, but don't hold your breath.
-        - Current concerns are the following:
-            - Will PICO release an OpenXR extension for their Motion Trackers?
-            - How complex would implementing said extension be for WiVRn?
-            - Does Monado send its trackers to OpenComposite?
-    - On Windows, whenever I used ALVR I would somewhat regularly get connection time outs, even over USB. Interruptions have only occured on WiVRn thus far if my system is dramatically overloaded. Thanks Windows!
+    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu and maybe Wlx-Overlay-S, but they still have the wrong offset in OpenComposite.
+    - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
+- (WIP) WMR HP VR1000-122a.
+    - Currently non-functional. Devices appear but Envision cannot use them.
+
+### Software
+- Fedora 41 (KDE Plasma, Wayland)
+- WiVRn (Flatpak) to connect to the PICO-4 and emulate SteamVR via OpenComposite.
+- (WIP) Envision with WMR profile for Windows Mixed Reality.
+    - Currently non-functional. Server fails to start, likely due to failing to access the HMD.
+- WlxOverlay for desktop views and playspace drag.
+    - Space Drag is either stick click, Space Reset is double-click left stick.
+    - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
+- Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
+- Proton: GE-Proton9-18 (unless otherwise specified)
+
 
 ## Working
 Things we can actually play! Yay!
