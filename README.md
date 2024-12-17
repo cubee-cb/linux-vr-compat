@@ -176,6 +176,7 @@ The following crash on launch or have other major issues.
 ## Development
 - Envision
     - Asks me to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needed was `boost-devel`.
+    - Probably needs `xr-hardware` package installed for udev rules. Alternatively you can probably do them manually.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
