@@ -108,6 +108,7 @@ Things we can actually play! Yay!
     - Setup:
         - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as Proton-GE-9-18 doesn't launch the game.
         - Add the `-vr` launch option and WiVRn's PRESSURE_VESSEL environment variable to Steam's Launch Options or Heroic's Advanced tab.
+- Vertigo: Remastered
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
