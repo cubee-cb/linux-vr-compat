@@ -171,10 +171,10 @@ The following crash on launch or have other major issues.
 - COMPOUND
     - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
 
-## Development
+## Development/hardware
 - Envision
     - Asks me to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needed was `boost-devel`.
-    - Probably needs `xr-hardware` package installed for udev rules. Alternatively you can probably do them manually.
+    - Probably needs `xr-hardware` package installed for udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
