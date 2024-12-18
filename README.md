@@ -7,7 +7,7 @@ Other files include scripts or configs that I use. For example, I modified the W
 - [Working games](#working)
 - [Partially working games](#partially-working)
 - [Not working games](#not-working)
-- [Development](#development)
+- [Development/hardware](#developmenthardware)
 - [Curiosities](#curiosities)
 - [Untested](#untested)
 
