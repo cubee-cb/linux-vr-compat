@@ -173,11 +173,18 @@ The following crash on launch or have other major issues.
 
 ## Development/hardware
 - Envision WMR Setup with the HP VR1000 HMD
-    - Asks to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needs is `boost-devel`.
-    - Needs `xr-hardware` package installed for udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`.
-    - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allowed them to connect although the bluetooth menu says they are not paired.
+    - Using Envision AppImage.
+    - Building the WMR profile asks to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needs is `boost-devel`.
+    - `xr-hardware` must be installed for the HMD devices' udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`, the Fedora `dnf` package did not install the rules for me.
+        - You could probably just put the `70-xrhardware.rules` file from that repo in `rules.d` manually.
+    - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allows them to connect although the bluetooth menu says they are not paired.
         - idk how to enable the controller tracking branch though, so we only have hand tracking at the moment.
-    - Envision will fail to start Monado if `/run/user/1000/monado_ipc_comp` or `~/.config/openxr/1/active_runtime.json` already exist, so it will conflict with my WiVRn install.
+    - Envision will fail to start Monado if `/run/user/1000/monado_ipc_comp` or `~/.config/openxr/1/active_runtime.json` already exist.
+        - I presume it lacks permissions to edit the `active_runtime.json`, so it can't temporarily replace it.
+        - For likely a similar reason, it will not remove `monado_ipc_comp` when the server closes, causing itself to fail with `Connection refused!` each time it tries to connect to the socket.
+        - This means it also conflicts with my separate WiVRn install, as I have to move its `active_runtime.json` to get Envision running.
+    - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be jittery. Envision should display a warning if this is not set.
+    - Head tracking is slightly laggy, perhaps reprojection is not working right?
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
