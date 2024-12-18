@@ -175,6 +175,7 @@ The following crash on launch or have other major issues.
 - Envision WMR Setup with the HP VR1000 HMD
     - Asks to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needs is `boost-devel`.
     - Needs `xr-hardware` package installed for udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`.
+    - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allowed them to connect although the bluetooth menu says they are not paired.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
