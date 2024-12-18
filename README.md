@@ -176,6 +176,8 @@ The following crash on launch or have other major issues.
     - Asks to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needs is `boost-devel`.
     - Needs `xr-hardware` package installed for udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`.
     - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allowed them to connect although the bluetooth menu says they are not paired.
+        - idk how to enable the controller tracking branch though, so we only have hand tracking at the moment.
+    - Envision will fail to start Monado if `/run/user/1000/monado_ipc_comp` or `~/.config/openxr/1/active_runtime.json` already exist, so it will conflict with my WiVRn install.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
