@@ -1,6 +1,6 @@
 # linux-vr-compat
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
-Other files include scripts or configs that I use. For example, I modified the WlxOverlay watch layout and added a button to it that spawns a WayVR app list.
+Other files include scripts or configs that I use. For example, I modified the Wlx-Overlay-S watch layout and added a button to it that spawns a WayVR app list.
 
 ### Shortcuts
 - [Setup](#setup)
@@ -18,20 +18,20 @@ Other files include scripts or configs that I use. For example, I modified the W
 - AMD RX 6600XT 8GB
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
 - Everything installed on a hard drive. (including OS)
-    - Plan to move to an SSD at some point, but loading speeds aren't bad! Or maybe I'm just used to it?
-- PICO 4 headset, connected with USB 3.0.
-    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu and maybe Wlx-Overlay-S, but they still have the wrong offset in OpenComposite.
+    - Plan to move OS to an SSD at some point, HDD speeds are starting to bottleneck as I do more things on this system.
+- PICO 4 headset, with USB 3.0 cable.
+    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu and maybe Wlx-Overlay-S, but they still have the wrong offset in OpenComposite applications.
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
-- (WIP) WMR HP VR1000-122a.
-    - Currently non-functional. Devices appear but Envision cannot use them.
+- Windows Mixed Reality HP VR1000-122a.
+    - Just keeping it going for 5 more minutes. No controller tracking.
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
 - WiVRn (Flatpak) to connect to the PICO-4 and emulate SteamVR via OpenComposite.
-- (WIP) Envision with WMR profile for Windows Mixed Reality.
-    - Currently non-functional. Server fails to start, likely due to failing to access the HMD.
+- Envision with WMR profile.
+    - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
 - WlxOverlay for desktop views and playspace drag.
-    - Space Drag is either stick click, Space Reset is double-click left stick.
+    - Space Drag is either left/right stick click, Space Reset is double-click left stick.
     - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
 - Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
 - Proton: GE-Proton9-18 (unless otherwise specified)
@@ -49,8 +49,8 @@ Things we can actually play! Yay!
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
             - See the VRChat folder for a launch script using flatpak Protontricks.
             - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
-    - If you have the Proton EasyAntiCheat Runtime installed, every first launch of the day will typically produce rapid in-game anticheat errors for each file of the game, saying it couldn't validate them. Subsequent launches are fine.
-- Beat Saber
+    - Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this is related to my HDD speed issue.
+- ^ Beat Saber
     - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
         - Settings and selected mods do not save on v0.0.6, use v0.0.5 instead.
     - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
@@ -101,12 +101,12 @@ Things we can actually play! Yay!
 - [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
     - Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
     - Setup:
-        - Add the executable to Heroic through the Add Game button. Set to Proton-GE-9-18 as usual.
+        - Add the executable to Heroic through the Add Game button. Use Proton-GE-9-18, as Wine-GE-Proton doesn't support VR.
         - Add WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
-- Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+- ^ Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
     - Playable, flickery shadows. Black screen in VR until actually in-game.
     - Setup:
-        - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as Proton-GE-9-18 doesn't launch the game.
+        - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as the game fails to launch with Proton-GE-9-18 and Wine-GE-Proton doesn't support VR.
         - Add the `-vr` launch option and WiVRn's PRESSURE_VESSEL environment variable to Steam's Launch Options or Heroic's Advanced tab.
 - Vertigo: Remastered
 
@@ -180,11 +180,11 @@ The following crash on launch or have other major issues.
         - You could probably just put the `70-xrhardware.rules` file from that repo in `rules.d` manually.
     - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allows them to connect although the bluetooth menu says they are not paired.
         - idk how to enable the controller tracking branch though, so we only have hand tracking at the moment.
-    - Envision will fail to start Monado if `/run/user/1000/monado_ipc_comp` or `~/.config/openxr/1/active_runtime.json` already exist.
+    - Envision will fail to start Monado if the `/run/user/1000/monado_ipc_comp` socket or `~/.config/openxr/1/active_runtime.json` already exist.
         - I presume it lacks permissions to edit the `active_runtime.json`, so it can't temporarily replace it.
-        - For likely a similar reason, it will not remove `monado_ipc_comp` when the server closes, causing itself to fail with `Connection refused!` each time it tries to connect to the socket.
-        - This means it also conflicts with my separate WiVRn install, as I have to move its `active_runtime.json` to get Envision running.
-    - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be jittery. Envision should display a warning if this is not set.
+        - For likely a similar reason, it will not remove `monado_ipc_comp` when the server closes, and will fail with `Connection refused!` each time it tries to connect through that socket.
+        - This means it also conflicts with my separate WiVRn install, as I have to move/rename its `active_runtime.json` to get Envision running.
+    - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be VERY jittery. Envision should display a warning box inside its main window if this is not set.
     - Head tracking is slightly laggy, perhaps reprojection is not working right?
 
 ## Curiosities
