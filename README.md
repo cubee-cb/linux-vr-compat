@@ -43,7 +43,8 @@ Things we can actually play! Yay!
 ^ - Requires a different Proton version.
 
 - VRChat
-    - World "Connecting" screens are broken.
+    - Updated to GE-Proton9-20-rtsp16 to hopefully fix video players being weird again, and since RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
+    - World "Connecting" screens are broken, OpenComposite issue.
     - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
     - Terrors of Nowhere
         - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
