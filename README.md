@@ -172,6 +172,10 @@ The following crash on launch or have other major issues.
     - Crashes on launch with no error window.
 - COMPOUND
     - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
+- Legend of Dungeon
+    - Linux native has lacks the VR mode launch option on both live and beta.
+    - Proton+live has an old VR option that supposedly doesn't work, didn't bother testing.
+    - Proton+beta has SteamVR option, but it launches in desktop mode.
 
 ## Development/hardware
 - Envision WMR Setup with the HP VR1000 HMD
