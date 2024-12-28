@@ -173,7 +173,7 @@ The following crash on launch or have other major issues.
 - COMPOUND
     - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
 - Legend of Dungeon
-    - Linux native has lacks the VR mode launch option on both live and beta.
+    - Linux native lacks the VR mode launch option on both live and beta.
     - Proton+live has an old VR option that supposedly doesn't work, didn't bother testing.
     - Proton+beta has SteamVR option, but it launches in desktop mode.
 
@@ -211,7 +211,6 @@ Owned and/or willing to test.
     - Keep Talking and Nobody Explodes
     - The Forest
     - REZ: Infinite
-    - Legend of Dungeon (apparently that has a VR mode)
     - Blind
     - Project Cars 2
 - Wishlisted:
