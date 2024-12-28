@@ -185,6 +185,7 @@ The following crash on launch or have other major issues.
         - You could probably just put the `70-xrhardware.rules` file from that repo in `rules.d` manually.
     - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allows them to connect although the bluetooth menu says they are not paired.
         - idk how to enable the controller tracking branch though, so we only have hand tracking at the moment.
+        - Connecting them a few days later, they blink and vibrate rapidly as if repeatedly turning on and off. Perhaps due to envision not running at the time?
     - Envision will fail to start Monado if the `/run/user/1000/monado_ipc_comp` socket or `~/.config/openxr/1/active_runtime.json` already exist.
         - I presume it lacks permissions to edit the `active_runtime.json`, so it can't temporarily replace it.
         - For likely a similar reason, it will not remove `monado_ipc_comp` when the server closes, and will fail with `Connection refused!` each time it tries to connect through that socket.
