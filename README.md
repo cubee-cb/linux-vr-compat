@@ -178,20 +178,25 @@ The following crash on launch or have other major issues.
     - Proton+beta has SteamVR option, but it launches in desktop mode.
 
 ## Development/hardware
+Troubleshooting setup of hardware or build issues.
 - Envision WMR Setup with the HP VR1000 HMD
-    - Using Envision AppImage.
+    - Using Envision ~AppImage~ DNF Package.
     - Building the WMR profile asks to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needs is `boost-devel`.
     - `xr-hardware` must be installed for the HMD devices' udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`, the Fedora `dnf` package did not install the rules for me.
         - You could probably just put the `70-xrhardware.rules` file from that repo in `rules.d` manually.
     - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allows them to connect although the bluetooth menu says they are not paired.
         - idk how to enable the controller tracking branch though, so we only have hand tracking at the moment.
         - Connecting them a few days later, they blink and vibrate rapidly as if repeatedly turning on and off. Perhaps due to envision not running at the time?
-    - Envision will fail to start Monado if the `/run/user/1000/monado_ipc_comp` socket or `~/.config/openxr/1/active_runtime.json` already exist.
+    - (AppImage) Envision will fail to start Monado if either the `/run/user/1000/monado_ipc_comp` socket or `~/.config/openxr/1/active_runtime.json` already exist.
         - I presume it lacks permissions to edit the `active_runtime.json`, so it can't temporarily replace it.
         - For likely a similar reason, it will not remove `monado_ipc_comp` when the server closes, and will fail with `Connection refused!` each time it tries to connect through that socket.
         - This means it also conflicts with my separate WiVRn install, as I have to move/rename its `active_runtime.json` to get Envision running.
+    - (DNF Package) Envision will fail to start Monado if the `/run/user/1000/monado_ipc_comp` socket already exists.
+        - I edited my Envision launch script (which sets my power profile) to also remove this file on launch, and it seems to "just work" for the first Start.
+            - It still dies on subsequent Starts until restarting Envision, however.
     - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be VERY jittery. Envision should display a warning box inside its main window if this is not set.
     - Head tracking is slightly laggy, perhaps reprojection is not working right?
+        - I switched to the Envision Fedora package (instead of the AppImage) and it seems not as bad now as I remember.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
