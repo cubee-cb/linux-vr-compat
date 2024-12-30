@@ -198,8 +198,12 @@ Troubleshooting setup of hardware or build issues.
     - Head tracking is slightly laggy, perhaps reprojection is not working right?
         - I switched to the Envision Fedora package (instead of the AppImage) and it seems not as bad now as I remember.
 - ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
-    - Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel` and cargo crate `cargo-about`.
-
+    - Alternative Creator Companion for VRChat.
+    - The AppImages now have a white screen. Initially v0.1.15 worked, but some system upgrade must have broken it. v0.1.16 never worked.
+        - EGL Display error. Basically identical to [this comment](https://github.com/vrc-get/vrc-get/issues/1694#issuecomment-2480857765) on the white screen issue thread.
+    - Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel dotnet-sdk-8.0` and cargo crate `cargo-about`.
+    - Final step of build fails to bundle the AppImage, but frankly I couldn't care less about using an AppImage. The executable is built in `vrc-get/target/release/` anyway.
+        - Might break some things if this expects to be running as an AppImage, for example setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
