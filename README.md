@@ -197,6 +197,9 @@ Troubleshooting setup of hardware or build issues.
     - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be VERY jittery. Envision should display a warning box inside its main window if this is not set.
     - Head tracking is slightly laggy, perhaps reprojection is not working right?
         - I switched to the Envision Fedora package (instead of the AppImage) and it seems not as bad now as I remember.
+- ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
+    - Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel` and cargo crate `cargo-about`.
+
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
