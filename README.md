@@ -242,7 +242,13 @@ Troubleshooting setup of hardware or build issues.
     - EGL Display error. Basically identical to [this comment](https://github.com/vrc-get/vrc-get/issues/1694#issuecomment-2480857765) on the white screen issue thread.
 - Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel dotnet-sdk-8.0` and cargo crate `cargo-about`.
 - Final step of build fails to bundle the AppImage, but frankly I couldn't care less about using an AppImage. The executable is built in `vrc-get/target/release/` anyway.
-    - Might break some things if this expects to be running as an AppImage, for example setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
+    - As long as it says `Built application at: /home/user/.../vrc-get/target/release/ALCOM` you should be all good.
+    - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
+- No matter which variant of ALCOM I use, launching Unity though ALCOM fails with a "No valid license found" error.
+    - For now I just use either of the following:
+        - ALCOM for project and package management and Unity Hub just to launch them.
+        - Moonlight to a Windows laptop for Unity stuff with the regular Creator Companion, cause Unity doesn't like Wayland much.
+    - Unity is a FlatPak, idk if that has anything to do with it.
 
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
