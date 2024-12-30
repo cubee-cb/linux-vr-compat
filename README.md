@@ -190,7 +190,7 @@ The following crash on launch or have other major issues.
 - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 
 ### Vivecraft
-- Running through Modrinth Launcher
+- Running through Modrinth Launcher (FlatPak)
 - Version: 1.20.1-1.1.14-fabric on Quilt Loader
 - When entering VR mode it fails to locate installation path, presumably for SteamVR.
     - According to [the FAQ](https://www.vivecraft.org/faq/#opencomposite), Vivecraft supports OpenComposite, but I'm not sure how to get it to find it or if recent updates (such as moving to Fabric) broke things.
@@ -258,6 +258,7 @@ Owned and/or willing to test.
 - Desert Bus VR
 - Republique VR
 - Traffic Jams
+- Assetto Corsa
 - Through library sharing:
     - Tabletop Simulator
     - Keep Talking and Nobody Explodes
