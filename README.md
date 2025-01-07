@@ -125,15 +125,18 @@ Things we can actually play! Yay!
 - Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
 - Setup:
     - Add the executable to Heroic through the Add Game button. Use Proton-GE-9-18, as Wine-GE-Proton doesn't support VR.
-    - Add WiVRn's PRESSURE_VESSEL environment variable to Heroic's game settings (Advanced tab)
+    - Add WiVRn's `PRESSURE_VESSEL` environment variable to Heroic's game settings (Advanced tab)
 
 ### ^ Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
 - Playable, flickery shadows. Black screen in VR until actually in-game.
 - Setup:
     - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as the game fails to launch with Proton-GE-9-18 and Wine-GE-Proton doesn't support VR.
-    - Add the `-vr` launch option and WiVRn's PRESSURE_VESSEL environment variable to Steam's Launch Options or Heroic's Advanced tab.
+    - Add the `-vr` launch option and WiVRn's `PRESSURE_VESSEL` environment variable to Steam's Launch Options or Heroic's Advanced tab.
 
 ### Vertigo: Remastered
+
+### Keep Talking and Nobody Explodes
+- Linux native doesn't support VR, use Proton instead.
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -219,6 +222,9 @@ The following crash on launch or have other major issues.
 - Proton+live has an old VR option that supposedly doesn't work, didn't bother testing.
 - Proton+beta has SteamVR option, but it launches in desktop mode.
 
+### Desert Bus VR
+- Launches in desktop mode even when choosing the SteamVR launch option.
+
 ## Development/hardware
 Troubleshooting setup of hardware or build issues.
 
@@ -267,13 +273,11 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 ## Untested
 Owned and/or willing to test.
 - I am Sakuya VR
-- Desert Bus VR
 - Republique VR
 - Traffic Jams
 - Assetto Corsa
 - Through library sharing:
     - Tabletop Simulator
-    - Keep Talking and Nobody Explodes
     - The Forest
     - REZ: Infinite
     - Blind
