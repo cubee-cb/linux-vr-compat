@@ -2,8 +2,7 @@
 Testing VR games on my Linux setup with WiVRn and WlxOverlay.
 Other files include scripts or configs that I use. For example, I modified the Wlx-Overlay-S watch layout and added a button to it that spawns a WayVR app list.
 
-**Note**
-Lately `amdgpu` has been encountering page faults and subsequently triggering GPU resets for some systems, including mine.
+**Note**: Lately `amdgpu` has been encountering page faults and subsequently triggering GPU resets for some systems, including mine.
 It looks to be related to `linux-firmware` and video encoding/decoding on AMD GPUs, and in my experience typically occurs when using WiVRn, though it does happen outside of VR on occasion.
 Seems to be tracked here:
 - [Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)
