@@ -49,13 +49,17 @@ Things we can actually play! Yay!
 
 ### VRChat
 - Updated to GE-Proton9-20-rtsp16 to hopefully fix video players being weird again, and since RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
-- World "Connecting" screens are broken, OpenComposite issue.
+- World "Connecting" screens are broken, known OpenComposite quirk.
 - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
+    - idk if the start script helps much though.
 - Terrors of Nowhere
     - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
         - See the VRChat folder for a launch script using flatpak Protontricks.
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
+            - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Use the HSV colours setting.
 - Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this is related to my HDD speed issue.
+- Non-16:9 videos on video players get stretched, which doesn't occur on PICO Standalone and Windows.
+    - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
 ### ^ Beat Saber
 - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
@@ -229,19 +233,19 @@ The following crash on launch or have other major issues.
 Troubleshooting setup of hardware or build issues.
 
 ### Envision WMR Setup with the HP VR1000 HMD
-- Using Envision ~AppImage~ DNF Package.
+- Using Envision DNF Package. (formerly AppImage)
 - Building the WMR profile asks to install `boost boost boost boost boost` (yes, five times in a row), but what it actually needs is `boost-devel`.
-- `xr-hardware` must be installed for the HMD devices' udev rules. Build from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) and check `/etc/udev/rules.d`, the Fedora `dnf` package did not install the rules for me.
+- The HMD devices' udev rules must be installed. These are easily found in `xr-hardware`, which can be built from [xr-hardware](https://salsa.debian.org/rpavlik/xr-hardware) or found through `dnf`. Check `/etc/udev/rules.d`, the Fedora `dnf` package did not install the rules for me.
     - You could probably just put the `70-xrhardware.rules` file from that repo in `rules.d` manually.
 - Controllers supposedly failed to pair via bluetooth menu and turned their lights off, but were still 'on'. Turning them off and on again allows them to connect although the bluetooth menu says they are not paired.
     - idk how to enable the controller tracking branch though, so we only have hand tracking at the moment.
-    - Connecting them a few days later, they blink and vibrate rapidly as if repeatedly turning on and off. Perhaps due to envision not running at the time?
+    - Connecting them a few days later, they just blink and vibrate rapidly as if repeatedly connecting and disconnecting.
 - (AppImage) Envision will fail to start Monado if either the `/run/user/1000/monado_ipc_comp` socket or `~/.config/openxr/1/active_runtime.json` already exist.
     - I presume it lacks permissions to edit the `active_runtime.json`, so it can't temporarily replace it.
     - For likely a similar reason, it will not remove `monado_ipc_comp` when the server closes, and will fail with `Connection refused!` each time it tries to connect through that socket.
     - This means it also conflicts with my separate WiVRn install, as I have to move/rename its `active_runtime.json` to get Envision running.
 - (DNF Package) Envision will fail to start Monado if the `/run/user/1000/monado_ipc_comp` socket already exists.
-    - I edited my Envision launch script (which sets my power profile) to also remove this file on launch, and it seems to "just work" for the first Start.
+    - I edited my Envision launch script (which sets my power profile) to also remove this file on launch, and it seems to "just work" for the first time I click Start.
         - It still dies on subsequent Starts until restarting Envision, however.
 - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be VERY jittery. Envision should display a warning box inside its main window if this is not set.
 - Head tracking is slightly laggy, perhaps reprojection is not working right?
