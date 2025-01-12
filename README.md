@@ -1,8 +1,8 @@
 # linux-vr-compat
-Testing VR games on my Linux setup with WiVRn and WlxOverlay.
-Other files include scripts or configs that I use. For example, I modified the Wlx-Overlay-S watch layout and added a button to it that spawns a WayVR app list.
+Testing VR games on my Linux setup with WiVRn and WlxOverlay-S.
+Other files include scripts or configs that I use.
 
-**Note**: Lately `amdgpu` has been encountering page faults and subsequently triggering GPU resets for some systems, including mine.
+**Note**: Lately `amdgpu` has been encountering page faults and subsequent GPU resets for some systems, including mine.
 It looks to be related to `linux-firmware` and video encoding/decoding on AMD GPUs, and in my experience typically occurs when using WiVRn, though it does happen outside of VR on occasion.
 Seems to be tracked here:
 - [Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)
@@ -35,7 +35,7 @@ Seems to be tracked here:
 - WiVRn (Flatpak) to connect to the PICO-4 and emulate SteamVR via OpenComposite.
 - Envision with WMR profile.
     - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
-- WlxOverlay for desktop views and playspace drag.
+- WlxOverlay-S for desktop views and playspace drag.
     - Space Drag is either left/right stick click, Space Reset is double-click left stick.
     - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
 - Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
@@ -231,6 +231,9 @@ The following crash on launch or have other major issues.
 
 ## Development/hardware
 Troubleshooting setup of hardware or build issues.
+
+### WlxOverlay-S
+- Once all the dependencies were installed, no issues.
 
 ### Envision WMR Setup with the HP VR1000 HMD
 - Using Envision DNF Package. (formerly AppImage)
