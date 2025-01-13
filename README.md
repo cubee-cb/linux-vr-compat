@@ -25,7 +25,7 @@ Seems to be tracked here:
 - Most games installed on a hard drive.
     - Recently migrated OS to SSD (that was painful).
 - PICO 4 headset, with USB 3.0 cable.
-    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.
+    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in WiVRn v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
 - Windows Mixed Reality HP VR1000-122a.
 
