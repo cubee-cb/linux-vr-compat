@@ -32,13 +32,13 @@ Seems to be tracked here:
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
-- WiVRn (Flatpak) to connect to the PICO-4 and emulate SteamVR via OpenComposite.
+- WiVRn (Flatpak) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
 - Envision with WMR profile.
     - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
 - WlxOverlay-S for desktop views and playspace drag.
     - Space Drag is either left/right stick click, Space Reset is double-click left stick.
     - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
-- Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it)
+- Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it other than switching to Envision for both headsets)
 - Proton: GE-Proton9-18 (unless otherwise specified)
 
 
@@ -220,6 +220,7 @@ The following crash on launch or have other major issues.
 
 ### COMPOUND
 - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
+- Supposedly works through [XRizer](https://github.com/Supreeeme/xrizer/), albeit with bad controller offsets, so I may try that in the future.
 
 ### Legend of Dungeon
 - Linux native lacks the VR mode launch option on both live and beta.
