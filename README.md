@@ -135,7 +135,7 @@ Things we can actually play! Yay!
     - Add the executable to Heroic through the Add Game button. Use Proton-GE-9-18, as Wine-GE-Proton doesn't support VR.
     - Add WiVRn's `PRESSURE_VESSEL` environment variable to Heroic's game settings (Advanced tab)
 
-### ^ Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+### ^ Kart Racing Pro rel13e (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
 - HMD view only. Requires a standard controller/wheel.
 - Playable, flickery shadows. Black screen in VR until actually in-game.
 - Setup:
@@ -146,6 +146,11 @@ Things we can actually play! Yay!
 
 ### Keep Talking and Nobody Explodes
 - Linux native doesn't support VR, use Proton instead.
+
+### Catlateral Damage VR
+- Linux native doesn't support VR, use Proton if you want to try the VR mode. Requires the free VR DLC installed.
+- Desktop mode under Proton has a lot of input lag, but VR is purrfect.
+- This game apparently binds Turn Right to both right *and left* joystick click, even on Windows+SteamVR. Not ideal, but it's also a problem with the game, not OpenComposite.
 
 ---
 
@@ -232,7 +237,8 @@ The following crash on launch or have other major issues.
 
 ### COMPOUND
 - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
-- Supposedly works through [XRizer](https://github.com/Supreeeme/xrizer/), albeit with bad controller offsets, so I may try that in the future.
+- Launches with [XRizer](https://github.com/Supreeeme/xrizer/) set as `VR_OVERRIDE`, albeit with bad controller offsets.
+    - However, it merely shows the Unity logo and loads a white room with grid patterns in the desktop window, nothing in VR. According to others it works, so it's probably something wrong in my setup.
 
 ### Legend of Dungeon
 - Linux native lacks the VR mode launch option on both live and beta.
@@ -305,10 +311,6 @@ Owned and/or willing to test.
 
 ---
 
-- Catlateral Damage
-    - Linux native doesn't support VR, use Proton.
-    - Requires the free VR DLC installed.
-    - Desktop mode under Proton has a lot of input lag.
 - I am Sakuya VR
 - Republique VR
 - Traffic Jams
