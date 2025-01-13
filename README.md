@@ -151,6 +151,10 @@ Things we can actually play! Yay!
 - Linux native doesn't support VR, use Proton if you want to try the VR mode. Requires the free VR DLC installed.
 - Desktop mode under Proton has a lot of input lag, but VR is purrfect.
 - This game apparently binds Turn Right to both right *and left* joystick click, even on Windows+SteamVR. Not ideal, but it's also a problem with the game, not OpenComposite.
+    - Teleport is mapped to trigger.
+    - Meow is mapped to right grip. (the most important mapping of all!)
+    - Continue is mapped to left Y, which isn't obvious with the OpenComposite rendermodels being actual hands.
+    - Click either joystick on the title scene to change cat colours.
 
 ---
 
