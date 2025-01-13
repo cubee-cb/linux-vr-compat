@@ -1,5 +1,4 @@
-# linux-vr-compat
-Testing VR games on my Linux setup with WiVRn and WlxOverlay-S.
+Testing VR games with WiVRn and WlxOverlay-S.
 Other files include scripts or configs that I use.
 
 **Note**: Lately `amdgpu` has been encountering page faults and subsequent GPU resets for some systems, including mine.
@@ -16,7 +15,11 @@ Seems to be tracked here:
 - [Curiosities](#curiosities)
 - [Untested](#untested)
 
+---
+
 ## Setup
+
+---
 
 ### Hardware
 - AMD Ryzen 5 5600G
@@ -40,13 +43,16 @@ Seems to be tracked here:
 - Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it other than switching to Envision for both headsets)
 - Proton: GE-Proton9-18 (unless otherwise specified)
 
+---
 
 ## Working
 Things we can actually play! Yay!
 
-^ - Requires a different Proton version.
+^ - Using a different Proton version. (notes will mention why)
 
-### VRChat
+---
+
+### ^ VRChat
 - Updated to GE-Proton9-20-rtsp16 to hopefully fix video players being weird again, and since RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
 - World "Connecting" screens are broken, known OpenComposite quirk.
 - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
@@ -56,17 +62,17 @@ Things we can actually play! Yay!
         - See the VRChat folder for a launch script using flatpak Protontricks.
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
             - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Use the HSV colours setting.
-- Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this is related to my HDD speed issue.
-- Non-16:9 videos on video players get stretched, which doesn't occur on PICO Standalone and Windows.
+- Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this is due to a HDD bottleneck.
+- Videos on video players get stretched, while on PICO Standalone and Windows they get letterboxed.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
-### ^ Beat Saber
+### ^ Beat Saber (Modded)
 - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
     - Settings and selected mods do not save on v0.0.6, use v0.0.5 instead.
 - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
 
 ### Pistol Whip
-- First launch takes ages, possibly in part due to being on a hard drive, but otherwise works perfectly.
+- First launch took ages, but otherwise works perfectly.
 
 ### The Lab
 - Loading screens are broken.
@@ -74,11 +80,11 @@ Things we can actually play! Yay!
 ### Sushi Ben Demo
 
 ### ^ Ragnarock
-- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on latest.
+- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
 - Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
 
 ### ^ Into the Radius
-- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on latest.
+- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
 - Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
 
 ### Vacation Simulator
@@ -87,10 +93,10 @@ Things we can actually play! Yay!
 - Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
 
 ### VAIL
-- Works despite the recent addition of Denuvo anti-cheat in patch 1.2.4 on 3 October 2024.
-- Default bindings have fire on trigger touch rather than pull.
+- Works despite the addition of Denuvo anti-cheat in patch 1.2.4.
+- Default bindings have fire on trigger touch rather than trigger pull, which makes it pretty annoying to play.
     - I've managed to obtain a bindings file from the `steamapps/workshop/` folder for SteamVR on another device, but I can't seem to get OpenComposite to pick it up. ([LVRA Wiki](https://lvra.gitlab.io/docs/fossvr/opencomposite/))
-    - I have tried [XRBinder](https://lvra.gitlab.io/docs/fossvr/xrbinder/), but can't get it to detect OpenComposite, or anything other than WlxOverlay.
+    - I have tried [XRBinder](https://lvra.gitlab.io/docs/fossvr/xrbinder/), but can't get it to detect anything other than WlxOverlay-S one time.
 - Menus are very flickery.
 - Large stutters while loading maps, likely due to running on a hard drive.
 
@@ -103,14 +109,14 @@ Things we can actually play! Yay!
 ### Rec Room
 - Alpha on the EAC window is broken, causing black squares.
 - The game will fail to login with error code "wrapper" unless you install "Proton Easy Anti Cheat Runtime" through Steam.
-    - This may affect VRChat, however. See VRChat's section above.
+    - ~This may affect VRChat, however. See VRChat's section above.~ May be a coincidence? VRChat still has problems after removing it.
 - After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
-- Loading screens are broken a la VRChat, but the game itself looks fine as opposed to what some people have been saying for Rec Room on OpenComposite.
-- Rec Room, hire me so I can fix all the broken weights in your outfits, the Aviator Gloves have like 3 verts weighted wrong each.
+- Loading screens are broken a la VRChat, but the game itself looks fine.
 
 ### SUPERHOT VR (Pre-removed scenes version via depot download)
 
 ### Hellblade: Senua's Sacrifice VR Edition
+- HMD view only. Requires a standard controller.
 - First launch crashed on starting a new game. Subsequent launch was fine, however.
 - A certain cutscene near the start of the game has Senua's head clip through the cutscene border and into the camera, which was fairly weird to experience.
 
@@ -120,7 +126,6 @@ Things we can actually play! Yay!
     - A and X are snap turn right/left respectively. A is also the reload action.
     - Left joystick seems to do nothing, but right stick turns and does teleport/jump as normal.
     - Weapon selection on joystick click conflicts with my space drag binding.
-    - I've only played this on WMR so to be fair I have no idea what the controls are supposed to be like.
 - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
     - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling).
 
@@ -131,6 +136,7 @@ Things we can actually play! Yay!
     - Add WiVRn's `PRESSURE_VESSEL` environment variable to Heroic's game settings (Advanced tab)
 
 ### ^ Kart Racing Pro rel11b (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+- HMD view only. Requires a standard controller/wheel.
 - Playable, flickery shadows. Black screen in VR until actually in-game.
 - Setup:
     - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as the game fails to launch with Proton-GE-9-18 and Wine-GE-Proton doesn't support VR.
@@ -141,8 +147,12 @@ Things we can actually play! Yay!
 ### Keep Talking and Nobody Explodes
 - Linux native doesn't support VR, use Proton instead.
 
+---
+
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
+
+---
 
 ### Tea For God
 - Hands don't appear, so cannot interact with anything.
@@ -157,17 +167,16 @@ These launch, but are unplayable or have serious issues functioning.
 - Playable with controllers up until the handshake bot due to lacking a grip pressure sensor. Hand tracking has no buttons and so it's unusable here.
     - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
 
-### Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
-- Logged in, froze when loading my cloud home while in the tutorial, so it may not like changing worlds.
-    - My cloud home is the default cloud home transferred from Neos, so world complexity/heaviness may not be the issue.
-- Default stick-click to jump binding conflicts with my space-drag/reset bindings.
+### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
+- As recommended on the linked page, switched to GE-Proton9-20-rtsp16.
+- Default stick-click to jump binding conflicts with my space-drag/reset bindings. Need to figure out how to rebind it to match WMR's bindings better.
 - My performance is abysmal and I often freeze when connecting to sessions, so for now I've demoted its status.
     - This may be due to running off a hard drive, I'll revisit this and add a note if running off an SSD fixes it.
 
 ### GRIP
-- Plays perfectly with a traditional controller... until it crashes mid-race.
-    - `Assertion failed: Wine C++ Runtime Library > /src-vrclient/winIVRSystem.c Line 8701 expression "!status"`, then `Fatal Error`.
-    - Seems like it's a VR-specific error for running under Wine/Proton. That's a shame.
+- HMD view only. Requires a standard controller.
+- Plays perfectly... until it crashes mid-race.
+    - Roughly: `Assertion failed: Wine C++ Runtime Library > /src-vrclient/winIVRSystem.c Line 8701 expression "!status"`, then `Fatal Error`.
 - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
 - Desktop mode seems to work.
 - Using GE-Proton7-55 seems to prevent the Wine error window from appearing, however it does not stop the crashing nor the `Fatal Error` window.
@@ -180,8 +189,12 @@ These launch, but are unplayable or have serious issues functioning.
 - Might work, but takes ages to load into a map. I gave up waiting.
 - Again, might be related to HDD speed.
 
+---
+
 ## Not working
 The following crash on launch or have other major issues.
+
+---
 
 ### Zenith VR
 - Loading screens are broken.
@@ -229,8 +242,12 @@ The following crash on launch or have other major issues.
 ### Desert Bus VR
 - Launches in desktop mode even when choosing the SteamVR launch option.
 
+---
+
 ## Development/hardware
 Troubleshooting setup of hardware or build issues.
+
+---
 
 ### WlxOverlay-S
 - Once all the dependencies were installed, no issues.
@@ -268,8 +285,12 @@ Troubleshooting setup of hardware or build issues.
         - Moonlight to a Windows laptop for Unity stuff with the regular Creator Companion, cause Unity doesn't like Wayland much.
     - Unity is a FlatPak, idk if that has anything to do with it.
 
+---
+
 ## Curiosities
 Stuff I don't expect to work but try anyway, because why not? Maybe something interesting will happen.
+
+---
 
 ### OVR Toolkit
 - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
@@ -277,8 +298,13 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 - After closing the desktop window, it remains running until closed by other means.
 - *I cannot uninstall it through Steam*.
 
+---
+
 ## Untested
 Owned and/or willing to test.
+
+---
+
 - Catlateral Damage
     - Linux native doesn't support VR, use Proton.
     - Requires the free VR DLC installed.
