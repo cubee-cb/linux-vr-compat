@@ -22,13 +22,12 @@ Seems to be tracked here:
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
-- Everything installed on a hard drive. (including OS)
-    - Plan to move OS to an SSD at some point, HDD speeds are starting to bottleneck as I do more things on this system.
+- Most games installed on a hard drive.
+    - Recently migrated OS to SSD (that was painful).
 - PICO 4 headset, with USB 3.0 cable.
-    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu and maybe Wlx-Overlay-S, but they still have the wrong offset in OpenComposite applications.
+    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
 - Windows Mixed Reality HP VR1000-122a.
-    - Just keeping it going for 5 more minutes. No controller tracking.
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
@@ -280,16 +279,19 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 
 ## Untested
 Owned and/or willing to test.
+- Catlateral Damage
+    - Linux native doesn't support VR, use Proton.
+    - Requires the free VR DLC installed.
+    - Desktop mode under Proton has a lot of input lag.
 - I am Sakuya VR
 - Republique VR
 - Traffic Jams
 - Assetto Corsa
-- Through library sharing:
-    - Tabletop Simulator
-    - The Forest
-    - REZ: Infinite
-    - Blind
-    - Project Cars 2
+- Tabletop Simulator
+- The Forest
+- REZ: Infinite
+- Blind
+- Project Cars 2
 - Wishlisted:
     - Hyperbolica
     - Sairento VR
