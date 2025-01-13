@@ -59,7 +59,7 @@ Things we can actually play! Yay!
     - idk if the start script helps much though.
 - Terrors of Nowhere
     - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
-        - See the VRChat folder for a launch script using flatpak Protontricks.
+        - See [the VRChat folder](vrchat/launch-ton-save-manager.sh) for an example launch script using flatpak Protontricks.
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
             - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Use the HSV colours setting.
 - Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this is due to a HDD bottleneck.
