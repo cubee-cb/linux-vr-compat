@@ -257,6 +257,11 @@ The following crash on launch or have other major issues.
 ### Desert Bus VR
 - Launches in desktop mode even when choosing the SteamVR launch option.
 
+### Assetto Corsa (with Content Manager)
+- HMD view only. Requires a standard controller/wheel.
+- Won't interface with VR until starting an actual race, so use WlxOverlay-S to interact with Content Manager.
+- Fails to find VR on loading a race.
+
 ---
 
 ## Development/hardware
@@ -322,7 +327,6 @@ Owned and/or willing to test.
 
 - Republique VR
 - Traffic Jams
-- Assetto Corsa
 - Tabletop Simulator
 - The Forest
 - REZ: Infinite
