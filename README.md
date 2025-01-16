@@ -137,7 +137,7 @@ Things we can actually play! Yay!
 
 ### ^ Kart Racing Pro rel13e (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
 - HMD view only. Requires a standard controller/wheel.
-- Playable, flickery shadows. Black screen in VR until actually in-game.
+- Playable, flickery shadows. Black screen in VR until starting an actual race, so use WlxOverlay-S to interact with menus.
 - Setup:
     - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as the game fails to launch with Proton-GE-9-18 and Wine-GE-Proton doesn't support VR.
     - Add the `-vr` launch option and WiVRn's `PRESSURE_VESSEL` environment variable to Steam's Launch Options or Heroic's Advanced tab.
@@ -155,6 +155,11 @@ Things we can actually play! Yay!
     - Meow is mapped to right grip. (the most important mapping of all!)
     - Continue is mapped to left Y, which isn't obvious with the OpenComposite rendermodels being actual hands.
     - Click either joystick on the title scene to change cat colours.
+
+### I am Sakuya VR
+- A little stuttery but mostly playable.
+- The level "To the top of the mansion" has the player clip into the floor as it rises and is very jittery as a result.
+- This game has weird controller offsets even on Windows/SteamVR; here the game hands are positioned above the real controllers.
 
 ---
 
@@ -315,7 +320,6 @@ Owned and/or willing to test.
 
 ---
 
-- I am Sakuya VR
 - Republique VR
 - Traffic Jams
 - Assetto Corsa
