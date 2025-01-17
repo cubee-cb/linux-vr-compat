@@ -79,7 +79,7 @@ Things we can actually play! Yay!
 
 ### Sushi Ben Demo ([Video](https://youtu.be/TEen2J73evQ?t=1284))
 
-### ^ Ragnarock ([Video](https://youtu.be/ESWKezEggIg&t=1406))
+### ^ Ragnarock ([Video](https://youtu.be/ESWKezEggIg&t=1048))
 - Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
 - Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
 
