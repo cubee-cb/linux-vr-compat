@@ -74,15 +74,6 @@ Things we can actually play! Yay!
 ### Pistol Whip ([Video](https://youtu.be/ESWKezEggIg&t=754))
 - First launch took ages, but otherwise works perfectly.
 
-### Half Life: Alyx (Proton)
-- Launches, menu interaction works, can load into a save file.
-- Controller bindings are somewhat broken:
-    - A and X are snap turn right/left respectively. A is also the reload action.
-    - Left joystick seems to do nothing, but right stick turns and does teleport/jump as normal.
-    - Weapon selection on joystick click conflicts with my space drag binding.
-- On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
-    - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling).
-
 ### VAIL
 - Works despite the addition of Denuvo anti-cheat in patch 1.2.4.
 - Default bindings have fire on trigger touch rather than trigger pull, which makes it pretty annoying to play.
@@ -169,6 +160,22 @@ These launch, but are unplayable or have serious issues functioning.
 
 ---
 
+### Half Life: Alyx
+- Ok, this is a weird one. I built OpenComposite manually, and now regardless of which version I use (WiVRn or Built):
+    - Proton Version: Used to work, but now it crashes after the grey Valve logo.
+        - Crashes on launch with no error window. This is basically what Native did beforehand.
+    - Native Version: Used to crash on launch, but now it does work???
+        - Now the left joystick controls movement properly, but performance is abysmal (10-15fps) and stutters horribly.
+        - Launch options: `PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/wivrn/comp_ipc:/var/lib/flatpak/app/io.github.wivrn.wivrn %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
+            - iirc this disables the Valve intro scene and turns off dynamic resolution, which I believe caused the white bars in the edges of the FoV mentioned later.
+- Old info (still generally applies):
+    - Controller bindings are somewhat broken:
+        - A and X are snap turn right/left respectively. A is also the reload action.
+        - Left joystick seems to do nothing (on Proton), but right stick turns and does teleport/jump as normal.
+        - Weapon selection on joystick click conflicts with my space drag binding.
+    - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
+        - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling).
+
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
 - As recommended on the linked page, switched to GE-Proton9-20-rtsp16.
 - Default stick-click to jump binding conflicts with my space-drag/reset bindings. Need to figure out how to rebind it to match WMR's bindings better.
@@ -199,6 +206,11 @@ These launch, but are unplayable or have serious issues functioning.
 - Desktop mode seems to work.
 - Using GE-Proton7-55 seems to prevent the Wine error window from appearing, however it does not stop the crashing nor the `Fatal Error` window.
 
+### COMPOUND Demo
+- Previously had an OpenComposite error every launch due to generated Microsoft Holographic (WMR) bindings missing the "none" action.
+- Manually built OpenComposite, now it just works, both with the built version set as `VR_OVERRIDE` and when using WiVRn's bundled version.
+    - idk why this has happened so it's in this section for now.
+
 ### Metal: Hellsinger VR Demo
 - Starts and stays on a black screen. May need longer for initial load like Pistol Whip, hence being placed here instead of Not working.
 - The game's custom cursor appears on the desktop window and can be moved around.
@@ -227,9 +239,6 @@ The following crash on launch or have other major issues.
 
 ---
 
-### Half Life: Alyx (Native)
-- Crashes on launch with no error window.
-
 ### Zenith VR ([Video](https://youtu.be/ESWKezEggIg&t=1392))
 - Loading screens are broken.
 - Crashes immediately after rendering the first loading screen with a texture error.
@@ -242,11 +251,6 @@ The following crash on launch or have other major issues.
 ### Half-Life 2 VR ([Video](https://youtu.be/ESWKezEggIg&t=1304))
 - Launches, but fails to find the VR session.
 - People in the LVRA Discord mentioned using a 32-bit build of WiVRn and OpenComposite. I'll keep an eye on that.
-
-### COMPOUND Demo
-- OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
-- Launches with [XRizer](https://github.com/Supreeeme/xrizer/) set as `VR_OVERRIDE`, albeit with bad controller offsets.
-    - However, it merely shows the Unity logo and loads a white room with grid patterns in the desktop window, nothing in VR. According to others it works, so it's probably something wrong in my setup.
 
 ### Vivecraft
 - Running through Modrinth Launcher (FlatPak)
