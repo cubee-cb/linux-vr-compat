@@ -66,30 +66,30 @@ Things we can actually play! Yay!
 - Videos on video players get stretched, while on PICO Standalone and Windows they get letterboxed.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
-### ^ Beat Saber (Modded)
+### ^ Beat Saber (Modded) ([Video](https://youtu.be/ESWKezEggIg&t=65))
 - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
     - Settings and selected mods do not save on v0.0.6, use v0.0.5 instead.
 - Mods do not load with GE-Proton9-18, but do with Proton Experimental.
 
-### Pistol Whip
+### Pistol Whip ([Video](https://youtu.be/ESWKezEggIg&t=754))
 - First launch took ages, but otherwise works perfectly.
 
-### The Lab
+### The Lab ([Video](https://youtu.be/TEen2J73evQ?t=0))
 - Loading screens are broken.
 
-### Sushi Ben Demo
+### Sushi Ben Demo ([Video](https://youtu.be/TEen2J73evQ?t=1284))
 
-### ^ Ragnarock
+### ^ Ragnarock ([Video](https://youtu.be/ESWKezEggIg&t=1406))
 - Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
 - Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
 
-### ^ Into the Radius
+### ^ Into the Radius ([Video](https://youtu.be/ESWKezEggIg&t=2202))
 - Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
 - Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
 
-### Vacation Simulator
+### Vacation Simulator ([Video](https://youtu.be/ESWKezEggIg&t=1470))
 
-### Rumble
+### Rumble ([Video](https://youtu.be/ESWKezEggIg&t=2912))
 - Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
 
 ### VAIL
@@ -135,7 +135,7 @@ Things we can actually play! Yay!
     - Add the executable to Heroic through the Add Game button. Use Proton-GE-9-18, as Wine-GE-Proton doesn't support VR.
     - Add WiVRn's `PRESSURE_VESSEL` environment variable to Heroic's game settings (Advanced tab)
 
-### ^ Kart Racing Pro rel13e (non-Steam version) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+### ^ Kart Racing Pro rel13e non-Steam ([Video of rel11b](https://youtu.be/zWL9ZwvFJ5A)) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
 - HMD view only. Requires a standard controller/wheel.
 - Playable, flickery shadows. Black screen in VR until starting an actual race, so use WlxOverlay-S to interact with menus.
 - Setup:
@@ -156,10 +156,11 @@ Things we can actually play! Yay!
     - Continue is mapped to left Y, which isn't obvious with the OpenComposite rendermodels being actual hands.
     - Click either joystick on the title scene to change cat colours.
 
-### I am Sakuya VR
+### I am Sakuya VR ([Video](https://youtu.be/cheXlFRxugk))
 - A little stuttery but mostly playable.
 - The level "To the top of the mansion" has the player clip into the floor as it rises and is very jittery as a result.
 - This game has weird controller offsets even on Windows/SteamVR; here the game hands are positioned above the real controllers.
+- HUD is just barely in vision but too small to be readable. (might be settings to adjust it though, haven't looked)
 
 ---
 
@@ -210,20 +211,20 @@ The following crash on launch or have other major issues.
 
 ---
 
-### Zenith VR
+### Zenith VR ([Video](https://youtu.be/ESWKezEggIg&t=1392))
 - Loading screens are broken.
 - Crashes immediately after rendering the first loading screen with a texture error.
 - Using GE-Proton7-55 doesn't help.
 
-### Until You Fall
+### Until You Fall ([Video](https://youtu.be/ESWKezEggIg&t=1975))
 - Black screen after logo, black-screen-fix beta no longer exists?
 - Using GE-Proton7-55 changes nothing.
 
-### Half-Life 2 VR
+### Half-Life 2 VR ([Video](https://youtu.be/ESWKezEggIg&t=1304))
 - Launches, but fails to find the VR session.
 - People in the LVRA Discord mentioned using a 32-bit build of WiVRn and OpenComposite. I'll keep an eye on that.
 
-### Hyper Dash
+### Hyper Dash ([Video](https://youtu.be/ESWKezEggIg&t=2086))
 - Fails to launch with an OpenComposite error for a stubbed file related to the chaperone.
 - This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 
