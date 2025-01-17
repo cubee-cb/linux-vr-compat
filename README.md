@@ -235,7 +235,7 @@ The following crash on launch or have other major issues.
 - Launches, but fails to find the VR session.
 - People in the LVRA Discord mentioned using a 32-bit build of WiVRn and OpenComposite. I'll keep an eye on that.
 
-### COMPOUND
+### COMPOUND Demo
 - OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
 - Launches with [XRizer](https://github.com/Supreeeme/xrizer/) set as `VR_OVERRIDE`, albeit with bad controller offsets.
     - However, it merely shows the Unity logo and loads a white room with grid patterns in the desktop window, nothing in VR. According to others it works, so it's probably something wrong in my setup.
@@ -338,6 +338,7 @@ Owned and/or willing to test.
 - Project Cars 2
 - Wishlisted:
     - Hyperbolica
+    - COMPOUND
     - Sairento VR
     - Ancient Dungeon
     - Endoparasitic VR
