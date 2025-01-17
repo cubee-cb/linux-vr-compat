@@ -4,7 +4,9 @@ Other files include scripts or configs that I use.
 **Note**: Lately `amdgpu` has been encountering page faults and subsequent GPU resets for some systems, including mine.
 It looks to be related to `linux-firmware` and video encoding/decoding on AMD GPUs, and in my experience typically occurs when using WiVRn, though it does happen outside of VR on occasion.
 Seems to be tracked here:
-- [Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)
+- [ring vcn_enc_0.0 timeout cause by linux-firmware 20241210.b00a7f7e](https://gitlab.freedesktop.org/drm/amd/-/issues/3842)
+- ~[Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)~ merged with above.
+Notably, this has occured much less frequently since moving Fedora to my SSD instead of my HDD.
 
 ### Shortcuts
 - [Setup](#setup)
@@ -25,16 +27,16 @@ Seems to be tracked here:
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
-- Most games installed on a hard drive.
-    - Recently migrated OS to SSD (that was painful).
+- Most games installed on a hard drive. Recently migrated OS to SSD (that was painful).
 - PICO 4 headset, with USB 3.0 cable.
-    - Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in WiVRn v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.
+    - ~Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in WiVRn v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.~ This seems fine for some VRChat avatars now, no idea how anything changed since WiVRn hasn't been updated since then, and some games' offsets still are incorrect?
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
 - Windows Mixed Reality HP VR1000-122a.
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
-- [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
+- [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak v0.22) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
+    - Lately my tracking seems to vary between perfect, very jittery, or overly smoothed. Closing the WiVRn client and reconnecting seems to choose a random variation.
 - [Envision](https://gitlab.com/gabmus/envision) with WMR profile.
     - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
@@ -62,7 +64,7 @@ Things we can actually play! Yay!
         - See [the VRChat folder](vrchat/launch-ton-save-manager.sh) for an example launch script using flatpak Protontricks.
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
             - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Use the HSV colours setting.
-- Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this is due to a HDD bottleneck.
+- Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this was due to a HDD bottleneck, notably this hasn't yet occured since moving my OS and VRChat to an SSD.
 - Videos on video players get stretched, while on PICO Standalone and Windows they get letterboxed.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
