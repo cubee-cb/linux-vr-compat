@@ -6,6 +6,7 @@ It looks to be related to `linux-firmware` and video encoding/decoding on AMD GP
 Seems to be tracked here:
 - [ring vcn_enc_0.0 timeout cause by linux-firmware 20241210.b00a7f7e](https://gitlab.freedesktop.org/drm/amd/-/issues/3842)
 - ~[Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)~ merged with above.
+
 Notably, this has occured much less frequently since moving Fedora to my SSD instead of my HDD.
 
 ### Shortcuts
