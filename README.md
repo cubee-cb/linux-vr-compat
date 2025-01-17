@@ -74,52 +74,6 @@ Things we can actually play! Yay!
 ### Pistol Whip ([Video](https://youtu.be/ESWKezEggIg&t=754))
 - First launch took ages, but otherwise works perfectly.
 
-### The Lab ([Video](https://youtu.be/TEen2J73evQ?t=0))
-- Loading screens are broken.
-
-### Sushi Ben Demo ([Video](https://youtu.be/TEen2J73evQ?t=1284))
-
-### ^ Ragnarock ([Video](https://youtu.be/ESWKezEggIg&t=1048))
-- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
-- Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
-
-### ^ Into the Radius ([Video](https://youtu.be/ESWKezEggIg&t=2202))
-- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
-- Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
-
-### Vacation Simulator ([Video](https://youtu.be/ESWKezEggIg&t=1470))
-
-### Rumble ([Video](https://youtu.be/ESWKezEggIg&t=2912))
-- Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
-
-### VAIL
-- Works despite the addition of Denuvo anti-cheat in patch 1.2.4.
-- Default bindings have fire on trigger touch rather than trigger pull, which makes it pretty annoying to play.
-    - I've managed to obtain a bindings file from the `steamapps/workshop/` folder for SteamVR on another device, but I can't seem to get OpenComposite to pick it up. ([LVRA Wiki](https://lvra.gitlab.io/docs/fossvr/opencomposite/))
-    - I have tried [XRBinder](https://lvra.gitlab.io/docs/fossvr/xrbinder/), but can't get it to detect anything other than WlxOverlay-S one time.
-- Menus are very flickery.
-- Large stutters while loading maps, likely due to running on a hard drive.
-
-### ChilloutVR
-
-### Down the Rabbit Hole
-
-### Propagation VR
-
-### Rec Room
-- Alpha on the EAC window is broken, causing black squares.
-- The game will fail to login with error code "wrapper" unless you install "Proton Easy Anti Cheat Runtime" through Steam.
-    - ~This may affect VRChat, however. See VRChat's section above.~ May be a coincidence? VRChat still has problems after removing it.
-- After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
-- Loading screens are broken a la VRChat, but the game itself looks fine.
-
-### SUPERHOT VR (Pre-removed scenes version via depot download)
-
-### Hellblade: Senua's Sacrifice VR Edition
-- HMD view only. Requires a standard controller.
-- First launch crashed on starting a new game. Subsequent launch was fine, however.
-- A certain cutscene near the start of the game has Senua's head clip through the cutscene border and into the camera, which was fairly weird to experience.
-
 ### Half Life: Alyx (Proton)
 - Launches, menu interaction works, can load into a save file.
 - Controller bindings are somewhat broken:
@@ -129,23 +83,33 @@ Things we can actually play! Yay!
 - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
     - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling).
 
-### [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
-- Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
-- Setup:
-    - Add the executable to Heroic through the Add Game button. Use Proton-GE-9-18, as Wine-GE-Proton doesn't support VR.
-    - Add WiVRn's `PRESSURE_VESSEL` environment variable to Heroic's game settings (Advanced tab)
+### VAIL
+- Works despite the addition of Denuvo anti-cheat in patch 1.2.4.
+- Default bindings have fire on trigger touch rather than trigger pull, which makes it pretty annoying to play.
+    - I've managed to obtain a bindings file from the `steamapps/workshop/` folder for SteamVR on another device, but I can't seem to get OpenComposite to pick it up. ([LVRA Wiki](https://lvra.gitlab.io/docs/fossvr/opencomposite/))
+    - I have tried [XRBinder](https://lvra.gitlab.io/docs/fossvr/xrbinder/), but can't get it to detect anything other than WlxOverlay-S one time.
+- Menus are very flickery.
+- Large stutters while loading maps, likely due to running on a hard drive.
 
-### ^ Kart Racing Pro rel13e non-Steam ([Video of rel11b](https://youtu.be/zWL9ZwvFJ5A)) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
-- HMD view only. Requires a standard controller/wheel.
-- Playable, flickery shadows. Black screen in VR until starting an actual race, so use WlxOverlay-S to interact with menus.
-- Setup:
-    - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as the game fails to launch with Proton-GE-9-18 and Wine-GE-Proton doesn't support VR.
-    - Add the `-vr` launch option and WiVRn's `PRESSURE_VESSEL` environment variable to Steam's Launch Options or Heroic's Advanced tab.
+### Rec Room
+- Alpha on the EAC window is broken, causing black squares.
+- The game will fail to login with error code "wrapper" unless you install "Proton Easy Anti Cheat Runtime" through Steam.
+    - ~This may affect VRChat, however. See VRChat's section above.~ May be a coincidence? VRChat still has problems after removing it.
+- After logging in the first time, an OpenComposite window appeared simply saying "An error has occured". Subsequent launches seem to go smoothly.
+- Loading screens are broken a la VRChat, but the game itself looks fine.
 
-### Vertigo: Remastered
+### ^ Ragnarock ([Video](https://youtu.be/ESWKezEggIg&t=1048))
+- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
+- Hammer/drum offsets seem to get stuck changing when adjustments are made, even when the joystick is released.
 
-### Keep Talking and Nobody Explodes
-- Linux native doesn't support VR, use Proton instead.
+### ^ Into the Radius ([Video](https://youtu.be/ESWKezEggIg&t=2202))
+- Successfully launches with GE-Proton7-55. Fails to launch with D3D11 error on GE-Proton9-18.
+- Extremely blurry by default, had to increase in-game resolution scale and turn off TAA.
+
+### Hellblade: Senua's Sacrifice VR Edition
+- HMD view only. Requires a standard controller.
+- First launch crashed on starting a new game. Subsequent launch was fine, however.
+- A certain cutscene near the start of the game has Senua's head clip through the cutscene border and into the camera, which was fairly weird to experience.
 
 ### Catlateral Damage VR
 - Linux native doesn't support VR, use Proton if you want to try the VR mode. Requires the free VR DLC installed.
@@ -162,6 +126,42 @@ Things we can actually play! Yay!
 - This game has weird controller offsets even on Windows/SteamVR; here the game hands are positioned above the real controllers.
 - HUD is just barely in vision but too small to be readable. (might be settings to adjust it though, haven't looked)
 
+### The Lab ([Video](https://youtu.be/TEen2J73evQ?t=0))
+- Loading screens are broken.
+
+### Rumble ([Video](https://youtu.be/ESWKezEggIg&t=2912))
+- Desktop window complains that the wrong OpenXR runtime is being used, but ignore that and it seems to work fine.
+
+### Keep Talking and Nobody Explodes
+- Linux native doesn't support VR, use Proton instead.
+
+### Vertigo: Remastered
+
+### Vacation Simulator ([Video](https://youtu.be/ESWKezEggIg&t=1470))
+
+### SUPERHOT VR (Pre-removed scenes version via depot download)
+
+### ChilloutVR
+
+### Sushi Ben Demo ([Video](https://youtu.be/TEen2J73evQ?t=1284))
+
+### Down the Rabbit Hole
+
+### Propagation VR
+
+### [Beat Saber Origins](https://hyperbolicmagnetism.itch.io/beat-saber-origins) (via [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+- Works perfectly. I just used Heroic because I had it installed for my Epic and GOG games.
+- Setup:
+    - Add the executable to Heroic through the Add Game button. Use Proton-GE-9-18, as Wine-GE-Proton doesn't support VR.
+    - Add WiVRn's `PRESSURE_VESSEL` environment variable to Heroic's game settings (Advanced tab)
+
+### ^ Kart Racing Pro rel13e non-Steam ([Video of rel11b](https://youtu.be/zWL9ZwvFJ5A)) (via Steam or [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher))
+- HMD view only. Requires a standard controller/wheel.
+- Playable, flickery shadows. Black screen in VR until starting an actual race, so use WlxOverlay-S to interact with menus.
+- Setup:
+    - Add the executable to Steam or Heroic through the Add Game button. Use Proton-GE-7-55, as the game fails to launch with Proton-GE-9-18 and Wine-GE-Proton doesn't support VR.
+    - Add the `-vr` launch option and WiVRn's `PRESSURE_VESSEL` environment variable to Steam's Launch Options or Heroic's Advanced tab.
+
 ---
 
 ## Partially working
@@ -169,27 +169,22 @@ These launch, but are unplayable or have serious issues functioning.
 
 ---
 
-### Tea For God
-- Hands don't appear, so cannot interact with anything.
-- This setup doesn't provide a playspace at all, so only joystick locomotion is available.
-    - Maybe [LOVR Playspace](https://lvra.gitlab.io/docs/fossvr/lovr/lovr-playspace/) could help with this, if it actually creates a playspace and isn't just visual.
-
-### Slinger VR
-- Controllers are stuck at the playspace origin and don't respond to input.
-
-### Aperture Hand Lab
-- Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
-- Playable with controllers up until the handshake bot due to lacking a grip pressure sensor. Hand tracking has no buttons and so it's unusable here.
-    - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
-
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
 - As recommended on the linked page, switched to GE-Proton9-20-rtsp16.
 - Default stick-click to jump binding conflicts with my space-drag/reset bindings. Need to figure out how to rebind it to match WMR's bindings better.
 - My performance is abysmal and I often freeze when connecting to sessions, so for now I've demoted its status.
     - This may be due to running off a hard drive, I'll revisit this and add a note if running off an SSD fixes it.
 
+### Assetto Corsa
+- HMD view only. Requires a standard controller/wheel.
+- Won't interface with VR until starting an actual race, so use WlxOverlay-S to interact with the launcher.
+- Vanilla launcher:
+    - Launches in VR when SteamVR mode is selected in the graphics settings.
+- Content Manager:
+    - Fails to find VR. I presume Content Manager doesn't pass the needed environment variable to AC, while the vanilla launcher does?
+
 ### GRIP
-- HMD view only. Requires a standard controller.
+- HMD view only. Requires a standard controller/wheel.
 - Plays perfectly... until it crashes mid-race.
     - Roughly: `Assertion failed: Wine C++ Runtime Library > /src-vrclient/winIVRSystem.c Line 8701 expression "!status"`, then `Fatal Error`.
 - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
@@ -200,9 +195,22 @@ These launch, but are unplayable or have serious issues functioning.
 - Starts and stays on a black screen. May need longer for initial load like Pistol Whip, hence being placed here instead of Not working.
 - The game's custom cursor appears on the desktop window and can be moved around.
 
+### Tea For God
+- Hands don't appear, so cannot interact with anything.
+- This setup doesn't provide a playspace at all, so only joystick locomotion is available.
+    - Maybe [LOVR Playspace](https://lvra.gitlab.io/docs/fossvr/lovr/lovr-playspace/) could help with this, if it actually creates a playspace and isn't just visual.
+
+### Aperture Hand Lab
+- Teleport binding is awkwardly mapped to stick click, and doesn't seem to confirm teleport on release.
+- Playable with controllers up until the handshake bot due to lacking a grip pressure sensor. Hand tracking has no buttons and so it's unusable here.
+    - This could be simulated using the grip analogue (say, the last 5-10%), but it will never be true pressure on current non-Knuckles controllers.
+
 ### Kingspray Graffiti
 - Might work, but takes ages to load into a map. I gave up waiting.
 - Again, might be related to HDD speed.
+
+### Slinger VR
+- Controllers are stuck at the playspace origin and don't respond to input.
 
 ---
 
@@ -210,6 +218,9 @@ These launch, but are unplayable or have serious issues functioning.
 The following crash on launch or have other major issues.
 
 ---
+
+### Half Life: Alyx (Native)
+- Crashes on launch with no error window.
 
 ### Zenith VR ([Video](https://youtu.be/ESWKezEggIg&t=1392))
 - Loading screens are broken.
@@ -224,9 +235,10 @@ The following crash on launch or have other major issues.
 - Launches, but fails to find the VR session.
 - People in the LVRA Discord mentioned using a 32-bit build of WiVRn and OpenComposite. I'll keep an eye on that.
 
-### Hyper Dash ([Video](https://youtu.be/ESWKezEggIg&t=2086))
-- Fails to launch with an OpenComposite error for a stubbed file related to the chaperone.
-- This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
+### COMPOUND
+- OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
+- Launches with [XRizer](https://github.com/Supreeeme/xrizer/) set as `VR_OVERRIDE`, albeit with bad controller offsets.
+    - However, it merely shows the Unity logo and loads a white room with grid patterns in the desktop window, nothing in VR. According to others it works, so it's probably something wrong in my setup.
 
 ### Vivecraft
 - Running through Modrinth Launcher (FlatPak)
@@ -238,33 +250,21 @@ The following crash on launch or have other major issues.
 ### Project Cars
 - Doesn't create a window, crashes shortly after Steam stops saying loading.
 
-### Museum of Other Realities
-- Crashes with a texture error after rendering the first logo, like Zenith.
-- Using GE-Proton7-55 doesn't help.
-
-### Half Life: Alyx (Native)
-- Crashes on launch with no error window.
-
-### COMPOUND
-- OpenComposite error due to generated Microsoft Holographic (WMR) bindings missing the "none" action. Probably solvable.
-- Launches with [XRizer](https://github.com/Supreeeme/xrizer/) set as `VR_OVERRIDE`, albeit with bad controller offsets.
-    - However, it merely shows the Unity logo and loads a white room with grid patterns in the desktop window, nothing in VR. According to others it works, so it's probably something wrong in my setup.
+### Hyper Dash ([Video](https://youtu.be/ESWKezEggIg&t=2086))
+- Fails to launch with an OpenComposite error for a stubbed file related to the chaperone.
+- This also has a free standalone version on both PICO and Quest, so not too big a deal in this scenario.
 
 ### Legend of Dungeon
 - Linux native lacks the VR mode launch option on both live and beta.
 - Proton+live has an old VR option that supposedly doesn't work, didn't bother testing.
 - Proton+beta has SteamVR option, but it launches in desktop mode.
 
+### Museum of Other Realities
+- Crashes with a texture error after rendering the first logo, like Zenith.
+- Using GE-Proton7-55 doesn't help.
+
 ### Desert Bus VR
 - Launches in desktop mode even when choosing the SteamVR launch option.
-
-### Assetto Corsa
-- HMD view only. Requires a standard controller/wheel.
-- Won't interface with VR until starting an actual race, so use WlxOverlay-S to interact with the launcher.
-- Vanilla launcher:
-    - Launches in VR when SteamVR mode is selected in the graphics settings.
-- Content Manager:
-    - Fails to find VR. I presume Content Manager doesn't pass the needed environment variable to AC, while the vanilla launcher does?
 
 ---
 
