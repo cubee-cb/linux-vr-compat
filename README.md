@@ -180,8 +180,16 @@ These launch, but are unplayable or have serious issues functioning.
 - Won't interface with VR until starting an actual race, so use WlxOverlay-S to interact with the launcher.
 - Vanilla launcher:
     - Launches in VR when SteamVR mode is selected in the graphics settings.
+    - WiVRn PICO 4 view is placed at seat level. Press Q+E (both look left and look right bindings) to recentre view.
+        - When using controllers, the driver hands aren't positioned correctly.
+        - When using Hand Tracking, the driver hands float several metres above the car with the arms stretched to reach them.
+    - Envision WMR view is positioned correctly by default.
+        - Hand tracking places the controller points correctly, but the driver hands do not follow them.
 - Content Manager:
     - Fails to find VR. I presume Content Manager doesn't pass the needed environment variable to AC, while the vanilla launcher does?
+        - Envision doesn't need the Steam environment variable like standalone WiVRn does though, so there's something missing here.
+        - Content Manager specifically has a setting for OpenComposite so no idea what's going on.
+    - This is the reason it's placed in Partially Working, as Content Manager seems to be a rather important part of this game.
 
 ### GRIP
 - HMD view only. Requires a standard controller/wheel.
