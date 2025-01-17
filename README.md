@@ -34,14 +34,14 @@ Seems to be tracked here:
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
-- WiVRn (Flatpak) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
-- Envision with WMR profile.
+- [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
+- [Envision](https://gitlab.com/gabmus/envision) with WMR profile.
     - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
-- WlxOverlay-S for desktop views and playspace drag.
+- [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
     - Space Drag is either left/right stick click, Space Reset is double-click left stick.
     - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
 - Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it other than switching to Envision for both headsets)
-- Proton: GE-Proton9-18 (unless otherwise specified)
+- Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
 
 ---
 
@@ -294,6 +294,7 @@ Troubleshooting setup of hardware or build issues.
 - On AMD GPUs, ensure the power profile is set to VR, otherwise the view will be VERY jittery. Envision should display a warning box inside its main window if this is not set.
 - Head tracking is slightly laggy, perhaps reprojection is not working right?
     - I switched to the Envision Fedora package (instead of the AppImage) and it seems not as bad now as I remember.
+- Can't figure out how to disable hand tracking. It's cool and all, but makes some games unplayable (like VRChat) since they then expect VR-style controllers instead of a standard controller, and the hand tracking is jittery to the point of being unusable.
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
