@@ -258,10 +258,13 @@ The following crash on launch or have other major issues.
 ### Desert Bus VR
 - Launches in desktop mode even when choosing the SteamVR launch option.
 
-### Assetto Corsa (with Content Manager)
+### Assetto Corsa
 - HMD view only. Requires a standard controller/wheel.
-- Won't interface with VR until starting an actual race, so use WlxOverlay-S to interact with Content Manager.
-- Fails to find VR on loading a race.
+- Won't interface with VR until starting an actual race, so use WlxOverlay-S to interact with the launcher.
+- Vanilla launcher:
+    - Launches in VR when SteamVR mode is selected in the graphics settings.
+- Content Manager:
+    - Fails to find VR. I presume Content Manager doesn't pass the needed environment variable to AC, while the vanilla launcher does?
 
 ---
 
