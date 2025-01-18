@@ -199,6 +199,7 @@ These launch, but are unplayable or have serious issues functioning.
     - Fails to find VR.
         - Envision doesn't need the Steam environment variable like standalone WiVRn does, so that likely rules out environment variable passthrough.
         - Content Manager specifically has a setting for OpenComposite, which is all the more strange why it doesn't work.
+        - Someone mentioned `I think I read something about disabling some parts of CSP , but not sure where to start there is a lot!`: [LVRA Discord message](https://discord.com/channels/1065291958328758352/1225819663024259082/1313565712035348553)
     - Content Manager not working in VR is the reason this is placed in Partially Working.
 
 ### GRIP
