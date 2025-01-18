@@ -160,6 +160,7 @@ Things we can actually play! Yay!
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
+Or, in some cases they start working all of a sudden but I have no idea why.
 
 ---
 
