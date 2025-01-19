@@ -180,6 +180,13 @@ Or, in some cases they start working all of a sudden but I have no idea why.
     - On second launch I found that after loading into my save there was a white bar across the bottom and right sides of the rendered display, only visible due to reprojection.
         - Perhaps the dynamic resolution is broken? [This seems to help](https://www.pcgamingwiki.com/wiki/Half-Life:_Alyx#Disable_dynamic_resolution_scaling).
 
+### Vivecraft
+- Running through Prism Launcher (Flatpak), with Vivecraft 1.21.1-1.2.2-fabric on Quilt Loader.
+- Set Flatpak allowed paths according to Issac Dowling's [message in the LVRA Discord](https://discord.com/channels/1065291958328758352/1065291958794322012/1297896737624690741)) or [YouTube video](https://www.youtube.com/watch?v=o8ho7VG13Ck&t=530s) to allow it to talk to WiVRn.
+- Some buttons get stuck pressed until opening the pause menu. (e.g. A place block, LS jump, RS sneak)
+    - Notably, certain buttons don't get stuck. (X inventory, Y pause, B radial menu)
+- I tested Modrinth Launcher initially, but I couldn't get that working. Since Prism also supports Modrinth instances this is overall much better.
+
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
 - As recommended on the linked page, switched to GE-Proton9-20-rtsp16.
 - Default stick-click to jump binding conflicts with my space-drag/reset bindings. Need to figure out how to rebind it to match WMR's bindings better.
@@ -256,13 +263,6 @@ The following crash on launch or have other major issues.
 ### Half-Life 2 VR ([Video](https://youtu.be/ESWKezEggIg&t=1304))
 - Launches, but fails to find the VR session.
 - People in the LVRA Discord mentioned using a 32-bit build of WiVRn and OpenComposite. I'll keep an eye on that.
-
-### Vivecraft
-- Running through Modrinth Launcher (FlatPak)
-- Version: 1.20.1-1.1.14-fabric on Quilt Loader
-- When entering VR mode it fails to locate installation path, presumably for SteamVR.
-    - According to [the FAQ](https://www.vivecraft.org/faq/#opencomposite), Vivecraft supports OpenComposite, but I'm not sure how to get it to find it or if recent updates (such as moving to Fabric) broke things.
-    - Providing environment variables according to [this video from Issac Dowling](https://www.youtube.com/watch?v=o8ho7VG13Ck&t=530s) (or [LVRA Discord](https://discord.com/channels/1065291958328758352/1065291958794322012/1297896737624690741)) to allow Modrinth Launcher to talk to WiVRn doesn't seem to change anything, though I may have made a mistake somewhere. Maybe I put them in the wrong spot.
 
 ### Project Cars
 - Doesn't create a window, crashes shortly after Steam stops saying loading.
