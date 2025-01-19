@@ -32,6 +32,7 @@ Notably, this has occured much less frequently since moving Fedora to my SSD ins
 - PICO 4 headset, with USB 3.0 cable.
     - ~Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in WiVRn v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.~ This seems fine for some VRChat avatars now, no idea how anything changed since WiVRn hasn't been updated since then, and some games' offsets still are incorrect?
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
+    - Presence sensor isn't used, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
 - Windows Mixed Reality HP VR1000-122a.
 
 ### Software
@@ -182,10 +183,11 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 
 ### Vivecraft
 - Running through Prism Launcher (Flatpak), with Vivecraft 1.21.1-1.2.2-fabric on Quilt Loader.
-- Set Flatpak allowed paths according to Issac Dowling's [message in the LVRA Discord](https://discord.com/channels/1065291958328758352/1065291958794322012/1297896737624690741)) or [YouTube video](https://www.youtube.com/watch?v=o8ho7VG13Ck&t=530s) to allow it to talk to WiVRn.
+- Set Flatpak allowed paths according to Issac Dowling's [message in the LVRA Discord](https://discord.com/channels/1065291958328758352/1065291958794322012/1297896737624690741) or [YouTube video](https://www.youtube.com/watch?v=o8ho7VG13Ck&t=530s) to allow it to talk to WiVRn.
 - Some buttons get stuck pressed until opening the pause menu. (e.g. A place block, LS jump, RS sneak)
     - Notably, certain buttons don't seem to get stuck. (X inventory, Y pause, B radial menu)
     - I see mention on the LVRA Discord of both an OpenXR version of Vivecraft and a branch of OpenComposite that "fixes" OpenVR Vivecraft, so I may look into those to see if either of them fix the "sticky" controls.
+- Hotswitching doesn't work since some part of the chain doesn't read the presence sensor.
 - I tested Modrinth Launcher initially, but I couldn't get that working. Since Prism also supports Modrinth instances this is overall much better.
 
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
