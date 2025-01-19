@@ -184,7 +184,8 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 - Running through Prism Launcher (Flatpak), with Vivecraft 1.21.1-1.2.2-fabric on Quilt Loader.
 - Set Flatpak allowed paths according to Issac Dowling's [message in the LVRA Discord](https://discord.com/channels/1065291958328758352/1065291958794322012/1297896737624690741)) or [YouTube video](https://www.youtube.com/watch?v=o8ho7VG13Ck&t=530s) to allow it to talk to WiVRn.
 - Some buttons get stuck pressed until opening the pause menu. (e.g. A place block, LS jump, RS sneak)
-    - Notably, certain buttons don't get stuck. (X inventory, Y pause, B radial menu)
+    - Notably, certain buttons don't seem to get stuck. (X inventory, Y pause, B radial menu)
+    - I see mention on the LVRA Discord of both an OpenXR version of Vivecraft and a branch of OpenComposite that "fixes" OpenVR Vivecraft, so I may look into those to see if either of them fix the "sticky" controls.
 - I tested Modrinth Launcher initially, but I couldn't get that working. Since Prism also supports Modrinth instances this is overall much better.
 
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
