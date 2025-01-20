@@ -344,7 +344,7 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 - *I cannot uninstall it through Steam*.
 
 ### OyasumiVR
-- GitHub version: Fails to install Edge Webview.
+- Fails to install Edge WebView2. Cannot launch without it.
 
 ---
 
