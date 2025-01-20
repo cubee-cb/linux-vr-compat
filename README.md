@@ -343,6 +343,9 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 - After closing the desktop window, it remains running until closed by other means.
 - *I cannot uninstall it through Steam*.
 
+### OyasumiVR
+- GitHub version: Fails to install Edge Webview.
+
 ---
 
 ## Untested
