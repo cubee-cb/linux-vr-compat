@@ -247,6 +247,9 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 ### Slinger VR
 - Controllers are stuck at the playspace origin and don't respond to input.
 
+### Tabletop Simulator
+- Crashes on launch with a stubbed file error. `.../Reimpl/BaseInput.cpp:569: SetActionManifestPath`
+
 ---
 
 ## Not working
@@ -355,7 +358,6 @@ Owned and/or willing to test.
 
 - Republique VR
 - Traffic Jams
-- Tabletop Simulator
 - The Forest
 - REZ: Infinite
 - Blind
