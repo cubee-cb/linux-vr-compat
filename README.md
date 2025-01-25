@@ -344,10 +344,15 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 - Desktop sits on the loading screen indefinitely with the text "Task Scheduler is broken."
 - Nothing happens in VR.
 - After closing the desktop window, it remains running until closed by other means.
-- *I cannot uninstall it through Steam*.
+- In order to uninstall it (Steam kept re-installing it), I had to close Steam entirely, delete the folder, then remove OVR Toolkit's `appmanifest.acf` from `steamapps`.
 
 ### OyasumiVR
 - Fails to install Edge WebView2. Cannot launch without it.
+
+### Trinus Cardboard VR (via Heroic)
+- "Unexpected UI Error" appears after the "Enter the Trinus" splash. Pressing Ignore allows the main window to open.
+- Connecting to the phone works, window capture worked for the Trinus window itself the first time, mouse control works.
+- Opening the LED position tracker test crashes Trinus.
 
 ---
 
