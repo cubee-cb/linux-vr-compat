@@ -7,7 +7,7 @@ Seems to be tracked here:
 - [ring vcn_enc_0.0 timeout cause by linux-firmware 20241210.b00a7f7e](https://gitlab.freedesktop.org/drm/amd/-/issues/3842)
 - ~[Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)~ merged with above.
 
-Notably, this has occured much less frequently since moving Fedora to my SSD instead of my HDD.
+Notably, it seems to occur less frequently whenever I make a large change to my system such as moving Fedora to my SSD instead of my HDD, or downgrading `linux-firmware`, but it always becomes unplayable again within a few days.
 
 ### Shortcuts
 - [Setup](#setup)
