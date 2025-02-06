@@ -289,6 +289,10 @@ The following crash on launch or have other major issues.
 ### Desert Bus VR
 - Launches in desktop mode even when choosing the SteamVR launch option.
 
+### Garry's Mod VR Mod
+- I forget which one, but it's presumably from the workshop.
+- The VR window simply says "VR headset not detected".
+
 ---
 
 ## Development/hardware
@@ -298,6 +302,13 @@ Troubleshooting setup of hardware or build issues.
 
 ### WlxOverlay-S
 - Once all the dependencies were installed, no issues.
+
+### OpenComposite
+- Once all the dependencies were installed, no issues.
+- Somehow building this and then not even using it managed to fix COMPOUND and break Half-Life: Alyx in the opposite direction.
+
+### XRizer
+- I forget the specifics. It seemed to build, but I'm not sure how to actually use it.
 
 ### Envision WMR Setup with the HP VR1000 HMD
 - Using Envision DNF Package. (formerly AppImage)
@@ -319,6 +330,12 @@ Troubleshooting setup of hardware or build issues.
     - I switched to the Envision Fedora package (instead of the AppImage) and it seems not as bad now as I remember.
 - Can't figure out how to disable hand tracking. It's cool and all, but makes some games unplayable (like VRChat) since they then expect VR-style controllers instead of a standard controller, and the hand tracking is jittery to the point of being unusable.
 
+### Building WiVRn
+- Envision's WiVRn build fails with what looks like an error in the code itself. I've given up trying to make it work several times.
+- Building the dashboard manually required several packages to be installed.
+    - Mostly Qt6 stuff: `qt6-qtbase-devel qt6-qtquick3d-devel qt6-qttools-devel qcoro-qt6-devel libcap-devel librsvg2-tools kf6-kirigami-devel extra-cmake-modules kf6-ki18n-devel kf6-kcoreaddons-devel kf6-kiconthemes-devel`
+    - And even then, despite the cmake commands finishing, no binaries appear in `/usr/local/bin/` contrary to what the output suggests. Some warnings appear near where Monado is built so I presume I'm missing something Monado needs?
+
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
 - The AppImages now have a white screen. Initially v0.1.15 worked, but some system upgrade must have broken it. v0.1.16 never worked.
@@ -331,7 +348,7 @@ Troubleshooting setup of hardware or build issues.
     - For now I just use either of the following:
         - ALCOM for project and package management and Unity Hub just to launch them.
         - Moonlight to a Windows laptop for Unity stuff with the regular Creator Companion, cause Unity doesn't like Wayland much.
-- Using the Unity Hub binary from the yum repo provided by Unity seems to work fine.
+- Using the Unity Hub binary from the yum repo provided by Unity seems to work fine, so outside of general Unity/Wayland/VRChat SDK issues, this is now a functioning setup.
 
 ---
 
