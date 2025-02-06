@@ -1,0 +1,300 @@
+
+width: 0.150
+
+size: [400, 576]
+
+elements:
+  # background panel
+  - type: Panel
+    rect: [0, 0, 400, 576]
+    corner_radius: 50
+    bg_color: "#24273a"
+
+  # close button
+  - type: Button
+    rect: [16, 16, 48, 48]
+    corner_radius: 100
+    font_size: 20
+    bg_color: "#ee2366"
+    fg_color: "#cad3f5"
+    text: "X"
+    click_up: # destroy if exists, otherwise create
+      - type: Window
+        target: quickchat
+        action: Destroy # only triggers if exists since before current frame
+
+#  - type: WayVRDisplayList
+#    rect: [68, 17, 300, 36]
+#    corner_radius: 15
+#    font_size: 15
+#    fg_color: "#cad3f5"
+#    bg_color: "#a468ca"
+
+  # clear button
+  - type: Button
+    rect: [80, 16, 120, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#a02020"
+    text: "Clear"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: ""
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: False
+
+  # open chatbox button
+  - type: Button
+    rect: [216, 16, 168, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#4040a0"
+    text: "Open Chat"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: ""
+          - type: Bool # send immediately
+            value: False
+          - type: Bool # play chatbox noise
+            value: False
+
+  # dividing line
+  - type: Panel
+    rect: [32, 70, 336, 4]
+    corner_radius: 100
+    bg_color: "#5b6078"
+
+  # quick chat entries below
+
+  - type: Button
+    rect: [16, 80, 180, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "hi"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "hi"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+  - type: Button
+    rect: [204, 80, 180, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "bye"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "bye"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 134, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "how are you?"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "how are you?"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 188, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "i'm hopping off"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "i'm hopping off"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 242, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "i'm gonna visit others"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "i'm gonna visit others"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 296, 180, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "portal"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "portal"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+  - type: Button
+    rect: [204, 296, 180, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "respawn"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "respawn"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 350, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "you go ahead"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "you go ahead"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 404, 180, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "wow!"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "wow!"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+  - type: Button
+    rect: [204, 404, 180, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "nice!"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "nice!"
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 458, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "uhhh..."
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/input"
+        values:
+          - type: String # text to send
+            value: "uhhh..."
+          - type: Bool # send immediately
+            value: True
+          - type: Bool # play chatbox noise
+            value: True
+
+
+  - type: Button
+    rect: [16, 512, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#444444"
+    text: "typing indicator"
+    click_down:
+      - type: SendOscValue
+        parameter: "/chatbox/typing"
+        values:
+          - type: Bool
+            value: True
+    click_up:
+      - type: SendOscValue
+        parameter: "/chatbox/typing"
+        values:
+          - type: Bool
+            value: False

@@ -72,7 +72,14 @@ elements:
     fg_color: "#24273a"
     bg_color: "#95a6da"
     text: "WayVR"
-    click_up: # destroy if exists, otherwise create
+
+    # spawn wayvr dashboard
+    click_up:
+      - type: WayVR
+        action: ToggleDashboard
+
+    # spawn old waywatch
+    middle_up:
       - type: Window
         target: waywatch
         action: ShowUi # only triggers if not exists
@@ -133,7 +140,7 @@ elements:
     font_size: 24 # Use 18 for 12-hour time
     fg_color: "#b7bdf8"
     source: Clock
-    timezone: "US/Eastern" # change TZ2 here
+    timezone: 0 # change TZ2 here
     format: "%H:%M" # 23:59
     #format: "%I:%M %p" # 11:59 PM
   - type: Label
@@ -141,8 +148,10 @@ elements:
     corner_radius: 4
     font_size: 14
     fg_color: "#b7bdf8"
-    source: Static
-    text: "EST" # change TZ2 label here
+    #source: Static
+    #text: "EST" # change TZ2 label here
+    source: Timezone
+    timezone: 0
 
   # alt clock 2
   - type: Label
@@ -151,7 +160,7 @@ elements:
     font_size: 24 # Use 18 for 12-hour time
     fg_color: "#8bd5ca"
     source: Clock
-    timezone: "Japan" # change TZ1 here
+    timezone: 1 # change TZ1 here
     format: "%H:%M" # 23:59
     #format: "%I:%M %p" # 11:59 PM
   - type: Label
@@ -159,8 +168,10 @@ elements:
     corner_radius: 4
     font_size: 14
     fg_color: "#8bd5ca"
-    source: Static
-    text: "JST" # change TZ1 label here
+    #source: Static
+    #text: "JST" # change TZ1 label here
+    source: Timezone
+    timezone: 1
 
   # batteries
   - type: BatteryList
@@ -174,24 +185,46 @@ elements:
     layout: Horizontal
     low_threshold: 33
 
-  # volume buttons
+  # OSC quick chat button
   - type: Button
     rect: [346, 50, 38, 38]
     corner_radius: 20
     font_size: 15
     fg_color: "#cad3f5"
-    bg_color: "#5b6078"
-    text: "+"
-    click_down:
-      - type: Exec
-        command: ["pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%"]
+    bg_color: "#6060e0"
+    text: ">_"
+    click_up:
+      - type: Window
+        target: quickchat
+        action: ShowUi # only triggers if not exists
+      - type: Window
+        target: quickchat
+        action: Destroy # only triggers if exists since before current frame
+    right_up:
+      - type: Window
+        target: osctoys
+        action: ShowUi # only triggers if not exists
+      - type: Window
+        target: osctoys
+        action: Destroy # only triggers if exists since before current frame
+
+
   - type: Button
     rect: [304, 50, 38, 38]
     corner_radius: 20
     font_size: 15
     fg_color: "#cad3f5"
-    bg_color: "#5b6078"
-    text: "-"
+    bg_color: "#a03030"
+    text: "~"
     click_down:
-      - type: Exec
-        command: ["pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%"]
+      - type: SendOscValue
+        parameter: "/avatar/parameters/hardware/headsetConnected"
+        values:
+          - type: Bool
+            value: False
+    right_down:
+      - type: SendOscValue
+        parameter: "/avatar/parameters/hardware/headsetConnected"
+        values:
+          - type: Bool
+            value: True
