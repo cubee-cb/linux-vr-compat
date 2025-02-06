@@ -344,11 +344,10 @@ Troubleshooting setup of hardware or build issues.
 - Final step of build fails to bundle the AppImage, but frankly I couldn't care less about using an AppImage. The executable is built in `vrc-get/target/release/` anyway.
     - As long as it says `Built application at: /home/user/.../vrc-get/target/release/ALCOM` you should be all good.
     - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
-- Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use.
-    - For now I just use either of the following:
-        - ALCOM for project and package management and Unity Hub just to launch them.
-        - Moonlight to a Windows laptop for Unity stuff with the regular Creator Companion, cause Unity doesn't like Wayland much.
-- Using the Unity Hub binary from the yum repo provided by Unity seems to work fine, so outside of general Unity/Wayland/VRChat SDK issues, this is now a functioning setup.
+- As for Unity Hub itself:
+    - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use.
+    - Using the Unity Hub binary from the yum repo provided by Unity seems to work fine, so this is now a functioning setup.
+        - However, I still prefer to Moonlight into my Windows laptop for Unity stuff due to general Unity-on-Wayland and VRChat-SDK-on-Linux issues. I've got Godot here anyway (which has functional OpenXR builds for Linux, unlike Unity :DD).
 
 ---
 
