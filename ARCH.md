@@ -1,4 +1,4 @@
-Testing VR games with WiVRn and WlxOverlay-S on, lo and behold, Arch Linux! And guess what? My GPU stopped crashing! Fedora's being slow to include the `linux-firmware` revert that fixes `amdgpu` crashing while using the encoder.
+Testing VR games with WiVRn and WlxOverlay-S on, lo and behold, Arch Linux! And guess what? My GPU doesn't crash here!
 
 ### Shortcuts
 - [Setup](#setup)
