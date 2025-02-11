@@ -27,12 +27,15 @@ Testing VR games with WiVRn and WlxOverlay-S on, lo and behold, Arch Linux! And 
 
 ### Software
 - Vanilla Arch Linux (KDE Plasma Desktop, Wayland)
+    - Initially installed with Hyprland so I could try it, not a fan of having to constantly hit Super to do anything. Replaced it with barebones KDE Plasma (no KDE apps).
+    - Installed Niri to try but there's no environment over it so it doesn't really work lol.
 - [WiVRn](https://github.com/WiVRn/WiVRn) (v0.23, SolarXR branch) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
 - [Envision](https://gitlab.com/gabmus/envision).
     - Hey, it actually works on Arch! Go figure.
+    - Start script that handles setting the GPU mode to VR while Envision is running.
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
-    - Space Drag is either left/right stick click, Space Reset is double-click left stick.
-    - Becomes laggy when playing VRChat. Unsure why.
+    - Working Set Toggle is Menu, Space Drag is left/right stick click, Space Reset is double-click left stick.
+    - Framerate drops when playing heavier VRChat worlds. Unsure why as this doesn't happen on Fedora under most similar circumstances.
 - Most games run through Steam (Runtime), SteamVR is not installed. Envision does some magic to make games use it as the VR runtime.
 - Proton: [GE-Proton](https://github.com/GloriousEggroll/proton-ge-custom) (specific version TBD, i forgor) (unless otherwise specified)
 
@@ -85,17 +88,17 @@ Troubleshooting build issues.
 
 ---
 
-### Envision WMR (HP VR1000 HMD)
+### Envision WiVRn (SolarXR branch)
+- Build works perfectly after running the `pacman` command to install dependencies.
+
+### Envision WMR (Controller Tracking branch)
 - Build works perfectly after running the `pacman` command to install dependencies.
 - Controller tracking branch works, but my controllers aren't tracked. They don't light up enough to be seen by the constellation tracker and/or aren't even detected at all?
 
-### Envision WiVRn
-- Build works perfectly after running the `pacman` command to install dependencies.
-
 ### SlimeVR (for SolarXR integration with WiVRn)
-- Install from AUR via `yay`.
+- Installed from AUR via `yay`. (`server` and `gui`, numbered 4 and 5 for me)
 - GUI installs fine.
-- Server fails to install due to Gradle not finding Java 17 despite `jdk17` being installed.
+- Server fails to build due to Gradle not finding Java 17 despite `jdk17` being installed.
   - Might just wait for the release that includes SolarXR, not too fussed using OSC since I use Joy-Cons with skating correction off anyway.
 
 ---
