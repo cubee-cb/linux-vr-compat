@@ -1,6 +1,9 @@
 Testing VR games with WiVRn and WlxOverlay-S.
 Other files include scripts or configs that I use.
 
+### Other pages
+- [Testing on Arch Linux](ARCH)
+
 **Note**: Lately `amdgpu` has been encountering page faults and subsequent GPU resets for some systems, including mine.
 It looks to be related to `linux-firmware` and video encoding/decoding on AMD GPUs, and in my experience typically occurs when using WiVRn, though it does happen outside of VR on occasion.
 Seems to be tracked here:
