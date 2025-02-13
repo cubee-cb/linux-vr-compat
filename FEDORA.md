@@ -107,10 +107,10 @@ Things we can actually play! Yay!
     - Click either joystick on the title scene to change cat colours.
 
 ### I am Sakuya VR ([Video](https://youtu.be/cheXlFRxugk))
-- A little stuttery but mostly playable.
+- Stuttery, but mostly playable.
 - The level "To the top of the mansion" has the player clip into the floor as it rises and is very jittery as a result.
-- This game has weird controller offsets even on Windows/SteamVR; here the game hands are positioned above the real controllers.
-- HUD is just barely in vision but too small to be readable. (might be settings to adjust it though, haven't looked)
+- This game has weird controller offsets even on Windows/SteamVR; here the game hand is positioned above the real controller.
+- HUD is just barely in vision but too small to be readable. There are settings to adjust its scale and position.
 
 ### The Lab ([Video](https://youtu.be/TEen2J73evQ?t=0))
 - Loading screens are broken.
