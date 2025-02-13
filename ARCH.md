@@ -37,7 +37,7 @@ Testing VR games with WiVRn and WlxOverlay-S on, lo and behold, Arch Linux! And 
     - Working Set Toggle is Menu, Space Drag is left/right stick click, Space Reset is double-click left stick.
     - Framerate drops when playing heavier VRChat worlds. Unsure why as this doesn't happen on Fedora under most similar circumstances.
 - Most games run through Steam (Runtime), SteamVR is not installed. Envision does some magic to make games use it as the VR runtime.
-- Proton: [GE-Proton](https://github.com/GloriousEggroll/proton-ge-custom) (specific version TBD, i forgor) (unless otherwise specified)
+- Proton: [GE-Proton-9-25](https://github.com/GloriousEggroll/proton-ge-custom), unless otherwise specified.
 
 ---
 
@@ -49,7 +49,7 @@ Things we can actually play! Yay!
 ---
 
 ### ^ VRChat
-- Using to GE-Proton-rtsp. Regular GE-Proton also works.
+- Using to GE-Proton9-22-rtsp17. Regular GE-Proton also works.
 - World "Connecting" screens are broken, known OpenComposite quirk.
 
 ### Beat Saber
@@ -58,6 +58,7 @@ Things we can actually play! Yay!
 - First launch took ages, but otherwise works perfectly.
 
 ### SUPERHOT VR
+- Seemingly much better throwing in this verison of WiVRn.
 
 ---
 
