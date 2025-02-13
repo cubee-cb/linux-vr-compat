@@ -10,5 +10,5 @@ Tracked here:
 - ~[Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)~ merged with above.
 
 ### Variants
-- [Fedora](FEDORA.md)
+- [Fedora](FEDORA.md) (Primary testing distro)
 - [Arch Linux](ARCH.md)
