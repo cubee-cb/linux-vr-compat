@@ -1,4 +1,4 @@
-Testing VR games with WiVRn and WlxOverlay-S on, lo and behold, Arch Linux! And guess what? My GPU doesn't crash here!
+Testing VR games with WiVRn and WlxOverlay-S on Arch Linux. And guess what? My GPU doesn't crash here!
 
 ### Shortcuts
 - [Setup](#setup)
@@ -6,7 +6,6 @@ Testing VR games with WiVRn and WlxOverlay-S on, lo and behold, Arch Linux! And 
 - [Partially working games](#partially-working)
 - [Not working games](#not-working)
 - [Development](#development)
-- [Curiosities](#curiosities)
 
 ---
 
