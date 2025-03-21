@@ -19,23 +19,26 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora. Seems Fedora is being sl
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
-- Most games installed on a hard drive. Recently migrated OS to SSD (that was painful).
-- PICO 4 headset, with USB 3.0 cable.
-    - ~Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in WiVRn v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.~ This seems fine for some VRChat avatars now, no idea how anything changed since WiVRn hasn't been updated since then, and some games' offsets still are incorrect?
-    - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level to turn it on in WiVRn. (Settings > Lab > Hand Tracking)
+- OS is on an SSD.
+- Most games installed on a hard drive.
+- PICO 4 headset, wireless.
+    - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available. (Settings > Lab > Hand Tracking)
     - Presence sensor isn't used, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
 - Windows Mixed Reality HP VR1000-122a.
 
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
-- [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak v0.22) to connect to the PICO 4 and emulate SteamVR via OpenComposite.
-    - Lately my tracking seems to vary between perfect, very jittery, or overly smoothed. Closing the WiVRn client and reconnecting seems to choose a random variation.
-- [Envision](https://gitlab.com/gabmus/envision) with WMR profile.
-    - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
+- One of the following runtime setups:
+    - (Current) [Envision] with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
+        - Plus WlxOverlay-S and WayVR Dashboard.
+    - [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak v0.22 or v0.23), using OpenComposite for OpenVR titles.
+        - Lately my tracking seems to vary between perfect, very jittery, or overly smoothed. Closing the WiVRn client and reconnecting seems to choose a random variation?
+    - [Envision](https://gitlab.com/gabmus/envision) with the WMR profile, using OpenComposite for OpenVR titles.
+        - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
     - Space Drag is either left/right stick click, Space Reset is double-click left stick.
-    - Custom build with battery OSC parameters, this has been [merged with main](https://github.com/galister/wlx-overlay-s/pull/108) as of now but has yet to be included in a release.
-- Most games run through Steam (Runtime), SteamVR is not installed. Using launch arguments provided by WiVRn to make games use it as the VR runtime. Manually. For each game individually. (there's probably a more efficient way to do it other than switching to Envision for both headsets)
+    - Custom build with battery OSC parameters, which are included as of Release v25.2.
+- Most games run through Steam (Runtime), SteamVR is not installed.
 - Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
 
 ---
@@ -47,7 +50,7 @@ Things we can actually play! Yay!
 
 ---
 
-### ^ VRChat
+### ^ VRChat (OpenComposite)
 - Updated to GE-Proton9-20-rtsp16 to hopefully fix video players being weird again, and since RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
 - World "Connecting" screens are broken, known OpenComposite quirk.
 - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
@@ -58,7 +61,14 @@ Things we can actually play! Yay!
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
             - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Use the HSV colours setting.
 - Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this was due to a HDD bottleneck, notably this hasn't yet occured since moving my OS and VRChat to an SSD.
-- Videos on video players get stretched, while on PICO Standalone and Windows they get letterboxed.
+- Some videos don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
+    - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
+
+### ^ VRChat (XRizer)
+- Using GE-Proton9-20-rtsp16.
+- Unlike OpenComposite, the world "Connecting" screens actually look almost normal! The world images are just a little desaturated + minor other visual quirks. (much better than a black void with broken planes lol)
+- Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
+- Some videos don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
 ### ^ Beat Saber (Modded) ([Video](https://youtu.be/ESWKezEggIg&t=65))
@@ -298,8 +308,13 @@ Troubleshooting setup of hardware or build issues.
 - Once all the dependencies were installed, no issues.
 - Somehow building this and then not even using it managed to fix COMPOUND and break Half-Life: Alyx in the opposite direction.
 
-### XRizer
-- I forget the specifics. It seemed to build, but I'm not sure how to actually use it.
+### Envision WiVRn Setup with the PICO 4
+- ~Envision's WiVRn build fails with what looks like an error in the code itself. I've given up trying to make it work several times.~ After several months, a variety of system upgrades, and updating `rustup`, the build works now! idk why. Whatever, I'm happy.
+- Set the following: (be wary of if these change in the future)
+    - OpenVR Module Type: `xrizer`
+    - OpenVR Compatibility Repo: `https://github.com/RinLovesYou/xrizer`
+    - OpenVR Compatibility Branch: `experimental`
+- Clean build!
 
 ### Envision WMR Setup with the HP VR1000 HMD
 - Using Envision DNF Package. (formerly AppImage)
@@ -320,12 +335,6 @@ Troubleshooting setup of hardware or build issues.
 - Head tracking is slightly laggy, perhaps reprojection is not working right?
     - I switched to the Envision Fedora package (instead of the AppImage) and it seems not as bad now as I remember.
 - Can't figure out how to disable hand tracking. It's cool and all, but makes some games unplayable (like VRChat) since they then expect VR-style controllers instead of a standard controller, and the hand tracking is jittery to the point of being unusable.
-
-### Building WiVRn
-- Envision's WiVRn build fails with what looks like an error in the code itself. I've given up trying to make it work several times.
-- Building the dashboard manually required several packages to be installed.
-    - Mostly Qt6 stuff: `qt6-qtbase-devel qt6-qtquick3d-devel qt6-qttools-devel qcoro-qt6-devel libcap-devel librsvg2-tools kf6-kirigami-devel extra-cmake-modules kf6-ki18n-devel kf6-kcoreaddons-devel kf6-kiconthemes-devel`
-    - And even then, despite the cmake commands finishing, no binaries appear in `/usr/local/bin/` contrary to what the output suggests. Some warnings appear near where Monado is built so I presume I'm missing something Monado needs?
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
