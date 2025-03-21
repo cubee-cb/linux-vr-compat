@@ -1,4 +1,7 @@
-Testing VR games with WiVRn and WlxOverlay-S on Arch Linux. And guess what? My GPU doesn't crash here!
+Testing VR games with WiVRn and WlxOverlay-S on Arch Linux. ~And guess what? My GPU doesn't crash here!~
+
+Uh nevermind. It crashes now. Hope it's not a hardware issue, which it will be now I've written this down. Or will it? I love uncertainty.
+Also the SSD doesn't boot anymore so I might have to work out what's going on there. Or just reroll the system on a new drive like I kind of want to do anyway, and consolidate my Fedora dev/gaming setup and Arch VR setup into the one install. `dnf` is sloooowwwwww. I'm liking `pacman` and `yay` so far. I guess I use Arch now? Just `archinstall` so it's not "proper" but frankly I don't care how it's installed as long as my distro functions.
 
 ### Shortcuts
 - [Setup](#setup)
@@ -17,7 +20,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Arch Linux. And guess what? My G
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
 - 16GB RAM (2x8GB, 3200Mhz, DDR4)
-- Storage: 60GB OCZ-Vertex SSD from like 2011 that's somehow still kicking, plugged into a USB 3 hub. (watch it stop working now i've written that.)
+- Storage: 60GB OCZ-Vertex SSD from like 2011 that's somehow still kicking, plugged into a USB 3 hub. (watch it stop working now i've written that. ...AYYY I called it! yeah it won't boot. can still access the files though.)
 - PICO 4 headset, wireless.
     - ~Currently, I still have incorrect controller offsets for PICO 4 controllers. Supposedly it was fixed in WiVRn v0.22, and indeed they look correct in the WiVRn client menu and WlxOverlay-S, but they still have the wrong offsets in OpenComposite applications.~ Some OpenComposite games' offsets are still incorrect, i.e. Beat Saber.
     - Something is causing the USB mode to disconnect constantly, will need to figure that out at some point since I prefer using the cable for stability.
