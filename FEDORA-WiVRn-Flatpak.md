@@ -29,9 +29,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora. Seems Fedora is being sl
 ### Software
 - Fedora 41 (KDE Plasma, Wayland)
 - One of the following runtime setups:
-    - (Current) [Envision] with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
-        - Plus WlxOverlay-S and WayVR Dashboard.
-    - [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak v0.22 or v0.23), using OpenComposite for OpenVR titles.
+    - (Primary) [WiVRn](https://github.com/WiVRn/WiVRn) (Flatpak v0.22 or v0.23), using OpenComposite for OpenVR titles.
         - Lately my tracking seems to vary between perfect, very jittery, or overly smoothed. Closing the WiVRn client and reconnecting seems to choose a random variation?
     - [Envision](https://gitlab.com/gabmus/envision) with the WMR profile, using OpenComposite for OpenVR titles.
         - Mostly functional. Reprojection is laggy. [Has other issues](#developmenthardware).
@@ -61,13 +59,6 @@ Things we can actually play! Yay!
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
             - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Use the HSV colours setting.
 - Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this was due to a HDD bottleneck, notably this hasn't yet occured since moving my OS and VRChat to an SSD.
-- Some videos don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
-    - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
-
-### ^ VRChat (XRizer)
-- Using GE-Proton9-20-rtsp16.
-- Unlike OpenComposite, the world "Connecting" screens actually look almost normal! The world images are just a little desaturated + minor other visual quirks. (much better than a black void with broken planes lol)
-- Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
 - Some videos don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
