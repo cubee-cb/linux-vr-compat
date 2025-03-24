@@ -176,7 +176,6 @@ May have been tested in past setups. If something's untested here, maybe check t
 ### I am Sakuya VR
 
 ### The Lab
-- Loading screens are broken.
 
 ### Rumble
 
