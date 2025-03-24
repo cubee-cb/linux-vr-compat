@@ -10,5 +10,6 @@ Tracked here:
 - ~[Full OS crash when using media source](https://gitlab.freedesktop.org/drm/amd/-/issues/3855)~ merged with above.
 
 ### Variants
-- [Fedora](FEDORA.md) (Primary testing distro)
-- [Arch Linux](ARCH.md)
+- [Fedora (Envision WiVRn, XRizer)](FEDORA-WiVRn-Envision.md) (Current testing setup)
+- [Fedora (Flatpak WiVRn, OpenComposite)](FEDORA-WiVRn-Flatpak.md)
+- [Arch Linux (Envision WiVRn, OpenComposite)](ARCH-WiVRn-Envision.md)
