@@ -70,7 +70,8 @@ Things we can actually play! Yay!
 - Major performance issues, eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
 - Using GE-Proton7-55, unsure if other versions work.
 
----
+### ChilloutVR
+- No notable issues after a short run around my home world. Haven't yet tested joining a live instance.
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -94,7 +95,7 @@ The following crash on launch or have other major issues.
 - Fails to enter VR mode.
 
 ### GRIP
-- On entering VR mode, the following XRizer error appears and botth it and the game crash: `src/system.rs:209:9: not yet implemented`
+- On entering VR mode, the following XRizer error appears: `src/system.rs:209:9: not yet implemented`
 - Some extra notes:
     - HMD view only. Requires a standard controller/wheel.
     - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
@@ -102,6 +103,12 @@ The following crash on launch or have other major issues.
 
 ### Desert Bus VR
 - Launches in desktop mode even when choosing the SteamVR launch option.
+
+### The Forest
+- The following XRizer error appears: `src/graphics_backends.rs:122:22: Unsupported texture type: DirectX`
+
+### I am Sakuya VR
+- Seems to launch in desktop mode? Or at least without the VR view.
 
 ---
 
@@ -173,8 +180,6 @@ May have been tested in past setups. If something's untested here, maybe check t
 
 ### Catlateral Damage VR
 
-### I am Sakuya VR
-
 ### The Lab
 
 ### Rumble
@@ -187,8 +192,6 @@ May have been tested in past setups. If something's untested here, maybe check t
 ### Vacation Simulator ([Video](https://youtu.be/ESWKezEggIg&t=1470))
 
 ### SUPERHOT VR (Pre-removed scenes version via depot download)
-
-### ChilloutVR
 
 ### Sushi Ben Demo ([Video](https://youtu.be/TEen2J73evQ?t=1284))
 
