@@ -73,6 +73,16 @@ Things we can actually play! Yay!
 ### ChilloutVR
 - No notable issues after a short run around my home world. Haven't yet tested joining a live instance.
 
+### Vivecraft
+- Running through Prism Launcher (via COPR repo), with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
+    - The Flatpak version does not detect VR when using Envision. It does however work with Flatpak WiVRn as long as the appropriate access is granted (see the Fedora Flatpak file for more info)
+- Seems to work almost perfectly out of the box.
+    - Controls, shaders, distant horizons, etc.
+- Full-body tracking (FBT):
+    - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. They are working on it, though!
+    - Using SlimeVR OSC trackers seems to work at first, as the tracking points are visible perfectly within the calibration screen, but calibrating results in all parts being locked to the head's rotation. Is this an XRizer issue?
+        - "Aren't OSC trackers a VRChat thing?" Yeah I though so too, but then my trackers appeared in Vivecraft one day after I left it running, and, well, SlimeVR's running on a different device so there's no way it could detect the trackers other than via OSC. I guess they added support for them then, maybe because of QuestCraft so they can use FBT too or something. Either way, pretty cool!
+
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
 Or, in some cases they start working all of a sudden but I have no idea why.
@@ -89,10 +99,6 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 The following crash on launch or have other major issues.
 
 ---
-
-### Vivecraft
-- Running through Prism Launcher (Flatpak), with Vivecraft 1.21.1-1.2.2-fabric on Quilt Loader.
-- Fails to enter VR mode.
 
 ### GRIP
 - On entering VR mode, the following XRizer error appears: `src/system.rs:209:9: not yet implemented`
