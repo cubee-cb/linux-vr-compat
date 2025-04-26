@@ -65,7 +65,7 @@ Things we can actually play! Yay!
 - Using Proton Experimental.
     - Based on testing with Flatpak WiVRn, mods do not load with GE-Proton9-18.
 
-### ^? Until You Fall ([Video](https://youtu.be/ESWKezEggIg&t=1975))
+### ^? Until You Fall
 - IT WORKS???? What? Yeah using XRizer gets it past the black screen and is somehow playable.
 - Major performance issues, eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
 - Using GE-Proton7-55, unsure if other versions work.
