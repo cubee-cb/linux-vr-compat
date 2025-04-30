@@ -1,4 +1,4 @@
-Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer.
+Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR/OpenVR compatibility.
 
 ### Shortcuts
 - [Setup](#setup)
@@ -26,7 +26,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer.
     - Presence sensor isn't used, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
 
 ### Software
-- Fedora 41 (KDE Plasma, Wayland)
+- Fedora 42 (KDE Plasma, Wayland, upgrades from Fedora 41)
 - The following runtime setup:
     - [Envision] with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
         - Plus WlxOverlay-S and WayVR Dashboard.
@@ -47,7 +47,7 @@ Things we can actually play! Yay!
 ### ^ VRChat
 - Using GE-Proton9-20-rtsp16 since it's the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
 - World "Connecting" screens are slightly broken, but overall look mostly like they are intended to, unlike in OpenComposite.
-  - The world images are just a little desaturated + a couple other small visual quirks. (much better than a black void with broken image planes, lol)
+  - The world image colours are just a bit off. Gamma issue? Wrong colour space?
 - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
     - idk if the start script helps much though.
 - Terrors of Nowhere
@@ -59,11 +59,17 @@ Things we can actually play! Yay!
 - Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
+### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
+- I'm running the prerelease branch, live probably also works but I can't be bothered testing it.
+
 ### ^ Beat Saber (Modded)
 - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
     - Settings and selected mods do not save on v0.0.6, use v0.0.5 instead.
 - Using Proton Experimental.
-    - Based on testing with Flatpak WiVRn, mods do not load with GE-Proton9-18.
+    - When I used Flatpak WiVRn, mods did not load with GE-Proton9-18.
+
+### Pistol Whip
+- Nothing of note. It just works.
 
 ### ^? Until You Fall
 - IT WORKS???? What? Yeah using XRizer gets it past the black screen and is somehow playable.
@@ -75,13 +81,16 @@ Things we can actually play! Yay!
 
 ### Vivecraft
 - Running through Prism Launcher (via COPR repo), with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
-    - The Flatpak version does not detect VR when using Envision. It does however work with Flatpak WiVRn as long as the appropriate access is granted (see the Fedora Flatpak file for more info)
+    - The Flatpak version does not detect VR when using Envision. It does however work with Flatpak WiVRn as long as the appropriate access is granted (see Fedora Flatpak WiVRn for more info)
 - Seems to work almost perfectly out of the box.
     - Controls, shaders, distant horizons, etc.
 - Full-body tracking (FBT):
     - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. They are working on it, though!
-    - Using SlimeVR OSC trackers seems to work at first, as the tracking points are visible perfectly within the calibration screen, but calibrating results in all parts being locked to the head's rotation. Is this an XRizer issue?
+    - Using SlimeVR OSC trackers seems to work at first, as the tracking points are visible perfectly within the calibration screen, but calibrating results in all parts being locked to the head's rotation. Is this an XRizer or Vivecraft issue?
         - "Aren't OSC trackers a VRChat thing?" Yeah I though so too, but then my trackers appeared in Vivecraft one day after I left it running, and, well, SlimeVR's running on a different device so there's no way it could detect the trackers other than via OSC. I guess they added support for them then, maybe because of QuestCraft so they can use FBT too or something. Either way, pretty cool!
+
+### COMPOUND Demo
+- Nothing of note. It just works.
 
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
@@ -89,9 +98,16 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 
 ---
 
-### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
-- Displays a black screen on the HMD.
-- In the desktop view, the HMD is tracked but no hands are visible.
+### Tea For God
+- The hands are visible, unlike OpenComposite, and as such the game is mostly playable.
+- Entering the options menu crashes the game with a `not implemented` error in `chaperone.rs`.
+- Some notes:
+    - There is no playspace, at least not with the PICO 4, so using roomscale motion defaults the world to a tiny 2x3 grid with a massive movement multiplier.
+        - I can navigate the entire world just by leaning, kinda funny.
+        - Joystick locomotion is likely more viable, until the options menu works.
+
+### VAIL
+- Trigger touch is mapped to trigger full press. Touching the trigger fires the weapons, presses the menu, etc. Playable otherwise.
 
 ---
 
@@ -100,8 +116,14 @@ The following crash on launch or have other major issues.
 
 ---
 
+### Half-Life: Alyx
+- Crashes after the loading screen with a failed assertion, for `left == right`. (`left == 4` and `right == 1` iirc)
+    - I saw discussion on the LVRA Discord about this assertion, related to having only one controller connected, but I have both. Strange.
+
 ### GRIP
-- On entering VR mode, the following XRizer error appears: `src/system.rs:209:9: not yet implemented`
+- On entering VR mode, the following XRizer error appears:
+    - First test: `src/system.rs:209:9: not yet implemented`
+    - April 2025 test: `compositor.rs .. pose invalid`
 - Some extra notes:
     - HMD view only. Requires a standard controller/wheel.
     - Splash screens are displayed on the desktop, but once in the game menus it switches to VR.
@@ -114,7 +136,10 @@ The following crash on launch or have other major issues.
 - The following XRizer error appears: `src/graphics_backends.rs:122:22: Unsupported texture type: DirectX`
 
 ### I am Sakuya VR
-- Seems to launch in desktop mode? Or at least without the VR view.
+- Does not launch in VR. Desktop window is controllable with standard controls, but the camera and hand are stuck in place.
+
+### Catlateral Damage VR
+- Does not launch in VR. Desktop window appears and shows blue overlays on the objects. (iirc this happens when the player is inside objects or teleporting?)
 
 ---
 
