@@ -46,16 +46,15 @@ Things we can actually play! Yay!
 
 ### ^ VRChat
 - Using GE-Proton9-20-rtsp16 since it's the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
-- World "Connecting" screens are slightly broken, but overall look mostly like they are intended to, unlike in OpenComposite.
-  - The world image colours are just a bit off. Gamma issue? Wrong colour space?
 - Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
     - idk if the start script helps much though.
 - Terrors of Nowhere
     - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
-        - See [the VRChat folder](vrchat/launch-ton-save-manager.sh) for an example launch script using flatpak Protontricks.
+        - See this [launch script](vrchat/launch-ton-save-manager.sh) in the VRChat folder for an example using flatpak Protontricks.
         - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
             - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Make sure the OSC colour setting is enabled and set to HSV colours.
-- Sometimes launching in VR bombards me with Anti-Cheat errors, despite using the start script. These errors actually have text though, saying the files failed to verify, and may also be related to the system being overloaded while starting. Perhaps this was due to a HDD bottleneck, notably this hasn't yet occured since moving my OS and VRChat to an SSD.
+- World "Connecting" screens look mostly like they are intended to, unlike in OpenComposite.
+  - The world thumbnail colours are just a bit off. Gamma issue? Wrong colour space?
 - Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
