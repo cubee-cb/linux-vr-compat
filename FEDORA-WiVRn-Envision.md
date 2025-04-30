@@ -26,7 +26,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
     - Presence sensor isn't used, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
 
 ### Software
-- Fedora 42 (KDE Plasma, Wayland, upgrades from Fedora 41)
+- Fedora 42 (KDE Plasma, Wayland, upgraded from Fedora 41)
 - The following runtime setup:
     - [Envision] with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
         - Plus WlxOverlay-S and WayVR Dashboard.
