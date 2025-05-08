@@ -81,6 +81,7 @@ Things we can actually play! Yay!
 ### Vivecraft
 - Running through Prism Launcher (via COPR repo), with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
     - The Flatpak version does not detect VR when using Envision. It does however work with Flatpak WiVRn as long as the appropriate access is granted (see Fedora Flatpak WiVRn for more info)
+        - [Spells for Flatpak Prism](https://discord.com/channels/1065291958328758352/1225819663024259082/1369754980457648148) from the LVRA Discord. Needs testing.
 - Seems to work almost perfectly out of the box.
     - Controls, shaders, distant horizons, etc.
 - Full-body tracking (FBT):
