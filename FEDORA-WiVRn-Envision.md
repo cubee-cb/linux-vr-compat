@@ -89,8 +89,6 @@ Things we can actually play! Yay!
         - [Image from the LVRA Discord](https://discord.com/channels/1065291958328758352/1225819663024259082/1369754980457648148) + context.
         - If you store some of your mod data outside the instance, don't forget to ensure those paths are here too.
             - I accidentally removed mine, causing Distant Horizons to be unable to load or generate chunks and Figura to crash the game.
-- Seems to work almost perfectly out of the box.
-    - Controls, shaders, etc.
 - Full-body tracking (FBT):
     - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. (by "native trackers", I mean ones passed through from Monado, such as Vives and SlimeVR via the SolarXR protocol)
         - Native trackers will probably work with Rin's experimental branch for XRizer.
@@ -98,6 +96,11 @@ Things we can actually play! Yay!
         - This *might* work properly with OpenComposite or when there are actual trackers.
     - Using SlimeVR OSC trackers seems to work at first, but calibrating results in all parts being locked to the head as before.
         - Perhaps Vivecraft ignores all OSC trackers if any native trackers exist?
+- Rebinding controls:
+    - Place the `xrizer`/`OpenComposite` directory in the instance's `minecraft` folder. (next to `options.txt`)
+    - Default bindings are in the `minecraft/openvr` folder, or you can try to find your SteamVR bindings somewhere inside SteamVR's workshop folder.
+    - Then you can follow [the LVRA Wiki](https://lvra.gitlab.io/docs/fossvr/opencomposite/#rebinding-controls) as usual.
+        - Make sure the binding files are named without spaces and underscores, so a config for `oculus_touch` becomes `oculustouch.json`.
 
 ### COMPOUND Demo
 - Nothing of note. It just works.
