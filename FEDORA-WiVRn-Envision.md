@@ -79,15 +79,23 @@ Things we can actually play! Yay!
 - No notable issues after a short run around my home world. Haven't yet tested joining a live instance.
 
 ### Vivecraft
-- Running through Prism Launcher (via COPR repo), with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
-    - The Flatpak version does not detect VR when using Envision. It does however work with Flatpak WiVRn as long as the appropriate access is granted (see Fedora Flatpak WiVRn for more info)
-        - [Spells for Flatpak Prism](https://discord.com/channels/1065291958328758352/1225819663024259082/1369754980457648148) from the LVRA Discord. Needs testing.
+- Running through Prism Launcher, with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
+    - The Flatpak version of Prism requires you to cast some spells for it to work with Envision. Grant the following file access permissions:
+        - `xdg-config/openxr:ro`
+        - `xdg-config/openvr:ro`
+        - `~/.local/share/envision:ro`
+        - `xdg-run/wivrn/comp_ipc:rw` (maybe only required for WiVRn)
+        - `xdg-run/monado_comp_ipc:rw` (maybe only required for Monado)
+        - [Image from the LVRA Discord](https://discord.com/channels/1065291958328758352/1225819663024259082/1369754980457648148) + context.
 - Seems to work almost perfectly out of the box.
     - Controls, shaders, distant horizons, etc.
 - Full-body tracking (FBT):
-    - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. They are working on it, though!
-    - Using SlimeVR OSC trackers seems to work at first, as the tracking points are visible perfectly within the calibration screen, but calibrating results in all parts being locked to the head's rotation. Is this an XRizer or Vivecraft issue?
-        - "Aren't OSC trackers a VRChat thing?" Yeah I though so too, but then my trackers appeared in Vivecraft one day after I left it running, and, well, SlimeVR's running on a different device so there's no way it could detect the trackers other than via OSC. I guess they added support for them then, maybe because of QuestCraft so they can use FBT too or something. Either way, pretty cool!
+    - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. (by "native trackers", I mean ones passed through from Monado, such as Vives and SlimeVR via the SolarXR protocol)
+        - Native trackers will probably work with Rin's experimental branch for XRizer.
+    - Vivecraft will claim there are trackers, but calibrating will attach all body parts to the head, turning you into a solid plank.
+        - This *might* work properly with OpenComposite or when there are actual trackers.
+    - Using SlimeVR OSC trackers seems to work at first, but calibrating results in all parts being locked to the head as before.
+        - Perhaps Vivecraft ignores all OSC trackers if any native trackers exist?
 
 ### COMPOUND Demo
 - Nothing of note. It just works.
