@@ -80,15 +80,17 @@ Things we can actually play! Yay!
 
 ### Vivecraft
 - Running through Prism Launcher, with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
-    - The Flatpak version of Prism requires you to cast some spells for it to work with Envision. Grant the following file access permissions:
+    - The Flatpak version of Prism requires you to cast some spells for it to work with Envision. Grant the following file access permissions via your favourite method (mine is Flatseal):
         - `xdg-config/openxr:ro`
         - `xdg-config/openvr:ro`
         - `~/.local/share/envision:ro`
         - `xdg-run/wivrn/comp_ipc:rw` (maybe only required for WiVRn)
         - `xdg-run/monado_comp_ipc:rw` (maybe only required for Monado)
         - [Image from the LVRA Discord](https://discord.com/channels/1065291958328758352/1225819663024259082/1369754980457648148) + context.
+        - If you store some of your mod data outside the instance, don't forget to ensure those paths are here too.
+            - I accidentally removed mine, causing Distant Horizons to be unable to load or generate chunks and Figura to crash the game.
 - Seems to work almost perfectly out of the box.
-    - Controls, shaders, distant horizons, etc.
+    - Controls, shaders, etc.
 - Full-body tracking (FBT):
     - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. (by "native trackers", I mean ones passed through from Monado, such as Vives and SlimeVR via the SolarXR protocol)
         - Native trackers will probably work with Rin's experimental branch for XRizer.
