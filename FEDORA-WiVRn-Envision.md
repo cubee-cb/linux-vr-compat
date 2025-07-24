@@ -18,21 +18,23 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 ### Hardware
 - AMD Ryzen 5 5600G
 - AMD RX 6600XT 8GB
-- 16GB RAM (2x8GB, 3200Mhz, DDR4)
-- OS is on an SSD.
+- 32GB RAM (2x16GB, 3600Mhz, DDR4)
+- OS is on a SATA SSD.
 - Most games installed on a hard drive.
 - PICO 4 headset, wireless.
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available. (Settings > Lab > Hand Tracking)
     - Presence sensor isn't used, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
+    - PICO Motion Trackers work about as well as they should.
 
 ### Software
 - Fedora 42 (KDE Plasma, Wayland, upgraded from Fedora 41)
 - The following runtime setup:
     - [Envision] with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
         - Plus WlxOverlay-S and WayVR Dashboard.
+        - For PICO Motion Trackers, use a branch of XRizer supporting trackers, or OpenComposite.
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
     - Space Drag is either left/right stick click, Space Reset is double-click left stick.
-- Most games run through Steam (Runtime), SteamVR is not installed.
+- Most games run through Steam (non-Flatpak), SteamVR is not installed and shouldn't be except for very specific circumstances.
 - Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
 
 ---
@@ -59,7 +61,10 @@ Things we can actually play! Yay!
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
-- I'm running the prerelease branch, live probably also works but I can't be bothered testing it.
+- Live branch (default). The splittening is underway.
+- Using GE-Proton9-20-rtsp16, same as VRChat.
+- Modding with ResoniteModLoader and Resolute. People recommend Monkeyloader these days, for me some RML mods just don't seem to do anything (such as ResonitePlatformSpoof, NoTankControls)
+- Seems to lock up every now and then with "Engine has not been responding for X seconds" in the log. No clear cause, and only started happening recently without any Resonite updates. Both Desktop and VR modes.
 
 ### ^ Beat Saber (Modded)
 - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
@@ -71,8 +76,8 @@ Things we can actually play! Yay!
 - Nothing of note. It just works.
 
 ### ^? Until You Fall
-- IT WORKS???? What? Yeah using XRizer gets it past the black screen and is somehow playable.
-- Major performance issues, eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
+- With XRizer, this gets past the black screen and is somehow playable.
+- Some performance issues, first run eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
 - Using GE-Proton7-55, unsure if other versions work.
 
 ### ChilloutVR
@@ -90,12 +95,11 @@ Things we can actually play! Yay!
         - If you store some of your mod data outside the instance, don't forget to ensure those paths are here too.
             - I accidentally removed mine, causing Distant Horizons to be unable to load or generate chunks and Figura to crash the game.
 - Full-body tracking (FBT):
-    - XRizer does not currently support trackers, so native trackers are non-functional at time of writing. (by "native trackers", I mean ones passed through from Monado, such as Vives and SlimeVR via the SolarXR protocol)
-        - Native trackers will probably work with Rin's experimental branch for XRizer.
+    - XRizer requires a branch for native tracker support. See RinLovesYou's fork/branches.
     - Vivecraft will claim there are trackers, but calibrating will attach all body parts to the head, turning you into a solid plank.
         - This *might* work properly with OpenComposite or when there are actual trackers.
     - Using SlimeVR OSC trackers seems to work at first, but calibrating results in all parts being locked to the head as before.
-        - Perhaps Vivecraft ignores all OSC trackers if any native trackers exist?
+        - Perhaps Vivecraft will not calibrate to OSC trackers if any native trackers exist?
 - Rebinding controls:
     - Place the `xrizer`/`OpenComposite` directory in the instance's `minecraft` folder. (next to `options.txt`)
     - Default bindings are in the `minecraft/openvr` folder, or you can try to find your SteamVR bindings somewhere inside SteamVR's workshop folder.
