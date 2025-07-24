@@ -13,8 +13,8 @@ Potentially related issues:
 - [ring gfx_0.0.0 timeout & reset failure ](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
 
 ### Variants
-- [Fedora (Envision WiVRn, XRizer, AMD)](FEDORA-WiVRn-Envision.md) (Current testing setup)
-- [Fedora (Flatpak WiVRn, OpenComposite, AMD)](FEDORA-WiVRn-Flatpak.md)
+- [Fedora 42 (Envision WiVRn, XRizer, AMD)](FEDORA-WiVRn-Envision.md) (Current testing setup)
+- [Fedora 41 (Flatpak WiVRn, OpenComposite, AMD)](FEDORA-WiVRn-Flatpak.md)
 - [Arch Linux (Envision WiVRn, OpenComposite, AMD)](ARCH-WiVRn-Envision.md)
 
 ### Maybe future variants
