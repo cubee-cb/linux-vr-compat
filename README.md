@@ -3,9 +3,7 @@ Subfolders include scripts or configs that I use.
 
 **Note**: `amdgpu` has been encountering page faults and subsequent GPU resets for some systems, including mine.
 
-Might be related to `linux-firmware` and combining video encoding/decoding with high load on AMD GPUs.
-
-As of more recently, I get `ring gfx` timeouts instead of `ring vcn_enc` timeouts, so perhaps Fedora's `linux-firmware` is up to date now.
+May have been related to `linux-firmware` and combining video encoding/decoding with high load on AMD GPUs. As of more recently, I get `ring gfx` timeouts instead of `ring vcn_enc` timeouts.
 
 Potentially related issues:
 - [ring vcn_enc_0.0 timeout cause by linux-firmware 20241210.b00a7f7e](https://gitlab.freedesktop.org/drm/amd/-/issues/3842)
@@ -13,12 +11,17 @@ Potentially related issues:
 - [ring gfx_0.0.0 timeout & reset failure ](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
 
 ### Variants
-- [Fedora 42 (Envision WiVRn, XRizer, AMD)](FEDORA-WiVRn-Envision.md) (Current testing setup)
-- [Fedora 41 (Flatpak WiVRn, OpenComposite, AMD)](FEDORA-WiVRn-Flatpak.md)
-- [Arch Linux (Envision WiVRn, OpenComposite, AMD)](ARCH-WiVRn-Envision.md)
+My current devices are a Desktop PC named Dent, and a Lenovo "Yoga" Laptop named Skittles.
+- [Fedora 42 (Dent AMD, Envision WiVRn, XRizer)](FEDORA-WiVRn-Envision.md) - Current main setup.
+- [CachyOS (Skittles Nvidia, Flatpak Wivrn, OpenComposite)](CACHYOS-WiVRn-Flatpak.md) - Secondary setup on my laptop.
+*"Yoga" in quotes cause it doesn't even do the Yoga Thing(tm) where they fold over backwards... it's just branding now.*
+
+### Old variants
+These are no longer in use.
+- [Fedora 41 (Dent AMD, Flatpak WiVRn, OpenComposite)](FEDORA-WiVRn-Flatpak.md) - Original setup.
+- [Arch Linux (Dent AMD, Envision WiVRn, OpenComposite)](ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
+- Debian Trixie (Skittles Nvidia, Flatpak Wivrn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
 
 ### Maybe future variants
-- CachyOS (Envision WivRn, XRizer, AMD) / Arch-based
-  - i wanna try this one out, see if it feels better to me than Fedora or pure Arch.
 - Debian (Envision WiVRn, XRizer, AMD iGPU + Nvidia)
   - might move my laptop to something like debian. if i do, i'll try running envision on its quirky nvidia optimus garbage.
