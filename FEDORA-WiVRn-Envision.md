@@ -1,5 +1,10 @@
 Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR/OpenVR compatibility.
 
+## Current notes:
+- Occasional `amdgpu` reset occur.
+- Recently my setup has developed screen "tearing", mostly in high-intensity scenes. No idea why. Very distracting.
+
+
 ### Shortcuts
 - [Setup](#setup)
 - [Working games](#working)
@@ -61,10 +66,12 @@ Things we can actually play! Yay!
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
 ### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
-- Live branch (default). The splittening is underway.
+- Live branch (default). The splittening is underway and at time of writing does not have VR support reimplemented yet.
 - Using GE-Proton9-20-rtsp16, same as VRChat.
 - Modding with ResoniteModLoader and Resolute. People recommend Monkeyloader these days, for me some RML mods just don't seem to do anything (such as ResonitePlatformSpoof, NoTankControls)
 - Seems to lock up every now and then with "Engine has not been responding for X seconds" in the log. No clear cause, and only started happening recently without any Resonite updates. Both Desktop and VR modes.
+- Full-body tracking (FBT):
+  - Does not calibrate. Trackers do not have roles and as such Resonite doesn't know what to do with them.
 
 ### ^ Beat Saber (Modded)
 - Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
@@ -82,6 +89,8 @@ Things we can actually play! Yay!
 
 ### ChilloutVR
 - No notable issues after a short run around my home world. Haven't yet tested joining a live instance.
+- Full-body tracking (FBT):
+  - Does not seem to be detected through XRizer. Calibrate button in the large menu does nothing.
 
 ### Vivecraft
 - Running through Prism Launcher, with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
@@ -109,6 +118,13 @@ Things we can actually play! Yay!
 ### COMPOUND Demo
 - Nothing of note. It just works.
 
+### ^ Half-Life: Alyx (Proton)
+- Using Proton Experimental.
+- Controls work properly now! Yay!
+- Lower than expected performance.
+    - This *probably* is due to the new headset, back on Windows 10 I used Windows Mixed Reality at 1440^2 per eye, while here I have 2160^2 per eye. (over double the amount of pixels!)
+- Obnoxiously slow load times on an HDD. Might move it to the NVMe I stole from my laptop.
+
 ## Partially working
 These launch, but are unplayable or have serious issues functioning.
 Or, in some cases they start working all of a sudden but I have no idea why.
@@ -132,10 +148,6 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 The following crash on launch or have other major issues.
 
 ---
-
-### Half-Life: Alyx
-- Crashes after the loading screen with a failed assertion, for `left == right`. (`left == 4` and `right == 1` iirc)
-    - I saw discussion on the LVRA Discord about this assertion, related to having only one controller connected, but I have both. Strange.
 
 ### GRIP
 - On entering VR mode, the following XRizer error appears:
