@@ -11,10 +11,9 @@ Potentially related issues:
 - [ring gfx_0.0.0 timeout & reset failure ](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
 
 ### Variants
-My current devices are a Desktop PC named Dent, and a Lenovo "Yoga" Laptop named Skittles.
+My current devices are a Desktop PC named Dent, and a Lenovo "Yoga" Laptop named Skittles. *"Yoga" in quotes cause it doesn't even do the Yoga Thing(tm) where they fold over backwards... it's just branding now.*
 - [Fedora 42 (Dent AMD, Envision WiVRn, XRizer)](FEDORA-WiVRn-Envision.md) - Current main setup.
 - [CachyOS (Skittles Nvidia, Flatpak Wivrn, OpenComposite)](CACHYOS-WiVRn-Flatpak.md) - Secondary setup on my laptop.
-*"Yoga" in quotes cause it doesn't even do the Yoga Thing(tm) where they fold over backwards... it's just branding now.*
 
 ### Old variants
 These are no longer in use.
@@ -23,5 +22,4 @@ These are no longer in use.
 - Debian Trixie (Skittles Nvidia, Flatpak Wivrn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
 
 ### Maybe future variants
-- Debian (Envision WiVRn, XRizer, AMD iGPU + Nvidia)
-  - might move my laptop to something like debian. if i do, i'll try running envision on its quirky nvidia optimus garbage.
+- idk lol. happy to test things, feel free to open an issue if you want me to test anything specific.
