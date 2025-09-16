@@ -62,6 +62,7 @@ Things we can actually play! Yay!
     - Formerly used GE-Proton9-20-rtsp16.
 - Uses the following launch options based on [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding --enable-debug-gui`
+    - I have world debug GUIs on since I make worlds and I think they're neat to have.
 - World "Connecting" screens look mostly like they are intended to, unlike in OpenComposite.
   - The world thumbnail colours are just a bit off. Gamma issue? Wrong colour space?
 - Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
