@@ -1,8 +1,9 @@
 Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR/OpenVR compatibility.
 
 ## Current notes:
-- Occasional `amdgpu` reset occur.
+- Occasional `amdgpu` resets occur.
 - Recently my setup has developed screen "tearing", mostly in high-intensity scenes. No idea why. Very distracting.
+- I need to re-test a lot of these games with newer updates to XRizer.
 
 
 ### Shortcuts
@@ -28,18 +29,21 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 - Most games installed on a hard drive.
 - PICO 4 headset, wireless.
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available. (Settings > Lab > Hand Tracking)
-    - Presence sensor isn't used, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
+    - Presence sensor isn't passed through at this time, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
     - PICO Motion Trackers work about as well as they should.
 
 ### Software
 - Fedora 42 (KDE Plasma, Wayland, upgraded from Fedora 41)
-- The following runtime setup:
-    - [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
-        - Plus WlxOverlay-S and WayVR Dashboard.
-        - For PICO Motion Trackers, use a branch of XRizer supporting trackers, or OpenComposite.
+- [Envision](https://lvra.gitlab.io/docs/fossvr/envision/)
+    - [WiVRn](https://github.com/WiVRn/WiVRn) - 
+    - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - For using PICO Motion Trackers in Resonite and such, I use the following fork:
+        - Repo: `https://github.com/Mr-Zero88-FBT/xrizer`
+        - Branch: `experimental2`
+        - Typically one would use the [fork by RinLovesYou](https://github.com/RinLovesYou/xrizer/tree/experimental2), I forget why I use this one but it had something to do with Resonite at the time.
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
-    - Space Drag is either left/right stick click, Space Reset is double-click left stick.
-- Most games run through Steam (non-Flatpak), SteamVR is not installed and shouldn't be except for very specific circumstances.
+    - Space Drag is mapped to left/right stick click, Space Reset is mapped to double-click left stick.
+    - I also have WayVR Dashboard configured, but I don't use it.
+- Most games run through Steam (non-Flatpak), SteamVR is not installed and shouldn't be except for very specific circumstances such as using its lighthouse driver.
 - Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
 
 I am aware that Envision is no longer recommended for WiVRn, and that I should be using Flatpak WiVRn instead. I will change back once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
@@ -58,15 +62,16 @@ Things we can actually play! Yay!
 ---
 
 ### ^ VRChat
-- Testing GE-Proton10-15-rtsp18 since it's the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton).
+- Testing GE-Proton10-15-rtsp18 (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
     - Formerly used GE-Proton9-20-rtsp16.
 - Uses the following launch options based on [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding --enable-debug-gui`
     - I have world debug GUIs on since I make worlds and I think they're neat to have.
-- World "Connecting" screens look mostly like they are intended to, unlike in OpenComposite.
-  - The world thumbnail colours are just a bit off. Gamma issue? Wrong colour space?
-- Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
+- World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
+- (todo: re-test on Proton10) Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
+- Full-body tracking (FBT):
+  - Works fine with my chosen branch of XRizer.
 
 ### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
 - I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
@@ -76,10 +81,10 @@ Things we can actually play! Yay!
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
 
 ### ^ Resonite (Proton, Pure Native is deprecated and for now as of The Splittening is replaced with a hybrid setup launched via Proton)
-- Proton: GE-Proton10-15-rtsp18. Wy "default" Proton version works fine otherwise.
+- Testing GE-Proton10-15-rtsp18. Wy "default" Proton version works fine otherwise.
 - Haven't looked back into modding since The Splittening.
 - Full-body tracking (FBT):
-  - Requires either OpenComposite or a branch of XRizer that supports trackers and applies roles Resonite can understand.
+  - Works fine with my chosen branch of XRizer.
 
 ### ^ Beat Saber (Modded)
 - Using Proton Experimental.
@@ -96,9 +101,12 @@ Things we can actually play! Yay!
 - Some performance issues, first run eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
 
 ### ChilloutVR
-- No notable issues after a short run around my home world. Haven't yet tested joining a live instance.
+- No issues related to this setup.
+    - There was a voice server problems I heard about in an instance I joined, around September 2025, but as said, server issue. Not WiVRn-, XRizer- or Linux-related.
 - Full-body tracking (FBT):
-  - Does not seem to be detected through XRizer. Calibrate button in the large menu does nothing.
+  - Works mostly fine with my chosen branch of XRizer. Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
+  - Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
+      - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
 
 ### Vivecraft
 - Running through Prism Launcher, with Vivecraft 1.21.1-1.2.5-fabric on Fabric Loader.
@@ -110,18 +118,17 @@ Things we can actually play! Yay!
         - `xdg-run/monado_comp_ipc:rw` (maybe only required for Monado)
         - [Image from the LVRA Discord](https://discord.com/channels/1065291958328758352/1225819663024259082/1369754980457648148) + context.
         - If you store some of your mod data outside the instance, don't forget to ensure those paths are here too.
-            - I accidentally removed mine, causing Distant Horizons to be unable to load or generate chunks and Figura to crash the game.
+            - I accidentally removed mine, causing Distant Horizons and Figura to be unable to access their data, which broke things in a rather dramatic fashion.
 - Full-body tracking (FBT):
-    - XRizer requires a branch for native tracker support. See RinLovesYou's fork/branches.
-    - Vivecraft will claim there are trackers, but calibrating will attach all body parts to the head, turning you into a solid plank.
-        - This *might* work properly with OpenComposite or when there are actual trackers.
-    - Using SlimeVR OSC trackers seems to work at first, but calibrating results in all parts being locked to the head as before.
-        - Perhaps Vivecraft will not calibrate to OSC trackers if any native trackers exist?
+    - Works fine with my chosen branch of XRizer.
+    - (todo: re-test with current setup) Using SlimeVR OSC trackers seems to work at first, but calibrating results in all parts being locked to the head.
+        - Perhaps Vivecraft will not calibrate to OSC trackers if any native trackers exist, despite being "inactive"?
 - Rebinding controls:
     - Place the `xrizer`/`OpenComposite` directory in the instance's `minecraft` folder. (next to `options.txt`)
     - Default bindings are in the `minecraft/openvr` folder, or you can try to find your SteamVR bindings somewhere inside SteamVR's workshop folder.
     - Then you can follow [the LVRA Wiki](https://lvra.gitlab.io/docs/fossvr/opencomposite/#rebinding-controls) as usual.
         - Make sure the binding files are named without spaces and underscores, so a config for `oculus_touch` becomes `oculustouch.json`.
+    - Alternatively, I have made [a guide of sorts on my website](https://cubee.games/wiki/?cat=guides&page=steamvr#extract-bindings).
 
 ### COMPOUND Demo
 - Nothing of note. It just works.
@@ -134,8 +141,8 @@ Things we can actually play! Yay!
 - Obnoxiously slow load times on an HDD. Might move it to the NVMe I stole from my laptop.
 
 ## Partially working
-These launch, but are unplayable or have serious issues functioning.
-Or, in some cases they start working all of a sudden but I have no idea why.
+These launch, but are unplayable or have issues functioning.
+Or, in some cases they started working all of a sudden but I have no idea why.
 
 ---
 
@@ -149,6 +156,9 @@ Or, in some cases they start working all of a sudden but I have no idea why.
 
 ### VAIL
 - Trigger touch is mapped to trigger full press. Touching the trigger fires the weapons, presses the menu, etc. Playable otherwise.
+
+### Rumble
+- Hands point upward, making the earthbending quite difficult to perform. Works otherwise.
 
 ---
 
@@ -187,19 +197,11 @@ Troubleshooting setup of hardware or build issues.
 
 ### WlxOverlay-S
 - Once all the dependencies were installed, no issues.
-  - Been contributing a few things since I wrote this and still no problems.
+  - Been contributing a few things since I wrote this and still no problems other than having to install any added dependencies.
 
 ### Envision WiVRn Setup
 - Envision's WiVRn build used to fail with what looks like an error in the code itself. After several months, a variety of system upgrades, installing packages to build WiVRn standalone, and updating `rustup`, the Envision build works now! idk why. Whatever, I'm happy.
-- Set one of the following (be wary of if these change in the future):
-    - Rin's experimental XRizer branch (the one I'm using):
-        - OpenVR Module Type: `xrizer`
-        - OpenVR Compatibility Repo: `https://github.com/RinLovesYou/xrizer`
-        - OpenVR Compatibility Branch: `experimental`
-    - Base XRizer (I haven't tried this yet):
-        - OpenVR Module Type: `xrizer`
-        - OpenVR Compatibility Repo: `https://github.com/Supreeeme/xrizer`
-        - OpenVR Compatibility Branch: `main`
+- Optionally set up WiVRn, XRizer, etc as described in the Software section at the top.
 - Clean build!
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
@@ -213,7 +215,7 @@ Troubleshooting setup of hardware or build issues.
 - As for Unity Hub itself:
     - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use.
     - Using the Unity Hub binary from the yum repo provided by Unity seems to work fine, so this is now a functioning setup.
-        - However, I still prefer to Moonlight into my Windows laptop for Unity stuff due to general Unity-Wayland quirks. I've got Godot here anyway (which has functional OpenXR builds for Linux, unlike Unity :DD).
+        - Previously, I used Sunshine and Moonlight to remote to a Windows laptop for Unity work, but I edned up putting Arch (CachyOS btw) on that so now I do all my work on my PC.
 
 ---
 
@@ -223,18 +225,15 @@ Stuff I don't expect to work but try anyway, because why not? Maybe something in
 ---
 
 ### Nothing here yet!
+- I tried a couple things on Fedora 41 with Flatpak WiVRn, maybe go check out that file if you're curious.
 
 ---
 
 ## Untested
 Owned and/or willing to test.
-May have been tested in past setups. If something's untested here, maybe check the list for Flatpak WiVRn?
+May have been tested in past setups. If something's untested here, maybe check the file for Flatpak WiVRn?
 
 ---
-
-### Pistol Whip
-
-### VAIL
 
 ### Rec Room
 
@@ -249,8 +248,6 @@ May have been tested in past setups. If something's untested here, maybe check t
 ### Catlateral Damage VR
 
 ### The Lab
-
-### Rumble
 
 ### Keep Talking and Nobody Explodes
 - Linux native doesn't support VR, use Proton instead.
@@ -284,8 +281,6 @@ May have been tested in past setups. If something's untested here, maybe check t
 ### Museum of Other Realities
 
 ### Garry's Mod VR Mod
-
-### Half Life: Alyx
 
 ### Assetto Corsa
 
