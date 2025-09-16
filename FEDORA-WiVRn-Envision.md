@@ -52,40 +52,41 @@ Things we can actually play! Yay!
 ---
 
 ### ^ VRChat
-- Using GE-Proton9-20-rtsp16 since it's the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton). GE-Proton9-18 works fine otherwise.
-- Uses [gamemoderun](https://github.com/FeralInteractive/gamemode) and custom start script from [Linux VR Adventures Wiki](https://lvra.gitlab.io/docs/vrchat/eac/).
-    - idk if the start script helps much though.
-- Terrors of Nowhere
-    - [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) runs via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
-        - See this [launch script](vrchat/launch-ton-save-manager.sh) in the VRChat folder for an example using flatpak Protontricks.
-        - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
-            - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the UI. Make sure the OSC colour setting is enabled and set to HSV colours.
+- Testing GE-Proton10-15-rtsp18 since it's the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton).
+    - Formerly used GE-Proton9-20-rtsp16.
+- Uses the following launch options based on [gamemoderun](https://github.com/FeralInteractive/gamemode):
+    - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding --enable-debug-gui`
 - World "Connecting" screens look mostly like they are intended to, unlike in OpenComposite.
   - The world thumbnail colours are just a bit off. Gamma issue? Wrong colour space?
 - Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
 
-### ^ Resonite (Proton, [see here](https://lvra.gitlab.io/docs/resonite/))
-- Live branch (default). The splittening is underway and at time of writing does not have VR support reimplemented yet.
-- Using GE-Proton9-20-rtsp16, same as VRChat.
-- Modding with ResoniteModLoader and Resolute. People recommend Monkeyloader these days, for me some RML mods just don't seem to do anything (such as ResonitePlatformSpoof, NoTankControls)
-- Seems to lock up every now and then with "Engine has not been responding for X seconds" in the log. No clear cause, and only started happening recently without any Resonite updates. Both Desktop and VR modes.
+### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
+- I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
+    - i.e. `flatpak run --command=protontricks-launch com.github.Matoking.protontricks --appid 438100 ./ToNSaveManager.exe`
+    - Also, see this [launch script](vrchat/launch-ton-save-manager.sh) I made that works around a crash on launch.
+- Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
+  - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
+
+### ^ Resonite (Proton, Pure Native is deprecated and for now as of The Splittening is replaced with a hybrid setup launched via Proton)
+- Proton: GE-Proton10-15-rtsp18. Wy "default" Proton version works fine otherwise.
+- Haven't looked back into modding since The Splittening.
 - Full-body tracking (FBT):
-  - Does not calibrate. Trackers do not have roles and as such Resonite doesn't know what to do with them.
+  - Requires either OpenComposite or a branch of XRizer that supports trackers and applies roles Resonite can understand.
 
 ### ^ Beat Saber (Modded)
-- Modding with [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager).
-    - Settings and selected mods do not save on v0.0.6, use v0.0.5 instead.
 - Using Proton Experimental.
     - When I used Flatpak WiVRn, mods did not load with GE-Proton9-18.
+- Modding with [BSManager](https://github.com/Zagrios/bs-manager), formerly [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) v0.0.5 (still used for OneClick as I haven't figured out why BSManager didn't work for that yet)
+    - If you use Beat Saber Mod Manager, settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 
 ### Pistol Whip
 - Nothing of note. It just works.
 
-### ^? Until You Fall
-- With XRizer, this gets past the black screen and is somehow playable.
-- Some performance issues, first run eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
+### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
+- With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits or XRizer.
+- Some performance issues, first run eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
 
 ### ChilloutVR
 - No notable issues after a short run around my home world. Haven't yet tested joining a live instance.
