@@ -34,13 +34,19 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 ### Software
 - Fedora 42 (KDE Plasma, Wayland, upgraded from Fedora 41)
 - The following runtime setup:
-    - [Envision] with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
+    - [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) with latest [WiVRn](https://github.com/WiVRn/WiVRn), using XRizer for OpenVR titles.
         - Plus WlxOverlay-S and WayVR Dashboard.
         - For PICO Motion Trackers, use a branch of XRizer supporting trackers, or OpenComposite.
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
     - Space Drag is either left/right stick click, Space Reset is double-click left stick.
 - Most games run through Steam (non-Flatpak), SteamVR is not installed and shouldn't be except for very specific circumstances.
 - Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
+
+I am aware that Envision is no longer recommended for WiVRn, and that I should be using Flatpak WiVRn instead. I will change back once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
+Benefits this way:
+- I don't need launch arguments in my Steam games.
+- Using a different XRizer fork/branch is as simple as changing a URL and rebuilding.
+- I get the latest changes as they happen without waiting for a release, though it might break things sometimes.
 
 ---
 
