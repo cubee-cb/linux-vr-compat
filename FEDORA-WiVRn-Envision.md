@@ -99,12 +99,12 @@ Things we can actually play! Yay!
 
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
-- With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits or XRizer.
+- With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
 - Some performance issues, first run eventually got nearly to a complete stop and almost locked up the system. Maybe not specifically the game's fault? Too much RAM used? Needs testing.
 
 ### ChilloutVR
 - No issues related to this setup.
-    - There was a voice server problems I heard about in an instance I joined, around September 2025, but as said, server issue. Not WiVRn-, XRizer- or Linux-related.
+    - There was a voice server problem I heard about in an instance I joined, around September 2025, but as said, server issue. Not WiVRn-, XRizer- or Linux-related.
 - Full-body tracking (FBT):
   - Works mostly fine with my chosen branch of XRizer. Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
   - Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
