@@ -68,8 +68,10 @@ Things we can actually play! Yay!
     - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding --enable-debug-gui`
     - I have world debug GUIs on since I make worlds and I think they're neat to have.
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
-- (todo: re-test on Proton10) Some videos (non-16:9?) don't display at all and cause my world's video player to display the Audio Only image, while on PICO Standalone and Windows they show a letterboxed image.
+- Some videos display incorrectly, distorted as if skewed to one side with broken colours.
     - Exhibited on ProTV 3 in [my home world](https://vrchat.com/home/launch?worldId=wrld_f79b0387-d681-409a-bbe8-4a40cc8528ce).
+    - Specifically [Geoxor Epic Playlist](https://www.youtube.com/watch?v=muJ8ZL7a4SY), which on Proton9-RTSP didn't display at all.
+    - It's not necessarily an Aspect Ratio thing, as other 16:9, 1:1, and 16:10 videos I tested work fine.
 - Full-body tracking (FBT):
   - Works fine with my chosen branch of XRizer.
 
