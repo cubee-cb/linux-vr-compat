@@ -11,15 +11,15 @@ Potentially related issues:
 - [ring gfx_0.0.0 timeout & reset failure ](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
 
 ### Variants
-My current devices are a Desktop PC named Dent, and a Lenovo "Yoga" Laptop named Skittles. *"Yoga" in quotes cause it doesn't even do the Yoga Thing(tm) where they fold over backwards... it's just branding now.*
-- [Fedora 42 (Dent AMD, Envision WiVRn, XRizer)](FEDORA-WiVRn-Envision.md) - Current main setup.
-- [CachyOS (Skittles Nvidia, Flatpak Wivrn, OpenComposite)](CACHYOS-WiVRn-Flatpak.md) - Secondary setup on my laptop.
+My current devices are a Desktop PC named Dent, and a Laptop named Skittles.
+- [Fedora 42 (Dent, AMD, Envision WiVRn, XRizer)](FEDORA-WiVRn-Envision.md) - Current main setup.
+- [CachyOS (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite)](CACHYOS-WiVRn-Flatpak.md) - Secondary setup on my laptop.
 
 ### Old variants
 These are no longer in use.
-- [Fedora 41 (Dent AMD, Flatpak WiVRn, OpenComposite)](FEDORA-WiVRn-Flatpak.md) - Original setup.
-- [Arch Linux (Dent AMD, Envision WiVRn, OpenComposite)](ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
-- Debian Trixie (Skittles Nvidia, Flatpak Wivrn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
+- [Fedora 41 (Dent, AMD, Flatpak WiVRn, OpenComposite)](FEDORA-WiVRn-Flatpak.md) - Original setup.
+- [Arch Linux (Dent, AMD, Envision WiVRn, OpenComposite)](ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
+- Debian Trixie (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
 
 ### Maybe future variants
 - idk lol. happy to test things, feel free to open an issue if you want me to test anything specific.
