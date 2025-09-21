@@ -17,7 +17,8 @@ This is most certainly not a setup I will use often, but I do enjoy seeing what 
 ---
 
 ### Hardware
-- Lenovo Yoga Slim 7 ProX
+- Lenovo "Yoga" Slim 7 ProX
+  - *"Yoga" in quotes cause it doesn't even do the Yoga Thing(tm) where they fold over backwards... it's nothing more than a brand now.*
 - AMD Ryzen 5 6600HS (Creator Edition, whatever that means)
 - NVIDIA GeForce RTX 3050 Mobile (4GB) (RTX Studio variant, whatever that means)
 - 16GB RAM (14GB Usable, 2GB for the AMD iGPU)
