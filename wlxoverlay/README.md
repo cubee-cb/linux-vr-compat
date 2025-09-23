@@ -4,17 +4,17 @@ Contained here are the following:
 - [watch](watch.yaml)
     - Customised watch with a nicer layout and custom clocks.
         - It's built around the Lexend font, so it may not look quite right with the default font.
-    - Includes a button for the WayVR Dashboard.
+    - Includes a button for the [WayVR Dashboard](https://github.com/olekolek1000/wayvr-dashboard).
       - When middle-clicked, it spawns my old no-longer-functional [waywatch](waywatch.yaml) overlay.
     - There are some media controls in the top right, which rely on `playerctl`. There are buttons for play/pause, next, and previous.
     - The blue `>_` button spawns the following:
-      - (Blue laser) A [performance monitor panel](monitor.yaml), which shows some values grabbed from a script. [This `pollhw` script](pollhw.sh), to be precise, which has variables that will need to be set up based on your system's hardware.
+      - (Blue laser) A [performance monitor panel](monitor.yaml), which shows some values grabbed from a script. [This `pollhw` script](pollhw.sh), to be precise, which has variables inside it that will need to be set up to match your system's hardware.
       - (Orange laser) A [quickchat panel](quickchat.yaml), which has some simple quick-chat messages for use with the VRChat chatbox.
-    - The Number button Changes the playspace drag multiplier. Blue laser increases by `1`, Orange laser decreases by `1`.
+    - The grey number button changes the playspace drag multiplier. Blue laser increases it by `1`, while Orange laser decreases by `1`.
 - [conf.d](conf.d)
   - Includes config files for timezones, font, passthrough, skybox, notification sound ([#179](https://github.com/galister/wlx-overlay-s/pull/179)), and screen display names ([#253](https://github.com/galister/wlx-overlay-s/pull/253)).
 - [aurorasky](aurorasky.dds)
-    - A SteamVR Void background converted to DDS format, since I wanted a darker skybox and finding a different one turned out to be more effort than I could be bothered putting in when this one was already perfect.
+    - A SteamVR Void background converted to DDS format, since I wanted a darker skybox and finding a different one turned out to be more effort than I could be bothered with when this one was already perfect.
 - [openxr_actions](openxr_actions.json5)
     - I changed the Oculus controller profile (Oculus/Meta/PICO devices, maybe others)
     - Show/Hide Working Set - Left Menu
