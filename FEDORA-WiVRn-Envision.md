@@ -40,6 +40,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
         - Repo: `https://github.com/Mr-Zero88-FBT/xrizer`
         - Branch: `experimental2`
         - Typically one would use the [fork by RinLovesYou](https://github.com/RinLovesYou/xrizer/tree/experimental2), I forget why I use this one but it had something to do with Resonite at the time.
+        - Hand tracking does not seem to pass through correctly, at least not with this fork. If this is important to you, try using base XRizer or OpenComposite instead.
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
     - Space Drag is mapped to left/right stick click, Space Reset is mapped to double-click left stick.
     - I also have WayVR Dashboard configured, but I don't use it.
