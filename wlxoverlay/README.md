@@ -7,7 +7,7 @@ Contained here are the following:
     - Includes a button for the WayVR Dashboard.
       - When middle-clicked, it spawns my old no-longer-functional [waywatch](waywatch.yaml) overlay.
     - There are some media controls in the top right, which rely on `playerctl`. There are buttons for play/pause, next, and previous.
-    - The blue `>_` button (Chat) spawns the following:
+    - The blue `>_` button spawns the following:
       - (Blue laser) A [performance monitor panel](monitor.yaml), which shows some values grabbed from a script. [This `pollhw` script](pollhw.sh), to be precise, which has variables that will need to be set up based on your system's hardware.
       - (Orange laser) A [quickchat panel](quickchat.yaml), which has some simple quick-chat messages for use with the VRChat chatbox.
     - The Number button Changes the playspace drag multiplier. Blue laser increases by `1`, Orange laser decreases by `1`.
