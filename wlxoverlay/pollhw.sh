@@ -16,7 +16,7 @@ while [[ "$#" -gt 0 ]]; do
         -C|--cputemp) sensors $cpu_temp_sensor | grep 'Tctl' | awk '{ printf $2 }' | sed "s/+/CPU Tctl Temp: /g" ;;
         -G|--gputemp) sensors $gpu_temp_sensor | grep 'edge' | awk '{ printf $2 }' | sed 's/+/GPU Edge Temp: /g' ;;
         -R|--ramtemp) echo "RAM Temp: Not Implemented" ;;
-        -V|--gputemp) sensors $gpu_temp_sensor | grep 'mem' | awk '{ printf $2 }' | sed 's/+/GPU VRAM Temp: /g' ;;
+        -V|--vramtemp) sensors $gpu_temp_sensor | grep 'mem' | awk '{ printf $2 }' | sed 's/+/GPU VRAM Temp: /g' ;;
         *) echo "Unknown parameter passed: $1"; exit 1 ;;
     esac
     shift
