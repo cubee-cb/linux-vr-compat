@@ -3,20 +3,23 @@
 Contained here are the following:
 - [watch](watch.yaml)
     - Customised watch with a nicer layout and custom clocks.
-        - It's built around the Lexend font, so it may not look right with the default font WlxOverlay-S uses.
-    - Includes a button for the WayVR Dashboard, that when middle-clicked also spawns my old no-longer-functional [waywatch](waywatch.yaml) overlay.
-    - Also has 2 extra OSC buttons for use with WlxOverlay-S versions up to date with current main:
-      - The blue `>_` button (Chat) spawns my [quickchat.yaml overlay](quickchat.yaml), which has some sample quick-chat messages for use with the VRChat chatbox. Right-clicking it spawns the [osctoys.yaml](osctoys.yaml) overlay instead, which currently only has a close button.
-      - The red `~` button (Disconnect) triggers my [ALVRConnectionOSC](https://github.com/cubee-cb/vr-utils?tab=readme-ov-file#alvrconnectionosc) parameter. Right click resets it. This one's mostly just for testing.
-- [timezones.yaml](timezones.yaml)
-  - Doesn't seem to work, my watch just uses the default timezones. Are they not valid?
+        - It's built around the Lexend font, so it may not look quite right with the default font.
+    - Includes a button for the WayVR Dashboard.
+      - When middle-clicked, it spawns my old no-longer-functional [waywatch](waywatch.yaml) overlay.
+    - There are some media controls in the top right, which rely on `playerctl`. There are buttons for play/pause, next, and previous.
+    - The blue `>_` button (Chat) spawns the following:
+      - (Blue laser) A [performance monitor panel](monitor.yaml), which shows some values grabbed from a script. [This `pollhw` script](pollhw.sh), to be precise, which has variables that will need to be set up based on your system's hardware.
+      - (Orange laser) A [quickchat panel](quickchat.yaml), which has some simple quick-chat messages for use with the VRChat chatbox.
+    - The Number button Changes the playspace drag multiplier. Blue laser increases by `1`, Orange laser decreases by `1`.
+- [conf.d](conf.d)
+  - Includes config files for timezones, font, passthrough, skybox, notification sound ([#179](https://github.com/galister/wlx-overlay-s/pull/179)), and screen display names ([#253](https://github.com/galister/wlx-overlay-s/pull/253)).
 - [aurorasky](aurorasky.dds)
-    - The SteamVR void background converted to DDS format, since I wanted a darker skybox and finding a different one turned out to be more effort than it was worth.
+    - A SteamVR Void background converted to DDS format, since I wanted a darker skybox and finding a different one turned out to be more effort than I could be bothered putting in when this one was already perfect.
 - [openxr_actions](openxr_actions.json5)
     - I changed the Oculus controller profile (Oculus/Meta/PICO devices, maybe others)
-    - Working Set Toggle - Left Menu
+    - Show/Hide Working Set - Left Menu
     - Space Drag - Left Joystick click or Right Joystick click.
     - Space Reset - Left Joystick double-click.
-    - If chords are ever implemented, I would like to change Space Drag to my old OVRAS config of Grip + Trigger + B/Y Touch.
-        - Look, it feels nice to physically "grab" the air to move around, instead of clicking a button.
+    - If OpenXR chords are ever implemented, I would like to change Space Drag to my old OVRAS config of Grip + Trigger + B/Y Touch.
+        - It feels nice to physically "grab" the air to move around, instead of clicking a button. Also, this reduces wear on the joystick.
         - I think of it as B/Y + Trigger to activate, and Grip to Space Drag. If you're holding something, use Trigger or B/Y Touch to drag instead.
