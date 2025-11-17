@@ -11,14 +11,14 @@ Potentially related issues:
 - [ring gfx_0.0.0 timeout & reset failure ](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
 
 ### Variants
-My current devices are a Desktop PC named Dent, and a Laptop named Skittles.
-- [Fedora 42 (Dent, AMD, Envision WiVRn, XRizer)](FEDORA-WiVRn-Envision.md) - Current main setup.
-- [CachyOS (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite)](CACHYOS-WiVRn-Flatpak.md) - Secondary setup on my laptop.
+- [Fedora 43 (Dent, AMD, Envision WiVRn, XRizer)](DENT-FEDORA43-WiVRn-Envision.md) - Current main setup.
 
 ### Old variants
 These are no longer in use.
-- [Fedora 41 (Dent, AMD, Flatpak WiVRn, OpenComposite)](FEDORA-WiVRn-Flatpak.md) - Original setup.
-- [Arch Linux (Dent, AMD, Envision WiVRn, OpenComposite)](ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
+- [Fedora 42 (Dent, AMD, Envision WiVRn, XRizer)](DENT-FEDORA42-WiVRn-Envision.md)
+- [CachyOS (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite)](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - Laptop is playing up.
+- [Fedora 41 (Dent, AMD, Flatpak WiVRn, OpenComposite)](DENT-FEDORA41-WiVRn-Flatpak.md)
+- [Arch Linux (Dent, AMD, Envision WiVRn, OpenComposite)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
 - Debian Trixie (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
 
 ### Maybe future variants
