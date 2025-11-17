@@ -11,15 +11,15 @@ Potentially related issues:
 - [ring gfx_0.0.0 timeout & reset failure ](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
 
 ### Variants
-- [Fedora 43 (Dent, AMD, Envision WiVRn, XRizer)](DENT-FEDORA43-WiVRn-Envision.md) - Current main setup.
+- [Dent Fedora 43 (AMD, Envision WiVRn, XRizer)](DENT-FEDORA43-WiVRn-Envision.md) - Current main setup.
 
 ### Old variants
 These are no longer in use.
-- [Fedora 42 (Dent, AMD, Envision WiVRn, XRizer)](DENT-FEDORA42-WiVRn-Envision.md)
-- [CachyOS (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite)](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - Laptop is playing up.
-- [Fedora 41 (Dent, AMD, Flatpak WiVRn, OpenComposite)](DENT-FEDORA41-WiVRn-Flatpak.md)
-- [Arch Linux (Dent, AMD, Envision WiVRn, OpenComposite)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
-- Debian Trixie (Skittles, NVIDIA, Flatpak WiVRn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
+- [Dent Fedora 42 (AMD, Envision WiVRn, XRizer)](DENT-FEDORA42-WiVRn-Envision.md)
+- [Skittles CachyOS (NVIDIA, Flatpak WiVRn, OpenComposite)](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - Laptop is playing up.
+- [Dent Fedora 41 (AMD, Flatpak WiVRn, OpenComposite)](DENT-FEDORA41-WiVRn-Flatpak.md)
+- [Dent Arch Linux (AMD, Envision WiVRn, OpenComposite)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
+- Skittles Debian Trixie (NVIDIA, Flatpak WiVRn, OpenComposite) - This lasted like a week before I replaced it with CachyOS.
 
 ### Maybe future variants
 - idk lol. happy to test things, feel free to open an issue if you want me to test anything specific.
