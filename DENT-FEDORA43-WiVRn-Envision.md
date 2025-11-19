@@ -42,18 +42,18 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 
 ### Software
 - Fedora 43 (KDE Plasma, Wayland, initially installed as Fedora 41)
-- [Envision](https://lvra.gitlab.io/docs/fossvr/envision/)
-    - [WiVRn](https://github.com/WiVRn/WiVRn)
-    - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - For full-body tracking, I use the following fork:
+- [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to build my VR runtime stuff.
+    - [WiVRn](https://github.com/WiVRn/WiVRn) - OpenXR runtime and streamer.
+    - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer. For full-body tracking, I use the following fork:
         - Repo: `https://github.com/ImSapphire/xrizer`
         - Branch: `generic_trackers`
-- [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) for desktop views and playspace drag.
-    - Space Drag is mapped to left/right stick click, Space Reset is mapped to double-click left stick.
+- [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) - An overlay application that provides desktop views and playspace drag.
+    - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick.
     - I also have WayVR Dashboard built and configured, but I don't have use for it at the current time.
 - Most games run through Steam (non-Flatpak), SteamVR is not installed, and in this case shouldn't be.
 - Default Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
 
-I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will change once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
+I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
 Though, there are some benefits using Envision:
 - I don't need to add the launch arguments to my Steam games.
 - Using a different XRizer fork/branch is as simple as changing a URL and rebuilding.
