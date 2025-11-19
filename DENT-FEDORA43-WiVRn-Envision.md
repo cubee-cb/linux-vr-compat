@@ -20,16 +20,18 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 ### VR Hardware
 - PICO 4 (256GB)
     - Typically used wireless.
-    - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available. (Settings > Lab > Hand Tracking)
-    - Presence sensor isn't passed through at this time, so VRChat doesn't trigger AFK, Vivecraft won't hotswitch, etc.
     - PICO Motion Trackers work about as well as they do.
     - Left controller seems to be failing now.
       - Keeps dropping out on occasion.
       - It's always the left controllers lol. My left WMR controller way back when was so power-hungry compared to the right.
 - Quest 3s (128GB)
     - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and presumably better controller prediction due to more sane offsets.
-      - PICO controllers are weird, man.
+      - PICO 4 controllers are weird, man.
     - Can be used in the dark, so if I want the lights off, this headset's the way to go.
+- Common notes
+    - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
+        - For PICO, this setting is under Settings > Lab > Hand Tracking.
+    - Presence isn't passed through at this time, so VRChat doesn't trigger its AFK state, Vivecraft won't hotswitch automatically, etc.
 
 ### PC Hardware
 - AMD Ryzen 5 5600G (iGPU disabled)
@@ -65,7 +67,10 @@ Some things to be careful of.
 ---
 
 ### Easy Effects
-- This seems to cause WiVRn's audio to become crunchy. If so, either turn off the `Enable` toggle on the VR applications, disable Output as a whole, or close down Easy Effects completely.
+- This seems to cause WiVRn's audio to become crunchy. To work around, do one of the following:
+    - Turn off the `Enable` toggle on the VR applications in the Output tab.
+    - Disable its effect on audio outputs as a whole.
+    - Close down Easy Effects completely.
 
 ### PROTON_LOG
 - I learnt this the hard way; if you have added `PROTON_LOG=1` to your launch arguments, try not to forget.
