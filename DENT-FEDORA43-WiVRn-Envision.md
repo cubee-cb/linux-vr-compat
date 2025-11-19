@@ -102,6 +102,12 @@ Things we can actually play! Yay!
 - Modding with [BSManager](https://github.com/Zagrios/bs-manager).
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 
+### ^ Resonite (Prerelease > .NET 10)
+- Using GE-Proton10-15-rtsp18.
+- .NET 10 breaks mods, so we'll have to wait for them to update. In my caase, my settings were broken (e.g. Motion Blur locked to 2000%) until I disabled the modloader.
+- Full-body tracking (FBT):
+  - Trackers appear fine with my chosen branch of XRizer.
+
 ---
 
 ## Partially working
