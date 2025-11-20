@@ -87,9 +87,8 @@ Things we can actually play! Yay!
 
 ### ^ VRChat
 - UsingGE-Proton10-20-rtsp19 (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
-- Uses the following launch options based on [gamemoderun](https://github.com/FeralInteractive/gamemode):
-    - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding --enable-debug-gui`
-    - I have world debug GUIs on since I make worlds and I think they're neat to have.
+- Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
+    - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
 - Full-body tracking (FBT):
   - Works fine with my chosen branch of XRizer.
