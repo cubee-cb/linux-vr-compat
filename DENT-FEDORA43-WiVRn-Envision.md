@@ -151,7 +151,7 @@ The following crash on launch or have other major issues that prevent the full e
 - Crash on launch. Need further investigation; Alyx's ability to avoid crashes has never been consistent on my system.
 
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (totally not biased)
-- Unity Player fails to launch, seemingly regardless of the Proton version used.
+- Unity Player crashes immediately on launch, seemingly regardless of the Proton version used.
     - Proton logs output `unhandled page fault`.
     - Player logs output `Failed to create the D3D11 device`.
     - Some versions of Proton additionally specify the following in the Player log:
