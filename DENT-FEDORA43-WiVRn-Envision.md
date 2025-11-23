@@ -42,16 +42,18 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 
 ### Software
 - Fedora 43 (KDE Plasma, Wayland, initially installed as Fedora 41)
-- [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to build my VR runtime stuff.
-    - [WiVRn](https://github.com/WiVRn/WiVRn) - OpenXR runtime and streamer.
+- [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to help automate a lot of the VR runtime stuff.
+    - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
     - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer. For full-body tracking, I use the following fork:
         - Repo: `https://github.com/ImSapphire/xrizer`
         - Branch: `generic_trackers`
 - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) - An overlay application that provides desktop views and playspace drag.
     - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick.
     - I also have WayVR Dashboard built and configured, but I don't have use for it at the current time.
-- Most games run through Steam (non-Flatpak), SteamVR is not installed, and in this case shouldn't be.
+- Most games run through Steam Native (i.e. not the Flatpak version).
+    - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
 - Default Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
+    - To install a custom Proton version, I use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (`pupgui2` in Flatpaks).
 
 I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
 Though, there are some benefits using Envision:
@@ -79,7 +81,7 @@ Some things to be careful of.
 ---
 
 ## Working
-Things we can actually play! Yay!
+Things we can actually play! Yay! There may be small issues here and there but these are not typically game-breaking.
 
 ^ - Using a different Proton version. (notes will mention why)
 
@@ -112,11 +114,24 @@ Things we can actually play! Yay!
 - Full-body tracking (FBT):
   - Trackers appear fine with my chosen branch of XRizer.
 
+### ^ Until You Fall
+- Using GE-Proton7-55, unsure if other versions work.
+- With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
+- Performance is sub-par, I lowered my resolution to 50% (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not perfect.
+
+### ChilloutVR
+- Full-body tracking (FBT):
+  - Works mostly fine with my chosen branch of XRizer. Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
+  - (todo: re-test) Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
+      - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
+
+### Vertigo: Remastered
+- Nothing much to note. From a brief test, the menu controls work and you can try to stop the first boss-thing from slapping you. I'm not very good at it.
+
 ---
 
 ## Partially working
-These launch, but are unplayable or have issues functioning.
-Or, in some cases they started working all of a sudden but I have no idea why.
+These launch, but have issues functioning normally and may have completely broken parts.
 
 ---
 
@@ -125,9 +140,15 @@ None tested.
 ---
 
 ## Not working
-The following crash on launch or have other major issues.
+The following crash on launch or have other major issues that prevent the full experience.
 
 ---
+
+### ^ Half-Life: Alyx (Proton)
+- Using Proton Experimental.
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=50 %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
+  - 50% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision.
+- Crash on launch. Need further investigation; Alyx's ability to avoid crashes has never been consistent on my system.
 
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (totally not biased)
 - Unity Player fails to launch, seemingly regardless of the Proton version used.
