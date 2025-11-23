@@ -128,6 +128,12 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ### Vertigo: Remastered
 - Nothing much to note. From a brief test, the menu controls work and you can try to stop the first boss-thing from slapping you. I'm not very good at it.
 
+### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
+- Requires the venrinment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
+    - i.e. set your launch options to `PROTON_USE_WINED3D=1 %command%`
+- The release version was built with Unity 6.2.
+    - Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. What changed, Unity?
+
 ---
 
 ## Partially working
@@ -149,15 +155,6 @@ The following crash on launch or have other major issues that prevent the full e
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=50 %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
   - 50% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision.
 - Crash on launch. Need further investigation; Alyx's ability to avoid crashes has never been consistent on my system.
-
-### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (totally not biased)
-- Unity Player crashes immediately on launch, seemingly regardless of the Proton version used.
-    - Proton logs output `unhandled page fault`.
-    - Player logs output `Failed to create the D3D11 device`.
-    - Some versions of Proton additionally specify the following in the Player log:
-        - `Got a UNKNOWN while executing native code. This usually indicates a fatal error in the mono runtime or one of the native libraries used by your application.`
-- The release version was built with Unity 6.2.
-    - Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then. What changed?
 
 ---
 
