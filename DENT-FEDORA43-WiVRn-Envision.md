@@ -156,6 +156,8 @@ The following crash on launch or have other major issues that prevent the full e
     - Player logs output `Failed to create the D3D11 device`.
     - Some versions of Proton additionally specify the following in the Player log:
         - `Got a UNKNOWN while executing native code. This usually indicates a fatal error in the mono runtime or one of the native libraries used by your application.`
+- The release version was built with Unity 6.2.
+    - Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then. What changed?
 
 ---
 
