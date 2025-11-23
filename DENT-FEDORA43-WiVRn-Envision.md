@@ -103,14 +103,14 @@ Things we can actually play! Yay! There may be small issues here and there but t
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
 
 ### ^ Beat Saber (Modded)
-- Using Proton Experimental.
-    - When I used Flatpak WiVRn, mods did not load with GE-Proton9-18.
-- Modding with [BSManager](https://github.com/Zagrios/bs-manager).
+- Using Proton Experimental, due to mod-loading issues with Proton-GE way back when I used Flatpak WiVRn.
+- I currently use [BSManager](https://github.com/Zagrios/bs-manager) for modding and launching Beat Saber 1.40.8.
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 
 ### ^ Resonite (Prerelease > .NET 10)
 - Using GE-Proton10-15-rtsp18.
-- .NET 10 breaks mods, so we'll have to wait for them to update. In my caase, my settings were broken (e.g. Motion Blur locked to 2000%) until I disabled the modloader.
+- .NET 10 breaks mods, so we'll have to wait for them to update. In my caase, my settings were broken (e.g. Motion Blur locked to 2000%) until I disabled Resonite Mod Loader.
+    - I plan to look into Monkeyloader at some point.
 - Full-body tracking (FBT):
   - Trackers appear fine with my chosen branch of XRizer.
 
