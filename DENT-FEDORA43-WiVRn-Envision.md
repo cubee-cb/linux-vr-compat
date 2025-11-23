@@ -129,10 +129,9 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Nothing much to note. From a brief test, the menu controls work and you can try to stop the first boss-thing from slapping you. I'm not very good at it.
 
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
-- Requires the venrinment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
+- Requires the environment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
     - i.e. set your launch options to `PROTON_USE_WINED3D=1 %command%`
-- The release version was built with Unity 6.2.
-    - Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. What changed, Unity?
+    - Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. It's currently built on Unity 6.2. *What changed, Unity?*
 
 ---
 
