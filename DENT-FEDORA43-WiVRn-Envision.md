@@ -72,6 +72,7 @@ Some things to be careful of.
 - This seems to cause WiVRn's audio to become crunchy. To work around, do one of the following:
     - Turn off the `Enable` toggle on the VR applications in the Output tab.
     - Disable its effect on audio outputs as a whole.
+        - Untested, but maybe you could turn off `Process all output devices` and/or set `Pipewire > General > Use default output` to a specific, non-WiVRn device.
     - Close down Easy Effects completely.
 
 ### PROTON_LOG
