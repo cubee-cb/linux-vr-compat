@@ -72,10 +72,10 @@ Some things to be careful of.
 - This seems to cause WiVRn's audio to become crunchy/robotic. To work around, do one of the following:
     - Override `Pipewire > General > Use default output` with a specific, non-WiVRn device. Naturally, this is only viable if you only have one audio output you would ever need filtered at a time.
         - Yes, EasyEffects seems to process the outputs even when there are no effects selected.
-    - Turn off the `Enable` toggle on the VR applications in the Output tab.
+    - In the Output tab, turn on the `Exclude` toggle for your active VR applications. (WlxOverlay-S, Beat Saber, VRChat, etc)
     - Disable its effect on audio outputs as a whole.
     - Close down Easy Effects completely.
-- I have heard people say my voice went "robotic" momentarily, and I assume this is also EasyEffects' fault. To be safe I've also overritten `Pipewire > General > Use default input` with my desktop mic.
+- I have heard people say my voice went "robotic" momentarily, and I presume this is also EasyEffects' fault. To be safe I've also overritten `Pipewire > General > Use default input` with my desktop mic.
     - Since the WiVRn client has a built-in noise reduction solution already, there's not much point allowing it to be filtered again. (unless I wanna pitch-change or something, but frankly, I'd rather learn to control my voice myself than have the computer do it)
     - I unplug my desktop mic when not in use, so it may "fall back" to the WiVRn mic. In my case, I have a little USB Capture card that it falls back to.
 
