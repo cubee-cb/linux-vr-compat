@@ -9,7 +9,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 - [Working games](#working)
 - [Partially working games](#partially-working)
 - [Not working games](#not-working)
-- [Development/hardware](#developmenthardware)
+- [Software](#software)
 
 ---
 
@@ -162,8 +162,8 @@ The following crash on launch or have other major issues that prevent the full e
 
 ---
 
-## Development/hardware
-Troubleshooting setup of hardware or build issues.
+## Software
+Troubleshooting setup of other, non-game software.
 
 ---
 
@@ -183,5 +183,9 @@ Troubleshooting setup of hardware or build issues.
 - As for Unity Hub itself:
     - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use.
     - Using the Unity Hub binary from the yum repo provided by Unity seems to work fine.
+
+### Blender (VR Scene Inspection Addon)
+- On Wayland, starting the OpenXR Session may result in an error `XR_ERROR_GRAPHICS_DEVICE_INVALID`.
+    - Changing the graphics backend to `Vulkan` under `Edit > Preferences > System > Display Graphics` should fix this.
 
 ---
