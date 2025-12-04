@@ -167,11 +167,6 @@ Troubleshooting setup of other, non-game software.
 
 ---
 
-### Envision WiVRn Setup
-- Envision's WiVRn build used to fail with what looks like an error in the code itself. After several months, a variety of system upgrades, installing packages to build WiVRn standalone, and updating `rustup`, the Envision build works now! idk why. Whatever, I'm happy.
-- Optionally set up WiVRn, XRizer, etc as described in the Software section at the top.
-- Clean build!
-
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
 - The AppImages display a white screen on launch, so building ALCOM manually is pretty much required on this system.
