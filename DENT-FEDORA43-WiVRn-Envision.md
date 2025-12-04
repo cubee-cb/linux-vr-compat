@@ -40,7 +40,7 @@ Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR
 - OS is on a SATA SSD.
 - Most games installed on a hard drive, some on an extra NVMe I ended up with due to ongoing issues with Skittles (the laptop, not the snack).
 
-### Software
+### PC Software
 - Fedora 43 (KDE Plasma, Wayland, initially installed as Fedora 41)
 - [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to help automate a lot of the VR runtime stuff.
     - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
