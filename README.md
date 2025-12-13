@@ -1,4 +1,5 @@
-Testing VR games with WiVRn and WlxOverlay-S.
+Testing VR games with WiVRn and WlxOverlay-S. See [linux-gaming-compat](https://github.com/cubee-cb/linux-gaming-compat) for non-VR titles.
+
 Subfolders include scripts or configs that I use.
 
 # Current variants
