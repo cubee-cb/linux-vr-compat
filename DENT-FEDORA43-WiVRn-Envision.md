@@ -43,20 +43,29 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
 - Most games installed on a hard drive, some on an extra NVMe I ended up with due to ongoing issues with Skittles (the laptop, not the snack).
 
 ### PC Software
-- Fedora 43 (KDE Plasma, Wayland, initially installed as Fedora 41)
-- [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to help automate a lot of the VR runtime stuff.
-    - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
-    - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer. For full-body tracking, I use the following fork:
-        - Repo: `https://github.com/ImSapphire/xrizer`
-        - Branch: `generic_trackers`
-- [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) - An overlay application that provides desktop views and playspace drag.
-    - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick.
-    - I also have WayVR Dashboard built and configured, but I don't have use for it at the current time.
-- Most games run through Steam Native (i.e. not the Flatpak version).
+- Distro: Fedora 43 (upgraded from Fedora 41)
+- Desktop: KDE Plasma, Wayland
+- Steam: `dnf` package (i.e. not the flatpak)
+    - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
+- Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (Default for all games and launchers, unless otherwise specified)
+    - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`).
+    - For manual installation (such as for the [GE-RTSP variant](https://github.com/SpookySkeletons/proton-ge-rtsp)), place the tool's folder in `.steam/steam/compatibilitytools.d/`.
+- XR Stack:
+    - [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to help automate a lot of the VR runtime stuff. Handles the following:
+        - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
+        - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer. For full-body tracking, I use the following fork:
+            - Repo: `https://github.com/ImSapphire/xrizer`
+            - Branch: `generic_trackers`
+    - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) - An overlay application that provides desktop views and playspace drag.
+        - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick.
+        - I also have WayVR Dashboard built and configured, but I don't have use for it at the current time.
     - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
-- Default Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (unless otherwise specified)
-    - To install a custom Proton version, I use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (`pupgui2` in Flatpaks).
 
+### PC Software
+- Epic Store + GOG: Heroic Games Launcher (AppImage version)
+  - Also used as a launcher for various additional games.
+
+ 
 I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
 Though, there are some benefits using Envision:
 - I don't need to add the launch arguments to my Steam games.
