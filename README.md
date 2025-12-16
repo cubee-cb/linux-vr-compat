@@ -3,7 +3,7 @@ Testing VR games with WiVRn and WlxOverlay-S. See [linux-gaming-compat](https://
 Subfolders include scripts or configs that I use.
 
 # Current variants
-- [Dent Fedora 43 (AMD, Envision WiVRn, XRizer)](DENT-FEDORA43-WiVRn-Envision.md) - Current main setup.
+- [Dent Fedora 43 (AMD, Envision WiVRn, XRizer)](DENT-FEDORA43-WiVRn-Envision.md) - Current main setup. Previous revisions follow:
   - [Fedora 42 (Envision WiVRn, XRizer)](DENT-FEDORA42-WiVRn-Envision.md)
   - [Fedora 41 (Flatpak WiVRn, OpenComposite)](DENT-FEDORA41-WiVRn-Flatpak.md)
 - [Skittles CachyOS (NVIDIA, Flatpak WiVRn, OpenComposite)](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - Laptop is playing up, so this install may not be much longer for this world.
