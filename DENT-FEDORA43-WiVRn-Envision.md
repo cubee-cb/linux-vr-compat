@@ -1,5 +1,7 @@
 Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR/OpenVR compatibility.
 
+As usual, if a game isn't listed here, check out the other files to see if I've tried it on another revision of this system.
+
 ## Current notes:
 - `amdgpu` resets not yet observed, but not known if resolved.
 
