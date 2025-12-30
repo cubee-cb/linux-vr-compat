@@ -53,9 +53,8 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
 - XR Stack:
     - [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to help automate a lot of the VR runtime stuff. Handles the following:
         - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
-        - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer. For full-body tracking, I use the following fork:
-            - Repo: `https://github.com/ImSapphire/xrizer`
-            - Branch: `generic_trackers`
+        - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer.
+            - `main` now has full-body-tracking support, so forks required no longer. I need to re-test my tracking soon; info here on FBT may be outdated.
     - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) - An overlay application that provides desktop views and playspace drag.
         - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick.
         - I also have WayVR Dashboard built and configured, but I don't have use for it at the current time.
@@ -66,10 +65,10 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
   - Also used as a launcher for various additional games.
 
  
-I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing once either XRizer has FBT support properly built-in (Envision just makes building and using those forks practically seamless) or when Envision stops working.
+I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing if/when Envision stops working, as I like being able to try out the latest changes every now and then.
 Though, there are some benefits using Envision:
 - I don't need to add the launch arguments to my Steam games.
-- Using a different XRizer fork/branch is as simple as changing a URL and rebuilding.
+- Using a different fork/branch of each component is as simple as changing a URL and rebuilding.
 - I get the latest changes as they happen without waiting for a release, though things might break sometimes.
 
 ---
@@ -108,8 +107,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
-- Full-body tracking (FBT):
-  - Works fine with my chosen branch of XRizer.
+- Full-body tracking (FBT) works just fine.
 
 #### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
 - I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
@@ -118,17 +116,17 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
 
-### ^ Beat Saber (Modded)
+### ^ Beat Saber (1.40.8 Modded)
 - Using Proton Experimental, due to mod-loading issues with Proton-GE way back when I used Flatpak WiVRn.
 - I currently use [BSManager](https://github.com/Zagrios/bs-manager) for modding and launching Beat Saber 1.40.8.
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
+- Full-body tracking doesn't seem to work; OpenXR Tracker Profiles either doesn't load or can't detect the trackers.
 
 ### ^ Resonite (Prerelease > .NET 10)
 - Using GE-Proton10-15-rtsp18.
 - .NET 10 breaks mods, so we'll have to wait for them to update. In my caase, my settings were broken (e.g. Motion Blur locked to 2000%) until I disabled Resonite Mod Loader.
     - I plan to look into Monkeyloader at some point.
-- Full-body tracking (FBT):
-  - Trackers appear fine with my chosen branch of XRizer.
+- Full-body tracking works just fine.
 
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
@@ -136,8 +134,8 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Performance is sub-par, I lowered my resolution to 50% (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not perfect.
 
 ### ChilloutVR
-- Full-body tracking (FBT):
-  - Works mostly fine with my chosen branch of XRizer. Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
+- Full-body tracking Works mostly fine:
+  - Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
   - (todo: re-test) Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
       - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
 
@@ -188,7 +186,7 @@ Troubleshooting setup of other, non-game software.
     - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
 - As for Unity Hub itself:
     - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use.
-    - Using the Unity Hub binary from the yum repo provided by Unity seems to work fine.
+    - Instead, using the Unity Hub binary from the yum repo provided by Unity seems to resolve this issue.
 
 ### Blender (VR Scene Inspection Addon)
 - On Wayland, starting the OpenXR Session may result in an error `XR_ERROR_GRAPHICS_DEVICE_INVALID`.
