@@ -27,8 +27,8 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
       - Keeps dropping out on occasion.
       - It's always the left controllers lol. My left WMR controller way back when was so power-hungry compared to the right.
 - Quest 3s (128GB)
-    - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and presumably better controller prediction due to more sane offsets.
-      - PICO 4 controllers are weird, man.
+    - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and more stable controller prediction.
+      - The PICO 4's controller offsets are weird, man. They flip all over the place.
     - Can be used in the dark, so if I want the lights off, this headset's the way to go.
 - Common notes
     - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
@@ -36,9 +36,9 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
     - Presence isn't passed through at this time, so VRChat doesn't trigger its AFK state, Vivecraft won't hotswitch automatically, etc.
 
 ### PC Hardware
-- AMD Ryzen 5 5600G (iGPU disabled)
+- AMD Ryzen 5 5600G (iGPU disabled in BIOS)
 - AMD Radeon RX 6600XT (8GB)
-- 32GB RAM (2x16GB, 3600Mhz, DDR4)
+- 32GB RAM (2x16GB, 3600MHz, DDR4)
 - OS is on a SATA SSD.
 - Most games installed on a hard drive, some on an extra NVMe I ended up with due to ongoing issues with Skittles (the laptop, not the snack).
 
