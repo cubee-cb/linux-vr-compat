@@ -1,6 +1,6 @@
-Testing VR games with WiVRn and WlxOverlay-S on Fedora, using XRizer for SteamVR/OpenVR compatibility.
+Testing VR games with WiVRn and WayVR on Fedora, using XRizer for SteamVR/OpenVR compatibility.
 
-As usual, if a game isn't listed here, check out the other files to see if I've tried it on another revision of this system.
+If a game isn't listed here, check out the other files to see if I've tried it on another revision of this system.
 
 ## Current notes:
 - `amdgpu` resets not yet observed, but not known if resolved.
@@ -24,7 +24,7 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
     - Typically used wireless.
     - PICO Motion Trackers work about as well as they do.
     - Left controller seems to be failing now.
-      - Keeps dropping out on occasion.
+      - Keeps dropping out on occasion, and the capacitive sensors keep getting stuck on or off.
       - It's always the left controllers lol. My left WMR controller way back when was so power-hungry compared to the right.
 - Quest 3s (128GB)
     - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and more stable controller prediction.
@@ -55,14 +55,12 @@ As usual, if a game isn't listed here, check out the other files to see if I've 
         - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
         - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer.
             - `main` now has full-body-tracking support, so forks required no longer. I need to re-test my tracking soon; info here on FBT may be outdated.
-    - [WlxOverlay-S](https://github.com/galister/wlx-overlay-s) - An overlay application that provides desktop views and playspace drag.
-        - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick.
-        - I also have WayVR Dashboard built and configured, but I don't have use for it at the current time.
+    - [WayVR (formerly WlxOverlay-S)](https://github.com/wlx-team/wayvr) - An overlay application that provides desktop views and playspace drag.
+        - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick
     - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
 
 ### PC Software
-- Epic Store + GOG: Heroic Games Launcher (AppImage version)
-  - Also used as a launcher for various additional games.
+- Epic Store, GOG, and non-Steam: Heroic Games Launcher (AppImage version)
 
  
 I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing if/when Envision stops working, as I like being able to try out the latest changes every now and then.
@@ -82,7 +80,7 @@ Some things to be careful of.
 - This seems to cause WiVRn's audio to become crunchy/robotic. To work around, do one of the following:
     - Override `Pipewire > General > Use default output` with a specific, non-WiVRn device. Naturally, this is only viable if you only have one audio output you would ever need filtered at a time.
         - Yes, EasyEffects seems to process the outputs even when there are no effects selected.
-    - In the Output tab, turn on the `Exclude` toggle for your active VR applications. (WlxOverlay-S, Beat Saber, VRChat, etc)
+    - In the Output tab, turn on the `Exclude` toggle for your active VR applications. (WayVR, Beat Saber, VRChat, etc)
     - Disable its effect on audio outputs as a whole.
     - Close down Easy Effects completely.
 - I have heard people say my voice went "robotic" momentarily, and I presume this is also EasyEffects' fault. To be safe I've also overritten `Pipewire > General > Use default input` with my desktop mic.
