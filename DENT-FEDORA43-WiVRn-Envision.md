@@ -99,7 +99,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ---
 
 ### ^ VRChat
-- Using GE-Proton10-20-rtsp19, moving to [GE-Proton10-26-rtsp20](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton10-26-rtsp20) (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
+- Using GE-Proton10-20-rtsp19. (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
@@ -118,10 +118,9 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 - Full-body tracking doesn't seem to work; OpenXR Tracker Profiles either doesn't load or can't detect the trackers.
 
-### ^ Resonite (Prerelease > .NET 10)
+### ^ Resonite
 - Using GE-Proton10-15-rtsp18.
-- .NET 10 breaks mods, so we'll have to wait for them to update. In my caase, my settings were broken (e.g. Motion Blur locked to 2000%) until I disabled Resonite Mod Loader.
-    - I plan to look into Monkeyloader at some point.
+- I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
 
 ### ^ Until You Fall
