@@ -1,0 +1,14 @@
+# general
+toast - notification appears
+key_click - keyboard key is pressed
+
+# wgui
+wgui_mouse_enter - laser enters a clickable element
+wgui_button_press - button is pressed
+wgui_button_release - button is released
+wgui_checkbox_check - checkbox is checked
+wgui_checkbox_uncheck - checkbox is unchecked
+
+# dashboard
+app_start - app is launched from the dashboard
+startup - dashboard is created (opened for the first time this session)
