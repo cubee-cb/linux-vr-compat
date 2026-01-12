@@ -1,6 +1,6 @@
 Testing VR games on Linux. See [linux-gaming-compat](https://github.com/cubee-cb/linux-gaming-compat) for non-VR titles.
 
-Subfolders include scripts or configs that I use.
+Subfolders include scripts or configs that I use. Configs are available under [dotfiles](dotfiles).
 
 # Current variants
 - Dent (Fedora, AMD)
