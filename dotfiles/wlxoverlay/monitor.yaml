@@ -1,0 +1,157 @@
+
+width: 0.150
+
+size: [400, 576]
+
+elements:
+  # background panel
+  - type: Panel
+    rect: [0, 0, 400, 576]
+    corner_radius: 50
+    bg_color: "#24273a"
+
+  # close button
+  - type: Button
+    rect: [16, 16, 48, 48]
+    corner_radius: 100
+    font_size: 20
+    bg_color: "#ee2366"
+    fg_color: "#cad3f5"
+    text: "X"
+    click_up: # destroy if exists, otherwise create
+      - type: Window
+        target: monitor
+        action: Destroy # only triggers if exists since before current frame
+
+  - type: Button
+    rect: [80, 16, 120, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#a02020"
+    text: "_"
+    click_down:
+      - type: SendOscValue
+        parameter: "/n"
+        values:
+          - type: String
+            value: ""
+
+  - type: Button
+    rect: [216, 16, 168, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#4040a0"
+    text: "_"
+    click_down:
+      - type: SendOscValue
+        parameter: "/n"
+        values:
+          - type: String
+            value: ""
+
+  # dividing line
+  - type: Panel
+    rect: [32, 70, 336, 4]
+    corner_radius: 100
+    bg_color: "#5b6078"
+
+  # batteries
+  - type: BatteryList
+    rect: [340, 80, 36, 496]
+    corner_radius: 4
+    font_size: 20
+    fg_color: "#8bd5ca"
+    fg_color_low: "#B06060"
+    fg_color_charging: "#6080A0"
+    num_devices: 9
+    layout: Vertical
+    low_threshold: 20
+
+  - type: Label
+    rect: [16, 112, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -c"]
+    interval: 0.5
+
+  - type: Label
+    rect: [16, 166, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -r"]
+    interval: 0.5
+
+  - type: Label
+    rect: [16, 220, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -g"]
+    interval: 0.5
+
+  - type: Label
+    rect: [16, 274, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -v"]
+    interval: 0.5
+
+  - type: Label
+    rect: [16, 328, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -C"]
+    interval: 2
+
+  - type: Label
+    rect: [16, 382, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -G"]
+    interval: 2
+
+  - type: Label
+    rect: [16, 436, 40, 32]
+    font_size: 20
+    fg_color: "#81a1c1"
+    source: Exec
+    command: ["bash", "-c", "~/.config/wlxoverlay/pollhw.sh -V"]
+    interval: 2
+
+
+
+  - type: Button
+    rect: [16, 458, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#5b6078"
+    text: "___"
+    click_down:
+      - type: SendOscValue
+        parameter: "/n"
+        values:
+          - type: String
+            value: ""
+
+
+  - type: Button
+    rect: [16, 512, 368, 48]
+    corner_radius: 20
+    font_size: 20
+    fg_color: "#cad3f5"
+    bg_color: "#444444"
+    text: "___"
+    click_down:
+      - type: SendOscValue
+        parameter: "/n"
+        values:
+          - type: String
+            value: ""
