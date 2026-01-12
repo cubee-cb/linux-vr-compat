@@ -47,6 +47,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Desktop: KDE Plasma, Wayland
 - Steam: `dnf` package (i.e. not the flatpak)
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
+- Epic Store, GOG, and non-Steam games: Heroic Games Launcher (AppImage version)
 - Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (Default for all games and launchers, unless otherwise specified)
     - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`).
     - For manual installation (such as for the [GE-RTSP variant](https://github.com/SpookySkeletons/proton-ge-rtsp)), place the tool's folder in `.steam/steam/compatibilitytools.d/`.
@@ -58,9 +59,6 @@ If a game isn't listed here, check out the other files to see if I've tried it o
     - [WayVR (formerly WlxOverlay-S)](https://github.com/wlx-team/wayvr) - An overlay application that provides desktop views and playspace drag.
         - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick.
     - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
-
-### PC Software
-- Epic Store, GOG, and non-Steam: Heroic Games Launcher (AppImage version)
 
  
 I will note that Envision is not typically recommended for WiVRn. Generally, you should be using system or Flatpak WiVRn instead. I will consider changing if/when Envision stops working, as I like being able to try out the latest changes every now and then.
