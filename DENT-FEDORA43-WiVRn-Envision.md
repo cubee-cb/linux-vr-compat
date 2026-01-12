@@ -22,7 +22,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 ### VR Hardware
 - PICO 4 (256GB)
     - Typically used wireless.
-    - PICO Motion Trackers work about as well as they do.
+    - PICO Motion Trackers work about as well as they are supposed to.
     - Left controller seems to be failing now.
       - Keeps dropping out on occasion, and the capacitive sensors keep getting stuck on or off.
       - It's always the left controllers lol. My left WMR controller way back when was so power-hungry compared to the right.
@@ -31,8 +31,8 @@ If a game isn't listed here, check out the other files to see if I've tried it o
       - The PICO 4's controller offsets are weird, man. They flip all over the place.
     - Can be used in the dark, so if I want the lights off, this headset's the way to go.
 - Common notes
-    - Hand tracking works fine in titles that support it. Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
-        - For PICO, this setting is under Settings > Lab > Hand Tracking.
+    - Hand Tracking works fine in titles that support it (that is, VRChat). Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
+        - For PICO, this is under Settings > Lab > Hand Tracking.
     - Presence isn't passed through at this time, so VRChat doesn't trigger its AFK state, Vivecraft won't hotswitch automatically, etc.
 
 ### PC Hardware
@@ -54,9 +54,9 @@ If a game isn't listed here, check out the other files to see if I've tried it o
     - [Envision](https://lvra.gitlab.io/docs/fossvr/envision/) - Handy tool to help automate a lot of the VR runtime stuff. Handles the following:
         - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
         - [XRizer](https://lvra.gitlab.io/docs/fossvr/xrizer/) - OpenVR > OpenXR compatibility layer.
-            - `main` now has full-body-tracking support, so forks required no longer. I need to re-test my tracking soon; info here on FBT may be outdated.
+            - `main` now has full-body-tracking support, so forks are required no longer.
     - [WayVR (formerly WlxOverlay-S)](https://github.com/wlx-team/wayvr) - An overlay application that provides desktop views and playspace drag.
-        - My Space Drag is mapped to left/right stick click, while Space Reset is mapped to double-click left stick
+        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick.
     - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
 
 ### PC Software
@@ -83,7 +83,7 @@ Some things to be careful of.
     - In the Output tab, turn on the `Exclude` toggle for your active VR applications. (WayVR, Beat Saber, VRChat, etc)
     - Disable its effect on audio outputs as a whole.
     - Close down Easy Effects completely.
-- I have heard people say my voice went "robotic" momentarily, and I presume this is also EasyEffects' fault. To be safe I've also overritten `Pipewire > General > Use default input` with my desktop mic.
+- I have heard people say my voice went "robotic" momentarily, and I presume this is also EasyEffects' fault. To be safe I've also overridden `Pipewire > General > Use default input` with my desktop mic.
     - Since the WiVRn client has a built-in noise reduction solution already, there's not much point allowing it to be filtered again. (unless I wanna pitch-change or something, but frankly, I'd rather learn to control my voice myself than have the computer do it)
     - I unplug my desktop mic when not in use, so it may "fall back" to the WiVRn mic. In my case, I have a little USB Capture card that it falls back to.
 
@@ -105,7 +105,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
-- Full-body tracking (FBT) works just fine.
+- Full-body tracking works just fine.
 
 #### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
 - I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
@@ -129,7 +129,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
 - With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
-- Performance is sub-par, I lowered my resolution to 50% (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not perfect.
+- Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not perfect.
 
 ### ChilloutVR
 - Full-body tracking Works mostly fine:
@@ -143,7 +143,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
 - Requires the environment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
     - i.e. set your launch options to `PROTON_USE_WINED3D=1 %command%`
-    - Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. It's currently built on Unity 6.2. *What changed, Unity?*
+    - Unity 6 seems to have issues on Linux in general; see versions of Beat Saber after 1.40.8. Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. Currently, it's built on Unity 6.2.
 
 ---
 
@@ -152,12 +152,14 @@ These launch, but have issues functioning normally and may have completely broke
 
 ---
 
-None tested.
+### Superhot VR
+- Grabbing is mapped to Trigger, and seems unable to drop items.
+    - Throwing things and thus progressing through certain areas therefore seems impossible.
 
 ---
 
 ## Not working
-The following crash on launch or have other major issues that prevent the full experience.
+The following crash on launch or have other major issues that prevent them from working at all.
 
 ---
 
@@ -166,6 +168,10 @@ The following crash on launch or have other major issues that prevent the full e
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=50 %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
   - 50% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision.
 - Crash on launch. Need further investigation; Alyx's ability to avoid crashes has never been consistent on my system.
+
+### ^ Catlateral Damage VR (Proton)
+- Using GE-Proton7-55. VR Mode is only available when using the Windows build via Proton.
+- Crash on launch.
 
 ---
 
