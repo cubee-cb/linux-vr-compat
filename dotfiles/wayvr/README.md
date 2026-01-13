@@ -11,9 +11,9 @@ Contained here are the following:
     - `pavtl` is used for the Volume controls.
     - `playerctl` is used for Media controls.
   - [quick-chat panel](theme/gui/quick-chat.xml)
-    - A custom panel with OSC buttons that send quick-chat messages to VRChat's Chatbox.
+    - A custom panel with OSC buttons that send quick-chat messages to VRChat's Chatbox. ([#388](https://github.com/wlx-team/wayvr/pull/388)).
 - [sound](sound)
-  - Custom sounds ([#379](https://https://github.com/wlx-team/wayvr/pull/379)).
+  - Custom sounds ([#379](https://github.com/wlx-team/wayvr/pull/379)).
 - [aurorasky](aurorasky.dds)
     - A SteamVR Void background converted to DDS format, since I wanted a darker skybox and finding a different one turned out to be more effort than I could be bothered with when this one was already perfect.
 - [openxr_actions](openxr_actions.json5)
