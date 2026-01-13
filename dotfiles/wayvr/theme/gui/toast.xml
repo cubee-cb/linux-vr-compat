@@ -1,0 +1,27 @@
+<layout>
+  <elements>
+    <div interactable="0">
+      <rectangle
+        max_width="500"
+        padding="16"
+        flex_direction="column"
+        gap="8"
+        color="#000000c0" border_color="~color_accent" border="2" round="8">
+
+        <!-- Toast title -->
+        <div flex_direction="row" align_items="center" gap="8">
+          <sprite src="icons/bell.svg" min_width="32" min_height="32" max_width="32" max_height="32" flex_grow="1" />
+          <label wrap="1" id="toast_title" weight="bold" size="25" padding_left="16" padding_right="16" />
+        </div>
+
+        <!-- A simple separator -->
+        <rectangle width="100%" height="2" color="~color_accent" />
+
+        <div>
+          <!-- Toast message -->
+          <label id="toast_body" wrap="1" size="20" padding_left="16" padding_right="16" />
+        </div>
+      </rectangle>
+    </div>
+  </elements>
+</layout>

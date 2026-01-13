@@ -1,0 +1,82 @@
+<layout>
+
+  <macro name="decorative_rect"
+    padding="8" color="~color_bg"
+    border="2" border_color="~color_accent" round="8" />
+
+  <macro name="button_style"
+    padding="8"
+    border_color="~color_accent_translucent" border="2" round="8" color="~color_accent_40" color2="~color_accent_10" gradient="vertical"
+    align_items="center" justify_content="center" />
+
+  <template name="Panel">
+    <Button macro="button_style" id="overlay_${idx}" tooltip_str="${name}" _press="::OverlayToggle ${name}">
+      <sprite width="38" height="38" color="~color_text" src_builtin="edit/panel.svg" />
+    </Button>
+  </template>
+
+  <template name="HorizontalSeparator">
+    <rectangle width="100%" height="2" color="~color_accent" />
+  </template>
+
+  <template name="VerticalSeparator">
+    <rectangle width="2" height="100%" color="~color_accent" />
+  </template>
+
+  <template name="OSCChatButton">
+    <!-- _press="::OscSend /chatbox/input" _arg0="<string-text-to-send>" _arg1="<bool-send-immediately>" _arg2="<bool-ping-sound>" -->
+    <Button _press="::OscSend /chatbox/input" _arg0="${send}" _arg1="true" _arg2="true" macro="button_style" color="#444444" border_color="#666666" min_width="300" min_height="40" tooltip_str="Send OSC Message" tooltip_side="top">
+      <label text="${send}" weight="bold" color="~color_text" />
+    </Button>
+  </template>
+
+  <elements>
+
+    <div padding="30" flex_direction="column" gap="8" min_width="300">
+      <rectangle macro="decorative_rect" flex_direction="row" gap="8" justify_content="space_evenly">
+
+        <div flex_direction="column" gap="8">
+
+          <!-- dashboard toggle -->
+          <div flex_direction="row" gap="4">
+            <Button _press="::OscSend /chatbox/input" _arg0="" _arg1="true" _arg2="true" macro="button_style" color="#444444" border_color="#666666" min_width="120" tooltip_str="Clear Chatbox" tooltip_side="bottom">
+              <label text="Clear" color="~color_text" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
+            </Button>
+
+            <Button _press="::OscSend /chatbox/input" _arg0="" _arg1="false" _arg2="false" macro="button_style" min_width="120" tooltip_str="Open Chatbox" tooltip_side="bottom">
+              <label text="Open Chat" color="~color_text" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
+            </Button>
+
+            <Button macro="button_style" color="~color_danger" border_color="~color_danger_translucent" _press="::OverlayToggle quick-chat" tooltip_str="Close" tooltip_side="bottom">
+              <sprite color="~color_text" width="40" height="40" src="edit/close.svg" />
+            </Button>
+          </div>
+
+          <HorizontalSeparator />
+      
+          <!-- osc messages -->
+          <OSCChatButton send="hello!" />
+          <OSCChatButton send="goodbye" />
+          <OSCChatButton send="how are you?" />
+          <HorizontalSeparator />
+          <OSCChatButton send="i'm going now" />
+          <OSCChatButton send="i'm gonna visit others" />
+          <OSCChatButton send="respawn" />
+          <OSCChatButton send="there is a portal" />
+          <HorizontalSeparator />
+          <OSCChatButton send="wow!" />
+          <OSCChatButton send="nice!" />
+          <OSCChatButton send="uhhh..." />
+          <HorizontalSeparator />
+          <OSCChatButton send="over that way" />
+
+            <Button _press="::OscSend /chatbox/input butter" _arg0="true" _arg1="true" macro="button_style" min_width="120" tooltip_str="Open Chatbox" tooltip_side="bottom">
+              <label text="Open Chat" color="~color_text" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
+            </Button>
+
+        </div>
+      </rectangle>
+    </div>
+
+  </elements>
+</layout>
