@@ -70,10 +70,6 @@
           <HorizontalSeparator />
           <OSCChatButton send="over that way" />
 
-            <Button _press="::OscSend /chatbox/input butter" _arg0="true" _arg1="true" macro="button_style" min_width="120" tooltip_str="Open Chatbox" tooltip_side="bottom">
-              <label text="Open Chat" color="~color_text" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
-            </Button>
-
         </div>
       </rectangle>
     </div>

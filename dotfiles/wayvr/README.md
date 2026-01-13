@@ -1,8 +1,17 @@
 # wayvr
 
+Lightly edited layout, theme, and configs for WayVR.
+
 Contained here are the following:
 - [conf.d](conf.d)
   - Includes my main config file, plus extras to set timezones, font, and custom skybox.
+- [theme](theme)
+  - Lightly edited watch layout with media controls. Some things to keep in mind:
+    - Icon paths are absolute; change `/home/curin/.config/wayvr` to match where your wayvr folder is.
+    - `pavtl` is used for the Volume controls.
+    - `playerctl` is used for Media controls.
+  - [quick-chat panel](theme/gui/quick-chat.xml)
+    - A custom panel with OSC buttons that send quick-chat messages to VRChat's Chatbox.
 - [sound](sound)
   - Custom sounds ([#379](https://https://github.com/wlx-team/wayvr/pull/379)).
 - [aurorasky](aurorasky.dds)
