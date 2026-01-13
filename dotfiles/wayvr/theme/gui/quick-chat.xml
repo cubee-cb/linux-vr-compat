@@ -40,11 +40,11 @@
           <!-- dashboard toggle -->
           <div flex_direction="row" gap="4">
             <Button _press="::OscSend /chatbox/input" _arg0="" _arg1="true" _arg2="true" macro="button_style" color="#444444" border_color="#666666" min_width="120" tooltip_str="Clear Chatbox" tooltip_side="bottom">
-              <label text="Clear" color="~color_text" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
+              <label text="Clear" color="~color_text" />
             </Button>
 
             <Button _press="::OscSend /chatbox/input" _arg0="" _arg1="false" _arg2="false" macro="button_style" min_width="120" tooltip_str="Open Chatbox" tooltip_side="bottom">
-              <label text="Open Chat" color="~color_text" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
+              <label text="Open Chat" color="~color_text" />
             </Button>
 
             <Button macro="button_style" color="~color_danger" border_color="~color_danger_translucent" _press="::OverlayToggle quick-chat" tooltip_str="Close" tooltip_side="bottom">
