@@ -18,8 +18,8 @@ If a game isn't listed here, check out the other files to see if I've tried it e
 
 ### PC Hardware
 - AMD Ryzen 5 5600G
-- Integrated GPU (16GB VRAM)
-- 64GB RAM (?MHz, DDR4)
+- Integrated GPU (Allocated 16GB? VRAM)
+- 64GB RAM (48GB usable, ?MHz, DDR4)
   - just... why? on this system?
 - OS is on a SATA SSD.
 - Most games installed with a hard drive-backed SSD cache.
