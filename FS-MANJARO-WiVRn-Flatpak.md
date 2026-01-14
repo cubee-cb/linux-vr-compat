@@ -14,7 +14,7 @@ If a game isn't listed here, check out the other files to see if I've tried it e
 
 ### VR Hardware
 - PICO 4 (256GB)
-    - Typically used wireless.
+    - Wired via USB A-C cable. (PC has no USB-C)
 
 ### PC Hardware
 - AMD Ryzen 5 5600G
