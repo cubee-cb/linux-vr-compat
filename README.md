@@ -4,16 +4,16 @@ Subfolders include scripts or configs that I use. Configs are available under [d
 
 # Variants
 - Dent (AMD Desktop)
-  - [Fedora 43](DENT-FEDORA43-WiVRn-Envision.md) - Current main setup.
+  - [Fedora 43](DENT-FEDORA43-WiVRn-Envision.md) (current) - Current main setup.
   - [Fedora 42](DENT-FEDORA42-WiVRn-Envision.md)
   - [Fedora 41](DENT-FEDORA41-WiVRn-Flatpak.md)
   - [Arch Linux](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
 - Skittles (NVIDIA Optimus Laptop)
-  - [Bazzite](SKITTLES-BAZZITE-WiVRn-AtomicXR.md) - Nothing done yet.
+  - [Bazzite](SKITTLES-BAZZITE-WiVRn-AtomicXR.md) (current) - Nothing done yet.
   - [CachyOS](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - I got bored and figured I'd try Bazzite.
   - Debian Trixie - This lasted like a week before I replaced it with CachyOS.
 - FS (AMD Integrated Desktop)
-  - [Manjaro](FS-MANJARO-WiVRn-Flatpak.md) - Lounge family gaming PC.
+  - [Manjaro](FS-MANJARO-WiVRn-Flatpak.md) (current) - Lounge family gaming PC.
 
 # Maybe future variants
 - idk lol. happy to test things, feel free to open an issue or something if you want me to test anything specific.
