@@ -1,6 +1,7 @@
 {
-  "animation_speed": 3.0,
-  "round_multiplier": 1.0,
+  "ui_animation_speed": 3.0,
+  "ui_round_multiplier": 2.0,
+  "ui_gradient_intensity": 0.3,
   "click_freeze_time_ms": 300,
   "invert_scroll_direction_x": false,
   "invert_scroll_direction_y": false,
@@ -12,11 +13,11 @@
   "upright_screen_fix": false,
   "double_cursor_fix": false,
   "sets_on_watch": false,
-  "hide_grab_help": false,
+  "hide_grab_help": true,
   "xr_click_sensitivity": 0.70000005,
   "xr_click_sensitivity_release": 0.5,
   "allow_sliding": true,
-  "focus_follows_mouse_mode": false,
+  "focus_follows_mouse_mode": true,
   "left_handed_mouse": false,
   "block_game_input": false,
   "block_game_input_ignore_watch": true,
@@ -34,5 +35,6 @@
   "context_menu_hold_and_release": false,
   "capture_method": "Auto",
   "keyboard_middle_click_mode": "None",
-  "autostart_apps": []
+  "autostart_apps": [],
+  "handsfree_pointer": "None"
 }

@@ -1,5 +1,8 @@
 <layout>
   <theme>
+
+    <var key="user_config_path" value="/home/curin/.config" />
+
     <var key="clock0_size" value="46" />
     <var key="clock0_date_size" value="16" />
     <var key="clock0_dow_size" value="16" />
@@ -74,6 +77,22 @@
     </Button>
   </template>
 
+  <template name="PanelButton">
+    <Button macro="button_style" _press="${press_action}" tooltip_str="${tooltip}" tooltip_side="top">
+      <sprite color="~color_text" width="40" height="40" src_ext="${localglyph}" />
+    </Button>
+  </template>
+
+
+  <template name="BottomButton">
+    <div gap="4">
+      <Button id="${id}" macro="button_style" _press="${press_action}" tooltip="${tooltip}" tooltip_side="top">
+        <sprite color="~color_text" width="40" height="40" src_builtin="${internalglyph}" />
+      </Button>
+    </div>
+  </template>
+
+
   <template name="Clock">
     <div gap="12" flex_direction="column" padding="4">
       <div flex_direction="column" >
@@ -124,46 +143,41 @@
             <Clock />
           </div>
 
-          <!-- Four buttons -->
+          <!-- watch panel buttons -->
           <div flex_direction="column" gap="8">
             <div gap="8">
+              <PanelButton tooltip="Previous Track" press_action="::ShellExec playerctl previous" localglyph="watch/previous.svg" />
+              <PanelButton tooltip="Play/Pause" press_action="::ShellExec playerctl play-pause" localglyph="watch/play_pause.svg" />
+              <PanelButton tooltip="Next Track" press_action="::ShellExec playerctl next" localglyph="watch/next.svg" />
 
-              <!-- media controls -->
-              <Button macro="button_style" _press="::ShellExec playerctl previous" tooltip_str="Previous Track" tooltip_side="top">
-                <sprite color="~color_text" width="40" height="40" src="/home/curin/.config/wayvr/theme/gui/watch/previous.png" />
-              </Button>
-              <Button macro="button_style" _press="::ShellExec playerctl play-pause" tooltip_str="Play/Pause" tooltip_side="top">
-                <sprite color="~color_text" width="40" height="40" src="/home/curin/.config/wayvr/theme/gui/watch/play_pause.png" />
-              </Button>
-              <Button macro="button_style" _press="::ShellExec playerctl next" tooltip_str="Next Track" tooltip_side="top">
-                <sprite color="~color_text" width="40" height="40" src="/home/curin/.config/wayvr/theme/gui/watch/next.png" />
-              </Button>
             </div>
             <div gap="8">
-              <Button macro="button_style" _press="::ShellExec pactl set-sink-volume @DEFAULT_SINK@ -5%" tooltip_str="Volume Down" tooltip_side="top">
-                <sprite color="~color_text" width="40" height="40" src="/home/curin/.config/wayvr/theme/gui/watch/volume_down.png" />
+              <PanelButton tooltip="Volume Down" press_action="::ShellExec pactl set-sink-volume @DEFAULT_SINK@ -5%" localglyph="watch/volume_down.svg" />
+              <PanelButton tooltip="Volume Up" press_action="::ShellExec pactl set-sink-volume @DEFAULT_SINK@ +5%" localglyph="watch/volume_up.svg" />
+
+              <Button macro="button_style" _press="::OscSend /chatbox/input" _arg0="" _arg1="false" _arg2="false" tooltip_str="Open Chatbox" tooltip_side="top">
+                <sprite color="~color_text" width="40" height="40" src="watch/chat.svg" />
               </Button>
-              <Button macro="button_style" _press="::ShellExec pactl set-sink-volume @DEFAULT_SINK@ +5%" tooltip_str="Volume Up" tooltip_side="top">
-                <sprite color="~color_text" width="40" height="40" src="/home/curin/.config/wayvr/theme/gui/watch/volume_up.png" />
-              </Button>
-              <Button macro="button_style" _press="::OverlayToggle quick-chat" _long_release="::OverlayReset quickchat" tooltip_str="Chat Panel" tooltip_side="top">
-                <sprite color="~color_text" width="40" height="40" src="/home/curin/.config/wayvr/theme/gui/watch/quick_chat.png" />
-              </Button>
+
             </div>
           </div>
         </rectangle>
 
-        <!-- Bottom buttons -->
+        <!-- bottom buttons -->
         <div flex_direction="row" gap="8">
 
-          <!-- dashboard toggle -->
+          <BottomButton id="btn_dashboard" press_action="::DashToggle" tooltip="WATCH.DASHBOARD" internalglyph="watch/wayvr_dashboard_mono.svg" />
+          <BottomButton id="btn_keyboard" press_action="::OverlayToggle kbd" tooltip="EDIT_MODE.KEYBOARD" internalglyph="watch/keyboard.svg" />
+          <VerticalSeparator />
+          <BottomButton id="btn_edit_mode" press_action="::EditToggle" tooltip="WATCH.EDIT_MODE" internalglyph="watch/edit.svg" />
+
+          <!-- edit mode
           <div gap="4">
             <Button id="btn_dashboard" macro="button_style" _press="::DashToggle" tooltip="WATCH.DASHBOARD" tooltip_side="top">
               <sprite color="~color_text" width="40" height="40" src="watch/wayvr_dashboard_mono.svg" />
             </Button>
           </div>
 
-          <!-- keyboard toggle -->
           <div gap="4">
             <Button id="btn_keyboard" macro="button_style" _press="::OverlayToggle kbd" tooltip="EDIT_MODE.KEYBOARD" tooltip_side="top">
               <sprite color="~color_text" src_builtin="watch/keyboard.svg" width="40" height="40" />
@@ -172,25 +186,22 @@
 
           <VerticalSeparator />
 
-          <!-- edit mode -->
           <div gap="4">
             <Button id="btn_edit_mode" macro="button_style" _press="::EditToggle" tooltip="WATCH.EDIT_MODE" tooltip_side="top">
               <sprite color="~color_text" width="40" height="40" src="watch/edit.svg" />
             </Button>
           </div>
-
+ -->
           <VerticalSeparator />
 
           <!-- working sets and/or panels -->
           <div id="sets_root" gap="4">
-            <!-- Will populate tags at runtime -->
-            <!-- These are examples for uidev -->
+            <!-- examples for uidev -->
             <Set idx="0" display="1" />
             <Set idx="1" display="2" />
           </div>
           <div id="panels_root" gap="4" display="none">
-            <!-- Will populate tags at runtime -->
-            <!-- These are examples for uidev -->
+            <!-- examples for uidev -->
             <Screen idx="0" display="H1" name="HDMI-A-1" />
             <Screen idx="1" display="D2" name="DP-2"/>
           </div>
