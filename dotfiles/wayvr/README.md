@@ -10,7 +10,7 @@ Contained here are the following:
 - [theme](theme)
   - Lightly edited watch layout with media controls. Some things to keep in mind:
     - Icon paths I've used are relative to this `theme` directory.
-    - `pavtl` is used for the Volume controls.
+    - `pactl` is used for the Volume controls.
     - `playerctl` is used for Media controls.
   - [quick-chat panel](theme/gui/quick-chat.xml)
     - A custom panel with OSC buttons that send quick-chat messages to VRChat's Chatbox. ([#388](https://github.com/wlx-team/wayvr/pull/388)).
