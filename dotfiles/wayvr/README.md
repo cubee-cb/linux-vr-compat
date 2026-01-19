@@ -2,7 +2,7 @@
 
 Lightly edited layout, theme, and configs for WayVR.
 
-![theme-example.jpeg]
+![Example image of the theme and watch.](theme-example.jpeg)
 
 Contained here are the following:
 - [conf.d](conf.d)
