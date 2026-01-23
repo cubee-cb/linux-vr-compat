@@ -152,8 +152,8 @@
 
             </div>
             <div gap="8">
-              <PanelButton tooltip="Volume Down" press_action="::ShellExec pactl set-sink-volume @DEFAULT_SINK@ -5%" localglyph="watch/volume_down.svg" />
-              <PanelButton tooltip="Volume Up" press_action="::ShellExec pactl set-sink-volume @DEFAULT_SINK@ +5%" localglyph="watch/volume_up.svg" />
+              <PanelButton tooltip="Volume Down" press_action="::ShellExec wpctl set-volume @DEFAULT_SINK@ .05-" localglyph="watch/volume_down.svg" />
+              <PanelButton tooltip="Volume Up" press_action="::ShellExec wpctl set-volume @DEFAULT_SINK@ .05+" localglyph="watch/volume_up.svg" />
 
               <Button macro="button_style" _press="::OscSend /chatbox/input" _arg0="" _arg1="false" _arg2="false" tooltip_str="Open Chatbox" tooltip_side="top">
                 <sprite color="~color_text" width="40" height="40" src="watch/chat.svg" />

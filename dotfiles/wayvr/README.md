@@ -9,9 +9,9 @@ Contained here are the following:
   - Includes my main config file, plus extras to set timezones, font, and custom skybox.
 - [theme](theme)
   - Lightly edited watch layout with media controls. Some things to keep in mind:
-    - Icon paths I've used are relative to this `theme` directory.
-    - `pactl` is used for the Volume controls.
+    - `wpctl` is used for the Volume controls.
     - `playerctl` is used for Media controls.
+    - Icon paths are relative to this `theme` directory.
   - [quick-chat panel](theme/gui/quick-chat.xml)
     - A custom panel with OSC buttons that send quick-chat messages to VRChat's Chatbox. ([#388](https://github.com/wlx-team/wayvr/pull/388)).
 - [sound](sound)
