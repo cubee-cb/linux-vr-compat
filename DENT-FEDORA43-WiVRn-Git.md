@@ -101,6 +101,7 @@ Surface-level summary of setting up the WiVRn Server (headless) with xrizer and 
   - Configure the headset, may need to run `wivrnctl pair` to pair with your HMD.
 - `~/.config/wivrn/config.json` > set `"application"` to point to the `wayvr` executable.
 - Create systemd service to run `wivrn-server` at login/desktop init.
+    - Then, if you set Auto Connect on the headset, you can simply open WiVRn on the headset and you're in VR.
 
 [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
 - Clone + build.
