@@ -90,6 +90,9 @@ Surface-level summary of setting up the WiVRn Server (headless) with xrizer and 
 
 ---
 
+**NOTE**: If you just want to *use* WiVRn, and don't want/need to build everything yourself, try the `wivrn-dashboard` package provided by your system (or the WiVRn Flatpak) with the WayVR package or AppImage.
+- Once you have it installed, the system package should come with a systemd service. If you'd like to have WiVRn auto-start on login: `systemctl enable --user wivrn` and `systemctl start --user wivrn`. I am unsure if the Flatpak does the same.
+
 [`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/target/release/wayvr`
