@@ -69,15 +69,13 @@ Some things to be careful of.
 ---
 
 ### Easy Effects
-- This seems to cause WiVRn's audio to become crunchy/robotic. To work around, do one of the following:
-    - Override `Pipewire > General > Use default output` with a specific, non-WiVRn device. Naturally, this is only viable if you only have one audio output you would ever need filtered at a time.
+- If your audio sounds crunchy or robotic:
+    - Update WiVRn to 26.2 or newer. System Packages may lag behind, but Flatpak is updated already.
+    - Override `Pipewire > General > Use default output` and/or `Pipewire > General > Use default input` with a specific, non-WiVRn device. Naturally, this is only viable if you only have one audio output you would ever need filtered at a time.
         - Yes, EasyEffects seems to process the outputs even when there are no effects selected.
     - In the Output tab, turn on the `Exclude` toggle for your active VR applications. (WayVR, Beat Saber, VRChat, etc)
     - Disable its effect on audio outputs as a whole.
     - Close down Easy Effects completely.
-- I have heard people say my voice went "robotic" momentarily, and I presume this is also EasyEffects' fault. To be safe I've also overridden `Pipewire > General > Use default input` with my desktop mic.
-    - Since the WiVRn client has a built-in noise reduction solution already, there's not much point allowing it to be filtered again. (unless I wanna pitch-change or something, but frankly, I'd rather learn to control my voice myself than have the computer do it)
-    - I unplug my desktop mic when not in use, so it may "fall back" to the WiVRn mic. In my case, I have a little USB Capture card that it falls back to.
 
 ### PROTON_LOG
 - I learnt this the hard way; if you have added `PROTON_LOG=1` to your launch arguments, try not to forget.
@@ -100,15 +98,15 @@ Surface-level summary of setting up the WiVRn Server (headless) with xrizer and 
 [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc):
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/WiVRn/build-server/server/wivrn-server`
-- Run `wivrn-server`
+- Run `wivrn-server` (optionally, build and run `wivrn-dashboard` instead for the GUI)
   - Configure the headset, may need to run `wivrnctl pair` to pair with your HMD.
 - `~/.config/wivrn/config.json` > set `"application"` to point to the `wayvr` executable.
 - Create systemd service to run `wivrn-server` at login/desktop init.
     - Then, if you set Auto Connect on the headset, you can simply open WiVRn on the headset and you're in VR.
 
 [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
-- Clone + build.
-- `~/.config/openvr/openvrpaths.vrpath` > set `"runtime"` to point to xrizer build folder.
+- Clone + build, note where the `target/release/` or `target/debug/` folder is.
+- `~/.config/openvr/openvrpaths.vrpath` > set `"runtime"` to point to this folder.
   - e.g. `~/devel/xr/xrizer/target/release/`
   - A sample `openvrpaths.json` is in this xrizer build dir; you should be able to just copy this file over instead.
 
@@ -121,7 +119,7 @@ I've made symlinks for each application, so I have a neat set of shortcuts all i
 As well, I have made some scripts that run `git pull` and then the build command for each application, as well as another that runs all of them.
 If I really wanted to, I could simply make a cron job that runs this `build_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns:
 - If there's been no commits, why bother re-building? It's a waste of energy and disk IO, so we should check the current and latest commits before updating.
-- If I'm auto-updating to the latest commit, then if something happens to break upstream I'll have to work out how to get up and running again the next time I want to hop into VR, instead of when I'm *aware* that I might break it by choosing to run updates.
+- If I'm auto-updating to the latest commit, then if something happens to break upstream I'll have to work out how to get up and running again the next time I want to hop into VR, instead of when I'm *aware* that I might break it by *choosing* to run updates.
 
 ---
 
