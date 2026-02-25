@@ -50,6 +50,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Desktop: KDE Plasma, Wayland
 - Steam: `dnf` package (i.e. not the flatpak)
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
+    - All Launch Options should be combined with the ones specified by WiVRn.
 - Epic Store, GOG, and non-Steam games: Heroic Games Launcher (AppImage version)
 - Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (Default for all games and launchers, unless otherwise specified)
     - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`).
