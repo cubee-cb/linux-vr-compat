@@ -5,13 +5,14 @@ This is most certainly not a setup I will use often, but I do enjoy seeing what 
 - Performance in VR is utter rubbish.
   - This laptop's GPU dies under encoding load, so running VR with a standalone HMD is kind of a struggle.
     - It can't even manage 60 FPS. And stutters a fair bit... in Beat Saber of all things. At like 70% foveation, too.
+    - Though, it is odd that initially VR started out tolerable when it ran Windows 11 (SteamVR + ALVR), then over time, it just... degraded.
   - So much for the "Extreme Performance" sticker that came stuck to it...
     - I get it's probably not intended to run both Encoding and 3D at the same time, but like, why not?
     - Was Windows lying about it having dedicated encoders? Or can Linux just not utilise them?
 - There seems to be some hardware fault where the NVMe just... doesn't show up. (among various other, smaller faults; this is the big one though)
   - Not even the BIOS sees it in this state.
   - This means that, fairly frequently, *I can't even boot the laptop*. Gosh forbid companies make anything more than `instant e-waste` these days. It's hardly 3 years old.
-    - Then sometimes when I try to boot off a USB instead it's like, *oh oopsie didn't see you there* and boots the NVMe instead.
+  - Then sometimes when I try to boot off a USB instead it's like, *oh oopsie didn't see you there* and boots the NVMe instead.
 
 ### Shortcuts
 - [Setup](#setup)
