@@ -133,8 +133,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ### ^ VRChat
 - Using GE-Proton10-20-rtsp19. (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
-    - `gamemoderun %command% --enable-avpro-in-proton --disable-amd-stutter-workaround --enable-hw-video-decoding`
-    - Some of these launch options have been deprecated recently, I'll update this when I work out which ones.
+    - `gamemoderun %command% --enable-avpro-in-proton`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
 - Full-body tracking works just fine.
 
