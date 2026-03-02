@@ -32,7 +32,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Quest 3s (128GB)
     - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and more stable controller prediction.
       - The PICO 4's controller offsets are weird, man. They flip all over the place.
-    - Can be used in the dark, so if I want the lights off, this headset's the way to go.
+    - Can be used in the dark, so if I wanted the lights off for whatever reason, this headset's the way to go.
 - Common notes
     - Hand Tracking works fine in titles that support it (that is, VRChat). Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
         - For PICO, this is under Settings > Lab > Hand Tracking.
@@ -52,8 +52,8 @@ If a game isn't listed here, check out the other files to see if I've tried it o
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
     - All Launch Options should be combined with the ones specified by WiVRn.
 - Epic Store, GOG, and non-Steam games: Heroic Games Launcher (AppImage version)
-- Proton: [GE-Proton9-18](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-18) (Default for all games and launchers, unless otherwise specified)
-    - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`).
+- Proton: [GE-Proton10-32](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-32) (Default for all games and launchers, unless otherwise specified)
+    - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`), though Heroic works too if you turn on "Download GE-Proton to Steam directory", then they can share installs.
     - For manual installation (such as for the [GE-RTSP variant](https://github.com/SpookySkeletons/proton-ge-rtsp)), place the tool's folder in `.steam/steam/compatibilitytools.d/`.
 - XR Stack (manually built):
     - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
@@ -127,7 +127,7 @@ If I really wanted to, I could simply make a cron job that runs this `build_all.
 ## Working
 Things we can actually play! Yay! There may be small issues here and there but these are not typically game-breaking.
 
-^ - Using a different Proton version. (notes will mention why)
+^ - A different Proton version is Required or Works Better. (notes will mention why)
 
 ---
 
@@ -146,13 +146,13 @@ Things we can actually play! Yay! There may be small issues here and there but t
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
 
 ### ^ Beat Saber (1.40.8 Modded)
-- Using Proton Experimental, due to mod-loading issues with Proton-GE way back when I used Flatpak WiVRn.
+- Using Proton Experimental, due to issues getting mods to load with Proton-GE way back when I used Flatpak WiVRn.
 - I currently use [BSManager](https://github.com/Zagrios/bs-manager) for modding and launching Beat Saber 1.40.8.
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 - Full-body tracking doesn't seem to work; OpenXR Tracker Profiles either doesn't load or can't detect the trackers.
 
 ### ^ Resonite
-- Using GE-Proton10-15-rtsp18.
+- Using GE-Proton10-15-rtsp18 for better video stream support.
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
 
@@ -162,12 +162,14 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not perfect.
 
 ### ChilloutVR
+- Tested: GE-Proton9-18
 - Full-body tracking Works mostly fine:
   - Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
   - (todo: re-test) Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
       - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
 
 ### Vertigo: Remastered
+- Tested: GE-Proton9-18
 - Nothing much to note. From a brief test, the menu controls work and you can try to stop the first boss-thing from slapping you. I'm not very good at it.
 
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
@@ -183,6 +185,7 @@ These launch, but have issues functioning normally and may have completely broke
 ---
 
 ### Superhot VR
+- Tested: GE-Proton9-18
 - Grabbing is mapped to Trigger, and seems unable to drop items.
     - Throwing things and thus progressing through certain areas therefore seems impossible.
 
@@ -194,45 +197,44 @@ The following crash on launch or have other major issues that prevent them from 
 ---
 
 ### ^ Half-Life: Alyx (Proton)
-- Using Proton Experimental.
+- Using Proton Experimental. Trying to work around issues.
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=50 %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
   - 50% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision.
 - Crash on launch. Need further investigation; Alyx's ability to avoid crashes has never been consistent on my system.
 
 ### ^ Catlateral Damage VR (Proton)
-- Using GE-Proton7-55. VR Mode is only available when using the Windows build via Proton.
+- Using GE-Proton7-55. VR Mode is only available when using the Windows build via Proton. Unsure if newer versions work.
 - Crash on launch.
 
 ---
 
 ## Software
-Troubleshooting setup of other, non-game software.
+Setup and troubleshooting of other, non-game software.
 
 ---
 
 ### Steam (native) - if you hate editing Launch Options for every game (+ auto OBS Game Capture):
-- Close Steam
+- Close Steam.
 - Edit your Steam shortcut to add the Environment Variables set by WiVRn.
-  - On KDE, you can right-click the Application Launcher > Edit Applications > Steam and add them in the box.
+  - On KDE, you can right-click the Application Launcher > Edit Applications > Steam and add them to the appropriate box.
   - This should add the WiVRn Env Vars to every Steam game so you don't have to manually edit the launch options every time you install a new game.
   - If you're using OBS's OBS_VKCapture plugin, you may also add `OBS_VKCAPTURE=1` here.
     - Note that you will still need to add the `obs-gamecapture %command%` Launch Option for games that do not use Vulkan.
-- Re-open Steam
+- Re-open Steam.
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
 - The AppImages display a white screen on launch, so building ALCOM manually is pretty much required on this system.
     - EGL Display error. Basically identical to [this comment](https://github.com/vrc-get/vrc-get/issues/1694#issuecomment-2480857765) on the white screen issue thread.
 - Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel dotnet-sdk-8.0` and cargo crate `cargo-about`.
-- Final step of build fails to bundle the AppImage. The raw executable is built in `vrc-get/target/release/` anyway.
+- Final step of build fails to bundle the AppImage. By this point, the raw executable has been built in `vrc-get/target/release/` anyway.
     - As long as it says `Built application at: /home/user/.../vrc-get/target/release/ALCOM` you should be all good.
     - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
 - As for Unity Hub itself:
-    - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use.
-    - Instead, using the Unity Hub binary from the yum repo provided by Unity seems to resolve this issue.
+    - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use. Instead, using the Unity Hub binary from the yum repo provided by Unity seems to work around this issue.
 
 ### Blender (VR Scene Inspection Addon)
 - On Wayland, starting the OpenXR Session may result in an error `XR_ERROR_GRAPHICS_DEVICE_INVALID`.
-    - Changing the graphics backend to `Vulkan` under `Edit > Preferences > System > Display Graphics` should fix this.
+    - Changing the graphics backend to `Vulkan` under `Edit > Preferences > System > Display Graphics` should work around this.
 
 ---
