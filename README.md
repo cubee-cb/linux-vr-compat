@@ -23,6 +23,11 @@ Subfolders include scripts or configs that I use. Configs are available under [d
 - Sequin - I could test on my Mac Mini 2018; that'll go well...
 - Daisy - We also have a mini pc sitting around; probably would be similar to FS though.
 
+# Resources
+- [The Linux VR Adventures Wiki](https://lvra.gitlab.io/) - Source of information for running VR on Linux in general.
+- [ProtonDB](https://www.protondb.com/) - Database of Windows Games and how well they run under Proton.
+- [LVRA DB](https://db.vronlinux.org/) - Like ProtonDB, but for XR Runtimes and VR Games.
+
 # Notes
 `amdgpu` sometimes encounters page faults and subsequent GPU resets for some systems. As of more recently, I get `ring gfx` timeouts instead of `ring vcn_enc` timeouts.
 
