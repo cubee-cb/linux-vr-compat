@@ -131,7 +131,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 
 ---
 
-### ^ VRChat
+### ^ VRChat - **Currently refuses to launch (Unity Player Crash), unsure why**
 - Using GE-Proton10-20-rtsp19. (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton`
@@ -151,7 +151,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 - Full-body tracking doesn't seem to work; OpenXR Tracker Profiles either doesn't load or can't detect the trackers.
 
-### ^ Resonite
+### ^ Resonite - **Currently refuses to launch, unsure why**
 - Using GE-Proton10-15-rtsp18 for better video stream support.
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
