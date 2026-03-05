@@ -10,7 +10,7 @@ Subfolders include scripts or configs that I use. Configs are available under [d
   - [Arch Linux (WiVRn Envision)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
   - [Fedora 41 (WiVRn Flatpak)](DENT-FEDORA41-WiVRn-Flatpak.md)
 - Skittles (AMD + NVIDIA Optimus Laptop)
-  - Linux Mint Debian Edition (N/A) (current) - Nothing done yet.
+  - Linux Mint / LMDE 7 (N/A) (current) - Nothing done yet.
   - Bazzite (WiVRn AtomicXR) - I installed it and did nothing with it.
   - [CachyOS (WiVRn Flatpak)](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - I got bored and figured I'd try Bazzite.
   - Debian Trixie - This lasted like a week before I replaced it with CachyOS.
