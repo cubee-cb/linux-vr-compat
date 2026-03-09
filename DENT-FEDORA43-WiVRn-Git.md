@@ -96,14 +96,17 @@ Surface-level summary of setting up the WiVRn Server (headless) with xrizer and 
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/target/release/wayvr`
 
-[`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc):
+[`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless (or `wivrn-dashboard` for GUI):
 - Clone + build, note where the executable is.
-  - e.g. `~/devel/xr/WiVRn/build-server/server/wivrn-server`
-- Run `wivrn-server` (optionally, build and run `wivrn-dashboard` instead for the GUI)
-  - Configure the headset, may need to run `wivrnctl pair` to pair with your HMD.
-- `~/.config/wivrn/config.json` > set `"application"` to point to the `wayvr` executable.
+  - e.g. `~/devel/xr/WiVRn/build-server/server/wivrn-server` or `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server`
+- Run `wivrn-server` (or run `wivrn-dashboard` instead for the GUI)
+  - Configure the headset, will need to run `wivrnctl pair` to pair with your HMD if using headless.
+- `~/.config/wivrn/config.json` > set `"application"` to point to the `wayvr` executable. (or configure in dashboard)
 - Create systemd service to run `wivrn-server` at login/desktop init.
     - Then, if you set Auto Connect on the headset, you can simply open WiVRn on the headset and you're in VR.
+    - Comes with caveats. You will have to:
+        - Manually close WayVR before the XR session will shutdown.
+        - `systemctl restart` the service if you need to restart the server.
 
 [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
 - Clone + build, note where the `target/release/` or `target/debug/` folder is.
