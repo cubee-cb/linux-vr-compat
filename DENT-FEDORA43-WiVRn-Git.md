@@ -131,12 +131,14 @@ Things we can actually play! Yay! There may be small issues here and there but t
 
 ---
 
-### ^ VRChat - **Currently refuses to launch (Unity Player Crash), unsure why**
+### ^ VRChat
 - Using GE-Proton10-20-rtsp19. (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
 - Full-body tracking works just fine.
+- Gotchas:
+    - VRChat seems not to launch after EAC if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
 #### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
 - I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
@@ -151,10 +153,12 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 - Full-body tracking doesn't seem to work; OpenXR Tracker Profiles either doesn't load or can't detect the trackers.
 
-### ^ Resonite - **Currently refuses to launch, unsure why**
+### ^ Resonite
 - Using GE-Proton10-15-rtsp18 for better video stream support.
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
+- Gotchas:
+    - Need to test: may not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
