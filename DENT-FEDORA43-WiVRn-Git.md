@@ -92,11 +92,11 @@ Surface-level summary of setting up the WiVRn Server with xrizer and WayVR.
 **NOTE**: If you just want to *use* WiVRn, and don't want/need to build everything yourself, try the [`wivrn-dashboard` system package](https://github.com/WiVRn/WiVRn?tab=readme-ov-file#pc-serverdashboard) (needs OpenVR > OpenXR translation layer installed separately) or the [WiVRn Flatpak](https://flathub.org/en/apps/io.github.wivrn.wivrn) (OpenVR compatibility built-in) with the [WayVR AppImage](https://github.com/wlx-team/wayvr?tab=readme-ov-file#installation).
 - Once you have it installed, the system package should come with a systemd service. If you'd like to have WiVRn auto-start on login: `systemctl enable --user wivrn` and `systemctl start --user wivrn`. I am unsure if the Flatpak does the same.
 
-[`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
+### [`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/wayvr/target/release/wayvr`
 
-[wivrn-dashbboard](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#dashboard) for GUI, or [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless:
+### [`wivrn-dashboard`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#dashboard) for GUI, or [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless:
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server` or `~/devel/xr/WiVRn/build-server/server/wivrn-server`
 - Run `wivrn-dashboard` for initial setup and pairing your headset.
@@ -110,12 +110,13 @@ Surface-level summary of setting up the WiVRn Server with xrizer and WayVR.
         - If using WayVR, you have to manually close WayVR before the XR session will shutdown. IIRC you may be able to do this under Settings > Troubleshooting? Otherwise, there's always `kill`.
         - If you need to restart the server, `systemctl restart` the service.
 
-[`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
+### [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
 - Clone + build, note where the `xrizer/target/release/` or `xrizer/target/debug/` folder is.
 - `~/.config/openvr/openvrpaths.vrpath` > set `"runtime"` to point to this folder.
   - e.g. `~/devel/xr/xrizer/target/release/`
   - A sample `openvrpaths.json` is in this xrizer build dir; you should be able to just copy this file over instead.
 
+### Next
 I've made symlinks for each application, so I have a neat set of shortcuts all in one folder:
 - `~/Programs/xr/` (added to `PATH`)
   - `xrizer/` -> `~/devel/xr/xrizer/target/release/`
@@ -139,7 +140,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ---
 
 ### ^ VRChat
-- Using GE-Proton10-20-rtsp19. (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
+- Using GE-Proton10-26-rtsp20. (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
@@ -165,12 +166,12 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
 - Gotchas:
-    - Need to test: may not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
+    - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
 - With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
-- Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not perfect.
+- Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not particularly smooth.
 
 ### ChilloutVR
 - Tested: GE-Proton9-18
@@ -229,8 +230,8 @@ Setup and troubleshooting of other, non-game software.
 - Edit your Steam shortcut to add the Environment Variables set by WiVRn.
   - On KDE, you can right-click the Application Launcher > Edit Applications > Steam and add them to the appropriate box.
   - This should add the WiVRn Env Vars to every Steam game so you don't have to manually edit the launch options every time you install a new game.
-  - If you're using OBS's OBS_VKCapture plugin, you may also add `OBS_VKCAPTURE=1` here.
-    - Note that you will still need to add the `obs-gamecapture %command%` Launch Option for games that do not use Vulkan.
+  - Doing this next bit seems to break VRChat and Resonite, but if you're using OBS's OBS_VKCapture plugin, you may also add `OBS_VKCAPTURE=1` here.
+    - Note that you will still need to add the `obs-gamecapture %command%` Launch Option for games that do not use Vulkan, so it may be worth just adding the launch option to everything manually.
 - Re-open Steam.
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
