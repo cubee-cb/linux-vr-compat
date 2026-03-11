@@ -85,7 +85,7 @@ Some things to be careful of.
 ---
 
 ## Setting up the XR Stack
-Surface-level summary of setting up the WiVRn Server (headless) with xrizer and WayVR.
+Surface-level summary of setting up the WiVRn Server with xrizer and WayVR.
 
 ---
 
@@ -94,22 +94,24 @@ Surface-level summary of setting up the WiVRn Server (headless) with xrizer and 
 
 [`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
 - Clone + build, note where the executable is.
-  - e.g. `~/devel/xr/target/release/wayvr`
+  - e.g. `~/devel/xr/wayvr/target/release/wayvr`
 
-[`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless (or `wivrn-dashboard` for GUI):
+[wivrn-dashbboard](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#dashboard) for GUI, or [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless:
 - Clone + build, note where the executable is.
-  - e.g. `~/devel/xr/WiVRn/build-server/server/wivrn-server` or `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server`
-- Run `wivrn-server` (or run `wivrn-dashboard` instead for the GUI)
-  - Configure the headset, will need to run `wivrnctl pair` to pair with your HMD if using headless.
-- `~/.config/wivrn/config.json` > set `"application"` to point to the `wayvr` executable. (or configure in dashboard)
-- Create systemd service to run `wivrn-server` at login/desktop init.
-    - Then, if you set Auto Connect on the headset, you can simply open WiVRn on the headset and you're in VR.
-    - Comes with caveats. You will have to:
-        - Manually close WayVR before the XR session will shutdown.
-        - `systemctl restart` the service if you need to restart the server.
+  - e.g. `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server` or `~/devel/xr/WiVRn/build-server/server/wivrn-server`
+- Run `wivrn-dashboard` for initial setup and pairing your headset.
+    - Remember to set the Autostart Application to the `wayvr` executable, if you want to use that.
+    - For `wivrn-server` (headless): Run `wivrnctl pair` to pair with your HMD. Config is under `~/.config/wivrn/config.json`: add the path of the `wayvr` executable to `"application"`.
+- Create a nice shortcut to launch WiVRn:
+    - For GUI, in your desktop environment you can usually create a Launcher on the desktop or an entry in the applications menu, though this will vary from environment to environment.
+        - Set this to point at the `wivrn-dashboard` executable.
+        - You can find the WiVRn icons under `WiVRn/images/`.
+    - For headless, you could create systemd service to run `wivrn-server` at login/desktop init, then, if you set Auto Connect on the headset, you can simply open WiVRn on the headset and you're in VR. Comes with caveats:
+        - If using WayVR, you have to manually close WayVR before the XR session will shutdown. IIRC you may be able to do this under Settings > Troubleshooting? Otherwise, there's always `kill`.
+        - If you need to restart the server, `systemctl restart` the service.
 
 [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
-- Clone + build, note where the `target/release/` or `target/debug/` folder is.
+- Clone + build, note where the `xrizer/target/release/` or `xrizer/target/debug/` folder is.
 - `~/.config/openvr/openvrpaths.vrpath` > set `"runtime"` to point to this folder.
   - e.g. `~/devel/xr/xrizer/target/release/`
   - A sample `openvrpaths.json` is in this xrizer build dir; you should be able to just copy this file over instead.
@@ -118,7 +120,9 @@ I've made symlinks for each application, so I have a neat set of shortcuts all i
 - `~/Programs/xr/` (added to `PATH`)
   - `xrizer/` -> `~/devel/xr/xrizer/target/release/`
   - `wayvr` -> `~/devel/xr/target/release/wayvr`
-  - `wivrn-server` -> `~/devel/xr/WiVRn/build-server/server/wivrn-server`
+  - `wivrn-dashboard` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrn-dashboard`
+  - `wivrn-server` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server`
+  - `wivrnctl` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrnctl`
 
 As well, I have made some scripts that run `git pull` and then the build command for each application, as well as another that runs all of them.
 If I really wanted to, I could simply make a cron job that runs this `build_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns:
