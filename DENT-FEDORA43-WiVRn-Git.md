@@ -98,7 +98,7 @@ Surface-level summary of setting up the WiVRn Server with xrizer and WayVR.
 
 ### [`wivrn-dashboard`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#dashboard) for GUI, or [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless:
 - Clone + build, note where the executable is.
-  - e.g. `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server` or `~/devel/xr/WiVRn/build-server/server/wivrn-server`
+  - e.g. `~/devel/xr/WiVRn/build-dashboard/server/wivrn-dashboard` or `~/devel/xr/WiVRn/build-server/server/wivrn-server`
 - Run `wivrn-dashboard` for initial setup and pairing your headset.
     - Remember to set the Autostart Application to the `wayvr` executable, if you want to use that.
     - For `wivrn-server` (headless): Run `wivrnctl pair` to pair with your HMD. Config is under `~/.config/wivrn/config.json`: add the path of the `wayvr` executable to `"application"`.
