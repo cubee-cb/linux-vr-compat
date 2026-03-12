@@ -170,7 +170,8 @@ Things we can actually play! Yay! There may be small issues here and there but t
 
 ### Half-Life: Alyx (Native)
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=60 %command% %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
-  - 60% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision. (to re-test; this was under OpenComposite and i forgot if it was Native or Proton)
+  - 60% resolution scale, skip intro video, and disable dynamic resolution.
+  - Dynamic Resolution can cause white bars on the sides of vision, hence disabling it (to re-test; this was under OpenComposite and i forgot if it was Native or Proton). (also, i forget what exactly these fidelity options do; might be harming performance more than necessary)
 - Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
 - As for performance, this hits my system hard.
     - I tested at 100% resolution, which didn't run particularly well even on Low Fidelity. 60% still to-test.
