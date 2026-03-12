@@ -55,11 +55,11 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Proton: [GE-Proton10-32](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-32) (Default for all games and launchers, unless otherwise specified)
     - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`), though Heroic works too if you turn on "Download GE-Proton to Steam directory", then they can share installs.
     - For manual installation (such as for the [GE-RTSP variant](https://github.com/SpookySkeletons/proton-ge-rtsp)), place the tool's folder in `.steam/steam/compatibilitytools.d/`.
-- XR Stack (manually built):
+- XR Stack (manually built; the release builds may lack some features I talk about here):
     - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
     - [xrizer](https://github.com/Supreeeme/xrizer) - OpenVR > OpenXR compatibility layer.
     - [WayVR](https://github.com/wlx-team/wayvr) - An overlay application that provides desktop views and playspace drag.
-        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick.
+        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick. This does conflict with some games; in this case you can set Playspace Multiplier to 0 in WayVR's settings.
     - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
 
 ---
@@ -168,6 +168,16 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
+### Half-Life: Alyx (Native)
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=60 %command% %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
+  - 60% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision. (to re-test; this was under OpenComposite and i forgot if it was Native or Proton)
+- Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
+- As for performance, this hits my system hard.
+    - I tested at 100% resolution, which didn't run particularly well even on Low Fidelity. 60% still to-test.
+    - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly bogging down towards the ending chapters.
+    - I suppose the extra overhead of ~2x the pixel count + stream encoding + no dynamic resolution pushes it over the edge.
+- If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
+
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
 - With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
@@ -209,10 +219,10 @@ The following crash on launch or have other major issues that prevent them from 
 ---
 
 ### ^ Half-Life: Alyx (Proton)
-- Using Proton Experimental. Trying to work around issues.
+- Using Proton Experimental.
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=50 %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
   - 50% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision.
-- Crash on launch. Need further investigation; Alyx's ability to avoid crashes has never been consistent on my system.
+- Crash on launch. Need further investigation; Alyx's ability to avoid being in crashes has never been consistent on my system, or (spoilers) at all apparently.
 
 ### ^ Catlateral Damage VR (Proton)
 - Using GE-Proton7-55. VR Mode is only available when using the Windows build via Proton. Unsure if newer versions work.
