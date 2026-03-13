@@ -168,17 +168,6 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
-### Half-Life: Alyx (Native)
-- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=60 %command% %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
-  - 60% resolution scale, skip intro video, and disable dynamic resolution.
-  - Dynamic Resolution can cause white bars on the sides of vision, hence disabling it (to re-test; this was under OpenComposite and i forgot if it was Native or Proton). (also, i forget what exactly these fidelity options do; might be harming performance more than necessary)
-- Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
-- As for performance, this hits my system hard.
-    - I tested at 100% resolution, which didn't run particularly well even on Low Fidelity. 60% still to-test.
-    - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly bogging down towards the ending chapters.
-    - I suppose the extra overhead of ~2x the pixel count + stream encoding + no dynamic resolution pushes it over the edge.
-- If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
-
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
 - With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
@@ -206,6 +195,19 @@ Things we can actually play! Yay! There may be small issues here and there but t
 These launch, but have issues functioning normally and may have completely broken parts.
 
 ---
+
+### Half-Life: Alyx (Native)
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=60 %command% %command% -novid`
+  - 60% resolution scale and skip intro video.
+  - If there are white bars on the edges of your screen, try adding `-console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution (iirc that's what this does).
+- Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
+- As for performance, this hits my system hard.
+    - I tested at 100% resolution, which didn't run particularly well even on Low Fidelity.
+    - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly bogging down towards the ending chapters.
+    - I suppose the extra overhead of ~2x the pixel count + stream encoding + no dynamic resolution pushes it over the edge?
+    - Changing to 60% resolution seemed pretty smooth, then I restarted the game and it ran like utter rubbish. Subsequent runs were the same. Later during the zombie-trains room it became unplayably stuttery. `htop` and `nvtop` stats don't seem to reveal a bottleneck. Recording from the HMD reveals the view flickering around constantly.
+- Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue.
+- If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
 
 ### Superhot VR
 - Tested: GE-Proton9-18
