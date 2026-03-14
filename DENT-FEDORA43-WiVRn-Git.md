@@ -174,7 +174,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ### Half-Life: Alyx (Native)
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
   - 70% resolution scale, skip intro video, disable spectator window, disable anti-aliasing.
-  - If there are white bars on the edges of your screen, try adding `+vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution. (this was an issue in OpenComposite; it may not be necessaary at all for xrizer)
+  - If there are white bars on the edges of your screen, try adding `+vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution. (this was an issue in OpenComposite; it may not be necessary at all for xrizer)
   - To make movement faster, add `+hlvr_continuous_normal_speed 150 +hlvr_continuous_combat_speed 150` (to personal taste).
 - Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
 - !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
