@@ -228,10 +228,12 @@ The following crash on launch or have other major issues that prevent them from 
 ---
 
 ### ^ Half-Life: Alyx (Proton)
-- Using Proton Experimental.
-- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=50 %command% -novid -console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3`
-  - 50% resolution scale, skip intro video, and disable dynamic resolution, the last of which can cause white bars on the sides of vision.
-- Crash on launch. Need further investigation; Alyx's ability to avoid being in crashes has never been consistent on my system, or (spoilers) at all apparently.
+- Using Proton Experimental. GE-Proton also fails.
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
+  - 70% resolution scale, skip Valve Guy intro, disable spectator/desktop window, disable anti-aliasing.
+- Crash on launch. Needs further investigation; Alyx isn't supposed to be in a crash this early. `PROTON_LOG` returns some of these:
+    - `err:msvcrt:_wassert (L"!status",L"../src-vrclient/winIVRMailbox.c",51)`
+    - `err:service:device_notify_proc failed to get event, error 1726`
 
 ### ^ Catlateral Damage VR (Proton)
 - Using GE-Proton7-55. VR Mode is only available when using the Windows build via Proton. Unsure if newer versions work.
