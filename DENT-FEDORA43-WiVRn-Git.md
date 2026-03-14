@@ -82,7 +82,7 @@ Some things to be careful of.
 - I learnt this the hard way; if you have added `PROTON_LOG=1` to your launch arguments, try not to forget.
   - My VRChat was unplayably laggy for weeks and I had no idea why until I went to the launch options to remove `--enable-debug-gui` and noticed it there from when I was debugging something.
 
-### Anti-Aliasing
+### Anti-Aliasing Performance
 - From what I hear, anti-aliasing is a big no-no for Linux VR. The performance cost far outweighs the slight benefit in visual smoothness, so usually you are better off disabling anti-aliasing all together.
 
 ---
