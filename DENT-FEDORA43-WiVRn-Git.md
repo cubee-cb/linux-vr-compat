@@ -82,6 +82,9 @@ Some things to be careful of.
 - I learnt this the hard way; if you have added `PROTON_LOG=1` to your launch arguments, try not to forget.
   - My VRChat was unplayably laggy for weeks and I had no idea why until I went to the launch options to remove `--enable-debug-gui` and noticed it there from when I was debugging something.
 
+### Anti-Aliasing
+- From what I hear, anti-aliasing is a big no-no for Linux VR. The performance cost far outweighs the slight benefit in visual smoothness, so usually you are better off disabling anti-aliasing all together.
+
 ---
 
 ## Setting up the XR Stack
@@ -168,6 +171,20 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
+### Half-Life: Alyx (Native)
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
+  - 70% resolution scale, skip intro video, disable spectator window, disable anti-aliasing.
+  - If there are white bars on the edges of your screen, try adding `+vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution.
+  - To make movement faster, add `+hlvr_continuous_normal_speed 150 +hlvr_continuous_combat_speed 150` (to personal taste).
+- Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
+- !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
+- As for performance, this hits my system hard.
+    - Performance is not smooth at all, even on Low Fidelity with these Launch Options disbling things. It feels like VRChat. (that is in no way a compliment)
+    - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly only bogging down towards the ending chapters. Very playable despite WMR being WMR.
+    - Maybe the extra overhead of ~2x the pixel count + stream encoding pushes it over the edge? `htop` and `nvtop` stats don't seem to reveal a bottleneck.
+    - One time I restarted the game and it ran like utter rubbish. Subsequent runs were the same. Later during the zombie-trains room it became unplayably stuttery. Recording from the HMD revealed the view flickering around constantly.
+- If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
+
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
 - With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
@@ -195,19 +212,6 @@ Things we can actually play! Yay! There may be small issues here and there but t
 These launch, but have issues functioning normally and may have completely broken parts.
 
 ---
-
-### Half-Life: Alyx (Native)
-- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=60 %command% %command% -novid`
-  - 60% resolution scale and skip intro video.
-  - If there are white bars on the edges of your screen, try adding `-console -vconsole +vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution (iirc that's what this does).
-- Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
-- As for performance, this hits my system hard.
-    - I tested at 100% resolution, which didn't run particularly well even on Low Fidelity.
-    - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly bogging down towards the ending chapters.
-    - I suppose the extra overhead of ~2x the pixel count + stream encoding + no dynamic resolution pushes it over the edge?
-    - Changing to 60% resolution seemed pretty smooth, then I restarted the game and it ran like utter rubbish. Subsequent runs were the same. Later during the zombie-trains room it became unplayably stuttery. `htop` and `nvtop` stats don't seem to reveal a bottleneck. Recording from the HMD reveals the view flickering around constantly.
-- Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue.
-- If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
 
 ### Superhot VR
 - Tested: GE-Proton9-18
