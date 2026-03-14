@@ -172,18 +172,20 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
 ### Half-Life: Alyx (Native)
-- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
-  - 70% resolution scale, skip intro video, disable spectator window, disable anti-aliasing.
-  - If there are white bars on the edges of your screen, try adding `+vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution. (this was an issue in OpenComposite; it may not be necessary at all for xrizer)
-  - To make movement faster, add `+hlvr_continuous_normal_speed 150 +hlvr_continuous_combat_speed 150` (to personal taste).
 - Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
+  - 70% resolution scale, skip Valve Guy intro, disable spectator/desktop window, disable anti-aliasing.
+  - If there are white bars on the edges of your vision, try adding `+vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution. (this was an issue in OpenComposite; it may not be necessary at all for xrizer)
+  - To make movement faster, add `+hlvr_continuous_normal_speed 150 +hlvr_continuous_combat_speed 150` (to personal taste).
 - !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
 - As for performance, this hits my system hard.
-    - Performance is not smooth at all, even on Low Fidelity with these Launch Options disbling things. It feels like VRChat. (that is in no way a compliment)
+    - Performance is not smooth at all, even on Low Fidelity with these Launch Options disabling things. It feels like VRChat. (that is in no way a compliment)
     - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly only bogging down towards the ending chapters. Very playable despite WMR being WMR.
     - Maybe the extra overhead of ~2x the pixel count + stream encoding pushes it over the edge? `htop` and `nvtop` stats don't seem to reveal a bottleneck.
     - One time I restarted the game and it ran like utter rubbish. Subsequent runs were the same. Later during the zombie-trains room it became unplayably stuttery. Recording from the HMD revealed the view flickering around constantly.
-- If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
+- Other notes:
+    - To share saves between the Windows and Native builds, go to `steamapps/common/Half-Life Alyx/game/hlvr/` and replace `SAVE` with a symlink to `save` (or the other way if `SAVE` contains your save files).
+    - If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
 
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
