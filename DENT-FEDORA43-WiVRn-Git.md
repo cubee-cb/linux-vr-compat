@@ -178,6 +178,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
   - If there are white bars on the edges of your vision, try adding `+vr_fidelity_level_auto 0 +vr_fidelity_level 3` to disable Dynamic Resolution. (this was an issue in OpenComposite; it may not be necessary at all for xrizer)
   - To make movement faster, add `+hlvr_continuous_normal_speed 150 +hlvr_continuous_combat_speed 150` (to personal taste).
 - !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
+    - I *thought* loading times were abysmal, but I had forgotten they need input to proceed. They're actually quite short on an NVMe!
 - As for performance, this hits my system hard.
     - Performance is not smooth at all, even on Low Fidelity with these Launch Options disabling things. It feels like VRChat. (that is in no way a compliment)
     - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly only bogging down towards the ending chapters. Very playable despite WMR being WMR.
