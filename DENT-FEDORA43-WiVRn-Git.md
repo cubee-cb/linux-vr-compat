@@ -89,7 +89,7 @@ Some things to be careful of.
 ---
 
 ## Setting up the XR Stack
-Surface-level summary of setting up the WiVRn Server with xrizer and WayVR.
+Surface-level summary of setting up the WiVRn Server with xrizer and WayVR. [Build scripts here](https://github.com/cubee-cb/xr-build-scripts).
 
 ---
 
@@ -129,9 +129,8 @@ I've made symlinks for each application, so I have a neat set of shortcuts all i
   - `wivrn-server` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server`
   - `wivrnctl` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrnctl`
 
-As well, I have made some scripts that run `git pull` and then the build command for each application, as well as another that runs all of them.
-If I really wanted to, I could simply make a cron job that runs this `build_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns:
-- If there's been no commits, why bother re-building? It's a waste of energy and disk IO, so we should check the current and latest commits before updating.
+As well, I have [made some scripts](https://github.com/cubee-cb/xr-build-scripts) that check if each application needs an update, then runs their build script, as well as another that updates all of them.
+If I really wanted to, I could simply make a cron job that runs this `update_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns:
 - If I'm auto-updating to the latest commit, then if something happens to break upstream I'll have to work out how to get up and running again the next time I want to hop into VR, instead of when I'm *aware* that I might break it by *choosing* to run updates.
 
 ---
