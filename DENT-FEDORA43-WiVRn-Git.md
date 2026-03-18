@@ -188,14 +188,16 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
-### Half-Life: Alyx (Native)
-- Seems to flip-flop between whether the Native or Proton version wants to work at any given time. We'll see how long this lasts.
+### Half-Life: Alyx (Proton + Native)
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
   - 70% resolution scale, skip Valve Guy intro, disable spectator/desktop window, disable anti-aliasing.
   - To disable Dynamic Resolution, add `+vr_fidelity_level_auto 0 +vr_fidelity_level 3`. (this resolves the "white bars" issue in OpenComposite; this may not be necessary for xrizer, but it's up to personal taste otherwise)
   - To make movement faster, add `+hlvr_continuous_normal_speed 150 +hlvr_continuous_combat_speed 150` (to personal taste).
-- !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
-    - I *thought* loading times were abysmal, but I had forgotten they need input to proceed. They're actually quite short on an NVMe!
+- **Native**-specific:
+    - !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
+        - I *thought* loading times were abysmal, but I had forgotten they need input to proceed. They're actually quite short on an NVMe!
+- **Proton**-specific:
+    - Using GE-Proton9-18; Apparently Proton versions newer than Proton 9 break Alyx.
 - As for performance, this runs surprisingly poor.
     - Performance is not smooth at all, even on Low Fidelity with these Launch Options disabling things. It feels like VRChat. (that is in no way a compliment)
     - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly only bogging down towards the ending chapters. Very playable despite WMR being WMR.
@@ -205,6 +207,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - To share saves between the Windows and Native Linux builds, go to `steamapps/common/Half-Life Alyx/game/hlvr/` and replace `SAVE` with a symlink to `save` (or the other way if `SAVE` contains your save files).
         - It seems `SAVE` is used on Native, while `save` is used on Windows.
     - If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
+    - Crash on some loading screens: [delete `hlvr/models/ui/dioramas/` folder (discord)](https://discord.com/channels/1065291958328758352/1093090359464165470/1480736206877888664)
 
 ### ^ Until You Fall
 - Using GE-Proton7-55, unsure if other versions work.
