@@ -148,6 +148,7 @@ Environment variables that are useful. Usually, these are put into Steam Launch 
 ### OXR_RECENTER_STAGE
 - Add `OXR_RECENTER_STAGE=1` to allow recentering Stage Space with the headset's Recenter action. This should resolve e.g. Beat Saber's recentering.
 - As far as I'm aware, this is because most games recenter Stage rather than Local. As Stage is not supposed to recenter (that is the purpose of Local, as the player's Origin), this environment variable allows you to "break" the spec and restore recentering functionality.
+    - It makes perfect sense too; if you wanna move your "origin", pick up your seat and put it somewhere else. You shouldn't need to move the entire room!
 
 ---
 
