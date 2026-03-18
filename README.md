@@ -1,6 +1,6 @@
 Testing VR games on Linux. See [linux-gaming-compat](https://github.com/cubee-cb/linux-gaming-compat) for non-VR titles.
 
-Subfolders include scripts or configs that I use. Configs are available under [dotfiles](dotfiles). See [build-scripts](build-scripts) for, well, build scripts I use for my XR Stack.
+Subfolders include scripts or configs that I use. Configs are available under [dotfiles](dotfiles). See [build-scripts]([build-scripts](https://github.com/cubee-cb/xr-build-scripts)) for, well, build scripts I use for my XR Stack.
 
 # Variants
 - Dent (AMD Desktop)
