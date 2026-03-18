@@ -11,6 +11,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - [Devices](#devices)
 - [Gotchas](#gotchas)
 - [Setting up the XR Stack](#setting-up-the-xr-stack)
+- [Useful ENV Vars](#useful-env-vars)
 - [Working games](#working)
 - [Partially working games](#partially-working)
 - [Not working games](#not-working)
@@ -135,6 +136,21 @@ If I really wanted to, I could simply make a cron job that runs this `build_all.
 
 ---
 
+## Useful ENV vars
+Environment variables that are useful. Usually, these are put into Steam Launch Options per-game (or your launcher / shortcut's equivalent) before the program/command itself, and are space-separated. (i.e. `ENV_VAR=1 xrgears` or `ENV_VAR=1 ANOTHER_ENV_VAR=500 %command%`)
+
+---
+
+### OXR_VIEWPORT_SCALE_PERCENTAGE
+- Add `OXR_VIEWPORT_SCALE_PERCENTAGE=50` (where `50` is your desired percentage) to alter the resolution this application renders at. This allows you to make more intensive games run better at the cost of clarity, similar to SteamVR's Per-Application Video Settings. This can also be set above `100` to supersample the application.
+- It may be useful for WayVR, or other text-heavy programs, but for this purpose it may be better to increase the Stream Resolution and lower the games' viewport scales instead.
+
+### OXR_RECENTER_STAGE
+- Add `OXR_RECENTER_STAGE=1` to allow recentering Stage Space with the headset's Recenter action. This should resolve e.g. Beat Saber's recentering.
+- As far as I'm aware, this is because most games recenter Stage rather than Local. As Stage is not supposed to recenter (that is the purpose of Local, as the player's Origin), this environment variable allows you to "break" the spec and restore recentering functionality.
+
+---
+
 ## Working
 Things we can actually play! Yay! There may be small issues here and there but these are not typically game-breaking.
 
@@ -207,7 +223,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
 - Requires the environment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
     - i.e. set your launch options to `PROTON_USE_WINED3D=1 %command%`
-    - Unity 6 seems to have issues on Linux in general; see versions of Beat Saber after 1.40.8. Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. Currently, it's built on Unity 6.2.
+    - Unity 6 seems to have issues on Linux in general; Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. Currently, it's built on Unity 6.2.
 
 ---
 
