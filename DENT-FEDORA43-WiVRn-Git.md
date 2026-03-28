@@ -1,6 +1,6 @@
 Testing VR games with WiVRn and WayVR on Fedora, using XRizer for SteamVR/OpenVR compatibility.
 
-Since WiVRn is being removed from Envision, I finally have an excuse to move away from it and make my XR stack more automated myself.
+Since Envision no longer supports WiVRn properly, I've finally had an excuse to move away from it and handle everything myself.
 
 If a game isn't listed here, check out the other files to see if I've tried it on another revision of this system.
 
