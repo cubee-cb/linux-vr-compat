@@ -86,6 +86,11 @@ Some things to be careful of.
 ### Anti-Aliasing Performance
 - From what I hear, anti-aliasing is a big no-no for Linux VR. The performance cost far outweighs the slight benefit in visual smoothness, so usually you are better off disabling anti-aliasing all together.
 
+### PICO 4 `adb install` reports success but apps aren't appearing in Library
+- If Multiple Users is enabled in the native [Android Settings](https://github.com/Pico-4/Settings), uninstalling apps seems to leave them installed for Guest. This may cause any future "installs" to instead update it for Guest without installing it for Owner (you).
+  - Go to Apps, find any labelled as "Not installed for this user", press the three-dots icon, then "Uninstall for all users". After this you can re-install the app.
+  - Multiple Users seems pointless and/or broken; I tried switching to another user and was left in the home environment without controllers nor the Dock until rebooting, after which my user was set to Owner again.
+
 ---
 
 ## Setting up the XR Stack
@@ -130,8 +135,9 @@ I've made symlinks for each application, so I have a neat set of shortcuts all i
   - `wivrnctl` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrnctl`
 
 As well, I have [made some scripts](https://github.com/cubee-cb/xr-build-scripts) that check if each application needs an update, then runs their build script, as well as another that updates all of them.
-If I really wanted to, I could simply make a cron job that runs this `update_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns:
-- If I'm auto-updating to the latest commit, then if something happens to break upstream I'll have to work out how to get up and running again the next time I want to hop into VR, instead of when I'm *aware* that I might break it by *choosing* to run updates.
+If I really wanted to, I could simply make a cron job that runs this `update_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns if I'm auto-updating to the latest commit:
+- If something happens to break upstream I'll have to work out how to get up and running again the next time I want to hop into VR, instead of when I'm *aware* that I might break it by *choosing* to run updates.
+- I'll need to update to the latest WiVRn Testing on the headset whenever updates have been run and I want to play VR, which is a pain.
 
 ---
 
