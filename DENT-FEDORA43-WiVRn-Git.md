@@ -169,6 +169,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton`
 - World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
+    - VRChat recently introduced customisable loading screens to Open Beta. At some point I'll check whether this issue persists.
 - Full-body tracking works just fine.
 - Spout2 Stream Camera to OBS:
     - Thanks to [Lina](https://www.youtube.com/@HoshinoLina)'s [`spout2pw`](https://github.com/hoshinolina/spout2pw/wiki), this is now possible. It also works for other Spout2 applications!
