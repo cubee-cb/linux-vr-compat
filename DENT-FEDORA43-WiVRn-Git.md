@@ -183,6 +183,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - Also, see this [launch script](vrchat/launch-ton-save-manager.sh) I made that works around a crash on launch.
 - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
+- Save icons will be missing (e.g. respawn, etc). Likely a missing font.
 
 ### ^ Beat Saber (1.40.8 Modded)
 - Using Proton Experimental, due to issues getting mods to load with Proton-GE way back when I used Flatpak WiVRn.
