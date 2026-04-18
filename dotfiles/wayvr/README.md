@@ -24,7 +24,8 @@ Contained here are the following:
     - I changed the Oculus controller profile (Oculus/Meta/PICO devices)
       - Other profiles are not included; don't replace yours with mine if you have different controllers.
     - Show/Hide Working Set - Left Menu
-    - Space Drag - Left Joystick Click or Right Joystick Click.
-    - Space Reset - Double Left Joystick Click.
+    - Space Drag - Right Joystick Click
+    - Space Rotate - Left Joystick Click
+    - Space Reset - Double Left Joystick Click
 - [pollhw](pollhw.sh)
   - A script to poll hardware stats like CPU/GPU usage and temperatures. Currently unused due to the UI refresh; I need to re-create my performance overlay.
