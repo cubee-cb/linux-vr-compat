@@ -1,7 +1,8 @@
-// cubee's pico-4/quest bindings for wayvr / wlxoverlay-s
-// - left menu to toggle overlays
-// - joystick clicks to space drag
-// - left joystick double-click to reset offsets
+// cubee's pico/quest bindings for wayvr
+// - left menu press to toggle overlays
+// - either joystick click to space drag
+// - left joystick double-click to reset space offsets
+// - right joystick double-click to space rotate
 //
 // Available bindings:
 //
@@ -73,8 +74,10 @@
       right: "/user/hand/right/input/trigger/touch"
     },
     space_drag: {
-      left: "/user/hand/left/input/thumbstick/click",
       right: "/user/hand/right/input/thumbstick/click"
+    },
+    space_rotate: {
+      left: "/user/hand/left/input/thumbstick/click",
     },
     //space_rotate: {
     //  //double_click: true,
