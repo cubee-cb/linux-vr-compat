@@ -168,8 +168,8 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Using [GE-Proton10-33-rtsp22](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton10-33-rtsp22). (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton`
-- World "Connecting" screen thumbnails' colours are just a bit off. Gamma issue? Wrong colour space?
-    - VRChat recently introduced customisable loading screens to Open Beta. At some point I'll check whether this issue persists.
+- Video players typically tank the framerate.
+- World thumbnails on the "Connecting" screen are a bit washed out.
 - Full-body tracking works just fine.
 - Spout2 Stream Camera to OBS:
     - Thanks to [Lina](https://www.youtube.com/@HoshinoLina)'s [`spout2pw`](https://github.com/hoshinolina/spout2pw/wiki), this is now possible. It also works for other Spout2 applications!
@@ -184,6 +184,9 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
 - Save icons will be missing (e.g. respawn, etc). Likely a missing font.
+
+#### Unity (Avatar creation, World creation)
+- See the section about ALCOM in [Software](#software).
 
 ### ^ Beat Saber (1.40.8 Modded)
 - Using Proton Experimental, due to issues getting mods to load with Proton-GE way back when I used Flatpak WiVRn.
@@ -289,14 +292,20 @@ Setup and troubleshooting of other, non-game software.
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
-- The AppImages display a white screen on launch, so building ALCOM manually is pretty much required on this system.
-    - EGL Display error. Basically identical to [this comment](https://github.com/vrc-get/vrc-get/issues/1694#issuecomment-2480857765) on the white screen issue thread.
-- Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel dotnet-sdk-8.0` and cargo crate `cargo-about`.
-- Final step of build fails to bundle the AppImage. By this point, the raw executable has been built in `vrc-get/target/release/` anyway.
-    - As long as it says `Built application at: /home/user/.../vrc-get/target/release/ALCOM` you should be all good.
-    - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
+- Getting it running:
+    - The AppImages display a white screen on launch, so building ALCOM manually is pretty much required on this system.
+        - EGL Display error. Basically identical to [this comment](https://github.com/vrc-get/vrc-get/issues/1694#issuecomment-2480857765) on the white screen issue thread.
+    - Needed to install DNF packages `nodejs-npm gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel dotnet-sdk-8.0` and cargo crate `cargo-about`.
+    - Final step of build fails to bundle the AppImage. By this point, the raw executable has been built in `vrc-get/target/release/` anyway.
+        - As long as it says `Built application at: /home/user/.../vrc-get/target/release/ALCOM` you should be all good.
+        - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
 - As for Unity Hub itself:
     - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use. Instead, using the Unity Hub binary from the yum repo provided by Unity seems to work around this issue.
+- And finally, actual usage:
+    - Build and Test will write `.vrca` files to `~/.local/share/VRChat/VRChat/Avatars/` [source](https://creators.vrchat.com/avatars/#local-avatar-testing).
+        - Symlink this folder to the Windows path in VRChat's proton prefix folder to use Build and Test.
+        - Does this hint at VRChat getting a native Linux client??? Doubtful, but with Frame's existence it could be more likely than ever.
+            - Though they have the technical hurdle of porting the PC version to OpenXR...
 
 ### Blender (VR Scene Inspection Addon)
 - On Wayland, starting the OpenXR Session may result in an error `XR_ERROR_GRAPHICS_DEVICE_INVALID`.
