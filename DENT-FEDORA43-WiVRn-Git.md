@@ -1,6 +1,6 @@
-Testing VR games with WiVRn and WayVR on Fedora, using XRizer for SteamVR/OpenVR compatibility.
+Testing VR games with WiVRn and WayVR on Fedora, using xrizer for SteamVR/OpenVR compatibility.
 
-Since Envision no longer supports WiVRn properly, I've finally had an excuse to move away from it and handle everything myself.
+Since Envision no longer builds WiVRn properly, I've finally had an excuse to move away from it and handle everything myself.
 
 If a game isn't listed here, check out the other files to see if I've tried it on another revision of this system.
 
@@ -24,18 +24,17 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 ---
 
 ### VR Hardware
-- PICO 4 (256GB)
+- PICO 4 (256GB) - Ucotu
     - Typically used wireless.
-    - PICO Motion Trackers work about as well as they are supposed to.
+    - PICO Motion Trackers work well, when Body Tracking is enabled in WiVRn.
     - Left controller seems to be failing now.
-      - Keeps dropping out on occasion, and the capacitive sensors keep getting stuck on or off.
-      - It's always the left controllers lol. My left WMR controller way back when was so power-hungry compared to the right.
-- Quest 3s (128GB)
+      - Drops out on occasion. Left Trigger capsense keeps getting stuck.
+- Quest 3s (128GB) - Spotlight
     - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and more stable controller prediction.
       - The PICO 4's controller offsets are weird, man. They flip all over the place.
-    - Can be used in the dark, so if I wanted the lights off for whatever reason, this headset's the way to go.
+    - Prior to HOS 2, could be used in the dark. This is no longer the case when using controllers. Be sure to thank Meta for removing features!
 - Common notes
-    - Hand Tracking works fine in titles that support it (that is, VRChat). Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
+    - Hand Tracking works fine in titles that support it (e.g. VRChat). Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
         - For PICO, this is under Settings > Lab > Hand Tracking.
     - Presence isn't passed through at this time, so VRChat doesn't trigger its AFK state, Vivecraft won't hotswitch automatically, etc.
 
@@ -47,7 +46,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Most games installed on a hard drive, some on an NVMe.
 
 ### PC Software
-- Distro: Fedora 43 (upgraded from Fedora 41)
+- Distro: Fedora 43 (initially installed as Fedora 41)
 - Desktop: KDE Plasma, Wayland
 - Steam: `dnf` package (i.e. not the flatpak)
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
@@ -60,7 +59,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
     - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
     - [xrizer](https://github.com/Supreeeme/xrizer) - OpenVR > OpenXR compatibility layer.
     - [WayVR](https://github.com/wlx-team/wayvr) - An overlay application that provides desktop views and playspace drag.
-        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick. This does conflict with some games; in this case you can set Playspace Multiplier to 0 in WayVR's settings.
+        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick. This does conflict with some games; in this case you can set Playspace Multiplier to 0 in WayVR's Features settings.
     - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
 
 ---
