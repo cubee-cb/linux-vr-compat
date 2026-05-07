@@ -98,14 +98,27 @@ Surface-level summary of setting up the WiVRn Server with xrizer and WayVR. [Bui
 
 ---
 
-**NOTE**: If you just want to *use* WiVRn, and don't want/need to build everything yourself, try the [`wivrn-dashboard` system package](https://github.com/WiVRn/WiVRn?tab=readme-ov-file#pc-serverdashboard) (needs OpenVR > OpenXR translation layer installed separately) or the [WiVRn Flatpak](https://flathub.org/en/apps/io.github.wivrn.wivrn) (OpenVR compatibility built-in) with the [WayVR AppImage](https://github.com/wlx-team/wayvr?tab=readme-ov-file#installation).
-- Once you have it installed, the system package should come with a systemd service. If you'd like to have WiVRn auto-start on login: `systemctl enable --user wivrn` and `systemctl start --user wivrn`. I am unsure if the Flatpak does the same.
+### Fedora Users: Fedora, Nobara, etc - **Excluding Fedora Atomic: Bazzite, etc**
 
-### [`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
+If you just want to *use* WiVRn, and don't want or need to build everything yourself: ([galister - Discord](https://discord.com/channels/1065291958328758352/1065335880975388782/1501797028257337364))
+- Install the [`wivrn-dashboard` system package](https://github.com/WiVRn/WiVRn?tab=readme-ov-file#pc-serverdashboard) via `dnf`: `dnf install wivrn-dashboard`
+- For SteamVR games, download [xrizer](https://github.com/Supreeeme/xrizer/releases) and extract it to `/opt/xrizer`. You may need sudo permissions to do this.
+- For desktop views and space-drag, download the [WayVR AppImage](https://github.com/wlx-team/wayvr?tab=readme-ov-file#installation).
+    - You may need to mark it as executable. Go to file properties and select "Allow executing file as program", or `chmod +x WayVR*.AppImage`
+- Open WiVRn and go to its settings. Set Autostart Application to Custom and select the WayVR AppImage file, and set OpenVR Compat to `xrizer`.
+- The WiVRn system package should come with a systemd service. If you'd like to have WiVRn auto-start on login: `systemctl enable --user wivrn` and `systemctl start --user wivrn`.
+
+Otherwise, if you want to get the latest changes as they come in, continue reading!
+
+### Building manually
+
+I've [made some scripts](https://github.com/cubee-cb/xr-build-scripts) to automate by builds. They each check if the application needs an update, then runs the build command and copies most of the built files to `/opt/`.
+
+#### [`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/wayvr/target/release/wayvr`
 
-### [`wivrn-dashboard`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#dashboard) for GUI, or [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless:
+#### [`wivrn-dashboard`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#dashboard) for GUI, or [`wivrn-server`](https://github.com/WiVRn/WiVRn/blob/master/docs/building.md#server-pc) for headless:
 - Clone + build, note where the executable is.
   - e.g. `~/devel/xr/WiVRn/build-dashboard/server/wivrn-dashboard` or `~/devel/xr/WiVRn/build-server/server/wivrn-server`
 - Run `wivrn-dashboard` for initial setup and pairing your headset.
@@ -119,26 +132,20 @@ Surface-level summary of setting up the WiVRn Server with xrizer and WayVR. [Bui
         - If using WayVR, you have to manually close WayVR before the XR session will shutdown. IIRC you may be able to do this under Settings > Troubleshooting? Otherwise, there's always `kill`.
         - If you need to restart the server, `systemctl restart` the service.
 
-### [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
+#### [`xrizer`](https://github.com/Supreeeme/xrizer?tab=readme-ov-file#building):
 - Clone + build, note where the `xrizer/target/release/` or `xrizer/target/debug/` folder is.
 - `~/.config/openvr/openvrpaths.vrpath` > set `"runtime"` to point to this folder.
   - e.g. `~/devel/xr/xrizer/target/release/`
   - A sample `openvrpaths.json` is in this xrizer build dir; you should be able to just copy this file over instead.
 
-### Next
-I've made symlinks for each application, so I have a neat set of shortcuts all in one folder:
-- `~/Programs/xr/` (added to `PATH`)
-  - `xrizer/` -> `~/devel/xr/xrizer/target/release/`
-  - `wayvr` -> `~/devel/xr/target/release/wayvr`
-  - `wivrn-dashboard` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrn-dashboard`
-  - `wivrn-server` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrn-server`
-  - `wivrnctl` -> `~/devel/xr/WiVRn/build-dashboard/server/wivrnctl`
-
-As well, I have [made some scripts](https://github.com/cubee-cb/xr-build-scripts) that check if each application needs an update, then runs their build script, as well as another that updates all of them.
-If I really wanted to, I could simply make a cron job that runs this `update_all.sh` script, so my entire XR stack auto-updates itself! Though, this comes with some concerns if I'm auto-updating to the latest commit:
-- If something happens to break upstream I'll have to work out how to get up and running again the next time I want to hop into VR, instead of when I'm *aware* that I might break it by *choosing* to run updates.
-- I'll need to update to the latest WiVRn Testing on the headset whenever updates have been run and I want to play VR, which is a pain.
-
+#### Next
+You could make some symlinks for each application, so you have a neat set of shortcuts:
+- `xrizer/` -> `xrizer/target/release/` - this should be a symlink to the folder itself
+- `wayvr` -> `wayvr/target/release/wayvr`
+- `wivrn-dashboard` -> `WiVRn/build-dashboard/server/wivrn-dashboard`
+- `wivrn-server` -> `WiVRn/build-dashboard/server/wivrn-server`
+- `wivrnctl` -> `WiVRn/build-dashboard/server/wivrnctl`
+ 
 ---
 
 ## Useful ENV vars
