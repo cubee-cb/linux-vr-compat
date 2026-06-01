@@ -46,7 +46,7 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Most games installed on a hard drive, some on an NVMe.
 
 ### PC Software
-- Distro: Fedora 43 (initially installed as Fedora 41)
+- Distro: Fedora 44 (initially installed as Fedora 41)
 - Desktop: KDE Plasma, Wayland
 - Steam: `dnf` package (i.e. not the flatpak)
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
@@ -204,6 +204,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Using GE-Proton10-15-rtsp18 for better video stream support.
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
+- For `resrec://`, etc urls to work: https://wiki.resonite.com/Linux_notes#URL_protocol_handler
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 
