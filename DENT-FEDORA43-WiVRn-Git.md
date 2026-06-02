@@ -198,7 +198,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Using Proton Experimental, due to issues getting mods to load with Proton-GE way back when I used Flatpak WiVRn.
 - I currently use [BSManager](https://github.com/Zagrios/bs-manager) for modding and launching Beat Saber 1.40.8.
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
-- Full-body tracking doesn't seem to work; OpenXR Tracker Profiles either doesn't load or can't detect the trackers.
+- Full-body avatars don't work; OpenXR Tracker Profiles doesn't detect the trackers (likely due to them lacking Tracker Roles).
 
 ### ^ Resonite
 - Using GE-Proton10-15-rtsp18 for better video stream support.
