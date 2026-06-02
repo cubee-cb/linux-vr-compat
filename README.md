@@ -4,7 +4,7 @@ Subfolders include scripts or configs that I use. Configs are available under [d
 
 # Variants
 - Dent (AMD Desktop)
-  - [Fedora 43 (WiVRn Git)](DENT-FEDORA43-WiVRn-Git.md) (current) - Current main setup.
+  - [Fedora 44 (WiVRn Git)](DENT-FEDORA43-WiVRn-Git.md) (current) - Current main setup.
   - [Fedora 43 (WiVRn Envision)](DENT-FEDORA43-WiVRn-Envision.md)
   - [Fedora 42 (WiVRn Envision)](DENT-FEDORA42-WiVRn-Envision.md)
   - [Arch Linux (WiVRn Envision)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
