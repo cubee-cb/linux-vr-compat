@@ -310,14 +310,11 @@ Setup and troubleshooting of other, non-game software.
 
 ---
 
-### Steam (native) - if you hate editing Launch Options for every game (+ auto OBS Game Capture):
-- Close Steam.
-- Edit your Steam shortcut to add the Environment Variables set by WiVRn.
-  - On KDE, you can right-click the Application Launcher > Edit Applications > Steam and add them to the appropriate box.
-  - This should add the WiVRn Env Vars to every Steam game so you don't have to manually edit the launch options every time you install a new game.
-  - Doing this next bit seems to break VRChat and Resonite, but if you're using OBS's OBS_VKCapture plugin, you may also add `OBS_VKCAPTURE=1` here.
-    - Note that you will still need to add the `obs-gamecapture %command%` Launch Option for games that do not use Vulkan, so it may be worth just adding the launch option to everything manually.
-- Re-open Steam.
+### Steam (native) - if you hate editing Launch Options for every game
+- Run `echo "PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES=1" > ~/.config/environment.d/wivrn.conf`
+    - For WiVRn flatpak, you will instead have put whatever variables that needs into `~/.config/environment.d/wivrn.conf` on separate lines.
+    - This adds the environment variable more or less globally so you don't have to set it on every single game.
+- Restart your session (log out and back in, or reboot).
 
 ### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
 - Alternative Creator Companion for VRChat.
