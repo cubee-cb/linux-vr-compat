@@ -206,7 +206,6 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - Lower resolution, make it less nice to allocate more resources, skip tutorial world.
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
-- For `resrec://`, etc urls to work: https://wiki.resonite.com/Linux_notes#URL_protocol_handler
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
 - Trigger click may not work on xrizer-git somewhere around June 2026.
@@ -225,6 +224,11 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Graphics config is done on Renderide's desktop window GUI. Most in-game settings do not apply to Renderide at time of writing.
     - I'd recommend turning off Ambient Occlusion; it looks kinda bad in my opinion.
     - Turning off the Post Processing entirely can net a decent boost to performance.
+
+### Using `resrec://` URLs (for objects, joining sessions, etc)
+- Follow the first two commands of this: https://wiki.resonite.com/Linux_notes#URL_protocol_handler
+- For the third command `desktop-file-install`, replace `"$XDG_DATA_HOME/applications"` with instead: `"~/.local/share/applications"`
+    - This is only necessary if `$XDG_DATA_HOME` is not set. If the third command fails with `Permission Denied` (or similar), this is probably the case, as it would then be attempting to create `applications` in the root directory (incorrect!).
 
 ### Half-Life: Alyx (Proton + Native)
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
