@@ -202,11 +202,29 @@ Things we can actually play! Yay! There may be small issues here and there but t
 
 ### ^ Resonite
 - Using GE-Proton10-15-rtsp18 for better video stream support.
+- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=75 nice -n -10 ionice -n 0 %command% -SkipIntroTutorial`
+    - Lower resolution, make it less nice to allocate more resources, skip tutorial world.
 - I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
 - Full-body tracking works just fine.
 - For `resrec://`, etc urls to work: https://wiki.resonite.com/Linux_notes#URL_protocol_handler
 - Gotchas:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
+- Trigger click may not work on xrizer-git somewhere around June 2026.
+
+#### [Renderide](https://github.com/DoubleStyx/Renderide) (Native Linux/OpenXR Resonite Renderer)
+- Please read their README for notes on the issues you WILL encounter.
+    - I was able to build just by cloning and running `cargo build --release` (with `cargo` installed, of course).
+    - Some things may not render, or will appear broken and/or flickery. You have been warned!
+- This renderer removes the need for the following to run Resonite:
+    - Proton (no longer using Unity/VR renderer)
+    - xrizer (no longer using OpenVR/SteamVR)
+        - It also fixes my trigger inputs by dodging OpenVR entirely.
+    - (huge; resonite becomes a native linux openxr social platform)
+- I've added a desktop file to launch Renderide. Note that Renderide itself handles launching Resonite; don't launch Resonite through Steam!
+    - `Exec=env OXR_VIEWPORT_SCALE_PERCENTAGE=75 nice -n -10 ionice -n 0 /path/to/renderide -SkipIntroTutorial`
+- Graphics config is done on Renderide's desktop window GUI. Most in-game settings do not apply to Renderide at time of writing.
+    - I'd recommend turning off Ambient Occlusion; it looks kinda bad in my opinion.
+    - Turning off the Post Processing entirely can net a decent boost to performance.
 
 ### Half-Life: Alyx (Proton + Native)
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
