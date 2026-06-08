@@ -225,7 +225,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - I'd recommend turning off Ambient Occlusion; it looks kinda bad in my opinion.
     - Turning off the Post Processing entirely can net a decent boost to performance.
 
-### Using `resrec://` URLs (for objects, joining sessions, etc)
+#### Using `resrec://` URLs (for objects, joining sessions, etc)
 - Follow the first two commands of this: https://wiki.resonite.com/Linux_notes#URL_protocol_handler
 - For the third command `desktop-file-install`, replace `"$XDG_DATA_HOME/applications"` with instead: `"~/.local/share/applications"`
     - This is only necessary if `$XDG_DATA_HOME` is not set. If the third command fails with `Permission Denied` (or similar), this is probably the case, as it would then be attempting to create `applications` in the root directory (incorrect!).
