@@ -261,7 +261,16 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Full-body tracking Works mostly fine:
   - Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
   - (todo: re-test) Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
-      - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
+    - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
+
+### Kingspray Graffiti
+- Tested: GE-Proton9-18 (ran alongside VRChat)
+- Loading times on HDD are really slow; the locations load pretty fast on NVMe though.
+- All controls seem to be mapped to triggers and stick clicks. (this game was made for Vive)
+  - For example, the phone menu is opened by clicking the Left Stick.
+- Artwork can be obtained by going to `steamapps/compatdata/471660/pfx/drive_c/users/steamuser/Documents/Kingspray Graffiti`
+  - Each time you save, it creates a folder (`<location>/<timestamp>/`) with the graffiti texture+mask at that moment in PNG format.
+    - The mask probably stores information for the Metallic property, unsure if anything else.
 
 ### Vertigo: Remastered
 - Tested: GE-Proton9-18
