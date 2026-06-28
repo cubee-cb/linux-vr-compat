@@ -171,7 +171,9 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ---
 
 ### ^ VRChat
-- Using [GE-Proton10-33-rtsp22](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton10-33-rtsp22). (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
+- Proton presently depends on if you need [Spout2PW](https://github.com/hoshinolina/spout2pw/releases), as this has been archived and I haven't found a fork I'm willing to use:
+    - With Spout2PW: [GE-Proton10-33-rtsp22](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton10-33-rtsp22). (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
+    - Without Spout2PW: [proton-rtsp-11.0-20260609-1](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/proton-rtsp-11.0-20260609-1)
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `gamemoderun %command% --enable-avpro-in-proton`
 - Video players typically tank the framerate.
