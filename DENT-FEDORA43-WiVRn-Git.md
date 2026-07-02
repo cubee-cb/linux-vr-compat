@@ -73,7 +73,7 @@ Some things to be careful of.
 ---
 
 ### Easy Effects
-- If your audio sounds crunchy or robotic:
+- If audio output sounds crunchy or robotic, try one of the following:
     - Update WiVRn to 26.2 or newer. System Packages may lag behind, but Flatpak is updated already.
     - Override `Pipewire > General > Use default output` and/or `Pipewire > General > Use default input` with a specific, non-WiVRn device. Naturally, this is only viable if you only have one audio output you would ever need filtered at a time.
         - Yes, EasyEffects seems to process the outputs even when there are no effects selected.
