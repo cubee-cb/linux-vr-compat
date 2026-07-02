@@ -6,7 +6,12 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 
 See [the Linux VR Adventures Wiki](https://wiki.vronlinux.org/) for the most up-to-date information on getting your VR up and running.
 
-### Shortcuts
+## Current notes:
+- Proton-RTSP has been rebased onto vanilla Proton 11, and no longer makes use of Proton-GE.
+- I'd recommend moving away from Proton-GE going forward. Proton-GE-11 is broken for a bunch of things, not to mention use of genAI in its production.
+    - The overly verbose change notes are quite unsettling when you consider all previous releases were simple lists of changes, now it's all like "well, how does this work, exactly?" and "oh, here's why I made this change!". Not to mention the faux-em-dashes (`--`) littered through them.
+
+## Shortcuts
 - [Devices](#devices)
 - [Gotchas](#gotchas)
 - [Setting up the XR Stack](#setting-up-the-xr-stack)
@@ -174,6 +179,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
     - `%command% --enable-avpro-in-proton`
 - Full-body tracking works well.
+- Selfie Expression works when using Proton RTSP 11.
 - Recording:
     - For Spout2, [`spout2pw`](https://github.com/hoshinolina/spout2pw/wiki) exists, but has been archived. Works with Proton 10 at maximum.
 - Quirks:
