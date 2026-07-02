@@ -4,8 +4,7 @@ Since Envision no longer builds WiVRn properly, I've finally had an excuse to mo
 
 If a game isn't listed here, check out the other files to see if I've tried it on another revision of this system.
 
-## Current notes:
-- `amdgpu` resets not yet observed, but not known if resolved.
+See [the Linux VR Adventures Wiki](https://wiki.vronlinux.org/) for the most up-to-date information on getting your VR up and running.
 
 ### Shortcuts
 - [Devices](#devices)
@@ -26,13 +25,13 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 ### VR Hardware
 - PICO 4 (256GB) - Ucotu
     - Typically used wireless.
-    - PICO Motion Trackers work well, when Body Tracking is enabled in WiVRn.
+    - PICO Motion Trackers work well. Enable Body Tracking in the WiVRn headset client.
     - Left controller seems to be failing now.
       - Drops out on occasion. Left Trigger capsense keeps getting stuck.
 - Quest 3s (128GB) - Spotlight
     - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and more stable controller prediction.
       - The PICO 4's controller offsets are weird, man. They flip all over the place.
-    - Prior to HOS 2, could be used in the dark. This is no longer the case when using controllers. Be sure to thank Meta for removing features!
+    - Prior to HorizonOS 2.0, it could be used in the dark. Now, this is only the case when also using hand tracking.
 - Common notes
     - Hand Tracking works fine in titles that support it (e.g. VRChat). Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
         - For PICO, this is under Settings > Lab > Hand Tracking.
@@ -51,16 +50,15 @@ If a game isn't listed here, check out the other files to see if I've tried it o
 - Steam: `dnf` package (i.e. not the flatpak)
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
     - All Launch Options should be combined with the ones specified by WiVRn.
-- Epic Store, GOG, and non-Steam games: Heroic Games Launcher (AppImage version)
 - Proton: [GE-Proton10-32](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-32) (Default for all games and launchers, unless otherwise specified)
-    - To install a custom Proton version, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`), though Heroic works too if you turn on "Download GE-Proton to Steam directory", then they can share installs.
-    - For manual installation (such as for the [GE-RTSP variant](https://github.com/SpookySkeletons/proton-ge-rtsp)), place the tool's folder in `.steam/steam/compatibilitytools.d/`.
-- XR Stack (manually built; the release builds may lack some features I talk about here):
+    - To install custom Proton versions, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`).
+    - For manual installation, place the tool's folder in `.steam/steam/compatibilitytools.d/`.
+- XR Stack (the release builds may lack some features I talk about, as I build these from source):
     - [WiVRn](https://github.com/WiVRn/WiVRn) - Monado-based OpenXR runtime and streamer for Standalone HMDs.
     - [xrizer](https://github.com/Supreeeme/xrizer) - OpenVR > OpenXR compatibility layer.
     - [WayVR](https://github.com/wlx-team/wayvr) - An overlay application that provides desktop views and playspace drag.
-        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick. This does conflict with some games; in this case you can set Playspace Multiplier to 0 in WayVR's Features settings.
-    - SteamVR is *not* installed, and in most cases shouldn't be as it can conflict with WiVRn.
+        - I have my Space Drag mapped to left/right stick click, with Space Reset mapped to double-clicking the left stick. This does conflict with some games; in this case, using WayVR you can set WayVR > Features > Playspace Multiplier to 0.
+    - SteamVR is *not* installed, and shouldn't be (unless using WiVRn with Lighthouse devices), as it can conflict with WiVRn.
 
 ---
 
@@ -93,13 +91,13 @@ Some things to be careful of.
 ---
 
 ## Setting up the XR Stack
-Surface-level summary of setting up the WiVRn Server with xrizer and WayVR. [Build scripts here](https://github.com/cubee-cb/xr-build-scripts).
+Setting up WiVRn with xrizer and WayVR. [Build scripts here](https://github.com/cubee-cb/xr-build-scripts).
 
 ---
 
-### Fedora Users: Fedora, Nobara, etc - **Excluding Fedora Atomic: Bazzite, etc**
+### Fedora Users
 
-If you just want to *use* WiVRn, and don't want or need to build everything yourself: ([galister - Discord](https://discord.com/channels/1065291958328758352/1065335880975388782/1501797028257337364))
+If you just want to *use* WiVRn, and don't want or need to build everything yourself: (source: [galister - LVRA Discord](https://discord.com/channels/1065291958328758352/1065335880975388782/1501797028257337364))
 - Install the [`wivrn-dashboard` system package](https://github.com/WiVRn/WiVRn?tab=readme-ov-file#pc-serverdashboard) via `dnf`: `dnf install wivrn-dashboard`
 - For SteamVR games, download [xrizer](https://github.com/Supreeeme/xrizer/releases) and extract it to `/opt/xrizer`. You may need sudo permissions to do this.
 - For desktop views and space-drag, download the [WayVR AppImage](https://github.com/wlx-team/wayvr?tab=readme-ov-file#installation).
@@ -111,7 +109,7 @@ Otherwise, if you want to get the latest changes as they come in, continue readi
 
 ### Building manually
 
-I've [made some scripts](https://github.com/cubee-cb/xr-build-scripts) to automate by builds. They each check if the application needs an update, then runs the build command and copies most of the built files to `/opt/`.
+I've [made some scripts](https://github.com/cubee-cb/xr-build-scripts) to automate my builds. They each check if the application needs an update, then runs the build command and copies most of the built files to `/opt/`.
 
 #### [`wayvr`](https://github.com/wlx-team/wayvr/wiki/Building-from-Source):
 - Clone + build, note where the executable is.
@@ -171,23 +169,23 @@ Things we can actually play! Yay! There may be small issues here and there but t
 ---
 
 ### ^ VRChat
-- Proton presently depends on if you need [Spout2PW](https://github.com/hoshinolina/spout2pw/releases), as this has been archived and I haven't found a fork I'm willing to use:
-    - With Spout2PW: [GE-Proton10-33-rtsp22](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton10-33-rtsp22). (RTSP is the [recommended fork for VRChat](https://lvra.gitlab.io/docs/vrchat/#recommended-proton))
-    - Without Spout2PW: [proton-rtsp-11.0-20260609-1](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/proton-rtsp-11.0-20260609-1)
+- Proton: [proton-rtsp-11.0-20260609-1](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/proton-rtsp-11.0-20260609-1)
+    - If video players don't work, try running `steam steam://unlockh264/`.
 - Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
-    - `gamemoderun %command% --enable-avpro-in-proton`
-- Video players typically tank the framerate.
-- World thumbnails on the "Connecting" screen are a bit washed out.
-- Full-body tracking works just fine.
-- Spout2 Stream Camera to OBS:
-    - Thanks to [Lina](https://www.youtube.com/@HoshinoLina)'s [`spout2pw`](https://github.com/hoshinolina/spout2pw/wiki), this is now possible. It also works for other Spout2 applications!
-    - There are instructions listed for both Flatpak and Native versions of Steam and OBS. I've used Native Steam with Flatpak OBS and [GE-Proton10-33-rtsp22](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/GE-Proton10-33-rtsp22) myself.
-- Gotchas:
+    - `%command% --enable-avpro-in-proton`
+- Full-body tracking works well.
+- Recording:
+    - For Spout2, [`spout2pw`](https://github.com/hoshinolina/spout2pw/wiki) exists, but has been archived. Works with Proton 10 at maximum.
+- Quirks:
+    - Video players typically tank the framerate. This may be reduced with Proton RTSP 11 and/or the `unity-6` beta.
+    - Loading a video causes a massive stutter, up to 1-2 seconds sometimes.
     - VRChat seems not to launch after EAC if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
+    - World thumbnails on the "Connecting" screen are a bit washed out.
 
 #### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
 - I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
     - i.e. `flatpak run --command=protontricks-launch com.github.Matoking.protontricks --appid 438100 ./ToNSaveManager.exe`
+    - Alternatively if using vanilla wine, something like this may also work: `WINEPREFIX=/path/to/compatdata/438100 wine ./TonSaveManager.exe`
     - Also, see this [launch script](vrchat/launch-ton-save-manager.sh) I made that works around a crash on launch.
 - Seems to work fine. Finds save files in the logs, saves copy when clicked, and even OSC works.
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
@@ -203,25 +201,25 @@ Things we can actually play! Yay! There may be small issues here and there but t
 - Full-body avatars don't work; OpenXR Tracker Profiles doesn't detect the trackers (likely due to them lacking Tracker Roles).
 
 ### ^ Resonite
-- Using GE-Proton10-15-rtsp18 for better video stream support.
+- Using GE-Proton10-15-rtsp18 for better video stream support. - todo: test Proton RTSP 11.
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=75 nice -n -10 ionice -n 0 %command% -SkipIntroTutorial`
     - Lower resolution, make it less nice to allocate more resources, skip tutorial world.
-- I have my mods disabled since the .NET 10 update broke them. Might get them back later if I can be bothered.
-- Full-body tracking works just fine.
-- Gotchas:
+- Modding should work, but I haven't bothered to reinstate mine yet.
+- Full-body tracking works fine once you've managed to get it calibrated properly.
+- Quirks:
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
-- Trigger click may not work on xrizer-git somewhere around June 2026.
+    - Trigger click should be fixed on latest xrizer commit. Untested since I was testing Renderide. (see next)
 
 #### [Renderide](https://github.com/DoubleStyx/Renderide) (Native Linux/OpenXR Resonite Renderer)
 - Please read their README for notes on the issues you WILL encounter.
     - I was able to build just by cloning and running `cargo build --release` (with `cargo` installed, of course).
     - Some things may not render, or will appear broken and/or flickery. You have been warned!
+    - Does not support OpenXR full-body tracking at time of writing.
 - This renderer removes the need for the following to run Resonite:
     - Proton (no longer using Unity/VR renderer)
     - xrizer (no longer using OpenVR/SteamVR)
-        - It also fixes my trigger inputs by dodging OpenVR entirely.
-    - (huge; resonite becomes a native linux openxr social platform)
-- I've added a desktop file to launch Renderide. Note that Renderide itself handles launching Resonite; don't launch Resonite through Steam!
+    - (huge; resonite becomes a native linux social platform!)
+- I've made myself a desktop file to launch Renderide. Note that Renderide itself handles launching Resonite; launching Resonite through Steam will use the default Unity renderer!
     - `Exec=env OXR_VIEWPORT_SCALE_PERCENTAGE=75 nice -n -10 ionice -n 0 /path/to/renderide -SkipIntroTutorial`
 - Graphics config is done on Renderide's desktop window GUI. Most in-game settings do not apply to Renderide at time of writing.
     - I'd recommend turning off Ambient Occlusion; it looks kinda bad in my opinion.
@@ -327,8 +325,7 @@ Setup and troubleshooting of other, non-game software.
     - This adds the environment variable more or less globally so you don't have to set it on every single game.
 - Restart your session (log out and back in, or reboot).
 
-### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md))
-- Alternative Creator Companion for VRChat.
+### ALCOM ([vrc-get-gui](https://github.com/vrc-get/vrc-get/blob/master/vrc-get-gui/README.md)) - Alternative Creator Companion for VRChat.
 - Getting it running:
     - The AppImages display a white screen on launch, so building ALCOM manually is pretty much required on this system.
         - EGL Display error. Basically identical to [this comment](https://github.com/vrc-get/vrc-get/issues/1694#issuecomment-2480857765) on the white screen issue thread.
@@ -337,12 +334,10 @@ Setup and troubleshooting of other, non-game software.
         - As long as it says `Built application at: /home/user/.../vrc-get/target/release/ALCOM` you should be all good.
         - Might break some things if it expects to be running as an AppImage, for example the setting `Use ALCOM for vcc: URL Scheme` shows a "failed to get appimage path" error, more remains to be seen.
 - As for Unity Hub itself:
-    - Launching the Flatpak version of Unity Hub though ALCOM fails with a "No valid license found" error, no matter which variant of ALCOM I use. Instead, using the Unity Hub binary from the yum repo provided by Unity seems to work around this issue.
+    - Launching the Flatpak version of Unity Hub though ALCOM failed with a "No valid license found" error, no matter which variant of ALCOM I used. Instead, using the Unity Hub binary from the yum repo provided by Unity got around this issue for me.
 - And finally, actual usage:
     - Build and Test will write `.vrca` files to `~/.local/share/VRChat/VRChat/Avatars/` [source](https://creators.vrchat.com/avatars/#local-avatar-testing).
         - Symlink this folder to the Windows path in VRChat's proton prefix folder to use Build and Test.
-        - Does this hint at VRChat getting a native Linux client??? Doubtful, but with Frame's existence it could be more likely than ever.
-            - Though they have the technical hurdle of porting the PC version to OpenXR...
 
 ### Blender (VR Scene Inspection Addon)
 - On Wayland, starting the OpenXR Session may result in an error `XR_ERROR_GRAPHICS_DEVICE_INVALID`.
