@@ -8,8 +8,7 @@ See [the Linux VR Adventures Wiki](https://wiki.vronlinux.org/) for the most up-
 
 ## Current notes:
 - Proton-RTSP has been rebased onto vanilla Proton 11, and no longer makes use of Proton-GE.
-- I'd recommend moving away from Proton-GE going forward. Proton-GE-11 is broken for a bunch of things, not to mention use of genAI in its production.
-    - The overly verbose change notes are quite unsettling when you consider all previous releases were simple lists of changes, now it's all like "well, how does this work, exactly?" and "oh, here's why I made this change!". Not to mention the faux-em-dashes (`--`) littered through them.
+- I'd recommend moving away from Proton-GE going forward. Reportedly Proton-GE-11 is broken for a bunch of things, not to mention use of genAI in its production.
 
 ## Shortcuts
 - [Devices](#devices)
