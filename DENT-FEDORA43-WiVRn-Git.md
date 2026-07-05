@@ -257,10 +257,11 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
     - Crash on some loading screens: [delete `hlvr/models/ui/dioramas/` folder (discord)](https://discord.com/channels/1065291958328758352/1093090359464165470/1480736206877888664)
 
-### Superhot VR
+### SUPERHOT VR
 - Tested: GE-Proton9-18 with VapoR as OpenVR Runtime
 - Launch Options: `VR_OVERRIDE=/path/to/lib64/VapoR %command%`
 - Works perfectly as far as I can tell.
+- Steam Console: `download_depot 617830 617831 6114012175981140194` if you want the original experience.
 - When using xrizer, Grab is instead mapped to Trigger, and is unable to drop items.
 
 ### ^ Until You Fall
