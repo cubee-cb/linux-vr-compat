@@ -257,9 +257,14 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - If you try using hand tracking, the fingers will move as if using Knuckles controllers, but the hands remain at the controllers' positions.
     - Crash on some loading screens: [delete `hlvr/models/ui/dioramas/` folder (discord)](https://discord.com/channels/1065291958328758352/1093090359464165470/1480736206877888664)
 
+### Superhot VR
+- Tested: GE-Proton9-18 with VapoR as OpenVR Runtime
+- Launch Options: `VR_OVERRIDE=/path/to/lib64/VapoR %command%`
+- Works perfectly as far as I can tell.
+- When using xrizer, Grab is instead mapped to Trigger, and is unable to drop items.
+
 ### ^ Until You Fall
-- Using GE-Proton7-55, unsure if other versions work.
-- With XRizer, this gets past the black screen and is somehow playable. Occasional crash on launch that should be fixed on the latest commits of XRizer.
+- Tested: GE-Proton7-55, unsure if other versions work.
 - Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not particularly smooth.
 
 ### ChilloutVR
@@ -294,10 +299,7 @@ These launch, but have issues functioning normally and may have completely broke
 
 ---
 
-### Superhot VR
-- Tested: GE-Proton9-18
-- Grabbing is mapped to Trigger, and seems unable to drop items.
-    - Throwing things and thus progressing through certain areas therefore seems impossible.
+none
 
 ---
 
