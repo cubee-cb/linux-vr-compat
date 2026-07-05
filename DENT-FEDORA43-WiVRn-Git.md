@@ -35,7 +35,7 @@ See [the Linux VR Adventures Wiki](https://wiki.vronlinux.org/) for the most up-
 - Quest 3s (128GB) - Spotlight
     - Typically used wireless. I use this primarily for Beat Saber due to its higher refresh rate and more stable controller prediction.
       - The PICO 4's controller offsets are weird, man. They flip all over the place.
-    - Prior to HorizonOS 2.0, it could be used in the dark. Now, this is only the case when also using hand tracking.
+    - Prior to HorizonOS 2.0, it could be used in the dark. Now, this is only the case when hand tracking is actively in use.
 - Common notes
     - Hand Tracking works fine in titles that support it (e.g. VRChat). Make sure it's enabled at the system level prior to launching WiVRn for the option to be available.
         - For PICO, this is under Settings > Lab > Hand Tracking.
