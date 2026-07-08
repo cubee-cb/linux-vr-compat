@@ -52,7 +52,7 @@ See [the Linux VR Adventures Wiki](https://wiki.vronlinux.org/) for the most up-
 - Steam: `dnf` package (i.e. not the flatpak)
     - Flatpak Steam *can* work, though I've had trouble with it myself. See: [LVRA Wiki > WiVRn > Steam Flatpak](https://lvra.gitlab.io/docs/fossvr/wivrn/#steam-flatpak).
     - All Launch Options should be combined with the ones specified by WiVRn.
-- Proton: [GE-Proton10-32](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-32) (Default for all games and launchers, unless otherwise specified)
+- Proton: per application
     - To install custom Proton versions, I typically use [ProtonUp-Qt](https://github.com/DavidoTek/ProtonUp-Qt) (in Flatpaks, look for `pupgui2`).
     - For manual installation, place the tool's folder in `.steam/steam/compatibilitytools.d/`.
 - XR Stack (the release builds may lack some features I talk about, as I build these from source):
@@ -166,11 +166,9 @@ Environment variables that are useful. Usually, these are put into Steam Launch 
 ## Games
 Notes will mention what Proton was used (if any), which OpenVR runtime was used, any tips for getting it working better (or at all), or if the game doesn't work.
 
-^ - A different Proton version is Required or Works Better. (notes will mention why)
-
 ---
 
-### ^ VRChat
+### VRChat
 - Tested: [proton-rtsp-11.0-20260609-1](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/proton-rtsp-11.0-20260609-1) with xrizer.
     - If video players don't work, try running `steam steam://unlockh264/`.
 - I use the following launch options: `%command% --enable-avpro-in-proton`
@@ -197,7 +195,7 @@ Notes will mention what Proton was used (if any), which OpenVR runtime was used,
 **Unity (Avatar creation, World creation)**
 - See the section about ALCOM in [Software](#software).
 
-### ^ Beat Saber (1.40.8 Modded)
+### Beat Saber (1.40.8 Modded)
 - Tested: Proton Experimental with xrizer.
 - I currently use [BSManager](https://github.com/Zagrios/bs-manager) for modding and launching Beat Saber 1.40.8.
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
@@ -209,7 +207,7 @@ Notes will mention what Proton was used (if any), which OpenVR runtime was used,
     - These Beat Saber versions break OpenXR spec by setting Alpha to be transparent while using the Alpha channel for Bloom, so it makes everything transparent (or black) except for the bloom effects. This fixes that by ignoring the Alpha channel.
     - This isn't a problem on SteamVR since... I guess they ignore Alpha by default.
 
-### ^ Resonite
+### Resonite
 - Using GE-Proton10-15-rtsp18 for better video stream support with xrizer. - todo: test Proton RTSP 11.
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=75 nice -n -10 ionice -n 0 %command% -SkipIntroTutorial`
     - Lower resolution, make it less nice to allocate more resources, skip tutorial world.
@@ -273,7 +271,7 @@ Notes will mention what Proton was used (if any), which OpenVR runtime was used,
 ### Ragnarock
 - Tested: GE-Proton7-55 with xrizer, unsure if other versions work.
 
-### ^ Until You Fall
+### Until You Fall
 - Tested: GE-Proton7-55 with xrizer, unsure if other versions work.
 - Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not particularly smooth.
 
@@ -297,15 +295,46 @@ Notes will mention what Proton was used (if any), which OpenVR runtime was used,
 - Tested: GE-Proton9-18 with xrizer.
 - Nothing much to note. From a brief test, the menu controls work and you can try to stop the first boss-thing from slapping you. I'm not very good at it.
 
-### ^ Catlateral Damage VR (Proton)
+### Catlateral Damage VR (Proton)
 - Tested: GE-Proton7-55 with VapoR. Unsure if newer versions work.
 - Launch Options: `VR_OVERRIDE=/path/to/lib64/VapoR %command%`
 - The VR version is only available when using the Windows build via Proton.
+
+### GRIP (VR Mode)
+- Tested: GE-Proton10-32 with xrizer.
+- Requires a standard controller.
+- Performance is lower than expected. Non-VR mode runs really well on high settings, while this runs poorly on very low settings with lowered resolution.
+- In-race HUD is placed really low and cannot be seen without looking away from the track ahead.
+
+### The Lab
+- Tested: GE-Proton10-32 with xrizer.
+- Performance degrades after some time. Specifically after entering the Slingshot minigame.
+
+### Tea For God
+- Tested: GE-Proton10-32 with xrizer.
+- Must play with joystick locomotion; roomscale is unsupported due to PICO 4 lacking playspace passthrough. (or maybe this just isn't implemented in general, I'm not sure)
+
+### SightLineVR (SightLine: The Chair)
+- Tested: GE-Proton10-32 with xrizer.
+- Works as expected.
+
+### RUMBLE
+- Tested: GE-Proton10-32 with xrizer.
+- Works as expected. Controller angle is off slightly.
 
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
 - Requires the environment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
     - i.e. set your launch options to `PROTON_USE_WINED3D=1 %command%`
     - Unity 6 seems to have issues on Linux in general; Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. Currently, it's built on Unity 6.2.
+
+### I am Sakuya VR
+- Tested: GE-Proton10-32 with xrizer and VapoR.
+- xrizer: Doesn't seem to interface with VR. Worked previously.
+- VapoR: Crash after initialising VR.
+
+### Talos Principle VR
+- Tested: GE-Proton10-32 with xrizer and VapoR.
+- Crash on launch, different between xrizer and VapoR. Worked previously.
 
 ---
 
