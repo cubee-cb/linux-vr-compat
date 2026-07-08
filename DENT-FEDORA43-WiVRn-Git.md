@@ -284,7 +284,7 @@ Notes will mention what Proton was used (if any), which OpenVR runtime was used,
     - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
 
 ### Kingspray Graffiti
-- Tested: GE-Proton9-18 with xrizer. (ran alongside VRChat)
+- Tested: GE-Proton10-32 with xrizer. (ran alongside VRChat)
 - Loading times on HDD are really slow; the locations load pretty fast on NVMe though.
 - All controls seem to be mapped to triggers and stick clicks. (this game was made for Vive)
   - For example, the phone menu is opened by clicking the Left Stick.
