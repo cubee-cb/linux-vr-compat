@@ -15,9 +15,7 @@ See [the Linux VR Adventures Wiki](https://wiki.vronlinux.org/) for the most up-
 - [Gotchas](#gotchas)
 - [Setting up the XR Stack](#setting-up-the-xr-stack)
 - [Useful ENV Vars](#useful-env-vars)
-- [Working games](#working)
-- [Partially working games](#partially-working)
-- [Not working games](#not-working)
+- [Games](#games)
 - [Software](#software)
 
 ---
@@ -165,18 +163,18 @@ Environment variables that are useful. Usually, these are put into Steam Launch 
 
 ---
 
-## Working
-Things we can actually play! Yay! There may be small issues here and there but these are not typically game-breaking.
+## Games
+Notes will mention what Proton was used (if any), which OpenVR runtime was used, any tips for getting it working better (or at all), or if the game doesn't work.
 
 ^ - A different Proton version is Required or Works Better. (notes will mention why)
 
 ---
 
 ### ^ VRChat
-- Proton: [proton-rtsp-11.0-20260609-1](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/proton-rtsp-11.0-20260609-1)
+- Tested: [proton-rtsp-11.0-20260609-1](https://github.com/SpookySkeletons/proton-ge-rtsp/releases/tag/proton-rtsp-11.0-20260609-1) with xrizer.
     - If video players don't work, try running `steam steam://unlockh264/`.
-- Uses the following launch options, including [gamemoderun](https://github.com/FeralInteractive/gamemode):
-    - `%command% --enable-avpro-in-proton`
+- I use the following launch options: `%command% --enable-avpro-in-proton`
+    - Not sure if it's needed anymore.
 - Full-body tracking works well.
 - Selfie Expression works when using Proton RTSP 11.
 - Recording:
@@ -187,7 +185,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - VRChat seems not to launch after EAC if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
     - World thumbnails on the "Connecting" screen are a bit washed out.
 
-#### [ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)
+**[ToN Save Manager](https://github.com/ChrisFeline/ToNSaveManager) for Terrors of Nowhere (VRChat)**
 - I run this via [Protontricks](https://github.com/Matoking/protontricks) inside the VRChat prefix (appid 438100).
     - i.e. `flatpak run --command=protontricks-launch com.github.Matoking.protontricks --appid 438100 ./ToNSaveManager.exe`
     - Alternatively if using vanilla wine, something like this may also work: `WINEPREFIX=/path/to/compatdata/438100 wine ./TonSaveManager.exe`
@@ -196,17 +194,23 @@ Things we can actually play! Yay! There may be small issues here and there but t
   - You can test OSC with [Rin the Witch](https://vrchat.com/home/avatar/avtr_0ae41d3f-ae4a-437d-b429-4b1dbb217d20) from Spookality 2024. The gold on her outfit should change colour to match the Terror's colour shown in the wrist UI. Make sure OSC colour is set to HSV.
 - Save icons will be missing (e.g. respawn, etc). Likely a missing font.
 
-#### Unity (Avatar creation, World creation)
+**Unity (Avatar creation, World creation)**
 - See the section about ALCOM in [Software](#software).
 
 ### ^ Beat Saber (1.40.8 Modded)
-- Using Proton Experimental, due to issues getting mods to load with Proton-GE way back when I used Flatpak WiVRn.
+- Tested: Proton Experimental with xrizer.
 - I currently use [BSManager](https://github.com/Zagrios/bs-manager) for modding and launching Beat Saber 1.40.8.
     - If you want to use [Beat Saber Mod Manager](https://github.com/affederaffe/BeatSaberModManager) (which I still use for OneClick installation), settings and selected mods do not save on v0.0.6, so use v0.0.5 instead.
 - Full-body avatars don't work; OpenXR Tracker Profiles doesn't detect the trackers (likely due to them lacking Tracker Roles).
 
+**1.40.9 - 1.44.1 (versions built on Unity 6)**
+- Tested: GE-Proton10-26-rtsp20 with xrizer.
+- Launch Options: `OXR_NO_TEXTURE_SOURCE_ALPHA=1 %command%`
+    - These Beat Saber versions break OpenXR spec by setting Alpha to be transparent while using the Alpha channel for Bloom, so it makes everything transparent (or black) except for the bloom effects. This fixes that by ignoring the Alpha channel.
+    - This isn't a problem on SteamVR since... I guess they ignore Alpha by default.
+
 ### ^ Resonite
-- Using GE-Proton10-15-rtsp18 for better video stream support. - todo: test Proton RTSP 11.
+- Using GE-Proton10-15-rtsp18 for better video stream support with xrizer. - todo: test Proton RTSP 11.
 - Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=75 nice -n -10 ionice -n 0 %command% -SkipIntroTutorial`
     - Lower resolution, make it less nice to allocate more resources, skip tutorial world.
 - Modding should work, but I haven't bothered to reinstate mine yet.
@@ -215,7 +219,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - May not launch if `OBS_VKCAPTURE` is set. Perhaps it doesn't like the Vulkan layer?
     - Trigger click should be fixed on latest xrizer commit. Untested since I was testing Renderide. (see next)
 
-#### [Renderide](https://github.com/DoubleStyx/Renderide) (Native Linux/OpenXR Resonite Renderer)
+**[Renderide](https://github.com/DoubleStyx/Renderide) (Native Linux + OpenXR Resonite Renderer)**
 - Please read their README for notes on the issues you WILL encounter.
     - I was able to build just by cloning and running `cargo build --release` (with `cargo` installed, of course).
     - Some things may not render, or will appear broken and/or flickery. You have been warned!
@@ -230,7 +234,7 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - I'd recommend turning off Ambient Occlusion; it looks kinda bad in my opinion.
     - Turning off the Post Processing entirely can net a decent boost to performance.
 
-#### Using `resrec://` URLs (for objects, joining sessions, etc)
+**Using `resrec://` URLs (for objects, joining sessions, etc)**
 - Follow the first two commands of this: https://wiki.resonite.com/Linux_notes#URL_protocol_handler
 - For the third command `desktop-file-install`, replace `"$XDG_DATA_HOME/applications"` with instead: `"~/.local/share/applications"`
     - This is only necessary if `$XDG_DATA_HOME` is not set. If the third command fails with `Permission Denied` (or similar), this is probably the case, as it would then be attempting to create `applications` in the root directory (incorrect!).
@@ -244,8 +248,8 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - !! Loading screens are invisible. Just wait for the sound ping then press a trigger and it should continue. Subtitles are also missing, but from what I hear this can be fixed with a symlink. (I don't care to fix those myself, though)
         - I *thought* loading times were abysmal, but I had forgotten they need input to proceed. They're actually quite short on an NVMe!
 - **Proton**-specific:
-    - Using GE-Proton9-18; Apparently Proton versions newer than Proton 9 break Alyx.
-- As for performance, this runs surprisingly poor.
+    - Tested: GE-Proton9-18 with xrizer. (apparently, Proton versions newer than Proton 9 break Alyx)
+- As for performance, this runs surprisingly poorly.
     - Performance is not smooth at all, even on Low Fidelity with these Launch Options disabling things. It feels like VRChat. (that is in no way a compliment)
     - This as abysmal compared to how well it ran on my old WMR headset on Windows with High/Ultra Fidelity, mostly only bogging down towards the ending chapters. Very playable despite WMR being WMR.
     - Maybe the extra overhead of ~2x the pixel count + stream encoding pushes it over the edge? `htop` and `nvtop` stats don't seem to reveal a bottleneck.
@@ -257,25 +261,31 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - Crash on some loading screens: [delete `hlvr/models/ui/dioramas/` folder (discord)](https://discord.com/channels/1065291958328758352/1093090359464165470/1480736206877888664)
 
 ### SUPERHOT VR
-- Tested: GE-Proton9-18 with VapoR as OpenVR Runtime
+- Tested: GE-Proton10-32 with VapoR.
 - Launch Options: `VR_OVERRIDE=/path/to/lib64/VapoR %command%`
 - Works perfectly as far as I can tell.
-- Steam Console: `download_depot 617830 617831 6114012175981140194` if you want the original experience.
+- Steam Console: `download_depot 617830 617831 6114012175981140194` if you want a version with the removed scenes.
 - When using xrizer, Grab is instead mapped to Trigger, and is unable to drop items.
 
+### Pistol Whip
+- Tested: GE-Proton10-32 with xrizer.
+
+### Ragnarock
+- Tested: GE-Proton7-55 with xrizer, unsure if other versions work.
+
 ### ^ Until You Fall
-- Tested: GE-Proton7-55, unsure if other versions work.
+- Tested: GE-Proton7-55 with xrizer, unsure if other versions work.
 - Performance is sub-par, I lowered my resolution significantly (`OXR_VIEWPORT_SCALE_PERCENTAGE=50`) and it's still not particularly smooth.
 
 ### ChilloutVR
-- Tested: GE-Proton9-18
-- Full-body tracking Works mostly fine:
-  - Some quirks with the body being pulled along with the legs sometimes, probably due to the platform's IK setup or my settings.
-  - (todo: re-test) Touching the ground with most avatars puts them in a "crouch" pose or flickers rapidly between standing and "crouching".
+- Tested: GE-Proton9-18 with xrizer.
+- Full-body tracking works mostly fine:
+  - Some quirks with the body being pulled along with the legs sometimes (e.g. when sitting/laying down), probably due to the platform's IK setup or my settings.
+  - Touching the ground can put most avatars in a "crouch" pose or flickers rapidly between standing and "crouching".
     - Avatars that are playspaced above the ground or have Locomotion disabled seem to behave as expected.
 
 ### Kingspray Graffiti
-- Tested: GE-Proton9-18 (ran alongside VRChat)
+- Tested: GE-Proton9-18 with xrizer. (ran alongside VRChat)
 - Loading times on HDD are really slow; the locations load pretty fast on NVMe though.
 - All controls seem to be mapped to triggers and stick clicks. (this game was made for Vive)
   - For example, the phone menu is opened by clicking the Left Stick.
@@ -284,41 +294,18 @@ Things we can actually play! Yay! There may be small issues here and there but t
     - The mask probably stores information for the Metallic property, unsure if anything else.
 
 ### Vertigo: Remastered
-- Tested: GE-Proton9-18
+- Tested: GE-Proton9-18 with xrizer.
 - Nothing much to note. From a brief test, the menu controls work and you can try to stop the first boss-thing from slapping you. I'm not very good at it.
+
+### ^ Catlateral Damage VR (Proton)
+- Tested: GE-Proton7-55 with VapoR. Unsure if newer versions work.
+- Launch Options: `VR_OVERRIDE=/path/to/lib64/VapoR %command%`
+- The VR version is only available when using the Windows build via Proton.
 
 ### [Whimsy](https://peopleofwhimsy.itch.io/whimsy) (yoo i worked on this one)
 - Requires the environment variable `PROTON_USE_WINED3D=1` ([thanks](https://bbs.archlinux.org/viewtopic.php?id=306674)), otherwise the Unity Player will fail to create a D3D11 device and crash immediately on launch.
     - i.e. set your launch options to `PROTON_USE_WINED3D=1 %command%`
     - Unity 6 seems to have issues on Linux in general; Whimsy was originally built on Unity 2022, and *did* run perfectly under Proton back then without this workaround. Currently, it's built on Unity 6.2.
-
----
-
-## Partially working
-These launch, but have issues functioning normally and may have completely broken parts.
-
----
-
-none
-
----
-
-## Not working
-The following crash on launch or have other major issues that prevent them from working at all.
-
----
-
-### ^ Half-Life: Alyx (Proton)
-- Using Proton Experimental. GE-Proton also fails.
-- Launch Options: `OXR_VIEWPORT_SCALE_PERCENTAGE=70 %command% -novid -nowindow -console -vconsole +vr_msaa 0`
-  - 70% resolution scale, skip Valve Guy intro, disable spectator/desktop window, disable anti-aliasing.
-- Crash on launch. Needs further investigation; Alyx isn't supposed to be in a crash this early. `PROTON_LOG` returns some of these:
-    - `err:msvcrt:_wassert (L"!status",L"../src-vrclient/winIVRMailbox.c",51)`
-    - `err:service:device_notify_proc failed to get event, error 1726`
-
-### ^ Catlateral Damage VR (Proton)
-- Using GE-Proton7-55. VR Mode is only available when using the Windows build via Proton. Unsure if newer versions work.
-- Crash on launch.
 
 ---
 
