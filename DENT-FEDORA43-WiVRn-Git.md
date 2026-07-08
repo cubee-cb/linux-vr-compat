@@ -104,7 +104,8 @@ If you just want to *use* WiVRn, and don't want or need to build everything your
 - For SteamVR games, download [xrizer](https://github.com/Supreeeme/xrizer/releases) and extract it to `/opt/xrizer`. You may need sudo permissions to do this.
 - For desktop views and space-drag, download the [WayVR AppImage](https://github.com/wlx-team/wayvr?tab=readme-ov-file#installation).
     - You may need to mark it as executable. Go to file properties and select "Allow executing file as program", or `chmod +x WayVR*.AppImage`
-- Open WiVRn and go to its settings. Set Autostart Application to Custom and select the WayVR AppImage file, and set OpenVR Compat to `xrizer`.
+- Open WiVRn and go to its settings. Set Autostart Application to Custom and select the WayVR AppImage file, and set OpenVR Compat to `/opt/xrizer`.
+    - If this isn't visible, you may not have put xrizer in the correct location.
 - The WiVRn system package should come with a systemd service. If you'd like to have WiVRn auto-start on login: `systemctl enable --user wivrn` and `systemctl start --user wivrn`.
 
 Otherwise, if you want to get the latest changes as they come in, continue reading!
