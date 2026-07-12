@@ -260,11 +260,11 @@ Notes will mention what Proton was used (if any), which OpenVR runtime was used,
     - Crash on some loading screens: [delete `hlvr/models/ui/dioramas/` folder (discord)](https://discord.com/channels/1065291958328758352/1093090359464165470/1480736206877888664)
 
 ### Minecraft (Prism Launcher AppImage)
-**[Vivecraft](https://www.vivecraft.org/)**
+**[Vivecraft](https://www.vivecraft.org/)** (Fabric 26.2)
 - Works perfectly with xrizer.
 - Full-body tracking works well.
 
-**[Visor](https://github.com/VisorModStudio/Visor)**
+**[Visor](https://github.com/VisorModStudio/Visor)** (Fabric 1.20.1)
 - I'm not sure what paths Flatpak Prism Launcher needs to connect to WiVRn; I changed to the AppImage and it works out-of-the-box there.
 - If the XRBinder layer is active, Visor will segfault once the loading screen finishes.
 - Full-body tracking is not yet supported.
