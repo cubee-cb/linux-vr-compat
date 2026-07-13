@@ -5,20 +5,20 @@ Subfolders include scripts or configs that I use.
 - See [build-scripts](https://github.com/cubee-cb/xr-build-scripts) for the scripts I use to build my XR stack.
 
 # Variants
-- Dent (AMD Desktop)
-  - [Fedora 44 (WiVRn Git)](DENT-FEDORA43-WiVRn-Git.md) (current) - Current main setup.
+- Dent (AMD Desktop) - My main device.
+  - [Fedora 44 (WiVRn Git)](DENT-FEDORA43-WiVRn-Git.md) (current)
   - [Fedora 43 (WiVRn Envision)](DENT-FEDORA43-WiVRn-Envision.md)
   - [Fedora 42 (WiVRn Envision)](DENT-FEDORA42-WiVRn-Envision.md)
   - [Arch Linux (WiVRn Envision)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
   - [Fedora 41 (WiVRn Flatpak)](DENT-FEDORA41-WiVRn-Flatpak.md)
-- Skittles (AMD + NVIDIA Optimus Laptop)
-  - Fedora 44 Cinnamon (current)
-  - Linux Mint / LMDE 7 - N/A
-  - Bazzite (WiVRn AtomicXR) - N/A
+- Skittles (AMD + NVIDIA Optimus Laptop) - Secondary laptop for portable use.
+  - Fedora 44 Cinnamon (N/A) (current)
+  - ~Linux Mint / LMDE 7 (N/A)~
+  - ~Bazzite (WiVRn AtomicXR)~
   - [CachyOS (WiVRn Flatpak)](SKITTLES-CACHYOS-WiVRn-Flatpak.md)
-  - Debian Trixie - N/A
-- FS (AMD Integrated Desktop)
-  - [Manjaro (WiVRn Flatpak)](FS-MANJARO-WiVRn-Flatpak.md) (current) - Lounge family gaming PC.
+  - ~Debian Trixie (N/A)~
+- FS (AMD iGPU Desktop) - Lounge family gaming PC.
+  - [Manjaro (WiVRn Flatpak)](FS-MANJARO-WiVRn-Flatpak.md) (current)
 
 # Maybe future variants
 - idk lol. happy to test things, feel free to open an issue or something if you want me to test anything specific.
