@@ -1,6 +1,8 @@
 Testing VR games on Linux. See [linux-gaming-compat](https://github.com/cubee-cb/linux-gaming-compat) for non-VR titles.
 
-Subfolders include scripts or configs that I use. Configs are available under [dotfiles](dotfiles). See [build-scripts](https://github.com/cubee-cb/xr-build-scripts) for, well, build scripts I use for my XR Stack.
+Subfolders include scripts or configs that I use.
+- Configs are available under [dotfiles](dotfiles).
+- See [build-scripts](https://github.com/cubee-cb/xr-build-scripts) for the scripts I use to build my XR stack.
 
 # Variants
 - Dent (AMD Desktop)
@@ -10,18 +12,18 @@ Subfolders include scripts or configs that I use. Configs are available under [d
   - [Arch Linux (WiVRn Envision)](DENT-ARCH-WiVRn-Envision.md) - A USB SSD I used as intermission when Fedora 41 was practically unusable due to crashing.
   - [Fedora 41 (WiVRn Flatpak)](DENT-FEDORA41-WiVRn-Flatpak.md)
 - Skittles (AMD + NVIDIA Optimus Laptop)
-  - Linux Mint / LMDE 7 (N/A) (current) - Nothing done yet.
-  - Bazzite (WiVRn AtomicXR) - I installed it and did nothing with it.
-  - [CachyOS (WiVRn Flatpak)](SKITTLES-CACHYOS-WiVRn-Flatpak.md) - I got bored and figured I'd try Bazzite.
-  - Debian Trixie - This lasted like a week before I replaced it with CachyOS.
+  - Fedora 44 Cinnamon (current)
+  - Linux Mint / LMDE 7 - N/A
+  - Bazzite (WiVRn AtomicXR) - N/A
+  - [CachyOS (WiVRn Flatpak)](SKITTLES-CACHYOS-WiVRn-Flatpak.md)
+  - Debian Trixie - N/A
 - FS (AMD Integrated Desktop)
   - [Manjaro (WiVRn Flatpak)](FS-MANJARO-WiVRn-Flatpak.md) (current) - Lounge family gaming PC.
 
 # Maybe future variants
 - idk lol. happy to test things, feel free to open an issue or something if you want me to test anything specific.
-- I do wanna test a Steam Frame but I don't think I'll be affording one for a while. (assuming they even ship to Australia on release)
-- Sequin - I could test on my Mac Mini 2018; that'll go well...
-- Daisy - We also have a mini pc sitting around; probably would be similar to FS though.
+- I do wanna test a Steam Frame but I don't think I'll be affording one for a while.
+- Sequin - I could test on my Mac Mini 2018; that's gonna go well...
 
 # Resources
 - [The Linux VR Adventures Wiki](https://lvra.gitlab.io/) - Source of information for running VR on Linux in general.
@@ -29,7 +31,4 @@ Subfolders include scripts or configs that I use. Configs are available under [d
 - [LVRA DB](https://db.vronlinux.org/) - Like ProtonDB, but for XR Runtimes and VR Games.
 
 # Notes
-`amdgpu` sometimes encounters page faults and subsequent GPU resets for some systems. As of more recently, I get `ring gfx` timeouts instead of `ring vcn_enc` timeouts.
-
-Potentially related issues:
-- [ring gfx_0.0.0 timeout & reset failure](https://gitlab.freedesktop.org/drm/amd/-/issues/4133)
+- None at the moment
