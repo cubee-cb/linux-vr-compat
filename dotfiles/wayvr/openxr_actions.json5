@@ -1,96 +1,403 @@
-// cubee's pico/quest bindings for wayvr
-// - left menu press to toggle overlays
-// - either joystick click to space drag
-// - left joystick double-click to reset space offsets
-// - right joystick double-click to space rotate
-//
-// Available bindings:
-//
-// -- click --
-// primary click to interact with the watch or overlays. required
-//
-// -- grab --
-// used to manipulate position, size, orientation of overlays in 3D space
-//
-// -- show_hide --
-// used to quickly hide and show your last selection of screens + keyboard
-//
-// -- space_drag --
-// move your stage (playspace drag)
-//
-// -- space_rotate --
-// rotate your stage (playspace rotate, WIP)
-//
-// -- space_reset --
-// reset your stage (reset the offset from playspace drag)
-//
-// -- click_modifier_right --
-// while this is held, your pointer will turn ORANGE and your mouse clicks will be RIGHT clicks
-//
-// -- click_modifier_middle --
-// while this is held, your pointer will turn PURPLE and your mouse clicks will be MIDDLE clicks
-//
-// -- move_mouse --
-// when using `focus_follows_mouse_mode`, you need to hold this for the mouse to move
-//
-// -- pose, haptic --
-// do not mess with these, unless you know what you're doing
-
 [
-  // Oculus Touch Controller. Compatible with Quest 2, Quest 3, Quest Pro, Pico
   {
-    profile: "/interaction_profiles/oculus/touch_controller",
-    pose: {
-      left: "/user/hand/left/input/aim/pose",
-      right: "/user/hand/right/input/aim/pose"
+    "profile": "/interaction_profiles/ext/eye_gaze_interaction",
+    "pose": {
+      "handsfree": "/user/eyes_ext/input/gaze_ext/pose"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/ext/hand_interaction_ext",
+    "click": {
+      "handsfree": "/user/hand/right/input/pinch_ext/value"
     },
-    haptic: {
-      left: "/user/hand/left/output/haptic",
-      right: "/user/hand/right/output/haptic"
+    "grab": {
+      "handsfree": "/user/hand/left/input/pinch_ext/value"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/oculus/touch_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
     },
-    click: {
-      left: "/user/hand/left/input/trigger/value",
-      right: "/user/hand/right/input/trigger/value"
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
     },
-    grab: {
-      left: "/user/hand/left/input/squeeze/value",
-      right: "/user/hand/right/input/squeeze/value"
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/value",
+      "right": "/user/hand/right/input/squeeze/value"
     },
-    scroll: {
-      left: "/user/hand/left/input/thumbstick/y",
-      right: "/user/hand/right/input/thumbstick/y"
+    "alt_click": {},
+    "show_hide": {
+      "left": "/user/hand/left/input/menu/click"
     },
-    click_modifier_right: {
-      left: "/user/hand/left/input/y/touch",
-      right: "/user/hand/right/input/b/touch"
+    "toggle_dashboard": {},
+    "space_drag": {
+      "right": "/user/hand/right/input/thumbstick/click"
     },
-    click_modifier_middle: {
-      left: "/user/hand/left/input/x/touch",
-      right: "/user/hand/right/input/a/touch"
+    "space_rotate": {
+      "left": "/user/hand/left/input/thumbstick/click"
     },
-    move_mouse: {
-      // used with focus_follows_mouse_mode
-      left: "/user/hand/left/input/trigger/touch",
-      right: "/user/hand/right/input/trigger/touch"
+    "space_reset": {
+      "left": "/user/hand/left/input/thumbstick/click",
+      "double_click": true
     },
-    space_drag: {
-      right: "/user/hand/right/input/thumbstick/click"
+    "click_modifier_right": {
+      "left": "/user/hand/left/input/y/touch",
+      "right": "/user/hand/right/input/b/touch"
     },
-    space_rotate: {
-      left: "/user/hand/left/input/thumbstick/click",
+    "click_modifier_middle": {
+      "left": "/user/hand/left/input/x/touch",
+      "right": "/user/hand/right/input/a/touch"
     },
-    //space_rotate: {
-    //  //double_click: true,
-    //  left: "/user/hand/left/input/thumbrest/touch",
-    //  right: "/user/hand/right/input/thumbrest/touch",
-    //},
-    space_reset: {
-      double_click: true,
-      left: "/user/hand/left/input/thumbstick/click",
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/touch",
+      "right": "/user/hand/right/input/trigger/touch"
     },
-    show_hide: {
-      left: "/user/hand/left/input/menu/click"
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/valve/index_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/force",
+      "right": "/user/hand/right/input/squeeze/force"
+    },
+    "alt_click": {
+      "right": "/user/hand/right/input/trackpad/force"
+    },
+    "show_hide": {
+      "left": "/user/hand/left/input/b/click",
+      "double_click": true
+    },
+    "toggle_dashboard": {
+      "right": "/user/hand/right/input/system/click",
+      "double_click": false
+    },
+    "space_drag": {
+      "left": "/user/hand/left/input/trackpad/force"
+    },
+    "space_reset": {
+      "left": "/user/hand/left/input/trackpad/force",
+      "double_click": true
+    },
+    "click_modifier_right": {
+      "left": "/user/hand/left/input/b/touch",
+      "right": "/user/hand/right/input/b/touch"
+    },
+    "click_modifier_middle": {
+      "left": "/user/hand/left/input/a/touch",
+      "right": "/user/hand/right/input/a/touch"
+    },
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/touch",
+      "right": "/user/hand/right/input/trigger/touch"
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/valve/frame_controller_valve",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/click",
+      "right": "/user/hand/right/input/trigger/click"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/click",
+      "right": "/user/hand/right/input/squeeze/click"
+    },
+    "alt_click": {},
+    "show_hide": {
+      "left": "/user/hand/left/input/view/click"
+    },
+    "toggle_dashboard": {
+      "right": "/user/hand/right/input/menu/click"
+    },
+    "space_drag": {
+      "left": "/user/hand/left/input/system/click"
+    },
+    "space_rotate": {
+      "right": "/user/hand/right/input/system/click",
+      "double_click": true
+    },
+    "space_reset": {
+      "left": "/user/hand/left/input/system/click",
+      "double_click": true
+    },
+    "click_modifier_right": {
+      "left": "/user/hand/left/input/dpad_right/touch",
+      "right": "/user/hand/right/input/x/touch"
+    },
+    "click_modifier_middle": {
+      "left": "/user/hand/left/input/dpad_left/touch",
+      "right": "/user/hand/right/input/b/touch"
+    },
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/touch",
+      "right": "/user/hand/right/input/trigger/touch"
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/htc/vive_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/click",
+      "right": "/user/hand/right/input/squeeze/click"
+    },
+    "show_hide": {
+      "left": "/user/hand/left/input/system/click"
+    },
+    "toggle_dashboard": {
+      "right": "/user/hand/right/input/system/click"
+    },
+    "space_drag": {
+      "right": "/user/hand/right/input/menu/click"
+    },
+    "space_reset": {
+      "right": "/user/hand/right/input/menu/click",
+      "double_click": true
+    },
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value",
+      "threshold_left": [
+        0.1,
+        0.2
+      ],
+      "threshold_right": [
+        0.1,
+        0.2
+      ]
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/trackpad/y",
+      "right": "/user/hand/right/input/trackpad/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/microsoft/motion_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/click",
+      "right": "/user/hand/right/input/squeeze/click"
+    },
+    "show_hide": {
+      "left": "/user/hand/left/input/menu/click"
+    },
+    "space_drag": {
+      "right": "/user/hand/right/input/menu/click",
+      "double_click": true
+    },
+    "click_modifier_right": {
+      "left": "/user/hand/left/input/trackpad/touch",
+      "right": "/user/hand/right/input/trackpad/touch"
+    },
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value",
+      "threshold_left": [
+        0.1,
+        0.2
+      ],
+      "threshold_right": [
+        0.1,
+        0.2
+      ]
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/hp/mixed_reality_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/value",
+      "right": "/user/hand/right/input/squeeze/value"
+    },
+    "show_hide": {
+      "left": "/user/hand/left/input/menu/click"
+    },
+    "space_drag": {
+      "right": "/user/hand/left/input/menu/click",
+      "double_click": true
+    },
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value",
+      "threshold_left": [
+        0.1,
+        0.2
+      ],
+      "threshold_right": [
+        0.1,
+        0.2
+      ]
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/khr/generic_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/value",
+      "right": "/user/hand/right/input/squeeze/value"
+    },
+    "show_hide": {
+      "left": "/user/hand/left/input/secondary/click",
+      "double_click": true
+    },
+    "click_modifier_right": {
+      "left": "/user/hand/left/input/secondary/click",
+      "right": "/user/hand/right/input/secondary/click"
+    },
+    "click_modifier_middle": {
+      "left": "/user/hand/left/input/primary/click",
+      "right": "/user/hand/right/input/primary/click"
+    },
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value",
+      "threshold_left": [
+        0.1,
+        0.2
+      ],
+      "threshold_right": [
+        0.1,
+        0.2
+      ]
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
+    }
+  },
+  {
+    "profile": "/interaction_profiles/samsung/odyssey_controller",
+    "pose": {
+      "left": "/user/hand/left/input/aim/pose",
+      "right": "/user/hand/right/input/aim/pose"
+    },
+    "click": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value"
+    },
+    "grab": {
+      "left": "/user/hand/left/input/squeeze/click",
+      "right": "/user/hand/right/input/squeeze/click"
+    },
+    "show_hide": {
+      "left": "/user/hand/left/input/menu/click"
+    },
+    "space_drag": {
+      "right": "/user/hand/right/input/menu/click",
+      "double_click": true
+    },
+    "click_modifier_right": {
+      "left": "/user/hand/left/input/trackpad/touch",
+      "right": "/user/hand/right/input/trackpad/touch"
+    },
+    "click_modifier_middle": {},
+    "move_mouse": {
+      "left": "/user/hand/left/input/trigger/value",
+      "right": "/user/hand/right/input/trigger/value",
+      "threshold_left": [
+        0.1,
+        0.2
+      ],
+      "threshold_right": [
+        0.1,
+        0.2
+      ]
+    },
+    "scroll": {
+      "left": "/user/hand/left/input/thumbstick/y",
+      "right": "/user/hand/right/input/thumbstick/y"
+    },
+    "haptic": {
+      "left": "/user/hand/left/output/haptic",
+      "right": "/user/hand/right/output/haptic"
     }
   }
-
 ]
