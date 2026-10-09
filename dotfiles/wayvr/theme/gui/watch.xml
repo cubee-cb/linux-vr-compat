@@ -1,11 +1,11 @@
 <layout>
-  <theme>
+  <vars>
     <var key="clock0_size" value="46" />
     <var key="clock0_date_size" value="16" />
     <var key="clock0_dow_size" value="16" />
     <var key="clock_alt_size" value="24" />
     <var key="clock_alt_tz_size" value="14" />
-  </theme>
+  </vars>
 
   <macro name="decorative_rect"
     padding="8" color="background_contrast"
